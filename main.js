@@ -1,0 +1,2 @@
+
+document.addEventListener("DOMContentLoaded",()=>{const b=document.getElementById("menuButton"),n=document.getElementById("mainNav");if(b&&n)b.onclick=()=>n.classList.toggle("open");const s=document.getElementById("siteSearch"),bt=document.getElementById("siteSearchButton");function go(){if(!s)return;const q=s.value.trim().toLowerCase();if(!q){s.focus();return}if(q.includes("inventory")||q.includes("variance")||q.includes("stock"))location.href="/inventory/";else location.href="/#tools"}if(bt)bt.onclick=go;if(s)s.addEventListener("keydown",e=>{if(e.key==="Enter")go()})});
