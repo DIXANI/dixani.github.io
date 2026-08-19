@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CBM Calculator for Shipping & Cartons | DIXANI</title>
+<meta name="description" content="Free CBM calculator for shipping. Calculate carton volume, total cubic meters, cubic feet, gross weight and approximate container volume usage.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI">
+<meta name="theme-color" content="#2563eb">
+<link rel="canonical" href="https://dixani.github.io/logistics/cbm-calculator/">
+<link rel="stylesheet" href="../../assets/css/cbm-calculator.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="/">DIXANI</a>
+<nav><a href="/">Home</a><a href="/#categories">Categories</a><a href="/about/">About</a></nav>
+</div></header>
+
+<main class="page">
+<section class="hero">
+<div class="badge">🚚 WAREHOUSE & LOGISTICS TOOL</div>
+<h1>CBM <span>Calculator</span></h1>
+<p>Calculate shipment volume for multiple carton types, convert dimensions automatically, total gross weight, and estimate container volume usage.</p>
+</section>
+
+<section class="panel">
+<div class="panel-head">
+<div><h2>Shipment Settings</h2><p>Choose the units used for carton dimensions and weight.</p></div>
+<button class="secondary" type="button" id="sampleBtn">Load Sample</button>
+</div>
+<div class="settings">
+<label>Dimension Unit<select id="dimensionUnit">
+<option value="cm" selected>Centimeters (cm)</option>
+<option value="m">Meters (m)</option>
+<option value="mm">Millimeters (mm)</option>
+<option value="in">Inches (in)</option>
+<option value="ft">Feet (ft)</option>
+</select></label>
+<label>Weight Unit<select id="weightUnit"><option value="kg" selected>Kilograms (kg)</option><option value="lb">Pounds (lb)</option></select></label>
+<label>Decimal Places<select id="decimals"><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option></select></label>
+</div>
+</section>
+
+<section class="panel">
+<div class="panel-head">
+<div><h2>Carton Types</h2><p>Add one row for each carton size in the shipment.</p></div>
+<button class="primary" type="button" id="addBtn">+ Add Carton</button>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>Carton / Reference</th><th>Length</th><th>Width</th><th>Height</th><th>Qty</th><th>Gross Wt / Carton</th><th>CBM / Carton</th><th>Total CBM</th><th></th></tr></thead>
+<tbody id="cartonBody"></tbody>
+</table>
+</div>
+<div id="empty" class="empty" hidden>No carton rows. Click “+ Add Carton” to begin.</div>
+<div id="warning" class="warning" hidden></div>
+<div class="actions"><button class="primary" type="button" id="calculateBtn">Calculate CBM</button><button class="danger" type="button" id="clearBtn">Clear All</button></div>
+</section>
+
+<section class="summary">
+<div class="summary-head"><div><h2>Shipment Summary</h2><p>Calculated from all valid carton rows.</p></div><div class="pill">VOLUME SUMMARY</div></div>
+<div class="summary-grid">
+<div class="metric"><span>Total Cartons</span><strong id="totalCartons">0</strong></div>
+<div class="metric featured"><span>Total CBM</span><strong id="totalCbm">0.0000 m³</strong></div>
+<div class="metric"><span>Total Cubic Feet</span><strong id="totalCft">0.0000 ft³</strong></div>
+<div class="metric"><span>Total Gross Weight</span><strong id="totalWeight">—</strong></div>
+<div class="metric"><span>Average CBM / Carton</span><strong id="averageCbm">0.0000 m³</strong></div>
+</div>
+</section>
+
+<section class="panel">
+<div class="summary-head"><div><h2>Container Volume Reference</h2><p>Approximate percentage of nominal container volume represented by this shipment's CBM.</p></div><div class="pill green">PLANNING REFERENCE</div></div>
+<div class="container-grid">
+<div class="container-card"><div><span>20 ft Standard</span><strong>~33 m³</strong></div><div class="track"><i id="bar20"></i></div><b id="pct20">0.0%</b></div>
+<div class="container-card"><div><span>40 ft Standard</span><strong>~67 m³</strong></div><div class="track"><i id="bar40"></i></div><b id="pct40">0.0%</b></div>
+<div class="container-card"><div><span>40 ft High Cube</span><strong>~76 m³</strong></div><div class="track"><i id="bar40hc"></i></div><b id="pct40hc">0.0%</b></div>
+</div>
+<p class="disclaimer">Volume percentage is only a planning reference. CBM alone cannot confirm that cargo will physically fit. Actual loading depends on internal container dimensions, carton dimensions and orientation, stacking restrictions, pallets, weight distribution and other operational constraints.</p>
+</section>
+
+<section class="panel info">
+<div class="eyebrow">HOW IT WORKS</div><h2>How CBM is calculated</h2>
+<div class="info-grid">
+<div><b>01</b><h3>Convert to meters</h3><p>DIXANI converts the selected dimension unit to meters before calculating volume.</p></div>
+<div><b>02</b><h3>Calculate each carton</h3><p>CBM per carton = Length × Width × Height in meters.</p></div>
+<div><b>03</b><h3>Multiply by quantity</h3><p>Total shipment CBM is the sum of each carton type's CBM multiplied by its quantity.</p></div>
+</div>
+</section>
+
+<section class="panel faq">
+<h2>CBM Calculator — Frequently Asked Questions</h2>
+<details><summary>What does CBM mean?</summary><p>CBM means cubic meter, a common unit for measuring cargo and shipment volume.</p></details>
+<details><summary>How do I calculate CBM from centimeters?</summary><p>Convert length, width and height from centimeters to meters, then multiply the three values. This calculator performs the conversion automatically.</p></details>
+<details><summary>Can CBM tell me exactly how many cartons fit in a container?</summary><p>No. Total CBM is useful for volume planning, but exact loading also depends on the dimensions and orientation of individual cartons, stacking rules, pallets and container internal dimensions.</p></details>
+</section>
+</main>
+
+<footer><div><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span></div><span>© 2026 DIXANI. All rights reserved.</span></footer>
+<script src="../../assets/js/cbm-calculator.js"></script>
+</body></html>
