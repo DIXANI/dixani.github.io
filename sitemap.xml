@@ -5,7 +5,6 @@
 <url><loc>https://dixani.github.io/privacy/</loc></url>
 <url><loc>https://dixani.github.io/terms/</loc></url>
 <url><loc>https://dixani.github.io/contact/</loc></url>
-<url><loc>https://dixani.github.io/categories/inventory/variance-report/</loc></url>
 <url><loc>https://dixani.github.io/categories/business/</loc></url>
 <url><loc>https://dixani.github.io/categories/finance/</loc></url>
 <url><loc>https://dixani.github.io/categories/converters/</loc></url>
@@ -37,5 +36,8 @@
 </url>
 <url>
     <loc>https://dixani.github.io/logistics/container-loading-calculator/</loc>
+</url>
+<url>
+    <loc>https://dixani.github.io/categories/inventory/</loc>
 </url>
 </urlset>
