@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Economic Order Quantity (EOQ) Calculator | DIXANI</title>
-<meta name="description" content="Free EOQ calculator. Calculate economic order quantity, orders per year, cycle inventory, ordering cost, holding cost and compare your current order quantity.">
+<meta name="description" content="Free EOQ calculator to calculate economic order quantity, orders per year, average cycle inventory, ordering cost, holding cost and compare your current order quantity.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="DIXANI">
 <meta name="theme-color" content="#2563eb">
@@ -29,7 +29,7 @@
 <section class="tool-intro">
   <div class="tool-badge">📦 INVENTORY TOOL</div>
   <h1>Economic Order Quantity <span>Calculator</span></h1>
-  <p>Calculate the order quantity that balances annual ordering cost and cycle-stock holding cost.</p>
+  <p>Calculate Economic Order Quantity (EOQ) to estimate the order size that balances annual ordering cost and cycle-stock holding cost.</p>
 </section>
 
 <section class="panel">
@@ -229,6 +229,51 @@
     </div>
   </div>
 </section>
+<section class="info-section">
+
+    <div class="section-label">
+        EXAMPLE
+    </div>
+
+    <h2>
+        EOQ Calculation Example
+    </h2>
+
+    <p>
+        Suppose annual demand is 10,000 units, ordering cost is
+        QAR 100 per order and annual holding cost is
+        QAR 0.50 per unit.
+    </p>
+
+    <div class="formula-box">
+        <strong>
+            EOQ = √((2 × 10,000 × 100) ÷ 0.50)
+            = 2,000 units
+        </strong>
+    </div>
+
+    <p>
+        At an EOQ of 2,000 units, the business would place
+        approximately 5 orders per year. Average cycle inventory
+        would be about 1,000 units.
+    </p>
+
+    <p>
+        Under the basic EOQ assumptions, annual ordering cost and
+        annual cycle-stock holding cost would each be approximately
+        QAR 500, giving a total relevant inventory cost of
+        QAR 1,000 per year.
+    </p>
+
+    <p>
+    If you already know the annual holding cost per unit,
+    use the Holding Cost / Unit method. If holding cost is
+    normally expressed as a percentage of unit cost, use the
+    Holding Rate % method and DIXANI will calculate the annual
+    holding cost per unit automatically.
+</p>
+
+</section>
 
 <section class="faq-section">
   <h2>EOQ Calculator — Frequently Asked Questions</h2>
@@ -247,6 +292,18 @@
     <summary>Does EOQ include the purchase cost of inventory?</summary>
     <p>This calculator excludes purchase cost from total relevant cost because, without quantity discounts, the annual purchase cost does not change with order quantity.</p>
   </details>
+
+  <details>
+    <summary>When should I not rely on basic EOQ?</summary>
+
+    <p>
+        Basic EOQ may be less suitable when demand is highly variable,
+        suppliers offer important quantity discounts, replenishment
+        timing is uncertain, products have short shelf lives or
+        inventory constraints significantly affect ordering decisions.
+    </p>
+</details>
+
 </section>
 
 <section class="related-section">
