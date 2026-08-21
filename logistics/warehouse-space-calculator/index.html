@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Warehouse Space & Storage Capacity Calculator | DIXANI</title>
+
+<meta name="description"
+content="Free warehouse space calculator. Estimate warehouse area required, pallet storage capacity, ground pallet positions, rack levels and storage utilization.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI">
+
+<link rel="canonical"
+href="https://dixani.github.io/logistics/warehouse-space-calculator/">
+
+<link rel="stylesheet"
+href="../../assets/css/warehouse-space-calculator.css">
+</head>
+
+<body>
+
+<header>
+    <a href="/">DIXANI</a>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/categories/logistics/">Logistics</a>
+        <a href="/about/">About</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <b>🏭 WAREHOUSE & LOGISTICS TOOL</b>
+
+    <h1>
+        Warehouse Space & Storage
+        <span>Capacity Calculator</span>
+    </h1>
+
+    <p>
+        Estimate warehouse space requirements or calculate approximate
+        pallet storage capacity using pallet dimensions, storage levels,
+        space allowances and utilization assumptions.
+    </p>
+</section>
+
+
+<section class="card">
+
+    <div class="head">
+        <div>
+            <h2>Choose Calculation Mode</h2>
+
+            <p>
+                Calculate the space required for your pallets or estimate
+                how many pallets can fit within available warehouse space.
+            </p>
+        </div>
+
+        <button type="button" id="sample">
+            Load Sample
+        </button>
+    </div>
+
+
+    <div class="tabs">
+
+        <button type="button"
+                id="spaceTab"
+                class="active">
+            Space Required
+        </button>
+
+        <button type="button"
+                id="capacityTab">
+            Storage Capacity
+        </button>
+
+    </div>
+
+
+    <!-- SPACE REQUIRED MODE -->
+
+    <div id="spaceMode">
+
+        <div class="formula">
+            <b>Space Required:</b>
+            Estimate ground pallet positions, pallet footprint
+            and additional operational space.
+        </div>
+
+        <div class="grid">
+
+            <label>
+                Total Pallets
+                <input id="totalPallets"
+                       type="number"
+                       min="1"
+                       step="1"
+                       placeholder="500">
+            </label>
+
+
+            <label>
+                Storage Levels
+                <input id="storageLevels"
+                       type="number"
+                       min="1"
+                       step="1"
+                       placeholder="4">
+                <small>
+                    Include the floor level if it is used for storage.
+                </small>
+            </label>
+
+
+            <label>
+                Pallet Length
+                <input id="palletLength"
+                       type="number"
+                       min="0"
+                       step="any"
+                       placeholder="120">
+            </label>
+
+
+            <label>
+                Pallet Width
+                <input id="palletWidth"
+                       type="number"
+                       min="0"
+                       step="any"
+                       placeholder="100">
+            </label>
+
+
+            <label>
+                Dimension Unit
+                <select id="dimensionUnit">
+                    <option value="cm" selected>Centimeters (cm)</option>
+                    <option value="mm">Millimeters (mm)</option>
+                    <option value="m">Meters (m)</option>
+                    <option value="in">Inches (in)</option>
+                    <option value="ft">Feet (ft)</option>
+                </select>
+            </label>
+
+
+            <label>
+                Aisle & Access Allowance (%)
+                <input id="aisleAllowance"
+                       type="number"
+                       min="0"
+                       max="95"
+                       step="any"
+                       placeholder="40">
+            </label>
+
+
+            <label>
+                Staging / Support Allowance (%)
+                <input id="supportAllowance"
+                       type="number"
+                       min="0"
+                       max="95"
+                       step="any"
+                       placeholder="15">
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- CAPACITY MODE -->
+
+    <div id="capacityMode" hidden>
+
+        <div class="formula">
+            <b>Storage Capacity:</b>
+            Estimate pallet positions from available warehouse area
+            and your storage assumptions.
+        </div>
+
+        <div class="grid">
+
+            <label>
+                Available Warehouse Area
+                <input id="warehouseArea"
+                       type="number"
+                       min="0"
+                       step="any"
+                       placeholder="2000">
+            </label>
+
+
+            <label>
+                Area Unit
+                <select id="areaUnit">
+                    <option value="sqm" selected>Square Meters (m²)</option>
+                    <option value="sqft">Square Feet (ft²)</option>
+                </select>
+            </label>
+
+
+            <label>
+                Storage Levels
+                <input id="capacityLevels"
+                       type="number"
+                       min="1"
+                       step="1"
+                       placeholder="4">
+            </label>
+
+
+            <label>
+                Pallet Length
+                <input id="capacityPalletLength"
+                       type="number"
+                       min="0"
+                       step="any"
+                       placeholder="120">
+            </label>
+
+
+            <label>
+                Pallet Width
+                <input id="capacityPalletWidth"
+                       type="number"
+                       min="0"
+                       step="any"
+                       placeholder="100">
+            </label>
+
+
+            <label>
+                Pallet Dimension Unit
+                <select id="capacityDimensionUnit">
+                    <option value="cm" selected>Centimeters (cm)</option>
+                    <option value="mm">Millimeters (mm)</option>
+                    <option value="m">Meters (m)</option>
+                    <option value="in">Inches (in)</option>
+                    <option value="ft">Feet (ft)</option>
+                </select>
+            </label>
+
+
+            <label>
+                Storage Area Allocation (%)
+                <input id="storageAllocation"
+                       type="number"
+                       min="1"
+                       max="100"
+                       step="any"
+                       placeholder="60">
+                <small>
+                    Percentage of warehouse floor area allocated
+                    to pallet storage footprints.
+                </small>
+            </label>
+
+
+            <label>
+                Target Position Utilization (%)
+                <input id="targetUtilization"
+                       type="number"
+                       min="1"
+                       max="100"
+                       step="any"
+                       placeholder="85">
+                <small>
+                    Operational target rather than maximum theoretical occupancy.
+                </small>
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <div id="warning"
+         class="warning"
+         hidden>
+    </div>
+
+
+    <div class="actions">
+
+        <button type="button"
+                class="primary"
+                id="calculate">
+            Calculate
+        </button>
+
+        <button type="button"
+                class="danger"
+                id="clear">
+            Clear All
+        </button>
+
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="head">
+
+        <div>
+            <h2 id="resultHeading">
+                Warehouse Space Result
+            </h2>
+
+            <p id="resultDescription">
+                Estimated warehouse space based on your storage assumptions.
+            </p>
+        </div>
+
+        <b class="pill"
+           id="modePill">
+            SPACE REQUIRED
+        </b>
+
+    </div>
+
+
+    <div class="results">
+
+        <div class="result featured">
+            <small id="mainResultLabel">
+                Estimated Warehouse Area
+            </small>
+
+            <strong id="mainResult">
+                —
+            </strong>
+        </div>
+
+
+        <div class="result">
+            <small>
+                Ground Pallet Positions
+            </small>
+
+            <strong id="groundPositions">
+                —
+            </strong>
+        </div>
+
+
+        <div class="result">
+            <small>
+                Pallet Footprint
+            </small>
+
+            <strong id="palletFootprint">
+                —
+            </strong>
+        </div>
+
+
+        <div class="result">
+            <small id="capacityLabel">
+                Total Pallet Capacity
+            </small>
+
+            <strong id="totalCapacity">
+                —
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="dark">
+
+        <div>
+            <small id="metric1Label">
+                Net Pallet Footprint
+            </small>
+
+            <strong id="metric1">
+                —
+            </strong>
+        </div>
+
+
+        <div>
+            <small id="metric2Label">
+                Aisle / Access Area
+            </small>
+
+            <strong id="metric2">
+                —
+            </strong>
+        </div>
+
+
+        <div>
+            <small id="metric3Label">
+                Staging / Support Area
+            </small>
+
+            <strong id="metric3">
+                —
+            </strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="head">
+
+        <div>
+            <h2>Visual Space Breakdown</h2>
+
+            <p>
+                Simplified visualization of the calculated
+                warehouse-space allocation.
+            </p>
+        </div>
+
+        <b class="pill">
+            VISUAL PLAN
+        </b>
+
+    </div>
+
+
+    <div class="space-visual">
+
+        <div class="visual-bar">
+
+            <div id="storageBar"
+                 class="storage-bar">
+            </div>
+
+            <div id="aisleBar"
+                 class="aisle-bar">
+            </div>
+
+            <div id="supportBar"
+                 class="support-bar">
+            </div>
+
+        </div>
+
+
+        <div class="legend">
+
+            <span>
+                <i class="storage-key"></i>
+                Storage
+                <b id="storagePercent">—</b>
+            </span>
+
+            <span>
+                <i class="aisle-key"></i>
+                Aisles / Access
+                <b id="aislePercent">—</b>
+            </span>
+
+            <span>
+                <i class="support-key"></i>
+                Staging / Support
+                <b id="supportPercent">—</b>
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <p class="disclaimer">
+        Planning estimate only. Actual warehouse capacity depends on
+        rack design, aisle widths, material-handling equipment,
+        fire and safety clearances, structural limitations,
+        staging requirements and operational rules.
+    </p>
+
+</section>
+
+
+<section class="card">
+
+    <h2>How Warehouse Space Is Estimated</h2>
+
+    <div class="info-grid">
+
+        <div>
+            <b>01</b>
+
+            <h3>Calculate Ground Positions</h3>
+
+            <p>
+                Pallet quantity is divided by the number of usable
+                storage levels to estimate required ground positions.
+            </p>
+        </div>
+
+
+        <div>
+            <b>02</b>
+
+            <h3>Calculate Pallet Footprint</h3>
+
+            <p>
+                Pallet length × pallet width determines the basic
+                floor footprint of each ground pallet position.
+            </p>
+        </div>
+
+
+        <div>
+            <b>03</b>
+
+            <h3>Add Operational Space</h3>
+
+            <p>
+                Aisles, access, staging and support areas are added
+                to create a more practical warehouse-space estimate.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="card related-section">
+
+    <h2>Related DIXANI Logistics Tools</h2>
+
+    <div class="related-grid">
+
+        <a class="related-card"
+           href="/logistics/pallet-calculator/">
+
+            <span>🚚</span>
+
+            <div>
+                <strong>Pallet Calculator</strong>
+                <small>
+                    Calculate cartons per pallet and visualize pallet formation.
+                </small>
+            </div>
+
+        </a>
+
+
+        <a class="related-card"
+           href="/logistics/cbm-calculator/">
+
+            <span>📦</span>
+
+            <div>
+                <strong>CBM Calculator</strong>
+                <small>
+                    Calculate carton and shipment volume.
+                </small>
+            </div>
+
+        </a>
+
+
+        <a class="related-card"
+           href="/logistics/container-loading-calculator/">
+
+            <span>🚢</span>
+
+            <div>
+                <strong>Container Loading Calculator</strong>
+                <small>
+                    Estimate loose-carton container capacity.
+                </small>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+    <strong>DIXANI</strong>
+    <span>Practical Tools. Smarter Work.</span>
+    <span>© 2026 DIXANI.</span>
+</footer>
+
+
+<script src="../../assets/js/warehouse-space-calculator.js"></script>
+
+</body>
+</html>
