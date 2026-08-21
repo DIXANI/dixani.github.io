@@ -1,6 +1,8 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pallet Calculator with Visual Layout | DIXANI</title><meta name="description" content="Free visual pallet calculator for cartons per layer, pallet capacity, pallets required, loaded height and carton formation."><link rel="canonical" href="https://dixani.github.io/logistics/pallet-calculator/"><link rel="stylesheet" href="../../assets/css/pallet-calculator.css"></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pallet Calculator with Visual Layout | DIXANI</title><meta name="description" content="Free pallet calculator with visual layout. Calculate cartons per layer, layers per pallet, cartons per pallet, pallets required, loaded height and pallet utilization."><meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI"><link rel="canonical" href="https://dixani.github.io/logistics/pallet-calculator/"><link rel="stylesheet" href="../../assets/css/pallet-calculator.css"></head><body>
 <header><a href="/">DIXANI</a><nav><a href="/">Home</a><a href="/categories/logistics/">Logistics</a><a href="/about/">About</a></nav></header><main>
-<section class="hero"><b>🚚 WAREHOUSE & LOGISTICS TOOL</b><h1>Pallet <span>Calculator</span></h1><p>Estimate pallet capacity and automatically visualize carton formation and the layer stack.</p></section>
+<section class="hero"><b>🚚 WAREHOUSE & LOGISTICS TOOL</b><h1>Pallet <span>Calculator</span></h1><p> Calculate cartons per layer, layers per pallet, pallet capacity
+    and pallets required, with a visual carton formation and layer-stack plan.</p></section>
 <section class="card"><div class="head"><div><h2>Pallet & Carton Inputs</h2><p>Enter all dimensions using one consistent unit.</p></div><button id="sample">Load Sample</button></div>
 <div class="grid"><label>Dimension Unit<select id="unit"><option value="cm">Centimeters (cm)</option><option value="mm">Millimeters (mm)</option><option value="m">Meters (m)</option><option value="in">Inches (in)</option><option value="ft">Feet (ft)</option></select></label><label>Total Cartons<input id="total" type="number" min="1" step="1" placeholder="200"></label><label>Decimal Places<select id="dp"><option>0</option><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label></div>
 <h3>Carton Dimensions</h3><div class="grid"><label>Carton Length<input id="cl" type="number" min="0" step="any" placeholder="40"></label><label>Carton Width<input id="cw" type="number" min="0" step="any" placeholder="30"></label><label>Carton Height<input id="ch" type="number" min="0" step="any" placeholder="25"></label></div>
@@ -8,4 +10,102 @@
 <div class="note"><b>Method:</b> DIXANI tests 0° and 90° simple-grid orientations and visualizes the better arrangement.</div><div id="warn" class="warn" hidden></div><div class="actions"><button class="primary" id="calc">Calculate Pallet</button><button class="danger" id="clear">Clear All</button></div></section>
 <section class="card"><div class="head"><div><h2>Pallet Results</h2><p>Estimated configuration from your dimensions.</p></div><b class="pill" id="orientation">—</b></div><div class="results"><div class="result featured"><small>Cartons / Layer</small><strong id="perLayer">—</strong></div><div class="result"><small>Layers / Pallet</small><strong id="layers">—</strong></div><div class="result featured"><small>Cartons / Pallet</small><strong id="perPallet">—</strong></div><div class="result"><small>Pallets Required</small><strong id="pallets">—</strong></div><div class="result"><small>Full Pallets</small><strong id="full">—</strong></div><div class="result"><small>Cartons on Last Pallet</small><strong id="last">—</strong></div></div><div class="dark"><div><small>Loaded Height</small><strong id="height">—</strong></div><div><small>Footprint Utilization</small><strong id="util">—</strong></div><div><small>Loaded Pallet CBM</small><strong id="cbm">—</strong></div></div></section>
 <section class="card"><div class="head"><div><h2>Visual Pallet Layout</h2><p>Dynamic simple-grid visualization based on the selected arrangement.</p></div><b class="pill">VISUAL PLAN</b></div><div class="visual-grid"><div class="visual-card"><h3>Top View — Layer Formation</h3><div id="topView" class="visual empty">No layout yet</div><div class="stats"><span id="formation">—</span><span id="layerCount">—</span></div></div><div class="visual-card"><h3>Side View — Layer Stack</h3><div id="sideView" class="visual empty">No stack yet</div><div class="stats"><span id="stackCount">—</span><span id="heightLabel">—</span></div></div></div><p class="disclaimer">Visual planning guide only. It does not perform advanced mixed-orientation/bin-packing optimization or assess load stability, carton strength or pallet weight limits.</p></section>
+<section class="card">
+
+    <h2>Pallet Calculation Example</h2>
+
+    <p>
+        Suppose a carton measures 40 cm × 30 cm × 25 cm
+        and the pallet measures 120 cm × 100 cm.
+    </p>
+
+    <p>
+        With carton rotation allowed, the simple-grid layout can place
+        9 cartons on each pallet layer.
+    </p>
+
+    <div class="note">
+        <b>
+            9 cartons per layer × 5 layers
+            = 45 cartons per pallet
+        </b>
+    </div>
+
+    <p>
+        If 200 cartons need to be palletized, the estimated requirement is:
+    </p>
+
+    <div class="note">
+        <b>
+            200 ÷ 45 = 4.44
+            → 5 pallets required
+        </b>
+    </div>
+
+    <p>
+        In this example, 4 pallets would be fully loaded
+        and the final pallet would contain 20 cartons.
+    </p>
+
+</section>
+<section class="card">
+
+    <h2>What Does the Pallet Calculator Show?</h2>
+
+    <p>
+        The calculator estimates how cartons can be arranged
+        on a pallet using a rectangular-grid layout.
+    </p>
+
+    <p>
+        It calculates cartons per layer, the number of layers
+        that fit within the maximum loaded height, total cartons
+        per pallet and the number of pallets required for the shipment.
+    </p>
+
+    <p>
+        The visual top view shows the selected carton formation,
+        while the side view shows the estimated layer stack
+        and loaded pallet height.
+    </p>
+
+</section>
+<section class="card related-section">
+
+    <h2>Related DIXANI Logistics Tools</h2>
+
+    <div class="related-grid">
+
+        <a class="related-card"
+           href="/logistics/cbm-calculator/">
+
+            <span>📦</span>
+
+            <div>
+                <strong>CBM Calculator</strong>
+                <small>
+                    Calculate carton and shipment volume.
+                </small>
+            </div>
+
+        </a>
+
+
+        <a class="related-card"
+           href="/logistics/container-loading-calculator/">
+
+            <span>🚢</span>
+
+            <div>
+                <strong>Container Loading Calculator</strong>
+                <small>
+                    Estimate container capacity and loading arrangement.
+                </small>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 </main><footer><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span><span>© 2026 DIXANI.</span></footer><script src="../../assets/js/pallet-calculator.js"></script></body></html>
