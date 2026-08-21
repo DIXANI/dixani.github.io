@@ -1,43 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://dixani.github.io/</loc></url>
-<url><loc>https://dixani.github.io/about/</loc></url>
-<url><loc>https://dixani.github.io/privacy/</loc></url>
-<url><loc>https://dixani.github.io/terms/</loc></url>
-<url><loc>https://dixani.github.io/contact/</loc></url>
-<url><loc>https://dixani.github.io/categories/business/</loc></url>
-<url><loc>https://dixani.github.io/categories/finance/</loc></url>
-<url><loc>https://dixani.github.io/categories/converters/</loc></url>
-<url><loc>https://dixani.github.io/inventory/variance-report/</loc></url>
-<url>
-  <loc>https://dixani.github.io/inventory/reorder-point/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/inventory/safety-stock/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/inventory/inventory-turnover/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/inventory/dio-calculator/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/inventory/eoq-calculator/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/categories/logistics/</loc>
-</url>
 
-<url>
-    <loc>https://dixani.github.io/logistics/cbm-calculator/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/logistics/pallet-calculator/</loc>
-</url>
-<url>
-    <loc>https://dixani.github.io/logistics/container-loading-calculator/</loc>
-</url>
-<url>
+  <url>
+    <loc>https://dixani.github.io/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/about/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/contact/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/privacy/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/terms/</loc>
+  </url>
+
+  <url>
     <loc>https://dixani.github.io/categories/inventory/</loc>
-</url>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/categories/logistics/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/categories/business/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/categories/finance/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/categories/converters/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/inventory/variance-report/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/inventory/reorder-point/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/inventory/safety-stock/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/inventory/inventory-turnover/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/inventory/dio-calculator/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/inventory/eoq-calculator/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/logistics/cbm-calculator/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/logistics/pallet-calculator/</loc>
+  </url>
+
+  <url>
+    <loc>https://dixani.github.io/logistics/container-loading-calculator/</loc>
+  </url>
+
 </urlset>
