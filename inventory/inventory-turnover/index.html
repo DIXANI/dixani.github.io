@@ -1,6 +1,8 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inventory Turnover Calculator | DIXANI</title><meta name="description" content="Free inventory turnover calculator. Calculate average inventory, turnover ratio and inventory days."><link rel="canonical" href="https://dixani.github.io/inventory/inventory-turnover/"><link rel="stylesheet" href="../../assets/css/inventory-turnover.css"></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inventory Turnover Calculator | DIXANI</title><meta name="description" content="Free inventory turnover calculator to calculate turnover ratio, average inventory, inventory days and COGS performance using beginning and ending inventory or direct average inventory."><meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI"><link rel="canonical" href="https://dixani.github.io/inventory/inventory-turnover/"><link rel="stylesheet" href="../../assets/css/inventory-turnover.css"></head><body>
 <header><a href="/">DIXANI</a><nav><a href="/">Home</a><a href="/categories/inventory/">Inventory</a><a href="/about/">About</a></nav></header>
-<main><section class="hero"><b>📦 INVENTORY TOOL</b><h1>Inventory Turnover <span>Calculator</span></h1><p>Measure how efficiently inventory moves using cost of goods sold and average inventory.</p></section>
+<main><section class="hero"><b>📦 INVENTORY TOOL</b><h1>Inventory Turnover <span>Calculator</span></h1><p>Calculate inventory turnover ratio, average inventory
+    and inventory days using cost of goods sold and stock values.</p></section>
 <section class="card"><div class="top"><div><h2>Inventory Data</h2><p>Choose how you want to provide average inventory.</p></div><button type="button" id="example">Load Example</button></div>
 <div class="tabs"><button type="button" id="beTab" class="active">Beginning + Ending</button><button type="button" id="avgTab">Direct Average Inventory</button></div>
 <div class="formula" id="formula"><b>Formula:</b> Average Inventory = (Beginning Inventory + Ending Inventory) ÷ 2</div>
@@ -16,5 +18,89 @@
 <div class="results"><div class="result featured"><small>Inventory Turnover Ratio</small><strong id="turnover">—</strong><small>Times during selected period</small></div><div class="result"><small>Average Inventory</small><strong id="avgResult">—</strong></div><div class="result"><small>Inventory Days</small><strong id="daysResult">—</strong></div><div class="result"><small>COGS</small><strong id="cogsResult">—</strong></div></div>
 <div class="note"><h3 id="noteTitle">Enter your inventory data</h3><p id="noteText">DIXANI will calculate turnover and inventory days. Appropriate turnover varies by industry and product type.</p></div></section>
 <section class="card"><h2>Understanding Inventory Turnover</h2><p>Inventory turnover shows how many times average inventory is sold or used during a reporting period. A higher or lower ratio is not automatically better; margins, lead times, seasonality and service targets all matter.</p><div class="three"><div><b>01</b><h3>Average Inventory</h3><p>Beginning and ending inventory are averaged. Seasonal businesses may benefit from more frequent inventory snapshots.</p></div><div><b>02</b><h3>Turnover Ratio</h3><p>COGS ÷ Average Inventory. QAR 500,000 COGS and QAR 125,000 average inventory equals 4.00×.</p></div><div><b>03</b><h3>Inventory Days</h3><p>Period days ÷ turnover. Annual turnover of 4.00× is about 91.25 days using 365 days.</p></div></div></section>
-<section class="card"><h2>Related DIXANI Inventory Tools</h2><div class="related"><a href="/inventory/variance-report/">📊 <strong>Inventory Variance Report</strong></a><a href="/inventory/reorder-point/">🔁 <strong>Reorder Point Calculator</strong></a><a href="/inventory/safety-stock/">🛡️ <strong>Safety Stock Calculator</strong></a></div></section></main>
+<section class="card">
+
+    <h2>Inventory Turnover Calculation Example</h2>
+
+    <p>
+        Suppose annual cost of goods sold is QAR 500,000,
+        beginning inventory is QAR 100,000 and ending inventory
+        is QAR 150,000.
+    </p>
+
+    <p>
+        Average inventory is:
+    </p>
+
+    <div class="formula">
+        <b>
+            (QAR 100,000 + QAR 150,000) ÷ 2
+            = QAR 125,000
+        </b>
+    </div>
+
+    <p>
+        Inventory turnover is:
+    </p>
+
+    <div class="formula">
+        <b>
+            QAR 500,000 ÷ QAR 125,000
+            = 4.00×
+        </b>
+    </div>
+
+    <p>
+        Using a 365-day reporting period, inventory days are:
+    </p>
+
+    <div class="formula">
+        <b>
+            365 ÷ 4.00
+            = 91.25 days
+        </b>
+    </div>
+
+</section><section class="card">
+
+    <h2>What Does Inventory Turnover Tell You?</h2>
+
+    <p>
+        Inventory turnover indicates how frequently average inventory
+        is sold or consumed during a reporting period.
+    </p>
+
+    <p>
+        A higher turnover ratio generally means inventory moves faster,
+        while a lower ratio means inventory remains on hand longer.
+        However, there is no single ideal turnover ratio for every business.
+    </p>
+
+    <p>
+        The appropriate level depends on factors such as product type,
+        gross margin, supplier lead time, seasonality, demand variability
+        and customer service requirements.
+    </p>
+
+</section><section class="card">
+
+    <h2>Related DIXANI Inventory Tools</h2>
+
+    <div class="related">
+
+        <a href="/inventory/dio-calculator/">
+            📅 <strong>Days Inventory Outstanding Calculator</strong>
+        </a>
+
+        <a href="/inventory/eoq-calculator/">
+            📦 <strong>Economic Order Quantity Calculator</strong>
+        </a>
+
+        <a href="/inventory/variance-report/">
+            📊 <strong>Inventory Variance Report</strong>
+        </a>
+
+    </div>
+
+</section></main>
 <footer><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span><span>© 2026 DIXANI.</span></footer><script src="../../assets/js/inventory-turnover.js"></script></body></html>
