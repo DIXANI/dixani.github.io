@@ -47,6 +47,10 @@
         <loc>https://dixani.github.io/categories/logistics/</loc>
     </url>
 
+    <url>
+        <loc>https://dixani.github.io/categories/finance/</loc>
+    </url>
+
 
     <!-- =========================
          INVENTORY TOOLS
@@ -70,6 +74,10 @@
 
     <url>
         <loc>https://dixani.github.io/inventory/eoq-calculator/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/inventory/dio-calculator/</loc>
     </url>
 
 
@@ -128,11 +136,11 @@
     </url>
 
     <url>
-        <loc>https://dixani.github.io/templates/inventory/reorder-level-template/</loc>
+        <loc>https://dixani.github.io/templates/inventory/reorder-level-tracker/</loc>
     </url>
 
     <url>
-        <loc>https://dixani.github.io/templates/inventory/expiry-date-tracker/</loc>
+        <loc>https://dixani.github.io/templates/inventory/inventory-adjustment-form/</loc>
     </url>
 
 
