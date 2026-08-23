@@ -1,83 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://dixani.github.io/</loc>
-  </url>
+    <!-- =========================
+         MAIN PAGES
+    ========================== -->
 
-  <url>
-    <loc>https://dixani.github.io/about/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/contact/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/about/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/privacy/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/contact/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/terms/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/privacy/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/categories/inventory/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/terms/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/categories/logistics/</loc>
-  </url>
 
-  <url>
-    <loc>https://dixani.github.io/categories/business/</loc>
-  </url>
+    <!-- =========================
+         TOOL CATEGORY PAGES
+    ========================== -->
 
-  <url>
-    <loc>https://dixani.github.io/categories/finance/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/categories/inventory/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/categories/converters/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/categories/business/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/inventory/variance-report/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/categories/converters/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/inventory/reorder-point/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/categories/logistics/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/inventory/safety-stock/</loc>
-  </url>
 
-  <url>
-    <loc>https://dixani.github.io/inventory/inventory-turnover/</loc>
-  </url>
+    <!-- =========================
+         INVENTORY TOOLS
+    ========================== -->
 
-  <url>
-    <loc>https://dixani.github.io/inventory/dio-calculator/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/inventory/variance-report/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/inventory/eoq-calculator/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/inventory/reorder-point/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/logistics/cbm-calculator/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/inventory/safety-stock/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/logistics/pallet-calculator/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/inventory/inventory-turnover/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/logistics/container-loading-calculator/</loc>
-  </url>
+    <url>
+        <loc>https://dixani.github.io/inventory/eoq-calculator/</loc>
+    </url>
 
-  <url>
-    <loc>https://dixani.github.io/logistics/warehouse-space-calculator/</loc>
-  </url>
+
+    <!-- =========================
+         LOGISTICS TOOLS
+    ========================== -->
+
+    <url>
+        <loc>https://dixani.github.io/logistics/cbm-calculator/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/logistics/pallet-calculator/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/logistics/container-loading-calculator/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/logistics/warehouse-space-calculator/</loc>
+    </url>
+
+
+    <!-- =========================
+         TEMPLATES HOME
+    ========================== -->
+
+    <url>
+        <loc>https://dixani.github.io/templates/</loc>
+    </url>
+
+
+    <!-- =========================
+         INVENTORY TEMPLATES
+    ========================== -->
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/stock-count-sheet/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/stock-variance-report/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/inventory-master-list/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/stock-movement-register/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/reorder-level-template/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/inventory/expiry-date-tracker/</loc>
+    </url>
+
+
+    <!-- =========================
+         WAREHOUSE TEMPLATES
+    ========================== -->
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/goods-received-note/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/goods-issue-note/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/stock-transfer-form/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/picking-list/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/packing-list/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/warehouse/damage-write-off-form/</loc>
+    </url>
+
+
+    <!-- =========================
+         PURCHASING TEMPLATES
+    ========================== -->
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/purchase-order/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/purchase-requisition/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/request-for-quotation/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/supplier-comparison/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/supplier-evaluation/</loc>
+    </url>
+
+    <url>
+        <loc>https://dixani.github.io/templates/purchasing/purchase-tracker/</loc>
+    </url>
+
 </urlset>
