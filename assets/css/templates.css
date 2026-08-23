@@ -595,3 +595,57 @@ a {
         grid-template-columns: 1fr;
     }
 }
+/* ===== FIVE STEP WORKFLOW ===== */
+
+.workflow-five {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr) auto
+        minmax(0, 1fr) auto
+        minmax(0, 1fr) auto
+        minmax(0, 1fr) auto
+        minmax(0, 1fr);
+    gap: 14px;
+    align-items: stretch;
+}
+
+.workflow-five > div:not(.workflow-arrow) {
+    min-width: 0;
+    width: auto;
+}
+
+.workflow-five .workflow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+
+    .workflow-five {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .workflow-five .workflow-arrow {
+        transform: rotate(90deg);
+        min-height: 24px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+    .workflow-five {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-five > div:not(.workflow-arrow) {
+        width: 100%;
+    }
+}
