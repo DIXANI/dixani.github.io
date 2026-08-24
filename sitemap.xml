@@ -39,6 +39,10 @@
         <loc>https://dixani.github.io/categories/business/</loc>
     </url>
 
+     <url>
+    <loc>https://dixani.github.io/categories/business/profit-margin-calculator/</loc>
+    </url>
+
     <url>
         <loc>https://dixani.github.io/categories/converters/</loc>
     </url>
@@ -209,4 +213,5 @@
         <loc>https://dixani.github.io/templates/purchasing/purchase-tracker/</loc>
     </url>
 
+   
 </urlset>
