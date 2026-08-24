@@ -649,3 +649,54 @@ a {
         width: 100%;
     }
 }
+/* ===== HOMEPAGE SEARCH ===== */
+
+.home-search {
+    max-width: 680px;
+    margin: 28px auto 0;
+    display: flex;
+    gap: 10px;
+}
+
+.home-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #0f172a;
+    font: inherit;
+    outline: none;
+}
+
+.home-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+}
+
+.home-search button {
+    padding: 15px 24px;
+    border: 0;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.home-search button:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 640px) {
+
+    .home-search {
+        flex-direction: column;
+    }
+
+    .home-search button {
+        width: 100%;
+    }
+}
