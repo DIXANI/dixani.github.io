@@ -652,10 +652,11 @@ a {
 /* ===== HOMEPAGE SEARCH ===== */
 
 .home-search {
-    max-width: 680px;
-    margin: 28px auto 0;
+    width: 100%;
+    max-width: 880px;
+    margin: 28px 0 0;
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .home-search input {
@@ -709,4 +710,45 @@ a {
 
 .template-card:hover .template-link.live-link {
     color: #1d4ed8;
+}
+/* =========================================================
+   TOOL CARD ALIGNMENT FIX
+   ========================================================= */
+
+.template-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push tags toward the bottom of every card */
+.template-card .template-tags {
+    margin-top: auto;
+}
+
+/* Keep live and coming-soon actions on the same baseline */
+.template-card .template-link,
+.template-card .coming-link {
+    margin-top: 24px;
+    min-height: 24px;
+}
+
+/* Live tool action */
+.template-card .template-link.live-link {
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.template-card:hover .template-link.live-link {
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   LIVE STATUS BADGE
+   ========================================================= */
+
+.template-card .status.live {
+    background: #dcfce7 !important;
+    color: #15803d !important;
 }
