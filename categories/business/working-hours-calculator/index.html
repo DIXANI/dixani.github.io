@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Free Working Hours Calculator | Shift Hours & Breaks | DIXANI</title>
+
+<meta name="description"
+content="Free working hours calculator to calculate shift duration, unpaid breaks, total worked hours, decimal hours and estimated earnings. Supports overnight shifts.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI">
+<meta name="theme-color" content="#2563eb">
+
+<link rel="canonical"
+href="https://dixani.github.io/categories/business/working-hours-calculator/">
+
+<link rel="stylesheet" href="/assets/css/templates.css">
+<link rel="stylesheet" href="working-hours.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="container header-inner">
+
+<a href="/" class="logo">DIXANI</a>
+
+<button class="menu-button"
+        id="menuButton"
+        type="button">
+☰
+</button>
+
+<nav class="main-nav" id="mainNav">
+
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/" class="active">Business</a>
+<a href="/about/">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="template-hero">
+
+<div class="container">
+
+<div class="hero-badge">
+⏱️ BUSINESS CALCULATOR
+</div>
+
+<h1>
+Working Hours
+<span>Calculator</span>
+</h1>
+
+<p>
+Calculate working hours from start and end times,
+subtract unpaid breaks, convert worked time to decimal
+hours and optionally estimate earnings from an hourly rate.
+</p>
+
+<div class="hero-note">
+
+<strong>Free calculator</strong>
+
+<span>•</span>
+
+Overnight shifts
+
+<span>•</span>
+
+Break deduction
+
+<span>•</span>
+
+Decimal hours
+
+<span>•</span>
+
+No account required
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CALCULATOR -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="calculator-shell">
+
+<div class="calculator-grid">
+
+
+<!-- INPUT PANEL -->
+
+<div class="calculator-panel input-panel">
+
+<div class="panel-heading">
+
+<span class="section-label">
+SHIFT DETAILS
+</span>
+
+<h2>
+Calculate Working Hours
+</h2>
+
+<p>
+Enter your shift start and end time,
+then add any unpaid break taken during the shift.
+</p>
+
+</div>
+
+
+<!-- START TIME -->
+
+<div class="field-group">
+
+<label for="startTime">
+Start Time
+</label>
+
+<input
+id="startTime"
+type="time">
+
+<small>
+Time your shift or work period begins.
+</small>
+
+</div>
+
+
+<!-- END TIME -->
+
+<div class="field-group">
+
+<label for="endTime">
+End Time
+</label>
+
+<input
+id="endTime"
+type="time">
+
+<small>
+If the end time is earlier than the start time,
+the calculator treats it as an overnight shift.
+</small>
+
+</div>
+
+
+<!-- BREAK -->
+
+<div class="field-group">
+
+<label for="breakMinutes">
+Unpaid Break
+<span class="optional">(minutes)</span>
+</label>
+
+<div class="input-with-unit">
+
+<input
+id="breakMinutes"
+type="number"
+min="0"
+step="1"
+placeholder="60">
+
+<span class="unit-suffix">
+MIN
+</span>
+
+</div>
+
+<small>
+Enter the total unpaid break time.
+Use 0 if no break should be deducted.
+</small>
+
+</div>
+
+
+<!-- HOURLY RATE -->
+
+<div class="field-group">
+
+<label for="hourlyRate">
+Hourly Rate
+<span class="optional">(optional)</span>
+</label>
+
+<div class="rate-row">
+
+<select id="currency">
+
+<option value="QAR">QAR</option>
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="LKR">LKR</option>
+<option value="INR">INR</option>
+
+</select>
+
+<input
+id="hourlyRate"
+type="number"
+min="0"
+step="0.01"
+placeholder="25.00">
+
+</div>
+
+<small>
+Optional. Add an hourly rate to estimate earnings
+for the calculated worked time.
+</small>
+
+</div>
+
+
+<!-- ACTIONS -->
+
+<div class="calculator-actions">
+
+<button
+id="calculateButton"
+class="primary-button"
+type="button">
+
+Calculate
+
+</button>
+
+<button
+id="exampleButton"
+class="secondary-button"
+type="button">
+
+Load Example
+
+</button>
+
+<button
+id="clearButton"
+class="text-button"
+type="button">
+
+Clear
+
+</button>
+
+</div>
+
+
+<div
+id="calculatorError"
+class="calculator-error"
+role="alert">
+</div>
+
+</div>
+
+
+<!-- RESULT PANEL -->
+
+<div class="calculator-panel result-panel">
+
+<div class="panel-heading">
+
+<span class="section-label">
+RESULTS
+</span>
+
+<h2>
+Working Time Summary
+</h2>
+
+<p>
+Your shift duration, break deduction,
+worked time and estimated earnings.
+</p>
+
+</div>
+
+
+<!-- MAIN RESULT -->
+
+<div class="result-primary">
+
+<span class="result-label">
+Total Worked Time
+</span>
+
+<strong id="workedTime">
+0h 00m
+</strong>
+
+<p id="workedTimeNote">
+Enter your shift times and calculate.
+</p>
+
+</div>
+
+
+<!-- RESULT CARDS -->
+
+<div class="result-grid">
+
+
+<div class="result-card">
+
+<span>
+Shift Duration
+</span>
+
+<strong id="shiftDuration">
+0h 00m
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Unpaid Break
+</span>
+
+<strong id="breakResult">
+0h 00m
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Decimal Hours
+</span>
+
+<strong id="decimalHours">
+0.00
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Paid Minutes
+</span>
+
+<strong id="paidMinutes">
+0 min
+</strong>
+
+</div>
+
+
+<div class="result-card result-card-wide">
+
+<span>
+Estimated Earnings
+</span>
+
+<strong id="estimatedEarnings">
+—
+</strong>
+
+</div>
+
+
+</div>
+
+
+<!-- BREAKDOWN -->
+
+<div class="formula-box">
+
+<strong>
+Calculation
+</strong>
+
+<p id="calculationBreakdown">
+Shift Duration − Unpaid Break = Worked Time
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+
+<section class="section featured-section">
+
+<div class="container">
+
+<div class="workflow-box">
+
+<div class="workflow-heading">
+
+<span class="section-label">
+EXAMPLE
+</span>
+
+<h2>
+8:00 AM to 5:30 PM with a 60-minute break
+</h2>
+
+<p>
+A shift from 8:00 AM until 5:30 PM lasts
+9 hours 30 minutes. After deducting a
+60-minute unpaid break, paid working time
+is 8 hours 30 minutes.
+</p>
+
+</div>
+
+
+<div class="workflow-example">
+
+<p>
+
+<strong>Shift:</strong>
+9h 30m
+
+<span>•</span>
+
+<strong>Break:</strong>
+1h 00m
+
+<span>•</span>
+
+<strong>Worked:</strong>
+8h 30m
+
+<span>•</span>
+
+<strong>Decimal:</strong>
+8.50 hours
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OVERNIGHT SHIFTS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+OVERNIGHT SHIFTS
+</span>
+
+<h2>
+Calculate shifts that finish the next day
+</h2>
+
+<p>
+If your end time is earlier than your start time,
+the calculator automatically treats the end time
+as occurring on the following day.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="category-grid">
+
+<div class="category-card">
+
+<div class="category-icon">
+🌙
+</div>
+
+<div>
+
+<h3>
+Night Shift Example
+</h3>
+
+<p>
+Start at 10:00 PM and finish at 6:00 AM
+the following morning.
+</p>
+
+<span>
+Shift Duration: 8 hours
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category-card">
+
+<div class="category-icon">
+☕
+</div>
+
+<div>
+
+<h3>
+Break Deduction
+</h3>
+
+<p>
+A 30-minute unpaid break on an 8-hour
+shift results in 7 hours 30 minutes worked.
+</p>
+
+<span>
+Decimal Hours: 7.50
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DECIMAL HOURS -->
+
+<section class="section featured-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+DECIMAL HOURS
+</span>
+
+<h2>
+Convert hours and minutes for payroll and timesheets
+</h2>
+
+<p>
+Decimal hours express minutes as a fraction of an hour,
+which can be useful for payroll, timesheets,
+job costing and hourly billing.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="workflow-box">
+
+<div class="workflow-example">
+
+<p>
+
+<strong>8h 15m</strong>
+= 8.25
+
+<span>•</span>
+
+<strong>8h 30m</strong>
+= 8.50
+
+<span>•</span>
+
+<strong>8h 45m</strong>
+= 8.75
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="workflow-box">
+
+<div class="workflow-heading">
+
+<span class="section-label">
+HOW IT WORKS
+</span>
+
+<h2>
+Calculate your working time in four steps
+</h2>
+
+</div>
+
+
+<div class="workflow">
+
+<div>
+
+<span>01</span>
+
+<strong>
+Start Time
+</strong>
+
+<p>
+Enter when
+work begins.
+</p>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div>
+
+<span>02</span>
+
+<strong>
+End Time
+</strong>
+
+<p>
+Enter when
+work finishes.
+</p>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div>
+
+<span>03</span>
+
+<strong>
+Subtract Break
+</strong>
+
+<p>
+Add unpaid
+break minutes.
+</p>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div>
+
+<span>04</span>
+
+<strong>
+Review Results
+</strong>
+
+<p>
+See worked time,
+decimal hours and earnings.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHO IT'S FOR -->
+
+<section class="section featured-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+WHO IT'S FOR
+</span>
+
+<h2>
+Useful for shifts, timesheets and hourly work
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="benefit-grid">
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Employees
+</h3>
+
+<p>
+Check working hours after
+deducting unpaid breaks.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Shift Workers
+</h3>
+
+<p>
+Calculate daytime
+and overnight shifts.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Small Businesses
+</h3>
+
+<p>
+Estimate employee hours
+for basic time records.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Freelancers
+</h3>
+
+<p>
+Convert worked time into
+decimal hours for billing.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RELATED -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+RELATED DIXANI RESOURCES
+</span>
+
+<h2>
+More practical business tools
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="category-grid">
+
+
+<a href="/categories/business/profit-margin-calculator/"
+   class="category-card">
+
+<div class="category-icon">
+💰
+</div>
+
+<div>
+
+<h3>
+Profit Margin Calculator
+</h3>
+
+<p>
+Calculate profit margin,
+markup and target selling price.
+</p>
+
+<span>
+Open Tool →
+</span>
+
+</div>
+
+</a>
+
+
+<a href="/categories/business/markup-calculator/"
+   class="category-card">
+
+<div class="category-icon">
+📈
+</div>
+
+<div>
+
+<h3>
+Markup Calculator
+</h3>
+
+<p>
+Calculate markup,
+selling price and equivalent margin.
+</p>
+
+<span>
+Open Tool →
+</span>
+
+</div>
+
+</a>
+
+
+<a href="/categories/business/"
+   class="category-card">
+
+<div class="category-icon">
+💼
+</div>
+
+<div>
+
+<h3>
+Business Tools
+</h3>
+
+<p>
+Browse practical calculators
+for everyday business tasks.
+</p>
+
+<span>
+Browse Business Tools →
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section featured-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+FAQ
+</span>
+
+<h2>
+Working Hours Calculator — Frequently Asked Questions
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="faq-section">
+
+
+<details>
+
+<summary>
+How do I calculate working hours?
+</summary>
+
+<p>
+Calculate the time between your start and end time,
+then subtract any unpaid break time.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Does the calculator support overnight shifts?
+</summary>
+
+<p>
+Yes. If the end time is earlier than the start time,
+the calculator treats the end time as occurring
+on the following day.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+How are decimal working hours calculated?
+</summary>
+
+<p>
+Worked minutes are divided by 60.
+For example, 8 hours 30 minutes equals
+8.50 decimal hours.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Are unpaid breaks included in working hours?
+</summary>
+
+<p>
+No. Any break entered in the unpaid-break field
+is deducted from the total shift duration.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Can I calculate estimated earnings?
+</summary>
+
+<p>
+Yes. Enter an optional hourly rate and the calculator
+will multiply it by your calculated decimal working hours.
+</p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-brand">
+DIXANI
+</div>
+
+<p>
+Practical Tools. Smarter Work.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Resources
+</h4>
+
+<a href="/#tools">Online Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/categories/inventory/">Inventory Tools</a>
+<a href="/categories/logistics/">Logistics Tools</a>
+<a href="/categories/business/">Business Tools</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Company
+</h4>
+
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Legal
+</h4>
+
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+© 2026 DIXANI. All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+<script src="/assets/js/main.js"></script>
+<script src="working-hours.js"></script>
+
+</body>
+
+</html>
