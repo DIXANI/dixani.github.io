@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Free Break-Even Calculator | Units & Revenue | DIXANI</title>
+
+<meta name="description"
+content="Free break-even calculator to calculate break-even units, break-even revenue, contribution margin and estimated profit or loss from fixed costs, selling price and variable costs.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI">
+<meta name="theme-color" content="#2563eb">
+
+<link rel="canonical"
+href="https://dixani.github.io/categories/finance/break-even-calculator/">
+
+<link rel="stylesheet" href="/assets/css/templates.css">
+<link rel="stylesheet" href="break-even.css">
+</head>
+
+<body>
+
+<header class="site-header">
+<div class="container header-inner">
+
+<a href="/" class="logo">DIXANI</a>
+
+<button class="menu-button" id="menuButton" type="button">☰</button>
+
+<nav class="main-nav" id="mainNav">
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Business</a>
+<a href="/about/">About</a>
+</nav>
+
+</div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="template-hero">
+<div class="container">
+
+<div class="hero-badge">
+📊 FINANCE CALCULATOR
+</div>
+
+<h1>
+Break-Even
+<span>Calculator</span>
+</h1>
+
+<p>
+Calculate how many units you need to sell to cover your costs,
+estimate break-even revenue and understand your contribution
+margin and expected profit or loss.
+</p>
+
+<div class="hero-note">
+
+<strong>Free calculator</strong>
+<span>•</span>
+Break-even units
+<span>•</span>
+Break-even revenue
+<span>•</span>
+Contribution margin
+<span>•</span>
+No account required
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CALCULATOR -->
+
+<section class="section">
+<div class="container">
+
+<div class="calculator-shell">
+
+<div class="calculator-grid">
+
+
+<!-- INPUT PANEL -->
+
+<div class="calculator-panel input-panel">
+
+<div class="panel-heading">
+
+<span class="section-label">
+BUSINESS COSTS
+</span>
+
+<h2>
+Calculate Your Break-Even Point
+</h2>
+
+<p>
+Enter your fixed costs, selling price and variable cost per unit.
+You can also add an expected sales volume to estimate profit or loss.
+</p>
+
+</div>
+
+
+<div class="field-group">
+
+<label for="currency">
+Currency
+</label>
+
+<select id="currency">
+<option value="QAR">QAR</option>
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="LKR">LKR</option>
+<option value="INR">INR</option>
+</select>
+
+</div>
+
+
+<div class="field-group">
+
+<label for="fixedCosts">
+Fixed Costs
+</label>
+
+<div class="input-with-unit">
+
+<span class="currency-prefix" id="fixedCurrency">
+QAR
+</span>
+
+<input
+id="fixedCosts"
+type="number"
+min="0"
+step="0.01"
+placeholder="10000.00">
+
+</div>
+
+<small>
+Costs that generally remain unchanged with sales volume,
+such as rent, salaries or insurance.
+</small>
+
+</div>
+
+
+<div class="field-group">
+
+<label for="sellingPrice">
+Selling Price per Unit
+</label>
+
+<div class="input-with-unit">
+
+<span class="currency-prefix" id="sellingCurrency">
+QAR
+</span>
+
+<input
+id="sellingPrice"
+type="number"
+min="0"
+step="0.01"
+placeholder="100.00">
+
+</div>
+
+<small>
+The price charged for one unit.
+</small>
+
+</div>
+
+
+<div class="field-group">
+
+<label for="variableCost">
+Variable Cost per Unit
+</label>
+
+<div class="input-with-unit">
+
+<span class="currency-prefix" id="variableCurrency">
+QAR
+</span>
+
+<input
+id="variableCost"
+type="number"
+min="0"
+step="0.01"
+placeholder="60.00">
+
+</div>
+
+<small>
+Costs that increase with each unit sold,
+such as materials, packaging or unit-level fees.
+</small>
+
+</div>
+
+
+<div class="field-group">
+
+<label for="expectedUnits">
+Expected Sales Volume
+<span class="optional">(optional)</span>
+</label>
+
+<div class="input-with-unit">
+
+<input
+id="expectedUnits"
+type="number"
+min="0"
+step="1"
+placeholder="400">
+
+<span class="unit-suffix">
+UNITS
+</span>
+
+</div>
+
+<small>
+Add expected unit sales to estimate profit or loss
+at that sales level.
+</small>
+
+</div>
+
+
+<div class="calculator-actions">
+
+<button
+id="calculateButton"
+class="primary-button"
+type="button">
+Calculate
+</button>
+
+<button
+id="exampleButton"
+class="secondary-button"
+type="button">
+Load Example
+</button>
+
+<button
+id="clearButton"
+class="text-button"
+type="button">
+Clear
+</button>
+
+</div>
+
+
+<div
+id="calculatorError"
+class="calculator-error"
+role="alert">
+</div>
+
+</div>
+
+
+<!-- RESULT PANEL -->
+
+<div class="calculator-panel result-panel">
+
+<div class="panel-heading">
+
+<span class="section-label">
+RESULTS
+</span>
+
+<h2>
+Break-Even Summary
+</h2>
+
+<p>
+See the sales volume and revenue required
+to cover your fixed and variable costs.
+</p>
+
+</div>
+
+
+<div class="result-primary">
+
+<span class="result-label">
+Break-Even Units
+</span>
+
+<strong id="breakEvenUnits">
+0
+</strong>
+
+<p id="breakEvenNote">
+Enter your values and calculate.
+</p>
+
+</div>
+
+
+<div class="result-grid">
+
+<div class="result-card">
+
+<span>
+Break-Even Revenue
+</span>
+
+<strong id="breakEvenRevenue">
+QAR 0.00
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Contribution / Unit
+</span>
+
+<strong id="contributionPerUnit">
+QAR 0.00
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Contribution Margin
+</span>
+
+<strong id="contributionMargin">
+0.00%
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Fixed Costs
+</span>
+
+<strong id="resultFixedCosts">
+QAR 0.00
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Expected Sales
+</span>
+
+<strong id="resultExpectedUnits">
+—
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Units vs Break-Even
+</span>
+
+<strong id="unitsDifference">
+—
+</strong>
+
+</div>
+
+
+<div class="result-card result-card-wide">
+
+<span>
+Estimated Profit / Loss
+</span>
+
+<strong id="estimatedProfit">
+—
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="formula-box">
+
+<strong>
+Break-Even Formula
+</strong>
+
+<p id="formulaText">
+Break-Even Units = Fixed Costs ÷
+(Selling Price − Variable Cost per Unit)
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- EXAMPLE -->
+
+<section class="section featured-section">
+<div class="container">
+
+<div class="workflow-box">
+
+<div class="workflow-heading">
+
+<span class="section-label">
+EXAMPLE
+</span>
+
+<h2>
+QAR 10,000 fixed costs with QAR 40 contribution per unit
+</h2>
+
+<p>
+If a product sells for QAR 100 and has a variable cost
+of QAR 60, each unit contributes QAR 40 toward covering
+fixed costs and then generating profit.
+</p>
+
+</div>
+
+<div class="workflow-example">
+
+<p>
+
+<strong>Fixed Costs:</strong>
+QAR 10,000
+
+<span>•</span>
+
+<strong>Selling Price:</strong>
+QAR 100
+
+<span>•</span>
+
+<strong>Variable Cost:</strong>
+QAR 60
+
+<span>•</span>
+
+<strong>Break-Even:</strong>
+250 units
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- KEY CONCEPTS -->
+
+<section class="section">
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+KEY CONCEPTS
+</span>
+
+<h2>
+Understand what drives your break-even point
+</h2>
+
+<p>
+Break-even analysis connects fixed costs,
+unit economics and sales volume.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="category-grid">
+
+<div class="category-card">
+
+<div class="category-icon">
+🏢
+</div>
+
+<div>
+
+<h3>
+Fixed Costs
+</h3>
+
+<p>
+Expenses that generally do not change directly
+with the number of units sold.
+</p>
+
+<span>
+Examples: rent, salaries, insurance
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category-card">
+
+<div class="category-icon">
+📦
+</div>
+
+<div>
+
+<h3>
+Variable Costs
+</h3>
+
+<p>
+Costs that increase as more products
+or services are sold.
+</p>
+
+<span>
+Examples: materials, packaging, commissions
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category-card">
+
+<div class="category-icon">
+💰
+</div>
+
+<div>
+
+<h3>
+Contribution Margin
+</h3>
+
+<p>
+The amount remaining from each sale after
+the variable cost of that unit is deducted.
+</p>
+
+<span>
+Selling Price − Variable Cost
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="section featured-section">
+<div class="container">
+
+<div class="workflow-box">
+
+<div class="workflow-heading">
+
+<span class="section-label">
+HOW IT WORKS
+</span>
+
+<h2>
+Calculate break-even in four simple steps
+</h2>
+
+</div>
+
+
+<div class="workflow">
+
+<div>
+
+<span>01</span>
+
+<strong>
+Fixed Costs
+</strong>
+
+<p>
+Enter your total
+fixed costs.
+</p>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div>
+
+<span>02</span>
+
+<strong>
+Unit Economics
+</strong>
+
+<p>
+Enter selling price
+and variable cost.
+</p>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div>
+
+<span>03</span>
+
+<strong>
+Calculate
+</strong>
+
+<p>
+Find contribution and
+break-even volume.
+</p>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div>
+
+<span>04</span>
+
+<strong>
+Compare Sales
+</strong>
+
+<p>
+Optionally compare expected
+sales against break-even.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- WHO IT'S FOR -->
+
+<section class="section">
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+WHO IT'S FOR
+</span>
+
+<h2>
+Useful for everyday business planning
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="benefit-grid">
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Small Businesses
+</h3>
+
+<p>
+Estimate the sales volume needed
+before the business starts generating profit.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+E-commerce Sellers
+</h3>
+
+<p>
+Compare product pricing and unit costs
+against fixed operating expenses.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Retail Businesses
+</h3>
+
+<p>
+Estimate how many units need to be sold
+to recover operating costs.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Business Planning
+</h3>
+
+<p>
+Test simple cost, price and sales-volume
+scenarios before making decisions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- RELATED -->
+
+<section class="section featured-section">
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+RELATED DIXANI RESOURCES
+</span>
+
+<h2>
+More pricing and business tools
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="category-grid">
+
+<a href="/categories/business/profit-margin-calculator/"
+class="category-card">
+
+<div class="category-icon">
+💰
+</div>
+
+<div>
+
+<h3>
+Profit Margin Calculator
+</h3>
+
+<p>
+Calculate profit margin,
+markup and target selling price.
+</p>
+
+<span>
+Open Tool →
+</span>
+
+</div>
+
+</a>
+
+
+<a href="/categories/business/markup-calculator/"
+class="category-card">
+
+<div class="category-icon">
+📈
+</div>
+
+<div>
+
+<h3>
+Markup Calculator
+</h3>
+
+<p>
+Calculate markup,
+selling price and equivalent margin.
+</p>
+
+<span>
+Open Tool →
+</span>
+
+</div>
+
+</a>
+
+
+<a href="/categories/finance/"
+class="category-card">
+
+<div class="category-icon">
+📊
+</div>
+
+<div>
+
+<h3>
+Finance Calculators
+</h3>
+
+<p>
+Browse DIXANI calculators for
+business and financial planning.
+</p>
+
+<span>
+Browse Finance Tools →
+</span>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section">
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+FAQ
+</span>
+
+<h2>
+Break-Even Calculator — Frequently Asked Questions
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="faq-section">
+
+<details>
+
+<summary>
+What is the break-even point?
+</summary>
+
+<p>
+The break-even point is the sales level where
+total contribution equals fixed costs,
+resulting in neither profit nor loss.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+How do I calculate break-even units?
+</summary>
+
+<p>
+Divide total fixed costs by the contribution
+per unit. Contribution per unit is selling price
+minus variable cost per unit.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What is break-even revenue?
+</summary>
+
+<p>
+Break-even revenue is the sales value associated
+with the break-even sales volume.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What happens if variable cost is higher than selling price?
+</summary>
+
+<p>
+There is no positive contribution toward fixed costs.
+Under those assumptions, increasing unit sales
+will not produce a normal break-even point.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What is contribution margin percentage?
+</summary>
+
+<p>
+Contribution margin percentage is contribution per unit
+divided by selling price, multiplied by 100.
+</p>
+
+</details>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-brand">
+DIXANI
+</div>
+
+<p>
+Practical Tools. Smarter Work.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Resources
+</h4>
+
+<a href="/#tools">Online Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/categories/inventory/">Inventory Tools</a>
+<a href="/categories/logistics/">Logistics Tools</a>
+<a href="/categories/business/">Business Tools</a>
+<a href="/categories/finance/">Finance Tools</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Company
+</h4>
+
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Legal
+</h4>
+
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 DIXANI. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+
+<script src="/assets/js/main.js"></script>
+<script src="break-even.js"></script>
+
+</body>
+</html>
