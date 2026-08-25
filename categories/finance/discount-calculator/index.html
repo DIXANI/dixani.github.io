@@ -2,53 +2,52 @@
 <html lang="en">
 
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LQEH9L9TZ4');
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Free Break-Even Calculator | Units & Revenue | DIXANI</title>
+<title>Free Discount Calculator | Sale Price & Savings | DIXANI</title>
 
 <meta name="description"
-content="Free break-even calculator to calculate break-even units, break-even revenue, contribution margin and estimated profit or loss from fixed costs, selling price and variable costs.">
+content="Free discount calculator to calculate sale price, discount percentage, amount saved, stacked discounts and total savings.">
 
 <meta name="robots" content="index, follow">
 <meta name="author" content="DIXANI">
 <meta name="theme-color" content="#2563eb">
 
 <link rel="canonical"
-href="https://dixani.github.io/categories/finance/break-even-calculator/">
+href="https://dixani.github.io/categories/finance/discount-calculator/">
 
 <link rel="stylesheet" href="/assets/css/templates.css">
-<link rel="stylesheet" href="break-even.css">
+<link rel="stylesheet" href="discount.css">
 </head>
 
 <body>
 
 <header class="site-header">
+
 <div class="container header-inner">
 
 <a href="/" class="logo">DIXANI</a>
 
-<button class="menu-button" id="menuButton" type="button">☰</button>
+<button class="menu-button"
+        id="menuButton"
+        type="button">
+☰
+</button>
 
 <nav class="main-nav" id="mainNav">
+
 <a href="/#tools">Tools</a>
 <a href="/templates/">Templates</a>
 <a href="/categories/inventory/">Inventory</a>
 <a href="/categories/logistics/">Logistics</a>
 <a href="/categories/business/">Business</a>
 <a href="/about/">About</a>
+
 </nav>
 
 </div>
+
 </header>
 
 
@@ -57,47 +56,79 @@ href="https://dixani.github.io/categories/finance/break-even-calculator/">
 <!-- HERO -->
 
 <section class="template-hero">
+
 <div class="container">
 
 <div class="hero-badge">
-📊 FINANCE CALCULATOR
+🏷️ FINANCE CALCULATOR
 </div>
 
 <h1>
-Break-Even
+Discount
 <span>Calculator</span>
 </h1>
 
 <p>
-Calculate how many units you need to sell to cover your costs,
-estimate break-even revenue and understand your contribution
-margin and expected profit or loss.
+Calculate sale prices, discount percentages and savings,
+or combine two discounts to see the true effective discount
+and final price.
 </p>
 
 <div class="hero-note">
 
 <strong>Free calculator</strong>
 <span>•</span>
-Break-even units
+Sale price
 <span>•</span>
-Break-even revenue
+Savings
 <span>•</span>
-Contribution margin
+Stacked discounts
 <span>•</span>
 No account required
 
 </div>
 
 </div>
+
 </section>
 
 
 <!-- CALCULATOR -->
 
 <section class="section">
+
 <div class="container">
 
 <div class="calculator-shell">
+
+
+<!-- MODES -->
+
+<div class="calculator-tabs">
+
+<button
+class="calc-tab active"
+data-mode="price"
+type="button">
+Price After Discount
+</button>
+
+<button
+class="calc-tab"
+data-mode="percentage"
+type="button">
+Find Discount %
+</button>
+
+<button
+class="calc-tab"
+data-mode="stacked"
+type="button">
+Stacked Discounts
+</button>
+
+</div>
+
 
 <div class="calculator-grid">
 
@@ -109,20 +140,22 @@ No account required
 <div class="panel-heading">
 
 <span class="section-label">
-BUSINESS COSTS
+INPUTS
 </span>
 
-<h2>
-Calculate Your Break-Even Point
+<h2 id="inputHeading">
+Calculate Price After Discount
 </h2>
 
-<p>
-Enter your fixed costs, selling price and variable cost per unit.
-You can also add an expected sales volume to estimate profit or loss.
+<p id="inputDescription">
+Enter the original price and discount percentage
+to calculate the sale price and amount saved.
 </p>
 
 </div>
 
+
+<!-- CURRENCY -->
 
 <div class="field-group">
 
@@ -131,6 +164,7 @@ Currency
 </label>
 
 <select id="currency">
+
 <option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
@@ -139,54 +173,29 @@ Currency
 <option value="SAR">SAR</option>
 <option value="LKR">LKR</option>
 <option value="INR">INR</option>
+
 </select>
 
 </div>
 
 
+<!-- ORIGINAL PRICE -->
+
 <div class="field-group">
 
-<label for="fixedCosts">
-Fixed Costs
+<label for="originalPrice">
+Original Price
 </label>
 
 <div class="input-with-unit">
 
-<span class="currency-prefix" id="fixedCurrency">
+<span class="currency-prefix"
+id="originalCurrency">
 QAR
 </span>
 
 <input
-id="fixedCosts"
-type="number"
-min="0"
-step="0.01"
-placeholder="10000.00">
-
-</div>
-
-<small>
-Costs that generally remain unchanged with sales volume,
-such as rent, salaries or insurance.
-</small>
-
-</div>
-
-
-<div class="field-group">
-
-<label for="sellingPrice">
-Selling Price per Unit
-</label>
-
-<div class="input-with-unit">
-
-<span class="currency-prefix" id="sellingCurrency">
-QAR
-</span>
-
-<input
-id="sellingPrice"
+id="originalPrice"
 type="number"
 min="0"
 step="0.01"
@@ -195,70 +204,134 @@ placeholder="100.00">
 </div>
 
 <small>
-The price charged for one unit.
+The price before any discount is applied.
 </small>
 
 </div>
 
 
-<div class="field-group">
+<!-- DISCOUNT 1 -->
 
-<label for="variableCost">
-Variable Cost per Unit
+<div class="field-group"
+id="discountGroup">
+
+<label for="discountPercent">
+Discount
 </label>
 
 <div class="input-with-unit">
 
-<span class="currency-prefix" id="variableCurrency">
+<input
+id="discountPercent"
+type="number"
+min="0"
+max="100"
+step="0.01"
+placeholder="20">
+
+<span class="unit-suffix">
+%
+</span>
+
+</div>
+
+<small>
+Enter a discount percentage between 0% and 100%.
+</small>
+
+</div>
+
+
+<!-- SALE PRICE -->
+
+<div class="field-group hidden"
+id="salePriceGroup">
+
+<label for="salePrice">
+Sale Price
+</label>
+
+<div class="input-with-unit">
+
+<span class="currency-prefix"
+id="saleCurrency">
 QAR
 </span>
 
 <input
-id="variableCost"
+id="salePrice"
 type="number"
 min="0"
 step="0.01"
-placeholder="60.00">
+placeholder="80.00">
 
 </div>
 
 <small>
-Costs that increase with each unit sold,
-such as materials, packaging or unit-level fees.
+Enter the final price after the discount.
 </small>
 
 </div>
 
 
-<div class="field-group">
+<!-- SECOND DISCOUNT -->
 
-<label for="expectedUnits">
-Expected Sales Volume
-<span class="optional">(optional)</span>
+<div class="field-group hidden"
+id="secondDiscountGroup">
+
+<label for="secondDiscount">
+Second Discount
 </label>
 
 <div class="input-with-unit">
 
 <input
-id="expectedUnits"
+id="secondDiscount"
 type="number"
 min="0"
-step="1"
-placeholder="400">
+max="100"
+step="0.01"
+placeholder="10">
 
 <span class="unit-suffix">
-UNITS
+%
 </span>
 
 </div>
 
 <small>
-Add expected unit sales to estimate profit or loss
-at that sales level.
+The second discount is applied after the first discount,
+not added directly to it.
 </small>
 
 </div>
 
+
+<!-- QUANTITY -->
+
+<div class="field-group">
+
+<label for="quantity">
+Quantity
+<span class="optional">(optional)</span>
+</label>
+
+<input
+id="quantity"
+type="number"
+min="1"
+step="1"
+placeholder="1">
+
+<small>
+Add a quantity to calculate total original cost,
+total savings and final total.
+</small>
+
+</div>
+
+
+<!-- ACTIONS -->
 
 <div class="calculator-actions">
 
@@ -306,12 +379,11 @@ RESULTS
 </span>
 
 <h2>
-Break-Even Summary
+Discount Summary
 </h2>
 
 <p>
-See the sales volume and revenue required
-to cover your fixed and variable costs.
+Review the final price, savings and effective discount.
 </p>
 
 </div>
@@ -319,15 +391,16 @@ to cover your fixed and variable costs.
 
 <div class="result-primary">
 
-<span class="result-label">
-Break-Even Units
+<span class="result-label"
+id="primaryResultLabel">
+Final Price
 </span>
 
-<strong id="breakEvenUnits">
-0
+<strong id="primaryResult">
+QAR 0.00
 </strong>
 
-<p id="breakEvenNote">
+<p id="primaryResultNote">
 Enter your values and calculate.
 </p>
 
@@ -336,13 +409,14 @@ Enter your values and calculate.
 
 <div class="result-grid">
 
+
 <div class="result-card">
 
 <span>
-Break-Even Revenue
+Original Price
 </span>
 
-<strong id="breakEvenRevenue">
+<strong id="resultOriginalPrice">
 QAR 0.00
 </strong>
 
@@ -352,10 +426,10 @@ QAR 0.00
 <div class="result-card">
 
 <span>
-Contribution / Unit
+Amount Saved
 </span>
 
-<strong id="contributionPerUnit">
+<strong id="amountSaved">
 QAR 0.00
 </strong>
 
@@ -365,10 +439,10 @@ QAR 0.00
 <div class="result-card">
 
 <span>
-Contribution Margin
+Discount
 </span>
 
-<strong id="contributionMargin">
+<strong id="resultDiscount">
 0.00%
 </strong>
 
@@ -378,10 +452,36 @@ Contribution Margin
 <div class="result-card">
 
 <span>
-Fixed Costs
+Effective Discount
 </span>
 
-<strong id="resultFixedCosts">
+<strong id="effectiveDiscount">
+0.00%
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Quantity
+</span>
+
+<strong id="resultQuantity">
+1
+</strong>
+
+</div>
+
+
+<div class="result-card">
+
+<span>
+Total Original
+</span>
+
+<strong id="totalOriginal">
 QAR 0.00
 </strong>
 
@@ -391,11 +491,11 @@ QAR 0.00
 <div class="result-card">
 
 <span>
-Expected Sales
+Total Savings
 </span>
 
-<strong id="resultExpectedUnits">
-—
+<strong id="totalSavings">
+QAR 0.00
 </strong>
 
 </div>
@@ -404,40 +504,28 @@ Expected Sales
 <div class="result-card">
 
 <span>
-Units vs Break-Even
+Final Total
 </span>
 
-<strong id="unitsDifference">
-—
+<strong id="finalTotal">
+QAR 0.00
 </strong>
 
 </div>
 
 
-<div class="result-card result-card-wide">
-
-<span>
-Estimated Profit / Loss
-</span>
-
-<strong id="estimatedProfit">
-—
-</strong>
-
-</div>
-
 </div>
 
 
-<div class="formula-box">
+<div class="formula-box"
+id="formulaBox">
 
 <strong>
-Break-Even Formula
+Discount Formula
 </strong>
 
-<p id="formulaText">
-Break-Even Units = Fixed Costs ÷
-(Selling Price − Variable Cost per Unit)
+<p>
+Final Price = Original Price × (1 − Discount %)
 </p>
 
 </div>
@@ -446,72 +534,18 @@ Break-Even Units = Fixed Costs ÷
 
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- EXAMPLE -->
+<!-- STACKED DISCOUNTS -->
 
 <section class="section featured-section">
-<div class="container">
 
-<div class="workflow-box">
-
-<div class="workflow-heading">
-
-<span class="section-label">
-EXAMPLE
-</span>
-
-<h2>
-QAR 10,000 fixed costs with QAR 40 contribution per unit
-</h2>
-
-<p>
-If a product sells for QAR 100 and has a variable cost
-of QAR 60, each unit contributes QAR 40 toward covering
-fixed costs and then generating profit.
-</p>
-
-</div>
-
-<div class="workflow-example">
-
-<p>
-
-<strong>Fixed Costs:</strong>
-QAR 10,000
-
-<span>•</span>
-
-<strong>Selling Price:</strong>
-QAR 100
-
-<span>•</span>
-
-<strong>Variable Cost:</strong>
-QAR 60
-
-<span>•</span>
-
-<strong>Break-Even:</strong>
-250 units
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- KEY CONCEPTS -->
-
-<section class="section">
 <div class="container">
 
 <div class="section-heading">
@@ -519,17 +553,115 @@ QAR 60
 <div>
 
 <span class="section-label">
-KEY CONCEPTS
+STACKED DISCOUNTS
 </span>
 
 <h2>
-Understand what drives your break-even point
+20% off followed by 10% off is not 30% off
 </h2>
 
 <p>
-Break-even analysis connects fixed costs,
-unit economics and sales volume.
+When discounts are applied one after another,
+the second discount applies to the already-discounted price.
 </p>
+
+</div>
+
+</div>
+
+
+<div class="discount-example">
+
+<div class="discount-example-item">
+
+<span class="example-label">
+Original
+</span>
+
+<strong>
+QAR 100
+</strong>
+
+</div>
+
+
+<div class="discount-example-arrow">
+→
+</div>
+
+
+<div class="discount-example-item">
+
+<span class="example-label">
+20% Off
+</span>
+
+<strong>
+QAR 80
+</strong>
+
+</div>
+
+
+<div class="discount-example-arrow">
+→
+</div>
+
+
+<div class="discount-example-item">
+
+<span class="example-label">
+Then 10% Off
+</span>
+
+<strong>
+QAR 72
+</strong>
+
+</div>
+
+
+<div class="discount-example-arrow">
+→
+</div>
+
+
+<div class="discount-example-item highlight">
+
+<span class="example-label">
+Effective Discount
+</span>
+
+<strong>
+28%
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MODES EXPLANATION -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+THREE CALCULATION MODES
+</span>
+
+<h2>
+Choose the calculation you need
+</h2>
 
 </div>
 
@@ -538,25 +670,26 @@ unit economics and sales volume.
 
 <div class="category-grid">
 
+
 <div class="category-card">
 
 <div class="category-icon">
-🏢
+🏷️
 </div>
 
 <div>
 
 <h3>
-Fixed Costs
+Price After Discount
 </h3>
 
 <p>
-Expenses that generally do not change directly
-with the number of units sold.
+Enter an original price and discount percentage
+to calculate the sale price and savings.
 </p>
 
 <span>
-Examples: rent, salaries, insurance
+Price + Discount % → Final Price
 </span>
 
 </div>
@@ -567,22 +700,22 @@ Examples: rent, salaries, insurance
 <div class="category-card">
 
 <div class="category-icon">
-📦
+🔎
 </div>
 
 <div>
 
 <h3>
-Variable Costs
+Find Discount %
 </h3>
 
 <p>
-Costs that increase as more products
-or services are sold.
+Enter the original price and sale price
+to calculate the discount percentage.
 </p>
 
 <span>
-Examples: materials, packaging, commissions
+Original + Sale Price → Discount %
 </span>
 
 </div>
@@ -593,37 +726,40 @@ Examples: materials, packaging, commissions
 <div class="category-card">
 
 <div class="category-icon">
-💰
+🏷️
 </div>
 
 <div>
 
 <h3>
-Contribution Margin
+Stacked Discounts
 </h3>
 
 <p>
-The amount remaining from each sale after
-the variable cost of that unit is deducted.
+Apply two sequential discounts and calculate
+their true combined effective discount.
 </p>
 
 <span>
-Selling Price − Variable Cost
+Discount 1 + Discount 2
 </span>
 
 </div>
 
 </div>
 
+
 </div>
 
 </div>
+
 </section>
 
 
 <!-- HOW IT WORKS -->
 
 <section class="section featured-section">
+
 <div class="container">
 
 <div class="workflow-box">
@@ -635,7 +771,7 @@ HOW IT WORKS
 </span>
 
 <h2>
-Calculate break-even in four simple steps
+Calculate discounts in a few seconds
 </h2>
 
 </div>
@@ -648,12 +784,12 @@ Calculate break-even in four simple steps
 <span>01</span>
 
 <strong>
-Fixed Costs
+Choose Mode
 </strong>
 
 <p>
-Enter your total
-fixed costs.
+Select the type of
+discount calculation.
 </p>
 
 </div>
@@ -669,12 +805,12 @@ fixed costs.
 <span>02</span>
 
 <strong>
-Unit Economics
+Enter Price
 </strong>
 
 <p>
-Enter selling price
-and variable cost.
+Enter the original
+product price.
 </p>
 
 </div>
@@ -690,12 +826,12 @@ and variable cost.
 <span>03</span>
 
 <strong>
-Calculate
+Add Discount
 </strong>
 
 <p>
-Find contribution and
-break-even volume.
+Enter discount or
+sale-price information.
 </p>
 
 </div>
@@ -711,12 +847,12 @@ break-even volume.
 <span>04</span>
 
 <strong>
-Compare Sales
+Review
 </strong>
 
 <p>
-Optionally compare expected
-sales against break-even.
+See final price,
+savings and totals.
 </p>
 
 </div>
@@ -726,12 +862,14 @@ sales against break-even.
 </div>
 
 </div>
+
 </section>
 
 
 <!-- WHO IT'S FOR -->
 
 <section class="section">
+
 <div class="container">
 
 <div class="section-heading">
@@ -743,7 +881,7 @@ WHO IT'S FOR
 </span>
 
 <h2>
-Useful for everyday business planning
+Useful for shopping, pricing and promotions
 </h2>
 
 </div>
@@ -753,33 +891,18 @@ Useful for everyday business planning
 
 <div class="benefit-grid">
 
-<div class="benefit">
-
-<span>✓</span>
-
-<h3>
-Small Businesses
-</h3>
-
-<p>
-Estimate the sales volume needed
-before the business starts generating profit.
-</p>
-
-</div>
-
 
 <div class="benefit">
 
 <span>✓</span>
 
 <h3>
-E-commerce Sellers
+Shoppers
 </h3>
 
 <p>
-Compare product pricing and unit costs
-against fixed operating expenses.
+Quickly calculate sale prices
+and how much money you save.
 </p>
 
 </div>
@@ -794,8 +917,8 @@ Retail Businesses
 </h3>
 
 <p>
-Estimate how many units need to be sold
-to recover operating costs.
+Check promotional pricing
+and discount amounts.
 </p>
 
 </div>
@@ -806,25 +929,44 @@ to recover operating costs.
 <span>✓</span>
 
 <h3>
-Business Planning
+E-commerce Sellers
 </h3>
 
 <p>
-Test simple cost, price and sales-volume
-scenarios before making decisions.
+Calculate promotional discounts
+for products and orders.
 </p>
 
 </div>
 
+
+<div class="benefit">
+
+<span>✓</span>
+
+<h3>
+Small Businesses
+</h3>
+
+<p>
+Compare discount scenarios
+before setting promotional prices.
+</p>
+
+</div>
+
+
 </div>
 
 </div>
+
 </section>
 
 
 <!-- RELATED -->
 
 <section class="section featured-section">
+
 <div class="container">
 
 <div class="section-heading">
@@ -836,7 +978,7 @@ RELATED DIXANI RESOURCES
 </span>
 
 <h2>
-More pricing and business tools
+More finance and pricing tools
 </h2>
 
 </div>
@@ -845,6 +987,34 @@ More pricing and business tools
 
 
 <div class="category-grid">
+
+
+<a href="/categories/finance/break-even-calculator/"
+class="category-card">
+
+<div class="category-icon">
+📊
+</div>
+
+<div>
+
+<h3>
+Break-Even Calculator
+</h3>
+
+<p>
+Calculate break-even units,
+revenue and contribution margin.
+</p>
+
+<span>
+Open Tool →
+</span>
+
+</div>
+
+</a>
+
 
 <a href="/categories/business/profit-margin-calculator/"
 class="category-card">
@@ -873,7 +1043,7 @@ Open Tool →
 </a>
 
 
-<a href="/categories/business/markup-calculator/"
+<a href="/categories/finance/"
 class="category-card">
 
 <div class="category-icon">
@@ -883,39 +1053,12 @@ class="category-card">
 <div>
 
 <h3>
-Markup Calculator
-</h3>
-
-<p>
-Calculate markup,
-selling price and equivalent margin.
-</p>
-
-<span>
-Open Tool →
-</span>
-
-</div>
-
-</a>
-
-
-<a href="/categories/finance/"
-class="category-card">
-
-<div class="category-icon">
-📊
-</div>
-
-<div>
-
-<h3>
 Finance Calculators
 </h3>
 
 <p>
-Browse DIXANI calculators for
-business and financial planning.
+Browse practical financial
+calculators from DIXANI.
 </p>
 
 <span>
@@ -926,15 +1069,18 @@ Browse Finance Tools →
 
 </a>
 
+
 </div>
 
 </div>
+
 </section>
 
 
 <!-- FAQ -->
 
 <section class="section">
+
 <div class="container">
 
 <div class="section-heading">
@@ -946,7 +1092,7 @@ FAQ
 </span>
 
 <h2>
-Break-Even Calculator — Frequently Asked Questions
+Discount Calculator — Frequently Asked Questions
 </h2>
 
 </div>
@@ -956,16 +1102,17 @@ Break-Even Calculator — Frequently Asked Questions
 
 <div class="faq-section">
 
+
 <details>
 
 <summary>
-What is the break-even point?
+How do I calculate a discounted price?
 </summary>
 
 <p>
-The break-even point is the sales level where
-total contribution equals fixed costs,
-resulting in neither profit nor loss.
+Multiply the original price by one minus the discount
+percentage expressed as a decimal. For example,
+20% off QAR 100 gives a final price of QAR 80.
 </p>
 
 </details>
@@ -974,13 +1121,13 @@ resulting in neither profit nor loss.
 <details>
 
 <summary>
-How do I calculate break-even units?
+How do I calculate the discount percentage?
 </summary>
 
 <p>
-Divide total fixed costs by the contribution
-per unit. Contribution per unit is selling price
-minus variable cost per unit.
+Subtract the sale price from the original price,
+divide the saving by the original price,
+then multiply by 100.
 </p>
 
 </details>
@@ -989,12 +1136,13 @@ minus variable cost per unit.
 <details>
 
 <summary>
-What is break-even revenue?
+How do stacked discounts work?
 </summary>
 
 <p>
-Break-even revenue is the sales value associated
-with the break-even sales volume.
+Each discount is applied sequentially.
+The second discount applies to the price remaining
+after the first discount.
 </p>
 
 </details>
@@ -1003,13 +1151,12 @@ with the break-even sales volume.
 <details>
 
 <summary>
-What happens if variable cost is higher than selling price?
+Is 20% off plus another 10% off equal to 30%?
 </summary>
 
 <p>
-There is no positive contribution toward fixed costs.
-Under those assumptions, increasing unit sales
-will not produce a normal break-even point.
+No. A 20% discount followed by a 10% discount
+produces an effective total discount of 28%.
 </p>
 
 </details>
@@ -1018,28 +1165,33 @@ will not produce a normal break-even point.
 <details>
 
 <summary>
-What is contribution margin percentage?
+Does quantity change the discount percentage?
 </summary>
 
 <p>
-Contribution margin percentage is contribution per unit
-divided by selling price, multiplied by 100.
+No. Quantity changes the total original value,
+total savings and final total, but the percentage
+discount remains the same.
 </p>
 
 </details>
+
 
 </div>
 
 </div>
+
 </section>
 
 </main>
 
 
 <footer class="footer">
+
 <div class="container">
 
 <div class="footer-grid">
+
 
 <div>
 
@@ -1093,6 +1245,7 @@ Legal
 
 </div>
 
+
 </div>
 
 
@@ -1101,11 +1254,13 @@ Legal
 </div>
 
 </div>
+
 </footer>
 
 
 <script src="/assets/js/main.js"></script>
-<script src="break-even.js"></script>
+<script src="discount.js"></script>
 
 </body>
+
 </html>
