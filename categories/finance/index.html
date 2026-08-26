@@ -48,31 +48,21 @@ type="button">
 ☰
 </button>
 
-<nav class="main-nav" id="mainNav">
+<nav class="main-nav"
+     id="mainNav"
+     aria-label="Main navigation">
 
-<a href="/#tools">
-Tools
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Business</a>
+
+<a href="/categories/finance/" class="active">
+Finance
 </a>
 
-<a href="/templates/">
-Templates
-</a>
-
-<a href="/categories/inventory/">
-Inventory
-</a>
-
-<a href="/categories/logistics/">
-Logistics
-</a>
-
-<a href="/categories/business/">
-Business
-</a>
-
-<a href="/about/">
-About
-</a>
+<a href="/about/">About</a>
 
 </nav>
 
@@ -315,6 +305,10 @@ Open Tool →
 
 </a>
 
+</div> <!-- template-grid -->
+
+</div> <!-- container -->
+
 </section>
 
 
@@ -457,42 +451,15 @@ Understand how many units you need to sell
 <p>
 Break-even analysis helps estimate the sales volume
 required for contribution to cover fixed costs.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="category-grid">
-
-
-<a href="/categories/finance/break-even-calculator/"
-class="category-card">
-
-<div class="category-icon">
-📊
-</div>
-
-<div>
-
-<h3>
+Use the
+<a href="/categories/finance/break-even-calculator/">
 Break-Even Calculator
-</h3>
-
-<p>
-Calculate break-even units, revenue,
+</a>
+to calculate break-even units, revenue,
 contribution per unit and contribution margin.
 </p>
 
-<span>
-Open Calculator →
-</span>
-
 </div>
-
-</a>
-
 
 </div>
 
@@ -530,17 +497,21 @@ amount saved and effective stacked discounts.
 </div>
 
 
-<div class="category-grid">
+<div class="category-grid finance-three-grid">
 
 
 <a href="/categories/finance/discount-calculator/"
 class="category-card">
 
+
 <div class="category-icon">
+    
+    
 🏷️
 </div>
 
 <div>
+    
 
 <h3>
 Discount Calculator
@@ -639,44 +610,17 @@ TAX CALCULATIONS
 </span>
 
 <h2>
-VAT tools coming next
+Add or remove VAT from business amounts
 </h2>
 
 <p>
-The planned VAT Calculator will support
-adding VAT to a net amount and removing VAT
-from a gross amount.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="category-grid">
-
-<div class="category-card">
-
-<div class="category-icon">
-🧾
-</div>
-
-<div>
-
-<h3>
+Use the
+<a href="/categories/finance/vat-calculator/">
 VAT Calculator
-</h3>
-
-<p>
-Calculate net amount, VAT amount
-and gross total using a configurable VAT rate.
+</a>
+to calculate net amount, VAT value and gross amount
+using a configurable VAT rate.
 </p>
-
-<span>
-Coming Soon
-</span>
-
-</div>
 
 </div>
 
@@ -822,8 +766,8 @@ and Inventory calculators for broader planning.
 </div>
 
 
-<div class="category-grid">
 
+<div class="category-grid finance-three-grid">
 
 <a href="/categories/business/"
 class="category-card">
@@ -964,9 +908,9 @@ What finance calculators are currently available?
 </summary>
 
 <p>
-The Break-Even Calculator and Discount Calculator
-are currently available. Additional tools such as
-a VAT Calculator are planned.
+The Break-Even Calculator, Discount Calculator
+and VAT Calculator are currently available.
+Additional finance tools may be added over time.
 </p>
 
 </details>

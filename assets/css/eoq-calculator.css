@@ -37,7 +37,11 @@ button{cursor:pointer}
   align-items:center;
   justify-content:space-between;
 }
-.brand{font-size:25px;font-weight:900}
+.brand{
+    font-size:25px;
+    font-weight:900;
+    color:#2563eb;
+}
 .header-nav{display:flex;gap:28px;color:var(--muted);font-size:14px;font-weight:700}
 
 .main-container{max-width:1180px;margin:auto;padding:64px 24px 80px}
