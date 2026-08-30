@@ -1,88 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Free VAT Calculator | Add or Remove VAT | DIXANI</title>
-
-<meta name="description"
-content="Free VAT calculator to add VAT to a net amount or remove VAT from a gross amount. Calculate net price, VAT amount and gross total using any VAT rate.">
-
-<meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI">
-<meta name="theme-color" content="#2563eb">
-
-<link rel="canonical"
-href="https://dixani.github.io/categories/finance/vat-calculator/">
-
-<link rel="stylesheet" href="/assets/css/templates.css">
-<link rel="stylesheet" href="vat.css">
-
-</head>
-
+<meta content="Free VAT calculator to add VAT to a net amount or remove VAT from a gross amount. Calculate net price, VAT amount and gross total using any VAT rate." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/>
+<meta content="#2563eb" name="theme-color"/>
+<link href="https://dixani.github.io/categories/finance/vat-calculator/" rel="canonical"/>
+<link href="/assets/css/templates.css" rel="stylesheet"/>
+<link href="vat.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-
-
 <!-- HEADER -->
-
-<header class="site-header">
-
-<div class="container header-inner">
-
-<a href="/" class="logo">DIXANI</a>
-
-<button
-class="menu-button"
-id="menuButton"
-type="button">
-☰
-</button>
-
-<nav class="main-nav" id="mainNav">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Business</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a class="active" href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main>
-
-
 <!-- HERO -->
-
 <section class="template-hero">
-
 <div class="container">
-
 <div class="hero-badge">
 🧾 FINANCE CALCULATOR
 </div>
-
 <h1>
 VAT
 <span>Calculator</span>
 </h1>
-
 <p>
 Add VAT to a net amount or remove VAT from a gross amount.
 Use your own VAT rate and instantly calculate the net value,
 VAT amount and gross total.
 </p>
-
 <div class="hero-note">
-
 <strong>Free calculator</strong>
 <span>•</span>
 Add VAT
@@ -94,78 +44,42 @@ Custom VAT rate
 No account required
 
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- CALCULATOR -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="calculator-shell">
-
-
 <!-- MODES -->
-
 <div class="calculator-tabs">
-
-<button
-class="calc-tab active"
-data-mode="add"
-type="button">
+<button class="calc-tab active" data-mode="add" type="button">
 Add VAT
 </button>
-
-<button
-class="calc-tab"
-data-mode="remove"
-type="button">
+<button class="calc-tab" data-mode="remove" type="button">
 Remove VAT
 </button>
-
 </div>
-
-
 <div class="calculator-grid">
-
-
 <!-- INPUT PANEL -->
-
 <div class="calculator-panel input-panel">
-
 <div class="panel-heading">
-
 <span class="section-label">
 INPUTS
 </span>
-
 <h2 id="inputHeading">
 Add VAT to an Amount
 </h2>
-
 <p id="inputDescription">
 Enter the net amount and VAT rate to calculate
 the VAT amount and gross total.
 </p>
-
 </div>
-
-
 <!-- CURRENCY -->
-
 <div class="field-group">
-
 <label for="currency">
 Currency
 </label>
-
 <select id="currency">
-
 <option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
@@ -174,953 +88,518 @@ Currency
 <option value="SAR">SAR</option>
 <option value="LKR">LKR</option>
 <option value="INR">INR</option>
-
 </select>
-
 </div>
-
-
 <!-- AMOUNT -->
-
 <div class="field-group">
-
 <label for="amount" id="amountLabel">
 Net Amount
 </label>
-
 <div class="input-with-unit">
-
-<span
-class="currency-prefix"
-id="amountCurrency">
+<span class="currency-prefix" id="amountCurrency">
 QAR
 </span>
-
-<input
-id="amount"
-type="number"
-min="0"
-step="0.01"
-placeholder="1000.00">
-
+<input id="amount" min="0" placeholder="1000.00" step="0.01" type="number"/>
 </div>
-
 <small id="amountHelp">
 Enter the amount before VAT is added.
 </small>
-
 </div>
-
-
 <!-- VAT RATE -->
-
 <div class="field-group">
-
 <label for="vatRate">
 VAT Rate
 </label>
-
 <div class="input-with-unit">
-
-<input
-id="vatRate"
-type="number"
-min="0"
-step="0.01"
-placeholder="5">
-
+<input id="vatRate" min="0" placeholder="5" step="0.01" type="number"/>
 <span class="unit-suffix">
 %
 </span>
-
 </div>
-
 <small>
 Enter the VAT rate applicable to your calculation.
 </small>
-
 </div>
-
-
 <!-- ACTIONS -->
-
 <div class="calculator-actions">
-
-<button
-id="calculateButton"
-class="primary-button"
-type="button">
+<button class="primary-button" id="calculateButton" type="button">
 Calculate
 </button>
-
-<button
-id="exampleButton"
-class="secondary-button"
-type="button">
+<button class="secondary-button" id="exampleButton" type="button">
 Load Example
 </button>
-
-<button
-id="clearButton"
-class="text-button"
-type="button">
+<button class="text-button" id="clearButton" type="button">
 Clear
 </button>
-
 </div>
-
-
-<div
-id="calculatorError"
-class="calculator-error"
-role="alert">
+<div class="calculator-error" id="calculatorError" role="alert">
 </div>
-
 </div>
-
-
-
 <!-- RESULT PANEL -->
-
 <div class="calculator-panel result-panel">
-
 <div class="panel-heading">
-
 <span class="section-label">
 RESULTS
 </span>
-
 <h2>
 VAT Summary
 </h2>
-
 <p>
 See the calculated net amount,
 VAT value and gross amount.
 </p>
-
 </div>
-
-
 <div class="result-primary">
-
-<span
-class="result-label"
-id="primaryResultLabel">
+<span class="result-label" id="primaryResultLabel">
 Gross Amount
 </span>
-
 <strong id="primaryResult">
 QAR 0.00
 </strong>
-
 <p id="primaryResultNote">
 Enter your values and calculate.
 </p>
-
 </div>
-
-
 <div class="result-grid">
-
-
 <div class="result-card">
-
 <span>
 Net Amount
 </span>
-
 <strong id="netAmount">
 QAR 0.00
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 VAT Rate
 </span>
-
 <strong id="resultVatRate">
 0.00%
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 VAT Amount
 </span>
-
 <strong id="vatAmount">
 QAR 0.00
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 Gross Amount
 </span>
-
 <strong id="grossAmount">
 QAR 0.00
 </strong>
-
 </div>
-
-
 </div>
-
-
 <div class="formula-box" id="formulaBox">
-
 <strong>
 Add VAT Formula
 </strong>
-
 <p>
 Gross Amount = Net Amount × (1 + VAT Rate)
 </p>
-
 </div>
-
 </div>
-
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- VAT EXAMPLE -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="vat-example-box">
-
-    <span class="vat-example-label">
+<span class="vat-example-label">
         EXAMPLE
     </span>
-
-    <h2>
+<h2>
         How a 5% VAT calculation works
     </h2>
-
-    <p class="vat-example-description">
+<p class="vat-example-description">
         For a net amount of QAR 1,000 with a 5% VAT rate,
         the VAT is QAR 50 and the gross amount is QAR 1,050.
     </p>
-
-    <div class="vat-example-divider"></div>
-
-    <div class="vat-example-summary">
-
-        <p>
-            <strong>Net Amount:</strong>
+<div class="vat-example-divider"></div>
+<div class="vat-example-summary">
+<p>
+<strong>Net Amount:</strong>
             QAR 1,000
 
             <span>•</span>
-
-            <strong>VAT 5%:</strong>
+<strong>VAT 5%:</strong>
             QAR 50
 
             <span>•</span>
-
-            <strong>Gross Amount:</strong>
+<strong>Gross Amount:</strong>
             QAR 1,050
         </p>
-
-    </div>
-
 </div>
-
 </div>
-
+</div>
 </section>
-
-
-
-
-
-
 <!-- MODES -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 TWO CALCULATION MODES
 </span>
-
 <h2>
 Add VAT or work backwards from a VAT-inclusive price
 </h2>
-
 <p>
 Choose the calculation depending on whether your starting
 amount excludes or already includes VAT.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="category-grid">
-
-
 <div class="category-card">
-
 <div class="category-icon">
 ➕
 </div>
-
 <div>
-
 <h3>
 Add VAT
 </h3>
-
 <p>
 Start with a net amount and calculate
 the VAT amount and final gross total.
 </p>
-
 <span>
 Net + VAT → Gross
 </span>
-
 </div>
-
 </div>
-
-
-
 <div class="category-card">
-
 <div class="category-icon">
 ➖
 </div>
-
 <div>
-
 <h3>
 Remove VAT
 </h3>
-
 <p>
 Start with a VAT-inclusive gross amount
 and calculate the underlying net value and VAT.
 </p>
-
 <span>
 Gross → Net + VAT
 </span>
-
 </div>
-
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- FORMULAS -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 VAT FORMULAS
 </span>
-
 <h2>
 How VAT is calculated
 </h2>
-
 <p>
 Adding VAT and removing VAT require different formulas.
 Simply subtracting the VAT percentage from a gross amount
 does not correctly remove included VAT.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="category-grid">
-
-
 <div class="category-card">
-
 <div class="category-icon">
 ➕
 </div>
-
 <div>
-
 <h3>
 Adding VAT
 </h3>
-
 <p>
 Multiply the net amount by the VAT rate
 to calculate the VAT amount.
 </p>
-
 <span>
 VAT = Net × VAT Rate
 </span>
-
 </div>
-
 </div>
-
-
-
 <div class="category-card">
-
 <div class="category-icon">
 🧾
 </div>
-
 <div>
-
 <h3>
 Gross Amount
 </h3>
-
 <p>
 Add the calculated VAT amount
 to the original net amount.
 </p>
-
 <span>
 Gross = Net + VAT
 </span>
-
 </div>
-
 </div>
-
-
-
 <div class="category-card">
-
 <div class="category-icon">
 ➖
 </div>
-
 <div>
-
 <h3>
 Removing VAT
 </h3>
-
 <p>
 Divide the VAT-inclusive gross amount
 by one plus the VAT rate.
 </p>
-
 <span>
 Net = Gross ÷ (1 + VAT Rate)
 </span>
-
 </div>
-
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- WHO IT'S FOR -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 WHO IT'S FOR
 </span>
-
 <h2>
 Useful for everyday VAT calculations
 </h2>
-
 <p>
 A simple calculator for people who need to separate
 net price, VAT and gross price quickly.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="benefit-grid">
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Small Businesses
 </h3>
-
 <p>
 Quickly calculate VAT-inclusive
 and VAT-exclusive amounts.
 </p>
-
 </div>
-
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
-Retail & E-commerce
+Retail &amp; E-commerce
 </h3>
-
 <p>
 Check net and gross prices
 when reviewing product pricing.
 </p>
-
 </div>
-
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
-Invoices & Quotations
+Invoices &amp; Quotations
 </h3>
-
 <p>
 Estimate the VAT portion
 of common business amounts.
 </p>
-
 </div>
-
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Everyday Calculations
 </h3>
-
 <p>
 Work backwards from a VAT-inclusive
 price without manual formulas.
 </p>
-
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- IMPORTANT NOTE -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="workflow-box">
-
 <div class="workflow-heading">
-
 <span class="section-label">
 IMPORTANT
 </span>
-
 <h2>
 Use the VAT rate that applies to your transaction
 </h2>
-
 <p>
 VAT rates and tax rules vary by country, product,
 service and transaction type. This calculator does not
 automatically determine which tax rate applies.
 </p>
-
 <p>
 Enter the appropriate VAT rate yourself and use the
 results for general calculation and planning purposes.
 For tax compliance questions, refer to the relevant
 tax authority or a qualified professional.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- RELATED -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 RELATED DIXANI RESOURCES
 </span>
-
 <h2>
 More finance and pricing calculators
 </h2>
-
 </div>
-
 </div>
-
-
 <div class="category-grid">
-
-
-<a href="/categories/finance/break-even-calculator/"
-class="category-card">
-
+<a class="category-card" href="/categories/finance/break-even-calculator/">
 <div class="category-icon">
 📊
 </div>
-
 <div>
-
 <h3>
 Break-Even Calculator
 </h3>
-
 <p>
 Calculate break-even units,
 revenue and contribution margin.
 </p>
-
 <span>
 Open Calculator →
 </span>
-
 </div>
-
 </a>
-
-
-
-<a href="/categories/finance/discount-calculator/"
-class="category-card">
-
+<a class="category-card" href="/categories/finance/discount-calculator/">
 <div class="category-icon">
 🏷️
 </div>
-
 <div>
-
 <h3>
 Discount Calculator
 </h3>
-
 <p>
 Calculate discounted prices,
 savings and stacked discounts.
 </p>
-
 <span>
 Open Calculator →
 </span>
-
 </div>
-
 </a>
-
-
-
-<a href="/categories/business/profit-margin-calculator/"
-class="category-card">
-
+<a class="category-card" href="/categories/business/profit-margin-calculator/">
 <div class="category-icon">
 💰
 </div>
-
 <div>
-
 <h3>
 Profit Margin Calculator
 </h3>
-
 <p>
 Calculate profit margin,
 markup and target selling price.
 </p>
-
 <span>
 Open Calculator →
 </span>
-
 </div>
-
 </a>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- FAQ -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 FAQ
 </span>
-
 <h2>
 VAT Calculator — Frequently Asked Questions
 </h2>
-
 </div>
-
 </div>
-
-
 <div class="faq-section">
-
-
 <details>
-
 <summary>
 How do I add VAT to a price?
 </summary>
-
 <p>
 Multiply the net amount by the VAT percentage to calculate
 the VAT amount, then add that VAT amount to the net value.
 </p>
-
 </details>
-
-
-
 <details>
-
 <summary>
 How do I remove VAT from a VAT-inclusive amount?
 </summary>
-
 <p>
 Divide the gross amount by one plus the VAT rate expressed
 as a decimal. The difference between the gross and calculated
 net amount is the included VAT.
 </p>
-
 </details>
-
-
-
 <details>
-
 <summary>
 Can I enter my own VAT rate?
 </summary>
-
 <p>
 Yes. The calculator uses the VAT percentage you enter,
 so it can be used with different VAT rates.
 </p>
-
 </details>
-
-
-
 <details>
-
 <summary>
 Why can't I simply subtract 5% from a VAT-inclusive price?
 </summary>
-
 <p>
 Because the VAT percentage is calculated from the net value,
 not from the VAT-inclusive gross value. Removing VAT therefore
 requires dividing the gross amount by one plus the VAT rate.
 </p>
-
 </details>
-
-
-
 <details>
-
 <summary>
 Does DIXANI determine which VAT rate I should use?
 </summary>
-
 <p>
 No. VAT rates and tax rules vary by jurisdiction and transaction.
 You should enter the rate that applies to your situation.
 </p>
-
 </details>
-
-
 </div>
-
 </div>
-
 </section>
-
-
 </main>
-
-
-
 <!-- FOOTER -->
-
 <footer class="footer">
-
 <div class="container">
-
 <div class="footer-grid">
-
-
-<div>
-
-<div class="footer-brand">
-DIXANI
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
 </div>
-
-<p>
-Practical Tools. Smarter Work.
-</p>
-
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
 </div>
-
-
-<div>
-
-<h4>
-Resources
-</h4>
-
-<a href="/#tools">Online Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory Tools</a>
-<a href="/categories/logistics/">Logistics Tools</a>
-<a href="/categories/business/">Business Tools</a>
-<a href="/categories/finance/">Finance Tools</a>
-
-</div>
-
-
-<div>
-
-<h4>
-Company
-</h4>
-
-<a href="/about/">About</a>
-<a href="/contact/">Contact</a>
-
-</div>
-
-
-<div>
-
-<h4>
-Legal</h4>
-
-<a href="/privacy/">Privacy</a>
-<a href="/terms/">Terms</a>
-
-</div>
-
-
-</div>
-
-
-<div class="copyright">
-© 2026 DIXANI. All rights reserved.
-</div>
-
-</div>
-
 </footer>
-
-
 <script src="/assets/js/main.js"></script>
 <script src="vat.js"></script>
-
 </body>
-
 </html>

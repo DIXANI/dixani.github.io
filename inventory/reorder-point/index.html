@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,53 +11,32 @@
 
   gtag('config', 'G-LQEH9L9TZ4');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Reorder Point Calculator – Free Inventory Tool | DIXANI</title>
-<meta name="description" content="Free reorder point calculator to estimate when to reorder inventory using average daily usage, supplier lead time and safety stock. Check stock coverage and reorder status.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://dixani.github.io/inventory/reorder-point/">
-<link rel="stylesheet" href="../../assets/css/reorder.css">
-</head>
+<meta content="Free reorder point calculator to estimate when to reorder inventory using average daily usage, supplier lead time and safety stock. Check stock coverage and reorder status." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://dixani.github.io/inventory/reorder-point/" rel="canonical"/>
+<link href="../../assets/css/reorder.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-<header class="tool-header">
-
-<div class="header-container">
-
-<a href="/" class="brand">DIXANI</a>
-
-<nav class="header-nav" aria-label="Main navigation">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Business</a>
-<a href="/categories/finance/">Finance</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</div>
-
-</header>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main class="main-container">
 <section class="tool-intro"><div class="tool-badge">📦 INVENTORY TOOL</div><h1>Reorder Point <span>Calculator</span></h1><p>Calculate when inventory should be reordered using average daily usage, supplier lead time and safety stock.</p></section>
 <section class="panel">
-<div class="panel-header"><div><h2>Inventory Inputs</h2><p>Enter your stock usage and replenishment details.</p></div><button type="button" class="secondary-button" id="loadExample">Load Example</button></div>
+<div class="panel-header"><div><h2>Inventory Inputs</h2><p>Enter your stock usage and replenishment details.</p></div><button class="secondary-button" id="loadExample" type="button">Load Example</button></div>
 <div class="form-grid">
-<div class="form-group"><label for="itemName">Item / Product</label><input id="itemName" placeholder="e.g. Basmati Rice 5kg"></div>
-<div class="form-group"><label for="avgUsage">Average Daily Usage</label><input id="avgUsage" type="number" min="0" step="any" placeholder="e.g. 15"><small>Average units consumed or sold per day.</small></div>
-<div class="form-group"><label for="leadTime">Lead Time (Days)</label><input id="leadTime" type="number" min="0" step="any" placeholder="e.g. 7"><small>Days between ordering and receiving stock.</small></div>
-<div class="form-group"><label for="safetyStock">Safety Stock</label><input id="safetyStock" type="number" min="0" step="any" placeholder="e.g. 30"><small>Buffer stock kept to reduce stockout risk.</small></div>
-<div class="form-group"><label for="currentStock">Current Stock</label><input id="currentStock" type="number" min="0" step="any" placeholder="e.g. 120"></div>
-<div class="form-group"><label for="incomingStock">Incoming Stock</label><input id="incomingStock" type="number" min="0" step="any" placeholder="e.g. 0"><small>Confirmed stock already on the way.</small></div>
-<div class="form-group"><label for="orderQty">Planned Order Quantity <span class="optional">(Optional)</span></label><input id="orderQty" type="number" min="0" step="any" placeholder="e.g. 200"><small>Used to estimate post-order stock coverage.</small></div>
-<div class="form-group"><label for="decimals">Decimal Places</label><select id="decimals"><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option></select></div>
+<div class="form-group"><label for="itemName">Item / Product</label><input id="itemName" placeholder="e.g. Basmati Rice 5kg"/></div>
+<div class="form-group"><label for="avgUsage">Average Daily Usage</label><input id="avgUsage" min="0" placeholder="e.g. 15" step="any" type="number"/><small>Average units consumed or sold per day.</small></div>
+<div class="form-group"><label for="leadTime">Lead Time (Days)</label><input id="leadTime" min="0" placeholder="e.g. 7" step="any" type="number"/><small>Days between ordering and receiving stock.</small></div>
+<div class="form-group"><label for="safetyStock">Safety Stock</label><input id="safetyStock" min="0" placeholder="e.g. 30" step="any" type="number"/><small>Buffer stock kept to reduce stockout risk.</small></div>
+<div class="form-group"><label for="currentStock">Current Stock</label><input id="currentStock" min="0" placeholder="e.g. 120" step="any" type="number"/></div>
+<div class="form-group"><label for="incomingStock">Incoming Stock</label><input id="incomingStock" min="0" placeholder="e.g. 0" step="any" type="number"/><small>Confirmed stock already on the way.</small></div>
+<div class="form-group"><label for="orderQty">Planned Order Quantity <span class="optional">(Optional)</span></label><input id="orderQty" min="0" placeholder="e.g. 200" step="any" type="number"/><small>Used to estimate post-order stock coverage.</small></div>
+<div class="form-group"><label for="decimals">Decimal Places</label><select id="decimals"><option value="0">0</option><option value="1">1</option><option selected="" value="2">2</option></select></div>
 </div>
-<div class="calculate-row"><button type="button" class="primary-button" id="calculateButton">Calculate Reorder Point</button><button type="button" class="danger-button" id="clearButton">Clear</button></div>
+<div class="calculate-row"><button class="primary-button" id="calculateButton" type="button">Calculate Reorder Point</button><button class="danger-button" id="clearButton" type="button">Clear</button></div>
 </section>
-
 <section class="results-section">
 <div class="results-header"><div><h2>Reorder Analysis</h2><p>Your result updates automatically as you enter values.</p></div><div class="status-pill neutral" id="reorderStatus">ENTER DATA</div></div>
 <div class="results-grid">
@@ -73,102 +52,78 @@
 <div><span>Coverage after planned order</span><strong id="postOrderCoverage">—</strong></div>
 </div>
 </section>
-
 <section class="formula-section"><span class="section-label">FORMULA</span><h2>How the reorder point is calculated</h2><div class="formula-box"><strong>Reorder Point = (Average Daily Usage × Lead Time) + Safety Stock</strong></div><p>The reorder point is the stock level at which a replenishment order should normally be placed.</p></section>
-
 <section class="info-section"><h2>How to use the Reorder Point Calculator</h2><div class="info-grid">
 <div><span>01</span><h3>Enter daily usage</h3><p>Use historical consumption or sales to estimate average daily demand.</p></div>
 <div><span>02</span><h3>Enter lead time</h3><p>Use the typical supplier delivery time in days.</p></div>
 <div><span>03</span><h3>Add safety stock</h3><p>Add a buffer for demand variation and delivery delays.</p></div>
 <div><span>04</span><h3>Review the result</h3><p>DIXANI indicates whether you should reorder now, soon, or not yet.</p></div>
 </div></section>
-
 <section class="info-section">
-
-    <h2>Why Is the Reorder Point Important?</h2>
-
-    <p>
+<h2>Why Is the Reorder Point Important?</h2>
+<p>
         A reorder point helps determine when a replenishment order
         should be placed before available inventory runs too low.
         The calculation considers expected demand during supplier
         lead time together with safety stock.
     </p>
-
-    <p>
+<p>
         For example, if an item uses 15 units per day and the supplier
         takes 7 days to deliver, expected lead-time demand is 105 units.
         With 30 units of safety stock, the reorder point becomes
         135 units.
     </p>
-
-    <p>
+<p>
         When available stock approaches or falls below this level,
         replenishment may need attention. Actual purchasing decisions
         should also consider open purchase orders, minimum order
         quantities, supplier schedules and expected changes in demand.
     </p>
-
 </section>
-
 <section class="faq-section"><h2>Reorder Point Calculator — Frequently Asked Questions</h2>
 <details><summary>What is a reorder point?</summary><p>A reorder point is the inventory level at which a new purchase or replenishment order should be placed.</p></details>
 <details><summary>Does the reorder point include safety stock?</summary><p>Yes. This calculator adds safety stock to expected demand during lead time.</p></details>
 <details><summary>What if available stock is below the reorder point?</summary><p>The tool will flag that the item needs reorder attention. You should also consider open purchase orders, supplier limits and minimum order quantities.</p></details>
 </section>
-
 <section class="related-section"><h2>Related DIXANI Inventory Tools</h2><div class="related-grid">
 <section class="related-section">
-
-    <h2>Related DIXANI Inventory Tools</h2>
-
-    <div class="related-grid">
-
-        <a class="related-card"
-           href="/inventory/safety-stock/">
-
-            <span>🛡️</span>
-
-            <strong>
+<h2>Related DIXANI Inventory Tools</h2>
+<div class="related-grid">
+<a class="related-card" href="/inventory/safety-stock/">
+<span>🛡️</span>
+<strong>
                 Safety Stock Calculator
             </strong>
-
-            <small>Live tool</small>
-
-        </a>
-
-
-        <a class="related-card"
-           href="/inventory/eoq-calculator/">
-
-            <span>📦</span>
-
-            <strong>
+<small>Live tool</small>
+</a>
+<a class="related-card" href="/inventory/eoq-calculator/">
+<span>📦</span>
+<strong>
                 Economic Order Quantity Calculator
             </strong>
-
-            <small>Live tool</small>
-
-        </a>
-
-
-        <a class="related-card"
-           href="/inventory/variance-report/">
-
-            <span>📊</span>
-
-            <strong>
+<small>Live tool</small>
+</a>
+<a class="related-card" href="/inventory/variance-report/">
+<span>📊</span>
+<strong>
                 Inventory Variance Report Generator
             </strong>
-
-            <small>Live tool</small>
-
-        </a>
-
-    </div>
-
+<small>Live tool</small>
+</a>
+</div>
 </section>
-</main>
-<footer class="tool-footer"><div><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span></div><p>© 2026 DIXANI. All rights reserved.</p></footer>
+</div></section></main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
+</footer>
 <script src="../../assets/js/reorder.js"></script>
-</body>
+<script src="/assets/js/main.js"></script></body>
 </html>

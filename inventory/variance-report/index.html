@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,61 +11,36 @@
 
   gtag('config', 'G-LQEH9L9TZ4');
 </script>
-  
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Free Inventory Variance Report Generator | DIXANI</title>
-<meta name="description" content="Free inventory variance report generator to compare system stock with physical stock, calculate shortages, excess and variance value, import CSV data and print a professional report.">
-<meta name="robots" content="index, follow"><meta name="author" content="DIXANI">
-<link rel="canonical"
-      href="https://dixani.github.io/inventory/variance-report/">  
-<link rel="stylesheet" href="../../assets/css/inventory.css">
-</head>
+<meta content="Free inventory variance report generator to compare system stock with physical stock, calculate shortages, excess and variance value, import CSV data and print a professional report." name="description"/>
+<meta content="index, follow" name="robots"/><meta content="DIXANI" name="author"/>
+<link href="https://dixani.github.io/inventory/variance-report/" rel="canonical"/>
+<link href="../../assets/css/inventory.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-<header class="tool-header">
-
-<div class="header-container">
-
-<a href="/" class="brand">DIXANI</a>
-
-<nav class="header-nav" aria-label="Main navigation">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Business</a>
-<a href="/categories/finance/">Finance</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</div>
-
-</header>
-
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main class="main-container">
 <section class="tool-intro">
 <div class="tool-badge">📦 INVENTORY TOOL</div>
 <h1>Inventory Variance <span>Report Generator</span></h1>
 <p>Compare system inventory with physical stock counts, identify shortages and excess, calculate quantity and financial variance, and create a printable inventory variance report.</p>
 </section>
-
 <section class="panel"><div class="panel-header"><div><h2>Report Information</h2><p>Enter the basic information for this report.</p></div></div>
 <div class="form-grid">
-<div class="form-group"><label for="companyName">Company / Business</label><input id="companyName" placeholder="e.g. ABC Trading W.L.L."></div>
-<div class="form-group"><label for="warehouseName">Warehouse / Location</label><input id="warehouseName" placeholder="e.g. Main Warehouse"></div>
-<div class="form-group"><label for="reportDate">Report Date</label><input type="date" id="reportDate"></div>
-<div class="form-group"><label for="preparedBy">Prepared By</label><input id="preparedBy" placeholder="e.g. Inventory Controller"></div>
+<div class="form-group"><label for="companyName">Company / Business</label><input id="companyName" placeholder="e.g. ABC Trading W.L.L."/></div>
+<div class="form-group"><label for="warehouseName">Warehouse / Location</label><input id="warehouseName" placeholder="e.g. Main Warehouse"/></div>
+<div class="form-group"><label for="reportDate">Report Date</label><input id="reportDate" type="date"/></div>
+<div class="form-group"><label for="preparedBy">Prepared By</label><input id="preparedBy" placeholder="e.g. Inventory Controller"/></div>
 <div class="form-group"><label for="currency">Currency</label><select id="currency"><option>QAR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></div>
-<div class="form-group"><label for="decimalPlaces">Decimal Places</label><select id="decimalPlaces"><option>0</option><option>1</option><option selected>2</option><option>3</option></select></div>
+<div class="form-group"><label for="decimalPlaces">Decimal Places</label><select id="decimalPlaces"><option>0</option><option>1</option><option selected="">2</option><option>3</option></select></div>
 </div></section>
-
 <section class="panel inventory-panel">
 <div class="panel-header inventory-header"><div><h2>Inventory Items</h2><p>Enter your system quantity and physical count.</p></div>
-<div class="header-actions"><button type="button" class="secondary-button" id="loadSampleButton">Load Sample</button><button type="button" class="primary-button" id="addItemButton">+ Add Item</button></div></div>
+<div class="header-actions"><button class="secondary-button" id="loadSampleButton" type="button">Load Sample</button><button class="primary-button" id="addItemButton" type="button">+ Add Item</button></div></div>
 <div class="import-area"><div><strong>Import inventory from CSV</strong><span>Use columns: SKU, Description, System Qty, Physical Qty, Unit Cost</span></div>
-<label class="file-button">Choose CSV File<input type="file" id="csvFile" accept=".csv,text/csv" hidden></label></div>
-<div class="table-controls"><div class="search-control"><span>🔍</span><input type="search" id="itemSearch" placeholder="Search SKU or description..."></div>
+<label class="file-button">Choose CSV File<input accept=".csv,text/csv" hidden="" id="csvFile" type="file"/></label></div>
+<div class="table-controls"><div class="search-control"><span>🔍</span><input id="itemSearch" placeholder="Search SKU or description..." type="search"/></div>
 <select id="statusFilter"><option value="all">All Statuses</option><option value="matched">Matched</option><option value="shortage">Shortage</option><option value="excess">Excess</option></select></div>
 <div class="table-wrapper"><table class="inventory-table"><thead><tr>
 <th>#</th><th>SKU / Item Code</th><th>Description</th><th>System Qty</th><th>Physical Qty</th><th>Variance</th><th>Variance %</th><th>Unit Cost</th><th>Variance Value</th><th>Status</th><th></th>
@@ -73,8 +48,7 @@
 <div class="table-empty" id="emptyMessage">No inventory items found.</div>
 <div class="table-footer-note"><span id="visibleCount">0 items</span><span>Negative variance = shortage · Positive variance = excess</span></div>
 </section>
-
-<section class="summary-section"><div class="summary-heading"><div><h2>Variance Summary</h2><p>Automatic summary based on your inventory data.</p></div><button type="button" class="calculate-button" id="calculateButton">Calculate Variance</button></div>
+<section class="summary-section"><div class="summary-heading"><div><h2>Variance Summary</h2><p>Automatic summary based on your inventory data.</p></div><button class="calculate-button" id="calculateButton" type="button">Calculate Variance</button></div>
 <div class="summary-grid">
 <div class="summary-card"><span>Total Items</span><strong id="totalItems">0</strong></div>
 <div class="summary-card"><span>Matched</span><strong id="matchedItems">0</strong></div>
@@ -88,10 +62,8 @@
 <div class="financial-card"><span>Excess Value</span><strong id="excessValue">QAR 0.00</strong></div>
 <div class="financial-card net-card"><span>Net Variance Value</span><strong id="netVariance">QAR 0.00</strong></div>
 </div></section>
-
 <section class="action-panel"><div><h2>Report Actions</h2><p>Export or print your completed inventory report.</p></div>
-<div class="action-buttons"><button type="button" class="secondary-button" id="exportCsvButton">↓ Export CSV</button><button type="button" class="secondary-button" id="printButton">🖨 Print / Save PDF</button><button type="button" class="danger-button" id="clearButton">Clear All</button></div></section>
-
+<div class="action-buttons"><button class="secondary-button" id="exportCsvButton" type="button">↓ Export CSV</button><button class="secondary-button" id="printButton" type="button">🖨 Print / Save PDF</button><button class="danger-button" id="clearButton" type="button">Clear All</button></div></section>
 <section class="info-section"><h2>How to use the Inventory Variance Report Generator</h2><div class="info-grid">
 <div><span>01</span><h3>Enter report information</h3><p>Add your company, warehouse, report date, preparer's name and currency.</p></div>
 <div><span>02</span><h3>Add inventory</h3><p>Enter SKU, description, system quantity, physical quantity and unit cost.</p></div>
@@ -99,32 +71,26 @@
 <div><span>04</span><h3>Export</h3><p>Export your data as CSV or print the report to PDF.</p></div>
 </div></section>
 <section class="info-section">
-
-    <h2>
+<h2>
         What Can You Use an Inventory Variance Report For?
     </h2>
-
-    <p>
+<p>
         An inventory variance report helps compare the stock quantity
         recorded in your inventory system with the quantity found
         during a physical stock count.
     </p>
-
-    <p>
+<p>
         Shortages may indicate issues such as picking errors,
         unrecorded movements, damages, incorrect receipts or
         inventory adjustments. Excess quantities can result from
         similar transaction or counting differences.
     </p>
-
-    <p>
+<p>
         This tool also calculates the financial value of each variance
         using the item's unit cost, helping you identify discrepancies
         that may require further investigation.
     </p>
-
 </section>
-
 <section class="faq-section"><h2>Inventory Variance Report — Frequently Asked Questions</h2>
 <details><summary>What is an inventory variance?</summary><p>Inventory variance is the difference between system quantity and the quantity physically counted. A negative variance generally indicates a shortage, while a positive variance indicates excess stock.</p></details>
 <details><summary>How is inventory variance calculated?</summary><p>DIXANI calculates variance as physical quantity minus system quantity. Variance percentage is calculated against system quantity. If system quantity is zero, percentage is shown as N/A.</p></details>
@@ -132,96 +98,75 @@
 <details><summary>Is my inventory data uploaded to DIXANI?</summary><p>No. Calculations happen directly inside your browser. Your inventory data is not sent to a DIXANI server.</p></details>
 </section>
 <section class="info-section">
-
-    <h2>
+<h2>
         Related Inventory Tools
     </h2>
-
-    <div class="info-grid">
-
-        <div>
-
-            <span>01</span>
-
-            <h3>
+<div class="info-grid">
+<div>
+<span>01</span>
+<h3>
                 Reorder Point Calculator
             </h3>
-
-            <p>
+<p>
                 Estimate when inventory should be reordered
                 based on usage, lead time and safety stock.
             </p>
-
-            <a href="/inventory/reorder-point/">
+<a href="/inventory/reorder-point/">
                 Open Reorder Point Calculator →
             </a>
-
-        </div>
-
-
-        <div>
-
-            <span>02</span>
-
-            <h3>
+</div>
+<div>
+<span>02</span>
+<h3>
                 Safety Stock Calculator
             </h3>
-
-            <p>
+<p>
                 Estimate buffer stock to help protect against
                 demand or lead-time variability.
             </p>
-
-            <a href="/inventory/safety-stock/">
+<a href="/inventory/safety-stock/">
                 Open Safety Stock Calculator →
             </a>
-
-        </div>
-
-
-        <div>
-
-            <span>03</span>
-
-            <h3>
+</div>
+<div>
+<span>03</span>
+<h3>
                 Inventory Turnover Calculator
             </h3>
-
-            <p>
+<p>
                 Measure how often average inventory moves
                 during a reporting period.
             </p>
-
-            <a href="/inventory/inventory-turnover/">
+<a href="/inventory/inventory-turnover/">
                 Open Inventory Turnover Calculator →
             </a>
-
-        </div>
-
-
-        <div>
-
-            <span>04</span>
-
-            <h3>
+</div>
+<div>
+<span>04</span>
+<h3>
                 EOQ Calculator
             </h3>
-
-            <p>
+<p>
                 Estimate an economic order quantity based on
                 demand, ordering cost and holding cost.
             </p>
-
-            <a href="/inventory/eoq-calculator/">
+<a href="/inventory/eoq-calculator/">
                 Open EOQ Calculator →
             </a>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 </main>
-<footer class="tool-footer"><div><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span></div><p>© 2026 DIXANI. All rights reserved.</p></footer>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
+</footer>
 <script src="../../assets/js/inventory.js"></script>
-</body></html>
+<script src="/assets/js/main.js"></script></body></html>

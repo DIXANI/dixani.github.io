@@ -1,9 +1,9 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
 
+<html lang="en">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,166 +11,85 @@
 
   gtag('config', 'G-LQEH9L9TZ4');
 </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Free Markup Calculator | Selling Price, Profit & Margin | DIXANI</title>
-
-<meta name="description"
-content="Free markup calculator to calculate selling price, markup percentage, profit, equivalent margin, revenue and total profit from cost and selling price.">
-
-<meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI">
-<meta name="theme-color" content="#2563eb">
-
-<link rel="canonical"
-href="https://dixani.github.io/categories/business/markup-calculator/">
-
-<link rel="stylesheet"
-href="/assets/css/templates.css">
-
-<link rel="stylesheet"
-href="markup-calculator.css">
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Free Markup Calculator | Selling Price, Profit &amp; Margin | DIXANI</title>
+<meta content="Free markup calculator to calculate selling price, markup percentage, profit, equivalent margin, revenue and total profit from cost and selling price." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/>
+<meta content="#2563eb" name="theme-color"/>
+<link href="https://dixani.github.io/categories/business/markup-calculator/" rel="canonical"/>
+<link href="/assets/css/templates.css" rel="stylesheet"/>
+<link href="markup-calculator.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-
-<header class="site-header">
-
-<div class="container header-inner">
-
-<a href="/" class="logo">DIXANI</a>
-
-<button class="menu-button"
-        id="menuButton"
-        type="button">
-☰
-</button>
-
-<nav class="main-nav" id="mainNav">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/" class="active">Business</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a class="active" href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main>
-
 <!-- HERO -->
-
 <section class="template-hero">
-
 <div class="container">
-
 <div class="hero-badge">
 📈 BUSINESS CALCULATOR
 </div>
-
 <h1>
 Markup
 <span>Calculator</span>
 </h1>
-
 <p>
 Calculate selling price from cost and markup,
 or calculate markup from cost and selling price.
 See profit, equivalent margin and total values
 in one simple calculator.
 </p>
-
 <div class="hero-note">
-
 <strong>Free calculator</strong>
 <span>•</span>
-Markup & margin
+Markup &amp; margin
 <span>•</span>
 Selling price
 <span>•</span>
 No account required
 
 </div>
-
 </div>
-
 </section>
-
-
 <!-- CALCULATOR -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="calculator-shell">
-
-
 <!-- TABS -->
-
 <div class="calculator-tabs">
-
-<button
-class="calc-tab active"
-data-mode="selling"
-type="button">
+<button class="calc-tab active" data-mode="selling" type="button">
 
 Calculate Selling Price
 
 </button>
-
-<button
-class="calc-tab"
-data-mode="markup"
-type="button">
+<button class="calc-tab" data-mode="markup" type="button">
 
 Calculate Markup
 
 </button>
-
 </div>
-
-
 <div class="calculator-grid">
-
-
 <!-- INPUTS -->
-
 <div class="calculator-panel input-panel">
-
 <div class="panel-heading">
-
 <span class="section-label">
 INPUTS
 </span>
-
 <h2 id="inputHeading">
 Calculate Selling Price
 </h2>
-
 <p id="inputDescription">
 Enter your cost price and markup percentage
 to calculate the required selling price.
 </p>
-
 </div>
-
-
 <div class="field-group">
-
 <label for="currency">
 Currency
 </label>
-
 <select id="currency">
-
 <option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
@@ -179,1017 +98,551 @@ Currency
 <option value="SAR">SAR</option>
 <option value="LKR">LKR</option>
 <option value="INR">INR</option>
-
 </select>
-
 </div>
-
-
 <div class="field-group">
-
 <label for="costPrice">
 Cost Price
 </label>
-
 <div class="input-with-unit">
-
-<span class="currency-prefix"
-id="costCurrency">
+<span class="currency-prefix" id="costCurrency">
 QAR
 </span>
-
-<input
-id="costPrice"
-type="number"
-min="0"
-step="0.01"
-placeholder="100.00">
-
+<input id="costPrice" min="0" placeholder="100.00" step="0.01" type="number"/>
 </div>
-
 <small>
 The amount paid or spent per unit.
 </small>
-
 </div>
-
-
 <!-- MARKUP INPUT -->
-
-<div class="field-group"
-id="markupInputGroup">
-
+<div class="field-group" id="markupInputGroup">
 <label for="markupPercentInput">
 Markup
 </label>
-
 <div class="input-with-unit">
-
-<input
-id="markupPercentInput"
-type="number"
-min="0"
-step="0.01"
-placeholder="50">
-
+<input id="markupPercentInput" min="0" placeholder="50" step="0.01" type="number"/>
 <span class="unit-suffix">
 %
 </span>
-
 </div>
-
 <small>
 Markup is calculated as a percentage of cost price.
 </small>
-
 </div>
-
-
 <!-- SELLING PRICE INPUT -->
-
-<div class="field-group hidden"
-id="sellingPriceGroup">
-
+<div class="field-group hidden" id="sellingPriceGroup">
 <label for="sellingPrice">
 Selling Price
 </label>
-
 <div class="input-with-unit">
-
-<span class="currency-prefix"
-id="sellingCurrency">
+<span class="currency-prefix" id="sellingCurrency">
 QAR
 </span>
-
-<input
-id="sellingPrice"
-type="number"
-min="0"
-step="0.01"
-placeholder="150.00">
-
+<input id="sellingPrice" min="0" placeholder="150.00" step="0.01" type="number"/>
 </div>
-
 <small>
 The price charged to the customer per unit.
 </small>
-
 </div>
-
-
 <div class="field-group">
-
 <label for="quantity">
 Quantity
 <span class="optional">(optional)</span>
 </label>
-
-<input
-id="quantity"
-type="number"
-min="0"
-step="1"
-placeholder="1">
-
+<input id="quantity" min="0" placeholder="1" step="1" type="number"/>
 <small>
 Use quantity to calculate total revenue,
 total cost and total profit.
 </small>
-
 </div>
-
-
 <div class="calculator-actions">
-
-<button
-id="calculateButton"
-class="primary-button"
-type="button">
+<button class="primary-button" id="calculateButton" type="button">
 
 Calculate
 
 </button>
-
-<button
-id="exampleButton"
-class="secondary-button"
-type="button">
+<button class="secondary-button" id="exampleButton" type="button">
 
 Load Example
 
 </button>
-
-<button
-id="clearButton"
-class="text-button"
-type="button">
+<button class="text-button" id="clearButton" type="button">
 
 Clear
 
 </button>
-
 </div>
-
-
-<div
-id="calculatorError"
-class="calculator-error"
-role="alert">
+<div class="calculator-error" id="calculatorError" role="alert">
 </div>
-
 </div>
-
-
 <!-- RESULTS -->
-
 <div class="calculator-panel result-panel">
-
 <div class="panel-heading">
-
 <span class="section-label">
 RESULTS
 </span>
-
 <h2>
-Markup & Pricing Summary
+Markup &amp; Pricing Summary
 </h2>
-
 <p>
 Review selling price, markup,
 margin and profit results.
 </p>
-
 </div>
-
-
 <div class="result-primary">
-
-<span class="result-label"
-id="primaryResultLabel">
+<span class="result-label" id="primaryResultLabel">
 Selling Price
 </span>
-
-<strong
-id="primaryResult">
+<strong id="primaryResult">
 QAR 0.00
 </strong>
-
-<p
-id="primaryResultNote">
+<p id="primaryResultNote">
 Enter your values and calculate.
 </p>
-
 </div>
-
-
 <div class="result-grid">
-
 <div class="result-card">
-
 <span>
 Markup
 </span>
-
-<strong
-id="resultMarkup">
+<strong id="resultMarkup">
 0.00%
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 Equivalent Margin
 </span>
-
-<strong
-id="resultMargin">
+<strong id="resultMargin">
 0.00%
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 Profit per Unit
 </span>
-
-<strong
-id="profitPerUnit">
+<strong id="profitPerUnit">
 QAR 0.00
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 Selling Price
 </span>
-
-<strong
-id="resultSellingPrice">
+<strong id="resultSellingPrice">
 QAR 0.00
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 Total Revenue
 </span>
-
-<strong
-id="totalRevenue">
+<strong id="totalRevenue">
 QAR 0.00
 </strong>
-
 </div>
-
-
 <div class="result-card">
-
 <span>
 Total Cost
 </span>
-
-<strong
-id="totalCost">
+<strong id="totalCost">
 QAR 0.00
 </strong>
-
 </div>
-
-
 <div class="result-card result-card-wide">
-
 <span>
 Total Profit
 </span>
-
-<strong
-id="totalProfit">
+<strong id="totalProfit">
 QAR 0.00
 </strong>
-
 </div>
-
 </div>
-
-
-<div
-class="formula-box"
-id="formulaBox">
-
+<div class="formula-box" id="formulaBox">
 <strong>
 Selling Price Formula
 </strong>
-
 <p>
 Selling Price = Cost Price × (1 + Markup %)
 </p>
-
 </div>
-
 </div>
-
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- MARKUP VS MARGIN -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 MARKUP VS MARGIN
 </span>
-
 <h2>
 Markup and margin use different calculation bases
 </h2>
-
 <p>
 Markup is based on cost price,
 while profit margin is based on selling price.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="category-grid">
-
 <div class="category-card">
-
 <div class="category-icon">
 📈
 </div>
-
 <div>
-
 <h3>
 Markup
 </h3>
-
 <p>
 Markup shows how much profit is added
 to cost as a percentage of cost price.
 </p>
-
 <span>
 Profit ÷ Cost × 100
 </span>
-
 </div>
-
 </div>
-
-
 <div class="category-card">
-
 <div class="category-icon">
 📊
 </div>
-
 <div>
-
 <h3>
 Profit Margin
 </h3>
-
 <p>
 Margin shows profit as a percentage
 of the final selling price.
 </p>
-
 <span>
 Profit ÷ Selling Price × 100
 </span>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- EXAMPLE -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="workflow-box">
-
 <div class="workflow-heading">
-
 <span class="section-label">
 EXAMPLE
 </span>
-
 <h2>
 Cost QAR 100 with a 50% markup
 </h2>
-
 <p>
 A 50% markup on a QAR 100 cost
 produces a selling price of QAR 150.
 </p>
-
 </div>
-
-
 <div class="workflow-example">
-
 <p>
-
 <strong>Selling Price:</strong>
 QAR 150
 
 <span>•</span>
-
 <strong>Profit:</strong>
 QAR 50
 
 <span>•</span>
-
 <strong>Markup:</strong>
 50%
 
 <span>•</span>
-
 <strong>Margin:</strong>
 33.33%
 
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- HOW TO USE -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="workflow-box">
-
 <div class="workflow-heading">
-
 <span class="section-label">
 HOW IT WORKS
 </span>
-
 <h2>
 Calculate markup in four simple steps
 </h2>
-
 <p>
 Use either cost and markup percentage
 or cost and selling price.
 </p>
-
 </div>
-
-
 <div class="workflow">
-
 <div>
-
 <span>01</span>
-
 <strong>
 Enter Cost
 </strong>
-
 <p>
 Enter the cost price
 for one unit.
 </p>
-
 </div>
-
-
 <div class="workflow-arrow">
 →
 </div>
-
-
 <div>
-
 <span>02</span>
-
 <strong>
 Choose Mode
 </strong>
-
 <p>
 Calculate selling price
 or calculate markup.
 </p>
-
 </div>
-
-
 <div class="workflow-arrow">
 →
 </div>
-
-
 <div>
-
 <span>03</span>
-
 <strong>
 Calculate
 </strong>
-
 <p>
 DIXANI calculates markup,
 margin and profit.
 </p>
-
 </div>
-
-
 <div class="workflow-arrow">
 →
 </div>
-
-
 <div>
-
 <span>04</span>
-
 <strong>
 Review
 </strong>
-
 <p>
 Use the result to support
 your pricing decision.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- WHO FOR -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 WHO IT'S FOR
 </span>
-
 <h2>
 Useful for product and service pricing
 </h2>
-
 <p>
 Use the calculator for straightforward
 pricing decisions where cost and selling price
 are known.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="benefit-grid">
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Retail Businesses
 </h3>
-
 <p>
 Calculate selling prices
 from product cost and markup.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 E-commerce Sellers
 </h3>
-
 <p>
 Check markup and equivalent
 profit margin before pricing products.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Small Businesses
 </h3>
-
 <p>
 Understand profitability
 without spreadsheet formulas.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Service Businesses
 </h3>
-
 <p>
 Calculate markup where
 cost and selling price are known.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- RELATED -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 RELATED DIXANI RESOURCES
 </span>
-
 <h2>
 More business calculators
 </h2>
-
 </div>
-
 </div>
-
-
 <div class="category-grid">
-
-
-<a href="/categories/business/profit-margin-calculator/"
-   class="category-card">
-
+<a class="category-card" href="/categories/business/profit-margin-calculator/">
 <div class="category-icon">
 💰
 </div>
-
 <div>
-
 <h3>
 Profit Margin Calculator
 </h3>
-
 <p>
 Calculate profit margin,
 markup and target selling price.
 </p>
-
 <span>
 Open Tool →
 </span>
-
 </div>
-
 </a>
-
-
-<a href="/categories/business/"
-   class="category-card">
-
+<a class="category-card" href="/categories/business/">
 <div class="category-icon">
 💼
 </div>
-
 <div>
-
 <h3>
 Business Tools
 </h3>
-
 <p>
 Browse DIXANI business
 calculators and practical utilities.
 </p>
-
 <span>
 Browse Business Tools →
 </span>
-
 </div>
-
 </a>
-
-
-<a href="/categories/finance/"
-   class="category-card">
-
+<a class="category-card" href="/categories/finance/">
 <div class="category-icon">
 📈
 </div>
-
 <div>
-
 <h3>
 Finance Tools
 </h3>
-
 <p>
 Explore financial calculators
 for business planning.
 </p>
-
 <span>
 Browse Finance Tools →
 </span>
-
 </div>
-
 </a>
-
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- FAQ -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 FAQ
 </span>
-
 <h2>
 Markup Calculator — Frequently Asked Questions
 </h2>
-
 </div>
-
 </div>
-
-
 <div class="faq-section">
-
 <details>
-
 <summary>
 How do I calculate markup?
 </summary>
-
 <p>
 Subtract cost price from selling price,
 divide the profit by cost price
 and multiply by 100.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 How do I calculate selling price from markup?
 </summary>
-
 <p>
 Multiply the cost price by one plus
 the markup percentage expressed as a decimal.
 For example, a 50% markup uses Cost × 1.50.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Is 50% markup the same as 50% profit margin?
 </summary>
-
 <p>
 No. A 50% markup produces a 33.33% margin
 when the selling price is calculated from cost.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Can markup be negative?
 </summary>
-
 <p>
 Yes. If selling price is below cost,
 the result represents a negative markup
 and a loss.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Does quantity change the markup percentage?
 </summary>
-
 <p>
 No. Quantity changes total revenue,
 total cost and total profit,
 but not the per-unit markup percentage.
 </p>
-
 </details>
-
 </div>
-
 </div>
-
 </section>
-
 </main>
-
-
 <footer class="footer">
-
 <div class="container">
-
 <div class="footer-grid">
-
-<div>
-
-<div class="footer-brand">
-DIXANI
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
 </div>
-
-<p>
-Practical Tools. Smarter Work.
-</p>
-
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
 </div>
-
-
-<div>
-
-<h4>
-Resources
-</h4>
-
-<a href="/#tools">
-Online Tools
-</a>
-
-<a href="/templates/">
-Templates
-</a>
-
-<a href="/categories/inventory/">
-Inventory Tools
-</a>
-
-<a href="/categories/logistics/">
-Logistics Tools
-</a>
-
-<a href="/categories/business/">
-Business Tools
-</a>
-
-</div>
-
-
-<div>
-
-<h4>
-Company
-</h4>
-
-<a href="/about/">
-About
-</a>
-
-<a href="/contact/">
-Contact
-</a>
-
-</div>
-
-
-<div>
-
-<h4>
-Legal
-</h4>
-
-<a href="/privacy/">
-Privacy
-</a>
-
-<a href="/terms/">
-Terms
-</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-© 2026 DIXANI. All rights reserved.
-</div>
-
-</div>
-
 </footer>
-
-
 <script src="/assets/js/main.js"></script>
 <script src="markup-calculator.js"></script>
-
 </body>
-
 </html>

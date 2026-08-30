@@ -1,11 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
-
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 
@@ -16,133 +14,44 @@ function gtag(){
 gtag('js', new Date());
 gtag('config', 'G-LQEH9L9TZ4');
 </script>
-
-<meta charset="utf-8">
-
-<meta name="viewport"
-content="width=device-width,initial-scale=1">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>
 Compound Interest Calculator | Investment Growth | DIXANI
 </title>
-
-<meta name="description"
-content="Free compound interest calculator to estimate future value, total contributions and interest earned with different compounding frequencies and recurring contributions.">
-
-<meta name="robots"
-content="index, follow">
-
-<meta name="author"
-content="DIXANI">
-
-<meta name="theme-color"
-content="#2563eb">
-
-<link rel="canonical"
-href="https://dixani.github.io/categories/finance/compound-interest-calculator/">
-
-<link rel="stylesheet"
-href="/assets/css/compound-interest-calculator.css">
-
-</head>
-
-
+<meta content="Free compound interest calculator to estimate future value, total contributions and interest earned with different compounding frequencies and recurring contributions." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/>
+<meta content="#2563eb" name="theme-color"/>
+<link href="https://dixani.github.io/categories/finance/compound-interest-calculator/" rel="canonical"/>
+<link href="/assets/css/compound-interest-calculator.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
-
-<header class="site-header">
-
-<div class="container header-inner">
-
-<a href="/" class="logo">
-DIXANI
-</a>
-
-<button
-class="menu-button"
-id="menuButton"
-type="button"
-aria-label="Open navigation">
-☰
-</button>
-
-<nav
-class="main-nav"
-id="mainNav"
-aria-label="Main navigation">
-
-<a href="/#tools">
-Tools
-</a>
-
-<a href="/templates/">
-Templates
-</a>
-
-<a href="/categories/inventory/">
-Inventory
-</a>
-
-<a href="/categories/logistics/">
-Logistics
-</a>
-
-<a href="/categories/business/">
-Business
-</a>
-
-<a href="/categories/finance/"
-class="active">
-Finance
-</a>
-
-<a href="/about/">
-About
-</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a class="active" href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main>
-
-
 <!-- =====================================================
      HERO
 ===================================================== -->
-
 <section class="tool-hero">
-
 <div class="container">
-
 <div class="hero-badge">
 📈 FINANCE TOOL
 </div>
-
 <h1>
 Compound Interest
 <span>Calculator</span>
 </h1>
-
 <p>
 Estimate how an initial investment can grow over time
 with compound interest and optional recurring contributions.
 </p>
-
 <div class="hero-note">
-
 <strong>
 Free online calculator
 </strong>
-
 <span>•</span>
 
 No account required
@@ -152,644 +61,369 @@ No account required
 Runs in your browser
 
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      CALCULATOR
 ===================================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="calculator-layout">
-
-
 <!-- INPUT CARD -->
-
 <div class="calculator-card">
-
 <div class="card-heading">
-
 <div>
-
 <span class="section-label">
 INVESTMENT DETAILS
 </span>
-
 <h2>
 Enter your investment information
 </h2>
-
 <p>
 Enter your starting amount, interest rate,
 investment period and contribution assumptions.
 </p>
-
 </div>
-
-<button
-type="button"
-class="example-button"
-id="loadExample">
+<button class="example-button" id="loadExample" type="button">
 Load Example
 </button>
-
 </div>
-
-
-
 <div class="input-grid">
-
-
 <label class="field">
-
 <span>
 Initial Investment
 </span>
-
 <div class="input-prefix">
-
 <span id="currencyPrefix">
 QAR
 </span>
-
-<input
-type="number"
-id="principal"
-min="0"
-step="any"
-inputmode="decimal"
-placeholder="10000">
-
+<input id="principal" inputmode="decimal" min="0" placeholder="10000" step="any" type="number"/>
 </div>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Annual Interest Rate
 </span>
-
 <div class="input-suffix">
-
-<input
-type="number"
-id="interestRate"
-min="0"
-step="any"
-inputmode="decimal"
-placeholder="5">
-
+<input id="interestRate" inputmode="decimal" min="0" placeholder="5" step="any" type="number"/>
 <span>
 %
 </span>
-
 </div>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Investment Period
 </span>
-
 <div class="term-input">
-
-<input
-type="number"
-id="investmentPeriod"
-min="0"
-step="any"
-inputmode="decimal"
-placeholder="10">
-
-<select
-id="periodUnit"
-aria-label="Investment period unit">
-
+<input id="investmentPeriod" inputmode="decimal" min="0" placeholder="10" step="any" type="number"/>
+<select aria-label="Investment period unit" id="periodUnit">
 <option value="years">
 Years
 </option>
-
 <option value="months">
 Months
 </option>
-
 </select>
-
 </div>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Compounding Frequency
 </span>
-
 <select id="compoundFrequency">
-
 <option value="1">
 Annually
 </option>
-
 <option value="2">
 Semi-annually
 </option>
-
 <option value="4">
 Quarterly
 </option>
-
-<option value="12" selected>
+<option selected="" value="12">
 Monthly
 </option>
-
 <option value="365">
 Daily
 </option>
-
 </select>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Additional Contribution
 </span>
-
 <div class="input-prefix">
-
 <span id="contributionCurrencyPrefix">
 QAR
 </span>
-
-<input
-type="number"
-id="contribution"
-min="0"
-step="any"
-inputmode="decimal"
-placeholder="500">
-
+<input id="contribution" inputmode="decimal" min="0" placeholder="500" step="any" type="number"/>
 </div>
-
 <small>
 Optional
 </small>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Contribution Frequency
 </span>
-
 <select id="contributionFrequency">
-
 <option value="0">
 No Contributions
 </option>
-
-<option value="12" selected>
+<option selected="" value="12">
 Monthly
 </option>
-
 <option value="4">
 Quarterly
 </option>
-
 <option value="1">
 Annually
 </option>
-
 </select>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Currency
 </span>
-
 <select id="currency">
-
 <option value="QAR">
 QAR
 </option>
-
 <option value="USD">
 USD
 </option>
-
 <option value="EUR">
 EUR
 </option>
-
 <option value="GBP">
 GBP
 </option>
-
 <option value="AED">
 AED
 </option>
-
 <option value="SAR">
 SAR
 </option>
-
 <option value="LKR">
 LKR
 </option>
-
 <option value="INR">
 INR
 </option>
-
 </select>
-
 </label>
-
-
-
 <label class="field">
-
 <span>
 Decimal Places
 </span>
-
 <select id="decimalPlaces">
-
 <option value="2">
 2
 </option>
-
 <option value="0">
 0
 </option>
-
 <option value="1">
 1
 </option>
-
 <option value="3">
 3
 </option>
-
 </select>
-
 </label>
-
-
 </div>
-
-
-
-<div
-class="warning"
-id="warning"
-hidden>
+<div class="warning" hidden="" id="warning">
 </div>
-
-
-
 <div class="calculator-actions">
-
-<button
-type="button"
-class="primary-button"
-id="calculate">
+<button class="primary-button" id="calculate" type="button">
 Calculate Growth
 </button>
-
-<button
-type="button"
-class="secondary-button"
-id="clear">
+<button class="secondary-button" id="clear" type="button">
 Clear
 </button>
-
 </div>
-
 </div>
-
-
-
 <!-- RESULTS CARD -->
-
 <div class="calculator-card results-card">
-
 <div class="card-heading">
-
 <div>
-
 <span class="section-label">
 INVESTMENT SUMMARY
 </span>
-
 <h2>
 Estimated future value
 </h2>
-
 <p>
 Review the estimated balance, contributions
 and compound interest earned.
 </p>
-
 </div>
-
 </div>
-
-
-
 <div class="results-grid">
-
 <div class="result-box featured">
-
 <span>
 Future Value
 </span>
-
 <strong id="futureValue">
 —
 </strong>
-
 </div>
-
-
-
 <div class="result-box">
-
 <span>
 Total Contributions
 </span>
-
 <strong id="totalContributions">
 —
 </strong>
-
 </div>
-
-
-
 <div class="result-box">
-
 <span>
 Interest Earned
 </span>
-
 <strong id="interestEarned">
 —
 </strong>
-
 </div>
-
-
-
 <div class="result-box">
-
 <span>
 Growth
 </span>
-
 <strong id="growthPercent">
 —
 </strong>
-
 </div>
-
 </div>
-
-
-
-<div class="loan-summary"
-id="investmentSummary">
-
+<div class="loan-summary" id="investmentSummary">
 <h3>
 Enter your investment details
 </h3>
-
 <p>
 DIXANI will estimate your future value,
 total contributions and compound interest.
 </p>
-
 </div>
-
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      GROWTH BREAKDOWN
 ===================================================== -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 GROWTH BREAKDOWN
 </span>
-
 <h2>
 See where the final balance comes from
 </h2>
-
 <p>
 Compare your initial investment, additional contributions
 and estimated compound interest.
 </p>
-
 </div>
-
 </div>
-
-
-
 <div class="comparison-grid">
-
 <div class="comparison-card">
-
 <span>
 Initial Investment
 </span>
-
 <strong id="initialBreakdown">
 —
 </strong>
-
 </div>
-
-
 <div class="comparison-card">
-
 <span>
 Additional Contributions
 </span>
-
 <strong id="contributionBreakdown">
 —
 </strong>
-
 </div>
-
-
 <div class="comparison-card">
-
 <span>
 Compound Interest
 </span>
-
 <strong id="interestBreakdown">
 —
 </strong>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      EXAMPLE
 ===================================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="example-box">
-
 <span class="section-label">
 EXAMPLE
 </span>
-
 <h2>
 Example compound interest calculation
 </h2>
-
 <p>
 Suppose you start with QAR 10,000, earn an annual
 interest rate of 5% compounded monthly for 10 years,
 and contribute QAR 500 each month.
 </p>
-
 <div class="example-divider"></div>
-
 <p>
-
 <strong>
 Initial Investment:
 </strong>
 QAR 10,000
 
 <span>•</span>
-
 <strong>
 Interest Rate:
 </strong>
 5%
 
 <span>•</span>
-
 <strong>
 Period:
 </strong>
 10 years
 
 <span>•</span>
-
 <strong>
 Contribution:
 </strong>
 QAR 500 monthly
 
 </p>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      HOW IT WORKS
 ===================================================== -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 HOW IT WORKS
 </span>
-
 <h2>
 How compound interest works
 </h2>
-
 <p>
 Compound interest means interest is earned not only
 on the original principal but also on previously
 accumulated interest.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="formula-box">
-
 <strong>
 A = P(1 + r ÷ n)<sup>nt</sup>
 </strong>
-
 <p>
 A = future value,
 P = principal,
@@ -797,586 +431,307 @@ r = annual interest rate,
 n = number of compounding periods per year,
 and t = time in years.
 </p>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      WHY COMPOUNDING MATTERS
 ===================================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
-COMPOUNDING & CONTRIBUTIONS
+COMPOUNDING &amp; CONTRIBUTIONS
 </span>
-
 <h2>
 What can affect investment growth?
 </h2>
-
 <p>
 Investment growth can change significantly depending
 on the interest rate, time period, compounding frequency
 and amount contributed.
 </p>
-
 </div>
-
 </div>
-
-
-
 <div class="benefit-grid">
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Starting Amount
 </h3>
-
 <p>
 A larger initial investment gives compound interest
 a larger starting balance to work with.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Investment Period
 </h3>
-
 <p>
 Longer periods allow more time for accumulated
 interest to generate additional interest.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Interest Rate
 </h3>
-
 <p>
 Higher rates can increase potential growth,
 although actual investment returns may vary.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Regular Contributions
 </h3>
-
 <p>
 Recurring contributions can substantially increase
 the amount available to compound over time.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      IMPORTANT NOTES
 ===================================================== -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 IMPORTANT NOTES
 </span>
-
 <h2>
 Understand what this estimate assumes
 </h2>
-
 <p>
 This calculator provides a mathematical growth estimate.
 Actual savings or investment returns may differ.
 </p>
-
 </div>
-
 </div>
-
-
 <div class="benefit-grid">
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Constant Rate
 </h3>
-
 <p>
 The calculation assumes the entered annual
 interest rate remains constant.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Regular Contributions
 </h3>
-
 <p>
 Recurring contributions are assumed to be made
 consistently at the selected frequency.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 No Fees or Taxes
 </h3>
-
 <p>
 Taxes, account fees, investment charges and
 other deductions are not included.
 </p>
-
 </div>
-
-
 <div class="benefit">
-
 <span>✓</span>
-
 <h3>
 Planning Estimate
 </h3>
-
 <p>
 The results are intended for general planning
 and educational purposes.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      RELATED TOOLS
 ===================================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 RELATED DIXANI TOOLS
 </span>
-
 <h2>
 More finance calculators
 </h2>
-
 </div>
-
 </div>
-
-
 <div class="category-grid finance-three-grid">
-
-
-<a
-href="/categories/finance/loan-payment-calculator/"
-class="category-card">
-
+<a class="category-card" href="/categories/finance/loan-payment-calculator/">
 <div class="category-icon">
 💳
 </div>
-
 <div>
-
 <h3>
 Loan Payment Calculator
 </h3>
-
 <p>
 Estimate monthly loan payments,
 total interest and repayment cost.
 </p>
-
 <span>
 Open Calculator →
 </span>
-
 </div>
-
 </a>
-
-
-
-<a
-href="/categories/finance/break-even-calculator/"
-class="category-card">
-
+<a class="category-card" href="/categories/finance/break-even-calculator/">
 <div class="category-icon">
 📊
 </div>
-
 <div>
-
 <h3>
 Break-Even Calculator
 </h3>
-
 <p>
 Calculate break-even units,
 revenue and contribution margin.
 </p>
-
 <span>
 Open Calculator →
 </span>
-
 </div>
-
 </a>
-
-
-
-<a
-href="/categories/finance/discount-calculator/"
-class="category-card">
-
+<a class="category-card" href="/categories/finance/discount-calculator/">
 <div class="category-icon">
 🏷️
 </div>
-
 <div>
-
 <h3>
 Discount Calculator
 </h3>
-
 <p>
 Calculate sale price,
 savings and stacked discounts.
 </p>
-
 <span>
 Open Calculator →
 </span>
-
 </div>
-
 </a>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 <!-- =====================================================
      FAQ
 ===================================================== -->
-
 <section class="section featured-section">
-
 <div class="container">
-
 <div class="section-heading">
-
 <div>
-
 <span class="section-label">
 FAQ
 </span>
-
 <h2>
 Compound Interest Calculator — Frequently Asked Questions
 </h2>
-
 </div>
-
 </div>
-
-
 <div class="faq-section">
-
 <details>
-
 <summary>
 What is compound interest?
 </summary>
-
 <p>
 Compound interest is interest calculated on the original
 principal plus interest that has already accumulated.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 What is compounding frequency?
 </summary>
-
 <p>
 Compounding frequency determines how often interest is
 added to the balance. Common frequencies include annually,
 quarterly, monthly and daily.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Can I include regular contributions?
 </summary>
-
 <p>
 Yes. You can enter an optional contribution and choose
 whether it is made monthly, quarterly or annually.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Does a higher compounding frequency increase growth?
 </summary>
-
 <p>
 With the same nominal annual interest rate, more frequent
 compounding generally produces a slightly higher future value.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Does this calculator predict investment returns?
 </summary>
-
 <p>
 No. It provides a mathematical estimate using the rate
 you enter. Actual investment returns can rise or fall and
 are not guaranteed.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Does the calculation include taxes or investment fees?
 </summary>
-
 <p>
 No. Taxes, management fees, transaction costs and other
 charges are not included unless you account for them
 separately in your assumptions.
 </p>
-
 </details>
-
-
 <details>
-
 <summary>
 Is this financial advice?
 </summary>
-
 <p>
 No. This calculator is intended for general educational
 and planning purposes.
 </p>
-
 </details>
-
 </div>
-
 </div>
-
 </section>
-
-
 </main>
-
-
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
-
 <footer class="footer">
-
 <div class="container">
-
 <div class="footer-grid">
-
-
-<div>
-
-<div class="footer-brand">
-DIXANI
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
 </div>
-
-<p>
-Practical Tools. Smarter Work.
-</p>
-
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
 </div>
-
-
-<div>
-
-<h4>
-Resources
-</h4>
-
-<a href="/#tools">
-Online Tools
-</a>
-
-<a href="/templates/">
-Templates
-</a>
-
-<a href="/categories/inventory/">
-Inventory Tools
-</a>
-
-<a href="/categories/logistics/">
-Logistics Tools
-</a>
-
-<a href="/categories/business/">
-Business Tools
-</a>
-
-<a href="/categories/finance/">
-Finance Tools
-</a>
-
-</div>
-
-
-<div>
-
-<h4>
-Company
-</h4>
-
-<a href="/about/">
-About
-</a>
-
-<a href="/contact/">
-Contact
-</a>
-
-</div>
-
-
-<div>
-
-<h4>
-Legal
-</h4>
-
-<a href="/privacy/">
-Privacy
-</a>
-
-<a href="/terms/">
-Terms
-</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-© 2026 DIXANI. All rights reserved.
-</div>
-
-</div>
-
 </footer>
-
-
 <script src="/assets/js/compound-interest-calculator.js"></script>
 <script src="/assets/js/main.js"></script>
-
 </body>
 </html>

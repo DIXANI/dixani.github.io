@@ -1,168 +1,90 @@
-<!doctype html><html lang="en"><head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!DOCTYPE html>
+<html lang="en"><head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-LQEH9L9TZ4');
-</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Days Inventory Outstanding (DIO) Calculator | DIXANI</title><meta name="description"
-      content="Free Days Inventory Outstanding calculator to calculate DIO, average inventory, inventory turnover, daily COGS and compare current inventory with a target DIO scenario.">
-
-<meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI"><link rel="canonical" href="https://dixani.github.io/inventory/dio-calculator/"><link rel="stylesheet" href="../../assets/css/dio-calculator.css"></head><body>
-<header class="tool-header">
-
-    <div class="header-container">
-
-        <a href="/" class="brand">
-            DIXANI
-        </a>
-
-        <nav class="header-nav">
-
-            <a href="/#tools">
-                Tools
-            </a>
-
-            <a href="/templates/">
-                Templates
-            </a>
-
-            <a href="/categories/inventory/">
-                Inventory
-            </a>
-
-            <a href="/categories/logistics/">
-                Logistics
-            </a>
-
-            <a href="/categories/business/">
-                Business
-            </a>
-
-            <a href="/categories/finance/">
-                Finance
-            </a>
-
-            <a href="/about/">
-                About
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
+</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Days Inventory Outstanding (DIO) Calculator | DIXANI</title><meta content="Free Days Inventory Outstanding calculator to calculate DIO, average inventory, inventory turnover, daily COGS and compare current inventory with a target DIO scenario." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/><link href="https://dixani.github.io/inventory/dio-calculator/" rel="canonical"/><link href="../../assets/css/dio-calculator.css" rel="stylesheet"/><link href="/assets/css/site-consistency.css" rel="stylesheet"/></head><body>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main>
 <section class="hero"><b>📅 INVENTORY TOOL</b><h1>Days Inventory Outstanding <span>Calculator</span></h1><p>Calculate Days Inventory Outstanding (DIO), estimate how long
     inventory is held and compare current inventory with a target DIO scenario</p></section>
-<section class="card"><div class="top"><div><h2>Inventory & COGS</h2><p>Choose how to provide average inventory.</p></div><button type="button" id="example">Load Example</button></div><div class="tabs"><button type="button" id="beTab" class="active">Beginning + Ending</button><button type="button" id="avgTab">Direct Average Inventory</button></div><div class="formula" id="formula"><b>DIO Formula:</b> ((Beginning + Ending) ÷ 2 ÷ COGS) × Period Days</div><div class="grid">
-<label>Cost of Goods Sold (COGS)<input id="cogs" type="number" min="0" step="any" inputmode="decimal" placeholder="500000"></label><label id="bGroup">Beginning Inventory<input id="beginning" type="number" min="0" step="any" inputmode="decimal" placeholder="100000"></label><label id="eGroup">Ending Inventory<input id="ending" type="number" min="0" step="any" inputmode="decimal" placeholder="150000"></label><label id="aGroup" hidden>Average Inventory<input id="average" type="number" min="0" step="any" inputmode="decimal" placeholder="125000"></label><label>Reporting Period<select id="period"><option value="365">1 Year (365 days)</option><option value="366">Leap Year (366 days)</option><option value="180">6 Months (180 days)</option><option value="90">Quarter (90 days)</option><option value="30">Month (30 days)</option></select></label><label>Target DIO (Days)<input id="target" type="number" min="0" step="any" inputmode="decimal" placeholder="75"></label><label>Currency<select id="currency"><option>QAR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></label></div><div id="warning" class="warning" hidden></div><div class="actions"><button type="button" class="primary" id="calculate">Calculate DIO</button><button type="button" id="clear">Clear</button></div></section>
+<section class="card"><div class="top"><div><h2>Inventory &amp; COGS</h2><p>Choose how to provide average inventory.</p></div><button id="example" type="button">Load Example</button></div><div class="tabs"><button class="active" id="beTab" type="button">Beginning + Ending</button><button id="avgTab" type="button">Direct Average Inventory</button></div><div class="formula" id="formula"><b>DIO Formula:</b> ((Beginning + Ending) ÷ 2 ÷ COGS) × Period Days</div><div class="grid">
+<label>Cost of Goods Sold (COGS)<input id="cogs" inputmode="decimal" min="0" placeholder="500000" step="any" type="number"/></label><label id="bGroup">Beginning Inventory<input id="beginning" inputmode="decimal" min="0" placeholder="100000" step="any" type="number"/></label><label id="eGroup">Ending Inventory<input id="ending" inputmode="decimal" min="0" placeholder="150000" step="any" type="number"/></label><label hidden="" id="aGroup">Average Inventory<input id="average" inputmode="decimal" min="0" placeholder="125000" step="any" type="number"/></label><label>Reporting Period<select id="period"><option value="365">1 Year (365 days)</option><option value="366">Leap Year (366 days)</option><option value="180">6 Months (180 days)</option><option value="90">Quarter (90 days)</option><option value="30">Month (30 days)</option></select></label><label>Target DIO (Days)<input id="target" inputmode="decimal" min="0" placeholder="75" step="any" type="number"/></label><label>Currency<select id="currency"><option>QAR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></label></div><div class="warning" hidden="" id="warning"></div><div class="actions"><button class="primary" id="calculate" type="button">Calculate DIO</button><button id="clear" type="button">Clear</button></div></section>
 <section class="card"><div class="top"><div><h2>Current Inventory Performance</h2><p>DIO and supporting inventory metrics.</p></div><b class="pill" id="mode">BEGINNING + ENDING</b></div><div class="results"><div class="result featured"><small>Days Inventory Outstanding</small><strong id="dio">—</strong></div><div class="result"><small>Average Inventory</small><strong id="avgResult">—</strong></div><div class="result"><small>Inventory Turnover</small><strong id="turnover">—</strong></div><div class="result"><small>Daily COGS</small><strong id="daily">—</strong></div></div><div class="note"><h3 id="noteTitle">Enter your inventory data</h3><p id="noteText">DIXANI will calculate DIO and supporting inventory metrics.</p></div></section>
 <section class="card"><div class="top"><div><h2>Target DIO Scenario</h2><p>Compare current inventory with inventory implied by your target DIO.</p></div><b class="pill green">PLANNING SCENARIO</b></div><div class="compare"><div><span>Current DIO</span><strong id="currentLabel">—</strong><i><em id="currentBar"></em></i></div><div><span>Target DIO</span><strong id="targetLabel">—</strong><i><em class="targetbar" id="targetBar"></em></i></div></div><div class="scenario"><div class="result"><small>Target Inventory</small><strong id="targetInv">—</strong></div><div class="result featured"><small id="diffLabel">Inventory Difference</small><strong id="difference">—</strong></div><div class="result"><small>DIO Difference</small><strong id="dioDiff">—</strong></div></div><p class="disclaimer">This is a planning estimate, not guaranteed cash savings. It does not account for service levels, supplier constraints, seasonality or item-level requirements.</p></section><section class="card">
-
-    <h2>DIO Calculation Example</h2>
-
-    <p>
+<h2>DIO Calculation Example</h2>
+<p>
         Suppose annual cost of goods sold is QAR 500,000,
         beginning inventory is QAR 100,000 and ending inventory
         is QAR 150,000.
     </p>
-
-    <p>
+<p>
         Average inventory is:
     </p>
-
-    <div class="formula">
-        <b>
+<div class="formula">
+<b>
             (QAR 100,000 + QAR 150,000) ÷ 2
             = QAR 125,000
         </b>
-    </div>
-
-    <p>
+</div>
+<p>
         Using a 365-day reporting period:
     </p>
-
-    <div class="formula">
-        <b>
+<div class="formula">
+<b>
             DIO = (QAR 125,000 ÷ QAR 500,000) × 365
             = 91.25 days
         </b>
-    </div>
-
-    <p>
+</div>
+<p>
         This means the average inventory level represents approximately
         91.25 days of cost of goods sold under the values entered.
     </p>
-
 </section><section class="card">
-
-    <h2>What Does Days Inventory Outstanding Mean?</h2>
-
-    <p>
+<h2>What Does Days Inventory Outstanding Mean?</h2>
+<p>
         Days Inventory Outstanding estimates the average number of days
         inventory remains on hand before being sold or consumed.
     </p>
-
-    <p>
+<p>
         Lower DIO generally indicates faster inventory movement,
         while higher DIO indicates inventory is held for a longer period.
         However, there is no universal ideal DIO value.
     </p>
-
-    <p>
+<p>
         Appropriate inventory days depend on product type, supplier lead time,
         seasonality, service requirements, demand variability and business model.
     </p>
-
 </section>
 <section class="card">
-
-    <h2>Related DIXANI Inventory Tools</h2>
-
-    <div class="related">
-
-        <a href="/inventory/inventory-turnover/">
+<h2>Related DIXANI Inventory Tools</h2>
+<div class="related">
+<a href="/inventory/inventory-turnover/">
             🔄 <strong>Inventory Turnover Calculator</strong>
-        </a>
-
-        <a href="/inventory/eoq-calculator/">
+</a>
+<a href="/inventory/eoq-calculator/">
             📦 <strong>Economic Order Quantity Calculator</strong>
-        </a>
-
-        <a href="/inventory/reorder-point/">
+</a>
+<a href="/inventory/reorder-point/">
             🔁 <strong>Reorder Point Calculator</strong>
-        </a>
-
-    </div>
-
+</a>
+</div>
 </section>
-</main><footer class="tool-footer">
-
-    <div class="tool-footer-brand">
-        <strong>DIXANI</strong>
-        <span>Practical Tools. Smarter Work.</span>
-    </div>
-
-    <nav class="tool-footer-nav" aria-label="Footer navigation">
-
-        <a href="/#tools">Tools</a>
-        <a href="/templates/">Templates</a>
-        <a href="/categories/inventory/">Inventory</a>
-        <a href="/categories/logistics/">Logistics</a>
-        <a href="/categories/business/">Business</a>
-        <a href="/categories/finance/">Finance</a>
-        <a href="/about/">About</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-
-    </nav>
-
-    <span class="tool-footer-copy">
-        © 2026 DIXANI.
-    </span>
-
-</footer><script src="../../assets/js/dio-calculator.js"></script></body></html>
+</main><footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
+</footer><script src="../../assets/js/dio-calculator.js"></script><script src="/assets/js/main.js"></script></body></html>

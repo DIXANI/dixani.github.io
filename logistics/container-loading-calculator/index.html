@@ -1,157 +1,119 @@
-<!doctype html><html lang="en"><head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!DOCTYPE html>
+<html lang="en"><head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-LQEH9L9TZ4');
-</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Container Loading Calculator | DIXANI</title><meta name="description" content="Free container loading calculator for loose cartons. Estimate cartons per container, containers required, volume utilization and visualize loading for 20ft, 40ft and 40ft High Cube containers."><meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI"><link rel="canonical" href="https://dixani.github.io/logistics/container-loading-calculator/"><link rel="stylesheet" href="../../assets/css/container-loading-calculator.css"></head>
-
+</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Container Loading Calculator | DIXANI</title><meta content="Free container loading calculator for loose cartons. Estimate cartons per container, containers required, volume utilization and visualize loading for 20ft, 40ft and 40ft High Cube containers." name="description"/><meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/><link href="https://dixani.github.io/logistics/container-loading-calculator/" rel="canonical"/><link href="../../assets/css/container-loading-calculator.css" rel="stylesheet"/><link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-<header>
-
-<a href="/">DIXANI</a>
-
-<nav class="main-nav" id="mainNav" aria-label="Main navigation">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Business</a>
-<a href="/categories/finance/">Finance</a>
-<a href="/categories/converters/">Converters</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</header><main>
-<section class="hero"><b>🚢 WAREHOUSE & LOGISTICS TOOL</b><h1>Container Loading <span>Calculator</span></h1><p>Estimate how many loose cartons fit in 20ft, 40ft and
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory</a><a class="active" href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header><main>
+<section class="hero"><b>🚢 WAREHOUSE &amp; LOGISTICS TOOL</b><h1>Container Loading <span>Calculator</span></h1><p>Estimate how many loose cartons fit in 20ft, 40ft and
     40ft High Cube shipping containers, compare carton orientations
     and visualize the selected loading arrangement.</p></section>
-<section class="card"><div class="head"><div><h2>Container & Carton Inputs</h2><p>Select a container or enter custom internal dimensions.</p></div><button id="sample">Load Sample</button></div>
-<div class="grid"><label>Container Type<select id="ctype"><option value="20">20ft Standard</option><option value="40">40ft Standard</option><option value="40hc">40ft High Cube</option><option value="custom">Custom Container</option></select></label><label>Dimension Unit<select id="unit"><option value="cm">Centimeters (cm)</option><option value="mm">Millimeters (mm)</option><option value="m">Meters (m)</option><option value="in">Inches (in)</option><option value="ft">Feet (ft)</option></select></label><label>Total Cartons<input id="total" type="number" min="1" step="1" placeholder="1000"></label></div>
-<h3>Carton Dimensions</h3><div class="grid"><label>Carton Length<input id="cl" type="number" min="0" step="any" placeholder="50"></label><label>Carton Width<input id="cw" type="number" min="0" step="any" placeholder="40"></label><label>Carton Height<input id="ch" type="number" min="0" step="any" placeholder="30"></label></div>
-<h3>Container Internal Dimensions</h3><div class="grid"><label>Internal Length<input id="il" type="number" min="0" step="any"></label><label>Internal Width<input id="iw" type="number" min="0" step="any"></label><label>Internal Height<input id="ih" type="number" min="0" step="any"></label></div>
-<label class="check"><span><input id="rotate" type="checkbox" checked> Test all 6 carton orientations</span><small>Chooses the best uniform simple-grid orientation.</small></label>
-<div class="note"><b>Planning method:</b> V1 tests six uniform carton orientations and selects the one with the highest simple-grid capacity. It does not mix orientations within the same load.</div><div id="warn" class="warn" hidden></div><div class="actions"><button class="primary" id="calc">Calculate Loading</button><button class="danger" id="clear">Clear All</button></div></section>
+<section class="card"><div class="head"><div><h2>Container &amp; Carton Inputs</h2><p>Select a container or enter custom internal dimensions.</p></div><button id="sample">Load Sample</button></div>
+<div class="grid"><label>Container Type<select id="ctype"><option value="20">20ft Standard</option><option value="40">40ft Standard</option><option value="40hc">40ft High Cube</option><option value="custom">Custom Container</option></select></label><label>Dimension Unit<select id="unit"><option value="cm">Centimeters (cm)</option><option value="mm">Millimeters (mm)</option><option value="m">Meters (m)</option><option value="in">Inches (in)</option><option value="ft">Feet (ft)</option></select></label><label>Total Cartons<input id="total" min="1" placeholder="1000" step="1" type="number"/></label></div>
+<h3>Carton Dimensions</h3><div class="grid"><label>Carton Length<input id="cl" min="0" placeholder="50" step="any" type="number"/></label><label>Carton Width<input id="cw" min="0" placeholder="40" step="any" type="number"/></label><label>Carton Height<input id="ch" min="0" placeholder="30" step="any" type="number"/></label></div>
+<h3>Container Internal Dimensions</h3><div class="grid"><label>Internal Length<input id="il" min="0" step="any" type="number"/></label><label>Internal Width<input id="iw" min="0" step="any" type="number"/></label><label>Internal Height<input id="ih" min="0" step="any" type="number"/></label></div>
+<label class="check"><span><input checked="" id="rotate" type="checkbox"/> Test all 6 carton orientations</span><small>Chooses the best uniform simple-grid orientation.</small></label>
+<div class="note"><b>Planning method:</b> V1 tests six uniform carton orientations and selects the one with the highest simple-grid capacity. It does not mix orientations within the same load.</div><div class="warn" hidden="" id="warn"></div><div class="actions"><button class="primary" id="calc">Calculate Loading</button><button class="danger" id="clear">Clear All</button></div></section>
 <section class="card"><div class="head"><div><h2>Loading Results</h2><p>Estimated capacity based on internal container dimensions.</p></div><b class="pill" id="orientation">—</b></div><div class="results"><div class="result featured"><small>Cartons / Row</small><strong id="cols">—</strong></div><div class="result"><small>Rows / Layer</small><strong id="rows">—</strong></div><div class="result"><small>Layers</small><strong id="layers">—</strong></div><div class="result featured"><small>Cartons / Container</small><strong id="capacity">—</strong></div><div class="result"><small>Containers Required</small><strong id="containers">—</strong></div><div class="result"><small>Cartons in Last Container</small><strong id="last">—</strong></div></div><div class="dark"><div><small>Container Internal Volume</small><strong id="containerCbm">—</strong></div><div><small>Full-Load Carton Volume</small><strong id="cargoCbm">—</strong></div><div><small>Volume Utilization</small><strong id="util">—</strong></div></div></section>
-<section class="card"><div class="head"><div><h2>Visual Container Loading Plan</h2><p>Simple-grid visualization of the selected uniform carton orientation.</p></div><b class="pill">VISUAL PLAN</b></div><div class="visual-grid"><div class="visual-card"><h3>Top View — One Layer</h3><div id="topView" class="visual empty">No layout yet</div><div class="stats"><span id="formation">—</span><span id="perLayer">—</span></div></div><div class="visual-card"><h3>Side View — Layer Stack</h3><div id="sideView" class="visual empty">No stack yet</div><div class="stats"><span id="stack">—</span><span id="usedHeight">—</span></div></div></div><p class="disclaimer">Planning estimate only. Actual loading must consider container door opening, payload/weight limits, axle and floor loading, packaging strength, stability, dunnage, dangerous-goods rules and operational requirements.</p></section>
+<section class="card"><div class="head"><div><h2>Visual Container Loading Plan</h2><p>Simple-grid visualization of the selected uniform carton orientation.</p></div><b class="pill">VISUAL PLAN</b></div><div class="visual-grid"><div class="visual-card"><h3>Top View — One Layer</h3><div class="visual empty" id="topView">No layout yet</div><div class="stats"><span id="formation">—</span><span id="perLayer">—</span></div></div><div class="visual-card"><h3>Side View — Layer Stack</h3><div class="visual empty" id="sideView">No stack yet</div><div class="stats"><span id="stack">—</span><span id="usedHeight">—</span></div></div></div><p class="disclaimer">Planning estimate only. Actual loading must consider container door opening, payload/weight limits, axle and floor loading, packaging strength, stability, dunnage, dangerous-goods rules and operational requirements.</p></section>
 <section class="card">
-
-    <h2>Container Loading Calculation Example</h2>
-
-    <p>
+<h2>Container Loading Calculation Example</h2>
+<p>
         Suppose cartons measure 50 cm × 40 cm × 30 cm and you want
         to estimate how many may fit inside a 20ft Standard container.
     </p>
-
-    <p>
+<p>
         DIXANI compares the available uniform carton orientations
         against the container's internal length, width and height.
         The orientation producing the highest simple-grid capacity
         is selected automatically when rotation is enabled.
     </p>
-
-    <div class="note">
-        <b>
+<div class="note">
+<b>
             Cartons per row × rows per layer × number of layers
             = estimated cartons per container
         </b>
-    </div>
-
-    <p>
+</div>
+<p>
         The calculator then compares the total shipment quantity
         against this estimated capacity to calculate the number
         of containers required and cartons in the final container.
     </p>
-
 </section>
 <section class="card">
-
-    <h2>What Does the Container Loading Calculator Estimate?</h2>
-
-    <p>
+<h2>What Does the Container Loading Calculator Estimate?</h2>
+<p>
         The calculator estimates loose-carton capacity using the
         internal length, width and height of the selected container.
     </p>
-
-    <p>
+<p>
         It can test six uniform carton orientations and choose
         the arrangement with the highest simple-grid carton capacity.
         The results include cartons per row, rows per layer,
         number of layers, cartons per container and volume utilization.
     </p>
-
-    <p>
+<p>
         The visual top view shows the estimated carton formation
         on one container layer, while the side view shows the
         estimated layer stack along the container length and height.
     </p>
-
 </section>
 <section class="card">
-
-    <h2>Important Container Loading Limitations</h2>
-
-    <p>
+<h2>Important Container Loading Limitations</h2>
+<p>
         This calculator is intended for preliminary space planning
         and uses a uniform rectangular-grid arrangement.
     </p>
-
-    <p>
+<p>
         Actual container loading may differ because cargo must also
         satisfy door-opening dimensions, payload limits, floor loading,
         weight distribution, carton strength, stacking restrictions,
         dunnage requirements and transport regulations.
     </p>
-
-    <p>
+<p>
         Mixed carton orientations may sometimes improve space usage,
         but Version 1 does not perform advanced three-dimensional
         bin-packing optimization.
     </p>
-
 </section>
 <section class="card related-section">
-
-    <h2>Related DIXANI Logistics Tools</h2>
-
-    <div class="related-grid">
-
-        <a class="related-card"
-           href="/logistics/cbm-calculator/">
-
-            <span>📦</span>
-
-            <div>
-                <strong>CBM Calculator</strong>
-                <small>
+<h2>Related DIXANI Logistics Tools</h2>
+<div class="related-grid">
+<a class="related-card" href="/logistics/cbm-calculator/">
+<span>📦</span>
+<div>
+<strong>CBM Calculator</strong>
+<small>
                     Calculate carton and shipment volume.
                 </small>
-            </div>
-
-        </a>
-
-
-        <a class="related-card"
-           href="/logistics/pallet-calculator/">
-
-            <span>🚚</span>
-
-            <div>
-                <strong>Pallet Calculator</strong>
-                <small>
+</div>
+</a>
+<a class="related-card" href="/logistics/pallet-calculator/">
+<span>🚚</span>
+<div>
+<strong>Pallet Calculator</strong>
+<small>
                     Calculate pallet capacity and visualize carton formation.
                 </small>
-            </div>
-
-        </a>
-
-    </div>
-
+</div>
+</a>
+</div>
 </section>
-</main><footer><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span><span>© 2026 DIXANI.</span></footer><script src="../../assets/js/container-loading-calculator.js"></script></body></html>
+</main><footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
+</footer><script src="../../assets/js/container-loading-calculator.js"></script><script src="/assets/js/main.js"></script></body></html>

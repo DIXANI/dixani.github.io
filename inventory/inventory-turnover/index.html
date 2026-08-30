@@ -1,131 +1,105 @@
-<!doctype html><html lang="en"><head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!DOCTYPE html>
+<html lang="en"><head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-LQEH9L9TZ4');
-</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inventory Turnover Calculator | DIXANI</title><meta name="description" content="Free inventory turnover calculator to calculate turnover ratio, average inventory, inventory days and COGS performance using beginning and ending inventory or direct average inventory."><meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI"><link rel="canonical" href="https://dixani.github.io/inventory/inventory-turnover/"><link rel="stylesheet" href="../../assets/css/inventory-turnover.css"></head><body>
-<header>
-
-<a href="/">DIXANI</a>
-
-<nav aria-label="Main navigation">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Business</a>
-<a href="/categories/finance/">Finance</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</header>
+</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Inventory Turnover Calculator | DIXANI</title><meta content="Free inventory turnover calculator to calculate turnover ratio, average inventory, inventory days and COGS performance using beginning and ending inventory or direct average inventory." name="description"/><meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/><link href="https://dixani.github.io/inventory/inventory-turnover/" rel="canonical"/><link href="../../assets/css/inventory-turnover.css" rel="stylesheet"/><link href="/assets/css/site-consistency.css" rel="stylesheet"/></head><body>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main><section class="hero"><b>📦 INVENTORY TOOL</b><h1>Inventory Turnover <span>Calculator</span></h1><p>Calculate inventory turnover ratio, average inventory
     and inventory days using cost of goods sold and stock values.</p></section>
-<section class="card"><div class="top"><div><h2>Inventory Data</h2><p>Choose how you want to provide average inventory.</p></div><button type="button" id="example">Load Example</button></div>
-<div class="tabs"><button type="button" id="beTab" class="active">Beginning + Ending</button><button type="button" id="avgTab">Direct Average Inventory</button></div>
+<section class="card"><div class="top"><div><h2>Inventory Data</h2><p>Choose how you want to provide average inventory.</p></div><button id="example" type="button">Load Example</button></div>
+<div class="tabs"><button class="active" id="beTab" type="button">Beginning + Ending</button><button id="avgTab" type="button">Direct Average Inventory</button></div>
 <div class="formula" id="formula"><b>Formula:</b> Average Inventory = (Beginning Inventory + Ending Inventory) ÷ 2</div>
-<div class="grid"><label>Cost of Goods Sold (COGS)<input id="cogs" type="number" min="0" step="any" inputmode="decimal" placeholder="500000"></label>
-<label id="bGroup">Beginning Inventory<input id="beginning" type="number" min="0" step="any" inputmode="decimal" placeholder="100000"></label>
-<label id="eGroup">Ending Inventory<input id="ending" type="number" min="0" step="any" inputmode="decimal" placeholder="150000"></label>
-<label id="aGroup" hidden>Average Inventory<input id="average" type="number" min="0" step="any" inputmode="decimal" placeholder="125000"></label>
+<div class="grid"><label>Cost of Goods Sold (COGS)<input id="cogs" inputmode="decimal" min="0" placeholder="500000" step="any" type="number"/></label>
+<label id="bGroup">Beginning Inventory<input id="beginning" inputmode="decimal" min="0" placeholder="100000" step="any" type="number"/></label>
+<label id="eGroup">Ending Inventory<input id="ending" inputmode="decimal" min="0" placeholder="150000" step="any" type="number"/></label>
+<label hidden="" id="aGroup">Average Inventory<input id="average" inputmode="decimal" min="0" placeholder="125000" step="any" type="number"/></label>
 <label>Reporting Period<select id="period"><option value="365">1 Year (365 days)</option><option value="366">Leap Year (366 days)</option><option value="180">6 Months (180 days)</option><option value="90">Quarter (90 days)</option><option value="30">Month (30 days)</option></select></label>
 <label>Currency<select id="currency"><option>QAR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></label>
-<label>Decimal Places<select id="decimals"><option>0</option><option>1</option><option selected>2</option><option>3</option></select></label></div>
-<div class="warning" id="warning" hidden></div><div class="actions"><button type="button" class="primary" id="calculate">Calculate Turnover</button><button type="button" id="clear">Clear</button></div></section>
+<label>Decimal Places<select id="decimals"><option>0</option><option>1</option><option selected="">2</option><option>3</option></select></label></div>
+<div class="warning" hidden="" id="warning"></div><div class="actions"><button class="primary" id="calculate" type="button">Calculate Turnover</button><button id="clear" type="button">Clear</button></div></section>
 <section class="card"><div class="top"><div><h2>Inventory Turnover Result</h2><p>Results update automatically when valid values change.</p></div><b class="pill" id="mode">BEGINNING + ENDING</b></div>
 <div class="results"><div class="result featured"><small>Inventory Turnover Ratio</small><strong id="turnover">—</strong><small>Times during selected period</small></div><div class="result"><small>Average Inventory</small><strong id="avgResult">—</strong></div><div class="result"><small>Inventory Days</small><strong id="daysResult">—</strong></div><div class="result"><small>COGS</small><strong id="cogsResult">—</strong></div></div>
 <div class="note"><h3 id="noteTitle">Enter your inventory data</h3><p id="noteText">DIXANI will calculate turnover and inventory days. Appropriate turnover varies by industry and product type.</p></div></section>
 <section class="card"><h2>Understanding Inventory Turnover</h2><p>Inventory turnover shows how many times average inventory is sold or used during a reporting period. A higher or lower ratio is not automatically better; margins, lead times, seasonality and service targets all matter.</p><div class="three"><div><b>01</b><h3>Average Inventory</h3><p>Beginning and ending inventory are averaged. Seasonal businesses may benefit from more frequent inventory snapshots.</p></div><div><b>02</b><h3>Turnover Ratio</h3><p>COGS ÷ Average Inventory. QAR 500,000 COGS and QAR 125,000 average inventory equals 4.00×.</p></div><div><b>03</b><h3>Inventory Days</h3><p>Period days ÷ turnover. Annual turnover of 4.00× is about 91.25 days using 365 days.</p></div></div></section>
 <section class="card">
-
-    <h2>Inventory Turnover Calculation Example</h2>
-
-    <p>
+<h2>Inventory Turnover Calculation Example</h2>
+<p>
         Suppose annual cost of goods sold is QAR 500,000,
         beginning inventory is QAR 100,000 and ending inventory
         is QAR 150,000.
     </p>
-
-    <p>
+<p>
         Average inventory is:
     </p>
-
-    <div class="formula">
-        <b>
+<div class="formula">
+<b>
             (QAR 100,000 + QAR 150,000) ÷ 2
             = QAR 125,000
         </b>
-    </div>
-
-    <p>
+</div>
+<p>
         Inventory turnover is:
     </p>
-
-    <div class="formula">
-        <b>
+<div class="formula">
+<b>
             QAR 500,000 ÷ QAR 125,000
             = 4.00×
         </b>
-    </div>
-
-    <p>
+</div>
+<p>
         Using a 365-day reporting period, inventory days are:
     </p>
-
-    <div class="formula">
-        <b>
+<div class="formula">
+<b>
             365 ÷ 4.00
             = 91.25 days
         </b>
-    </div>
-
+</div>
 </section><section class="card">
-
-    <h2>What Does Inventory Turnover Tell You?</h2>
-
-    <p>
+<h2>What Does Inventory Turnover Tell You?</h2>
+<p>
         Inventory turnover indicates how frequently average inventory
         is sold or consumed during a reporting period.
     </p>
-
-    <p>
+<p>
         A higher turnover ratio generally means inventory moves faster,
         while a lower ratio means inventory remains on hand longer.
         However, there is no single ideal turnover ratio for every business.
     </p>
-
-    <p>
+<p>
         The appropriate level depends on factors such as product type,
         gross margin, supplier lead time, seasonality, demand variability
         and customer service requirements.
     </p>
-
 </section><section class="card">
-
-    <h2>Related DIXANI Inventory Tools</h2>
-
-    <div class="related">
-
-        <a href="/inventory/dio-calculator/">
+<h2>Related DIXANI Inventory Tools</h2>
+<div class="related">
+<a href="/inventory/dio-calculator/">
             📅 <strong>Days Inventory Outstanding Calculator</strong>
-        </a>
-
-        <a href="/inventory/eoq-calculator/">
+</a>
+<a href="/inventory/eoq-calculator/">
             📦 <strong>Economic Order Quantity Calculator</strong>
-        </a>
-
-        <a href="/inventory/variance-report/">
+</a>
+<a href="/inventory/variance-report/">
             📊 <strong>Inventory Variance Report</strong>
-        </a>
-
-    </div>
-
+</a>
+</div>
 </section></main>
-<footer><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span><span>© 2026 DIXANI.</span></footer><script src="../../assets/js/inventory-turnover.js"></script></body></html>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
+</footer><script src="../../assets/js/inventory-turnover.js"></script><script src="/assets/js/main.js"></script></body></html>

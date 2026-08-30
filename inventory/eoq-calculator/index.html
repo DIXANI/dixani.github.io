@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,343 +11,277 @@
 
   gtag('config', 'G-LQEH9L9TZ4');
 </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Economic Order Quantity (EOQ) Calculator | DIXANI</title>
-<meta name="description" content="Free EOQ calculator to calculate economic order quantity, orders per year, average cycle inventory, ordering cost, holding cost and compare your current order quantity.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI">
-<meta name="theme-color" content="#2563eb">
-<link rel="canonical" href="https://dixani.github.io/inventory/eoq-calculator/">
-<link rel="stylesheet" href="../../assets/css/eoq-calculator.css">
-</head>
+<meta content="Free EOQ calculator to calculate economic order quantity, orders per year, average cycle inventory, ordering cost, holding cost and compare your current order quantity." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="DIXANI" name="author"/>
+<meta content="#2563eb" name="theme-color"/>
+<link href="https://dixani.github.io/inventory/eoq-calculator/" rel="canonical"/>
+<link href="../../assets/css/eoq-calculator.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-
-<header class="tool-header">
-  <div class="header-container">
-
-    <a href="/" class="brand">DIXANI</a>
-
-    <nav class="header-nav" aria-label="Main navigation">
-      <a href="/#tools">Tools</a>
-      <a href="/templates/">Templates</a>
-      <a href="/categories/inventory/">Inventory</a>
-      <a href="/categories/logistics/">Logistics</a>
-      <a href="/categories/business/">Business</a>
-      <a href="/categories/finance/">Finance</a>
-      <a href="/about/">About</a>
-    </nav>
-
-  </div>
-</header>
-
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main class="main-container">
-
 <section class="tool-intro">
-  <div class="tool-badge">📦 INVENTORY TOOL</div>
-  <h1>Economic Order Quantity <span>Calculator</span></h1>
-  <p>Calculate Economic Order Quantity (EOQ) to estimate the order size that balances annual ordering cost and cycle-stock holding cost.</p>
+<div class="tool-badge">📦 INVENTORY TOOL</div>
+<h1>Economic Order Quantity <span>Calculator</span></h1>
+<p>Calculate Economic Order Quantity (EOQ) to estimate the order size that balances annual ordering cost and cycle-stock holding cost.</p>
 </section>
-
 <section class="panel">
-  <div class="panel-header">
-    <div>
-      <h2>EOQ Inputs</h2>
-      <p>Enter annual demand and choose how to define holding cost.</p>
-    </div>
-    <button type="button" class="secondary-button" id="loadExample">Load Example</button>
+<div class="panel-header">
+<div>
+<h2>EOQ Inputs</h2>
+<p>Enter annual demand and choose how to define holding cost.</p>
+</div>
+<button class="secondary-button" id="loadExample" type="button">Load Example</button>
+</div>
+<div class="method-tabs">
+<button class="method-tab active" id="directTab" type="button">Holding Cost / Unit</button>
+<button class="method-tab" id="rateTab" type="button">Holding Rate %</button>
+</div>
+<div class="formula-box" id="formulaBox">
+<strong>EOQ Formula:</strong> √((2 × Annual Demand × Ordering Cost) ÷ Holding Cost per Unit)
   </div>
-
-  <div class="method-tabs">
-    <button type="button" class="method-tab active" id="directTab">Holding Cost / Unit</button>
-    <button type="button" class="method-tab" id="rateTab">Holding Rate %</button>
-  </div>
-
-  <div class="formula-box" id="formulaBox">
-    <strong>EOQ Formula:</strong> √((2 × Annual Demand × Ordering Cost) ÷ Holding Cost per Unit)
-  </div>
-
-  <div class="form-grid">
-    <div class="form-group">
-      <label for="annualDemand">Annual Demand (Units)</label>
-      <input id="annualDemand" type="number" min="0" step="any" inputmode="decimal" placeholder="e.g. 10000">
-    </div>
-
-    <div class="form-group">
-      <label for="orderingCost">Ordering Cost per Order</label>
-      <input id="orderingCost" type="number" min="0" step="any" inputmode="decimal" placeholder="e.g. 100">
-    </div>
-
-    <div class="form-group" id="holdingCostGroup">
-      <label for="holdingCost">Annual Holding Cost / Unit</label>
-      <input id="holdingCost" type="number" min="0" step="any" inputmode="decimal" placeholder="e.g. 0.50">
-    </div>
-
-    <div class="form-group" id="unitCostGroup" hidden>
-      <label for="unitCost">Unit Cost</label>
-      <input id="unitCost" type="number" min="0" step="any" inputmode="decimal" placeholder="e.g. 2.50">
-    </div>
-
-    <div class="form-group" id="holdingRateGroup" hidden>
-      <label for="holdingRate">Annual Holding Rate (%)</label>
-      <input id="holdingRate" type="number" min="0" step="any" inputmode="decimal" placeholder="e.g. 20">
-    </div>
-
-    <div class="form-group">
-      <label for="workingDays">Working Days / Year</label>
-      <input id="workingDays" type="number" min="1" step="1" inputmode="numeric" value="365">
-    </div>
-
-    <div class="form-group">
-      <label for="currentOrderQty">Current Order Quantity <span class="optional">(Optional)</span></label>
-      <input id="currentOrderQty" type="number" min="0" step="any" inputmode="decimal" placeholder="e.g. 1000">
-    </div>
-
-    <div class="form-group">
-      <label for="currency">Currency</label>
-      <select id="currency">
-        <option value="QAR" selected>QAR</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-        <option value="AED">AED</option>
-        <option value="SAR">SAR</option>
-        <option value="LKR">LKR</option>
-        <option value="INR">INR</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="decimalPlaces">Decimal Places</label>
-      <select id="decimalPlaces">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2" selected>2</option>
-        <option value="3">3</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="validation-message" id="validationMessage" hidden></div>
-
-  <div class="action-row">
-    <button type="button" class="primary-button" id="calculateButton">Calculate EOQ</button>
-    <button type="button" class="danger-button" id="clearButton">Clear</button>
-  </div>
+<div class="form-grid">
+<div class="form-group">
+<label for="annualDemand">Annual Demand (Units)</label>
+<input id="annualDemand" inputmode="decimal" min="0" placeholder="e.g. 10000" step="any" type="number"/>
+</div>
+<div class="form-group">
+<label for="orderingCost">Ordering Cost per Order</label>
+<input id="orderingCost" inputmode="decimal" min="0" placeholder="e.g. 100" step="any" type="number"/>
+</div>
+<div class="form-group" id="holdingCostGroup">
+<label for="holdingCost">Annual Holding Cost / Unit</label>
+<input id="holdingCost" inputmode="decimal" min="0" placeholder="e.g. 0.50" step="any" type="number"/>
+</div>
+<div class="form-group" hidden="" id="unitCostGroup">
+<label for="unitCost">Unit Cost</label>
+<input id="unitCost" inputmode="decimal" min="0" placeholder="e.g. 2.50" step="any" type="number"/>
+</div>
+<div class="form-group" hidden="" id="holdingRateGroup">
+<label for="holdingRate">Annual Holding Rate (%)</label>
+<input id="holdingRate" inputmode="decimal" min="0" placeholder="e.g. 20" step="any" type="number"/>
+</div>
+<div class="form-group">
+<label for="workingDays">Working Days / Year</label>
+<input id="workingDays" inputmode="numeric" min="1" step="1" type="number" value="365"/>
+</div>
+<div class="form-group">
+<label for="currentOrderQty">Current Order Quantity <span class="optional">(Optional)</span></label>
+<input id="currentOrderQty" inputmode="decimal" min="0" placeholder="e.g. 1000" step="any" type="number"/>
+</div>
+<div class="form-group">
+<label for="currency">Currency</label>
+<select id="currency">
+<option selected="" value="QAR">QAR</option>
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="LKR">LKR</option>
+<option value="INR">INR</option>
+</select>
+</div>
+<div class="form-group">
+<label for="decimalPlaces">Decimal Places</label>
+<select id="decimalPlaces">
+<option value="0">0</option>
+<option value="1">1</option>
+<option selected="" value="2">2</option>
+<option value="3">3</option>
+</select>
+</div>
+</div>
+<div class="validation-message" hidden="" id="validationMessage"></div>
+<div class="action-row">
+<button class="primary-button" id="calculateButton" type="button">Calculate EOQ</button>
+<button class="danger-button" id="clearButton" type="button">Clear</button>
+</div>
 </section>
-
-<section class="results-section" aria-live="polite">
-  <div class="results-header">
-    <div>
-      <h2>EOQ Result</h2>
-      <p>Recommended order quantity and estimated annual inventory costs.</p>
-    </div>
-    <div class="mode-pill" id="modePill">HOLDING COST / UNIT</div>
-  </div>
-
-  <div class="results-grid">
-    <div class="result-card featured">
-      <span>Recommended EOQ</span>
-      <strong id="eoqResult">—</strong>
-      <small>Units per order</small>
-    </div>
-
-    <div class="result-card">
-      <span>Orders per Year</span>
-      <strong id="ordersPerYear">—</strong>
-    </div>
-
-    <div class="result-card">
-      <span>Average Cycle Inventory</span>
-      <strong id="averageInventory">—</strong>
-    </div>
-
-    <div class="result-card">
-      <span>Time Between Orders</span>
-      <strong id="timeBetweenOrders">—</strong>
-    </div>
-
-    <div class="result-card">
-      <span>Annual Ordering Cost</span>
-      <strong id="annualOrderingCost">—</strong>
-    </div>
-
-    <div class="result-card">
-      <span>Annual Holding Cost</span>
-      <strong id="annualHoldingCost">—</strong>
-    </div>
-  </div>
-
-  <div class="total-cost-card">
-    <span>Total Relevant Inventory Cost</span>
-    <strong id="totalRelevantCost">—</strong>
-    <small>Ordering cost + cycle-stock holding cost. Inventory purchase cost is excluded.</small>
-  </div>
+<section aria-live="polite" class="results-section">
+<div class="results-header">
+<div>
+<h2>EOQ Result</h2>
+<p>Recommended order quantity and estimated annual inventory costs.</p>
+</div>
+<div class="mode-pill" id="modePill">HOLDING COST / UNIT</div>
+</div>
+<div class="results-grid">
+<div class="result-card featured">
+<span>Recommended EOQ</span>
+<strong id="eoqResult">—</strong>
+<small>Units per order</small>
+</div>
+<div class="result-card">
+<span>Orders per Year</span>
+<strong id="ordersPerYear">—</strong>
+</div>
+<div class="result-card">
+<span>Average Cycle Inventory</span>
+<strong id="averageInventory">—</strong>
+</div>
+<div class="result-card">
+<span>Time Between Orders</span>
+<strong id="timeBetweenOrders">—</strong>
+</div>
+<div class="result-card">
+<span>Annual Ordering Cost</span>
+<strong id="annualOrderingCost">—</strong>
+</div>
+<div class="result-card">
+<span>Annual Holding Cost</span>
+<strong id="annualHoldingCost">—</strong>
+</div>
+</div>
+<div class="total-cost-card">
+<span>Total Relevant Inventory Cost</span>
+<strong id="totalRelevantCost">—</strong>
+<small>Ordering cost + cycle-stock holding cost. Inventory purchase cost is excluded.</small>
+</div>
 </section>
-
 <section class="comparison-section">
-  <div class="results-header">
-    <div>
-      <h2>Order Quantity Comparison</h2>
-      <p>Compare your current order quantity with the calculated EOQ.</p>
-    </div>
-    <div class="mode-pill comparison-pill">COST SCENARIO</div>
-  </div>
-
-  <div class="comparison-grid">
-    <div class="result-card">
-      <span>Current Order Quantity</span>
-      <strong id="currentQtyResult">—</strong>
-    </div>
-
-    <div class="result-card">
-      <span>Current Relevant Cost</span>
-      <strong id="currentRelevantCost">—</strong>
-    </div>
-
-    <div class="result-card">
-      <span>EOQ Relevant Cost</span>
-      <strong id="eoqRelevantCost">—</strong>
-    </div>
-
-    <div class="result-card featured">
-      <span id="costDifferenceLabel">Estimated Cost Difference</span>
-      <strong id="costDifference">—</strong>
-      <small>Per year</small>
-    </div>
-  </div>
-
-  <p class="disclaimer">
+<div class="results-header">
+<div>
+<h2>Order Quantity Comparison</h2>
+<p>Compare your current order quantity with the calculated EOQ.</p>
+</div>
+<div class="mode-pill comparison-pill">COST SCENARIO</div>
+</div>
+<div class="comparison-grid">
+<div class="result-card">
+<span>Current Order Quantity</span>
+<strong id="currentQtyResult">—</strong>
+</div>
+<div class="result-card">
+<span>Current Relevant Cost</span>
+<strong id="currentRelevantCost">—</strong>
+</div>
+<div class="result-card">
+<span>EOQ Relevant Cost</span>
+<strong id="eoqRelevantCost">—</strong>
+</div>
+<div class="result-card featured">
+<span id="costDifferenceLabel">Estimated Cost Difference</span>
+<strong id="costDifference">—</strong>
+<small>Per year</small>
+</div>
+</div>
+<p class="disclaimer">
     This comparison is a planning estimate based on the basic EOQ model. A modeled cost reduction is not the same as guaranteed cash savings.
   </p>
 </section>
-
 <section class="info-section">
-  <div class="section-label">HOW IT WORKS</div>
-  <h2>Understanding Economic Order Quantity</h2>
-
-  <div class="info-grid">
-    <div>
-      <span>01</span>
-      <h3>Balance Costs</h3>
-      <p>EOQ balances annual ordering cost with annual cycle-stock holding cost.</p>
-    </div>
-
-    <div>
-      <span>02</span>
-      <h3>Plan Order Frequency</h3>
-      <p>Annual demand divided by EOQ estimates orders per year. Working days divided by orders per year estimates the time between orders.</p>
-    </div>
-
-    <div>
-      <span>03</span>
-      <h3>Know the Limits</h3>
-      <p>Basic EOQ assumes relatively stable demand and costs, replenishment without stockouts, and no quantity-discount effects.</p>
-    </div>
-  </div>
+<div class="section-label">HOW IT WORKS</div>
+<h2>Understanding Economic Order Quantity</h2>
+<div class="info-grid">
+<div>
+<span>01</span>
+<h3>Balance Costs</h3>
+<p>EOQ balances annual ordering cost with annual cycle-stock holding cost.</p>
+</div>
+<div>
+<span>02</span>
+<h3>Plan Order Frequency</h3>
+<p>Annual demand divided by EOQ estimates orders per year. Working days divided by orders per year estimates the time between orders.</p>
+</div>
+<div>
+<span>03</span>
+<h3>Know the Limits</h3>
+<p>Basic EOQ assumes relatively stable demand and costs, replenishment without stockouts, and no quantity-discount effects.</p>
+</div>
+</div>
 </section>
 <section class="info-section">
-
-    <div class="section-label">
+<div class="section-label">
         EXAMPLE
     </div>
-
-    <h2>
+<h2>
         EOQ Calculation Example
     </h2>
-
-    <p>
+<p>
         Suppose annual demand is 10,000 units, ordering cost is
         QAR 100 per order and annual holding cost is
         QAR 0.50 per unit.
     </p>
-
-    <div class="formula-box">
-        <strong>
+<div class="formula-box">
+<strong>
             EOQ = √((2 × 10,000 × 100) ÷ 0.50)
             = 2,000 units
         </strong>
-    </div>
-
-    <p>
+</div>
+<p>
         At an EOQ of 2,000 units, the business would place
         approximately 5 orders per year. Average cycle inventory
         would be about 1,000 units.
     </p>
-
-    <p>
+<p>
         Under the basic EOQ assumptions, annual ordering cost and
         annual cycle-stock holding cost would each be approximately
         QAR 500, giving a total relevant inventory cost of
         QAR 1,000 per year.
     </p>
-
-    <p>
+<p>
     If you already know the annual holding cost per unit,
     use the Holding Cost / Unit method. If holding cost is
     normally expressed as a percentage of unit cost, use the
     Holding Rate % method and DIXANI will calculate the annual
     holding cost per unit automatically.
 </p>
-
 </section>
-
 <section class="faq-section">
-  <h2>EOQ Calculator — Frequently Asked Questions</h2>
-
-  <details>
-    <summary>What is Economic Order Quantity?</summary>
-    <p>EOQ is the order quantity that minimizes the combined annual ordering and cycle-stock holding costs under the assumptions of the basic EOQ model.</p>
-  </details>
-
-  <details>
-    <summary>Does EOQ include safety stock?</summary>
-    <p>No. Basic EOQ determines order quantity. Safety stock and reorder point are separate inventory planning decisions.</p>
-  </details>
-
-  <details>
-    <summary>Does EOQ include the purchase cost of inventory?</summary>
-    <p>This calculator excludes purchase cost from total relevant cost because, without quantity discounts, the annual purchase cost does not change with order quantity.</p>
-  </details>
-
-  <details>
-    <summary>When should I not rely on basic EOQ?</summary>
-
-    <p>
+<h2>EOQ Calculator — Frequently Asked Questions</h2>
+<details>
+<summary>What is Economic Order Quantity?</summary>
+<p>EOQ is the order quantity that minimizes the combined annual ordering and cycle-stock holding costs under the assumptions of the basic EOQ model.</p>
+</details>
+<details>
+<summary>Does EOQ include safety stock?</summary>
+<p>No. Basic EOQ determines order quantity. Safety stock and reorder point are separate inventory planning decisions.</p>
+</details>
+<details>
+<summary>Does EOQ include the purchase cost of inventory?</summary>
+<p>This calculator excludes purchase cost from total relevant cost because, without quantity discounts, the annual purchase cost does not change with order quantity.</p>
+</details>
+<details>
+<summary>When should I not rely on basic EOQ?</summary>
+<p>
         Basic EOQ may be less suitable when demand is highly variable,
         suppliers offer important quantity discounts, replenishment
         timing is uncertain, products have short shelf lives or
         inventory constraints significantly affect ordering decisions.
     </p>
 </details>
-
 </section>
-
 <section class="related-section">
-  <h2>Related DIXANI Inventory Tools</h2>
-
-  <div class="related-grid">
-    <a href="/inventory/reorder-point/" class="related-card">
-      <span>🔁</span><strong>Reorder Point Calculator</strong><small>Live tool</small>
-    </a>
-
-    <a href="/inventory/safety-stock/" class="related-card">
-      <span>🛡️</span><strong>Safety Stock Calculator</strong><small>Live tool</small>
-    </a>
-
-    <a href="/inventory/dio-calculator/" class="related-card">
-      <span>📅</span><strong>DIO Calculator</strong><small>Live tool</small>
-    </a>
-  </div>
+<h2>Related DIXANI Inventory Tools</h2>
+<div class="related-grid">
+<a class="related-card" href="/inventory/reorder-point/">
+<span>🔁</span><strong>Reorder Point Calculator</strong><small>Live tool</small>
+</a>
+<a class="related-card" href="/inventory/safety-stock/">
+<span>🛡️</span><strong>Safety Stock Calculator</strong><small>Live tool</small>
+</a>
+<a class="related-card" href="/inventory/dio-calculator/">
+<span>📅</span><strong>DIO Calculator</strong><small>Live tool</small>
+</a>
+</div>
 </section>
-
 </main>
-
-<footer class="tool-footer">
-  <div><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span></div>
-  <span>© 2026 DIXANI. All rights reserved.</span>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
 </footer>
-
 <script src="../../assets/js/eoq-calculator.js"></script>
-</body>
+<script src="/assets/js/main.js"></script></body>
 </html>

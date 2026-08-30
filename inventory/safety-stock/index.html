@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,36 +11,16 @@
 
   gtag('config', 'G-LQEH9L9TZ4');
 </script>s
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Free Safety Stock Calculator | DIXANI</title>
-
-<meta name="description"
-      content="Free safety stock calculator using simple and service-level methods. Estimate buffer inventory from demand, lead time and service level to reduce stockout risk.">
-
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://dixani.github.io/inventory/safety-stock/">
-<link rel="stylesheet" href="../../assets/css/safety-stock.css">
-</head>
+<meta content="Free safety stock calculator using simple and service-level methods. Estimate buffer inventory from demand, lead time and service level to reduce stockout risk." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://dixani.github.io/inventory/safety-stock/" rel="canonical"/>
+<link href="../../assets/css/safety-stock.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-<header>
-
-<a href="/">DIXANI</a>
-
-<nav aria-label="Main navigation">
-
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Business</a>
-<a href="/categories/finance/">Finance</a>
-<a href="/about/">About</a>
-
-</nav>
-
-</header>
-
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/about/">About</a></nav></div></header>
 <main>
 <section class="hero">
 <b>🛡️ INVENTORY TOOL</b>
@@ -48,50 +28,44 @@
 <p>Estimate the buffer inventory needed to reduce stockout risk
     when demand or supplier lead times vary unexpectedly.</p>
 </section>
-
 <section class="card">
 <div class="top">
 <div><h2>Choose Calculation Method</h2><p>Use Simple for quick planning or Advanced when demand variability data is available.</p></div>
-<button type="button" id="example">Load Example</button>
+<button id="example" type="button">Load Example</button>
 </div>
-
 <div class="tabs">
-<button type="button" id="simpleTab" class="active">Simple Method</button>
-<button type="button" id="advancedTab">Advanced Method</button>
+<button class="active" id="simpleTab" type="button">Simple Method</button>
+<button id="advancedTab" type="button">Advanced Method</button>
 </div>
-
 <div id="simple">
 <div class="formula">(Maximum Daily Usage × Maximum Lead Time) − (Average Daily Usage × Average Lead Time)</div>
 <div class="grid">
-<label>Maximum Daily Usage<input id="maxDaily" type="number" min="0" step="any" placeholder="25"></label>
-<label>Maximum Lead Time (Days)<input id="maxLead" type="number" min="0" step="any" placeholder="10"></label>
-<label>Average Daily Usage<input id="avgDaily" type="number" min="0" step="any" placeholder="15"></label>
-<label>Average Lead Time (Days)<input id="avgLead" type="number" min="0" step="any" placeholder="7"></label>
+<label>Maximum Daily Usage<input id="maxDaily" min="0" placeholder="25" step="any" type="number"/></label>
+<label>Maximum Lead Time (Days)<input id="maxLead" min="0" placeholder="10" step="any" type="number"/></label>
+<label>Average Daily Usage<input id="avgDaily" min="0" placeholder="15" step="any" type="number"/></label>
+<label>Average Lead Time (Days)<input id="avgLead" min="0" placeholder="7" step="any" type="number"/></label>
 </div>
 </div>
-
-<div id="advanced" hidden>
+<div hidden="" id="advanced">
 <div class="formula">Z-score × Demand Standard Deviation × √Lead Time</div>
 <div class="grid">
 <label>Target Service Level
 <select id="service">
 <option value="1.28">90%</option>
 <option value="1.645">95%</option>
-<option value="1.96" selected>97.5%</option>
+<option selected="" value="1.96">97.5%</option>
 <option value="2.326">99%</option>
 </select></label>
-<label>Daily Demand Std. Deviation<input id="std" type="number" min="0" step="any" placeholder="6"></label>
-<label>Average Lead Time (Days)<input id="advLead" type="number" min="0" step="any" placeholder="7"></label>
-<label>Average Daily Usage<input id="advAvg" type="number" min="0" step="any" placeholder="15"></label>
+<label>Daily Demand Std. Deviation<input id="std" min="0" placeholder="6" step="any" type="number"/></label>
+<label>Average Lead Time (Days)<input id="advLead" min="0" placeholder="7" step="any" type="number"/></label>
+<label>Average Daily Usage<input id="advAvg" min="0" placeholder="15" step="any" type="number"/></label>
 </div>
 </div>
-
 <div class="actions">
-<button type="button" class="primary" id="calculate">Calculate Safety Stock</button>
-<button type="button" id="clear">Clear</button>
+<button class="primary" id="calculate" type="button">Calculate Safety Stock</button>
+<button id="clear" type="button">Clear</button>
 </div>
 </section>
-
 <section class="card">
 <div class="top">
 <div><h2>Safety Stock Result</h2><p>Updates automatically as values change.</p></div>
@@ -105,60 +79,55 @@
 </div>
 <div class="note"><h3 id="noteTitle">Enter your inventory data</h3><p id="noteText">DIXANI will estimate the safety-stock buffer.</p></div>
 </section>
-
 <section class="card"><h2>Which method should I use?</h2>
 <div class="two">
 <div><h3>Simple Method</h3><p>Useful when you know normal and worst-case usage and supplier lead times.</p></div>
 <div><h3>Advanced Method</h3><p>Useful when historical data lets you estimate demand standard deviation and choose a target service level.</p></div>
 </div></section>
 <section class="card">
-
-    <h2>Why Is Safety Stock Important?</h2>
-
-    <p>
+<h2>Why Is Safety Stock Important?</h2>
+<p>
         Safety stock is additional inventory kept as a buffer against
         uncertainty in customer demand, supplier lead time or both.
     </p>
-
-    <p>
+<p>
         Without sufficient safety stock, unexpected demand increases
         or delivery delays can cause stockouts. Too much safety stock,
         however, can increase storage, financing, expiry and
         obsolescence costs.
     </p>
-
-    <p>
+<p>
         The Simple Method is useful when you know average and
         maximum usage and lead times. The Advanced Method is more
         suitable when you have historical demand variability data
         and want to calculate safety stock using a target service level.
     </p>
-
 </section>
-
 <section class="card">
-
-    <h2>Related DIXANI Inventory Tools</h2>
-
-    <div class="related">
-
-        <a href="/inventory/reorder-point/">
+<h2>Related DIXANI Inventory Tools</h2>
+<div class="related">
+<a href="/inventory/reorder-point/">
             🔁 <strong>Reorder Point Calculator</strong>
-        </a>
-
-        <a href="/inventory/eoq-calculator/">
+</a>
+<a href="/inventory/eoq-calculator/">
             📦 <strong>Economic Order Quantity Calculator</strong>
-        </a>
-
-        <a href="/inventory/variance-report/">
+</a>
+<a href="/inventory/variance-report/">
             📊 <strong>Inventory Variance Report</strong>
-        </a>
-
-    </div>
-
+</a>
+</div>
 </section>
 </main>
-
-<footer><strong>DIXANI</strong><span>Practical Tools. Smarter Work.</span><span>© 2026 DIXANI.</span></footer>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div>
+<div><h4>Resources</h4><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/categories/inventory/">Inventory Tools</a><a href="/categories/logistics/">Logistics Tools</a><a href="/categories/business/">Business Tools</a><a href="/categories/finance/">Finance Tools</a><a href="/categories/converters/">Converter Tools</a></div>
+<div><h4>Company</h4><a href="/about/">About</a><a href="/contact/">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+</div>
+<div class="copyright">© 2026 DIXANI. All rights reserved.</div>
+</div>
+</footer>
 <script src="../../assets/js/safety-stock.js"></script>
-</body></html>
+<script src="/assets/js/main.js"></script></body></html>
