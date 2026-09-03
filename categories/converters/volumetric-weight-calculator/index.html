@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LQEH9L9TZ4');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Volumetric Weight Calculator for Shipping | DIXANI</title>
+
+<meta name="description"
+content="Free volumetric weight calculator for shipping, courier and logistics use. Compare actual weight with dimensional weight and calculate chargeable weight.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="DIXANI">
+<meta name="theme-color" content="#2563eb">
+
+<link rel="canonical"
+href="https://dixani.github.io/categories/converters/volumetric-weight-calculator/">
+
+<link rel="stylesheet"
+href="/assets/css/templates.css">
+
+<link rel="stylesheet"
+href="/assets/css/site-consistency.css">
+
+<link rel="stylesheet"
+href="/assets/css/volumetric-weight-calculator.css">
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+<div class="container header-inner">
+
+<a href="/" class="logo">DIXANI</a>
+
+<button class="menu-button"
+        id="menuButton"
+        type="button">
+☰
+</button>
+
+<nav class="main-nav"
+     id="mainNav"
+     aria-label="Main navigation">
+
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Business</a>
+<a href="/categories/finance/">Finance</a>
+<a href="/categories/converters/" class="active">Converters</a>
+<a href="/about/">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="template-hero volumetric-hero">
+
+<div class="container">
+
+<div class="hero-badge">
+📦 SHIPPING & LOGISTICS CALCULATOR
+</div>
+
+<h1>
+Volumetric Weight
+<span>Calculator</span>
+</h1>
+
+<p>
+Calculate dimensional or volumetric weight for cartons and shipments,
+compare it with the actual weight and identify the chargeable weight
+used for shipping and courier calculations.
+</p>
+
+<div class="hero-note">
+
+<strong>Free to use</strong>
+
+<span>•</span>
+
+No account required
+
+<span>•</span>
+
+Metric &amp; imperial units
+
+<span>•</span>
+
+Built for shipping workflows
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CALCULATOR -->
+
+<section class="vw-calculator-section">
+
+<div class="container">
+
+<div class="vw-calculator-layout">
+
+
+<!-- INPUT CARD -->
+
+<div class="vw-calculator-card">
+
+<div class="vw-card-heading">
+
+<span class="section-label">
+SHIPMENT DETAILS
+</span>
+
+<h2>
+Calculate Volumetric Weight
+</h2>
+
+<p>
+Enter the carton dimensions, quantity and actual weight.
+</p>
+
+</div>
+
+
+<div class="vw-form-grid">
+
+
+<div class="vw-field vw-field-full">
+
+<label for="dimensionUnit">
+Dimension Unit
+</label>
+
+<select id="dimensionUnit">
+
+<option value="cm">Centimetres (cm)</option>
+<option value="in">Inches (in)</option>
+
+</select>
+
+</div>
+
+
+<div class="vw-field">
+
+<label for="length">
+Length
+</label>
+
+<input
+type="number"
+id="length"
+min="0"
+step="any"
+placeholder="e.g. 50">
+
+</div>
+
+
+<div class="vw-field">
+
+<label for="width">
+Width
+</label>
+
+<input
+type="number"
+id="width"
+min="0"
+step="any"
+placeholder="e.g. 40">
+
+</div>
+
+
+<div class="vw-field">
+
+<label for="height">
+Height
+</label>
+
+<input
+type="number"
+id="height"
+min="0"
+step="any"
+placeholder="e.g. 30">
+
+</div>
+
+
+<div class="vw-field">
+
+<label for="quantity">
+Carton Quantity
+</label>
+
+<input
+type="number"
+id="quantity"
+min="1"
+step="1"
+value="1">
+
+</div>
+
+
+<div class="vw-field">
+
+<label for="weightUnit">
+Actual Weight Unit
+</label>
+
+<select id="weightUnit">
+
+<option value="kg">Kilograms (kg)</option>
+<option value="lb">Pounds (lb)</option>
+
+</select>
+
+</div>
+
+
+<div class="vw-field">
+
+<label for="actualWeight">
+Actual Weight
+</label>
+
+<input
+type="number"
+id="actualWeight"
+min="0"
+step="any"
+placeholder="e.g. 12">
+
+</div>
+
+
+<div class="vw-field vw-field-full">
+
+<label for="divisor">
+Volumetric Divisor
+</label>
+
+<select id="divisor">
+
+<option value="5000">
+5000 — Common Air / Express Freight
+</option>
+
+<option value="6000">
+6000 — Common Courier Calculation
+</option>
+
+<option value="4000">
+4000 — Selected Carriers
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="vw-actions">
+
+<button
+type="button"
+id="calculateButton"
+class="primary-button">
+Calculate
+</button>
+
+<button
+type="button"
+id="sampleButton"
+class="secondary-button">
+Load Sample
+</button>
+
+<button
+type="button"
+id="clearButton"
+class="secondary-button">
+Clear
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RESULT CARD -->
+
+<div class="vw-result-card">
+
+<span class="section-label">
+RESULT
+</span>
+
+<h2>
+Chargeable Weight
+</h2>
+
+<div class="vw-main-result">
+
+<strong id="chargeableWeight">
+0.00 kg
+</strong>
+
+<span>
+Higher of actual or volumetric weight
+</span>
+
+</div>
+
+
+<div class="vw-result-list">
+
+
+<div class="vw-result-row">
+
+<span>
+Actual Weight
+</span>
+
+<strong id="actualWeightResult">
+0.00 kg
+</strong>
+
+</div>
+
+
+<div class="vw-result-row">
+
+<span>
+Volumetric Weight
+</span>
+
+<strong id="volumetricWeightResult">
+0.00 kg
+</strong>
+
+</div>
+
+
+<div class="vw-result-row">
+
+<span>
+Volume per Carton
+</span>
+
+<strong id="cartonVolumeResult">
+0.000 m³
+</strong>
+
+</div>
+
+
+<div class="vw-result-row">
+
+<span>
+Total Shipment Volume
+</span>
+
+<strong id="totalVolumeResult">
+0.000 m³
+</strong>
+
+</div>
+
+
+<div class="vw-result-row">
+
+<span>
+Carton Quantity
+</span>
+
+<strong id="quantityResult">
+1
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div class="vw-result-note">
+
+<p id="resultSummary">
+Enter your shipment details to calculate volumetric and chargeable weight.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="uc-how-wrap">
+
+<div class="container">
+
+<div class="uc-how-box">
+
+<div class="uc-how-head">
+
+<span class="uc-how-label">
+How It Works
+</span>
+
+<h2>
+Calculate chargeable shipping weight in four steps
+</h2>
+
+</div>
+
+
+<div class="uc-how-steps">
+
+
+<article class="uc-step-card">
+
+<span class="uc-step-number">
+01
+</span>
+
+<h3>
+Enter Dimensions
+</h3>
+
+<p>
+Enter the carton length, width and height.
+</p>
+
+</article>
+
+
+<div class="uc-step-arrow"
+aria-hidden="true">
+→
+</div>
+
+
+<article class="uc-step-card">
+
+<span class="uc-step-number">
+02
+</span>
+
+<h3>
+Add Quantity
+</h3>
+
+<p>
+Enter the number of identical cartons in the shipment.
+</p>
+
+</article>
+
+
+<div class="uc-step-arrow"
+aria-hidden="true">
+→
+</div>
+
+
+<article class="uc-step-card">
+
+<span class="uc-step-number">
+03
+</span>
+
+<h3>
+Enter Actual Weight
+</h3>
+
+<p>
+Add the total physical weight of the shipment.
+</p>
+
+</article>
+
+
+<div class="uc-step-arrow"
+aria-hidden="true">
+→
+</div>
+
+
+<article class="uc-step-card">
+
+<span class="uc-step-number">
+04
+</span>
+
+<h3>
+Compare Weights
+</h3>
+
+<p>
+The higher weight becomes the estimated chargeable weight.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRACTICAL USES -->
+
+<section class="uc-uses-section">
+
+<div class="container uc-uses-container">
+
+<div class="uc-uses-heading">
+
+<span class="uc-uses-label">
+Who It's For
+</span>
+
+<h2>
+Useful for Shipping and Logistics Operations
+</h2>
+
+<p>
+Estimate dimensional weight before booking or comparing shipment costs.
+</p>
+
+</div>
+
+
+<div class="uc-uses-grid">
+
+
+<article class="uc-use-card">
+
+<div class="uc-use-icon">
+✓
+</div>
+
+<h3>
+Courier Shipments
+</h3>
+
+<p>
+Estimate dimensional weight before sending parcels with express couriers.
+</p>
+
+</article>
+
+
+<article class="uc-use-card">
+
+<div class="uc-use-icon">
+✓
+</div>
+
+<h3>
+Air Freight
+</h3>
+
+<p>
+Compare physical weight with shipment volume for air-cargo planning.
+</p>
+
+</article>
+
+
+<article class="uc-use-card">
+
+<div class="uc-use-icon">
+✓
+</div>
+
+<h3>
+E-commerce
+</h3>
+
+<p>
+Check shipping weight for packaged customer orders and fulfillment.
+</p>
+
+</article>
+
+
+<article class="uc-use-card">
+
+<div class="uc-use-icon">
+✓
+</div>
+
+<h3>
+Warehouse Operations
+</h3>
+
+<p>
+Estimate carton volume and shipping requirements before dispatch.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="uc-faq-section">
+
+<div class="container uc-faq-container">
+
+<div class="uc-faq-heading">
+
+<span class="uc-faq-label">
+FAQ
+</span>
+
+<h2>
+Volumetric Weight Calculator — Frequently Asked Questions
+</h2>
+
+</div>
+
+
+<div class="uc-faq-list">
+
+
+<details>
+
+<summary>
+What is volumetric weight?
+</summary>
+
+<p>
+Volumetric weight is a calculated shipping weight based on the amount
+of space a shipment occupies rather than only its physical weight.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What is chargeable weight?
+</summary>
+
+<p>
+Chargeable weight is typically the higher value between actual shipment
+weight and volumetric weight.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Why do carriers use a volumetric divisor?
+</summary>
+
+<p>
+The divisor converts shipment dimensions into an equivalent shipping
+weight. Different carriers and transport methods may use different divisors.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Can I calculate multiple cartons?
+</summary>
+
+<p>
+Yes. Enter the quantity when all cartons have the same dimensions.
+The calculator will calculate the total shipment volume and volumetric weight.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Does every courier use the same divisor?
+</summary>
+
+<p>
+No. Divisors can vary by courier, service, country and transport mode.
+Always confirm the applicable divisor with your carrier when preparing a shipment.
+</p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RELATED TOOLS -->
+
+<section class="uc-related-section">
+
+<div class="container uc-related-container">
+
+<div class="uc-related-heading">
+
+<span class="uc-related-label">
+Related Tools
+</span>
+
+<h2>
+More Shipping and Logistics Tools
+</h2>
+
+<p>
+Use these DIXANI tools together for shipment planning and warehouse operations.
+</p>
+
+</div>
+
+
+<div class="uc-related-grid">
+
+
+<a href="/categories/converters/unit-converter/"
+class="uc-related-card">
+
+<h3>
+Unit Converter
+</h3>
+
+<p>
+Convert common metric and imperial measurements.
+</p>
+
+<span>
+Open Calculator →
+</span>
+
+</a>
+
+
+<a href="/logistics/cbm-calculator/"
+class="uc-related-card">
+
+<h3>
+CBM Calculator
+</h3>
+
+<p>
+Calculate carton and shipment cubic volume.
+</p>
+
+<span>
+Open Calculator →
+</span>
+
+</a>
+
+
+<a href="/logistics/container-loading-calculator/"
+class="uc-related-card">
+
+<h3>
+Container Loading Calculator
+</h3>
+
+<p>
+Estimate carton capacity for shipping containers.
+</p>
+
+<span>
+Open Calculator →
+</span>
+
+</a>
+
+
+<a href="/logistics/pallet-calculator/"
+class="uc-related-card">
+
+<h3>
+Pallet Calculator
+</h3>
+
+<p>
+Estimate pallet loading and carton arrangement.
+</p>
+
+<span>
+Open Calculator →
+</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-brand">
+DIXANI
+</div>
+
+<p>
+Practical Tools. Smarter Work.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Resources
+</h4>
+
+<a href="/#tools">
+Online Tools
+</a>
+
+<a href="/templates/">
+Templates
+</a>
+
+<a href="/categories/inventory/">
+Inventory Tools
+</a>
+
+<a href="/categories/logistics/">
+Logistics Tools
+</a>
+
+<a href="/categories/business/">
+Business Tools
+</a>
+
+<a href="/categories/finance/">
+Finance Tools
+</a>
+
+<a href="/categories/converters/">
+Converters
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Company
+</h4>
+
+<a href="/about/">
+About
+</a>
+
+<a href="/contact/">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Legal
+</h4>
+
+<a href="/privacy/">
+Privacy
+</a>
+
+<a href="/terms/">
+Terms
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+© 2026 DIXANI. All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+<script src="/assets/js/main.js"></script>
+
+<script src="/assets/js/volumetric-weight-calculator.js"></script>
+
+</body>
+
+</html>
