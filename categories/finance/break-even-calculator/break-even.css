@@ -502,3 +502,146 @@
     background: #dcfce7;
     color: #15803d;
 }
+/* ===== BREAK-EVEN RESULT INTERPRETATION ===== */
+
+.break-even-insight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.break-even-insight-grid .benefit {
+    height: 100%;
+}
+
+.break-even-note {
+    margin-top: 22px;
+    padding: 20px 24px;
+
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+}
+
+.break-even-note p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.break-even-note strong {
+    color: #0f172a;
+}
+
+@media (max-width: 640px) {
+
+    .break-even-insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .break-even-note {
+        padding: 18px 20px;
+    }
+}
+/* ===== COMMON BREAK-EVEN MISTAKES ===== */
+
+.break-even-mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.break-even-mistakes-grid .benefit {
+    height: 100%;
+}
+
+@media (max-width: 640px) {
+    .break-even-mistakes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== BREAK-EVEN STEPS ===== */
+
+.break-even-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.break-even-step {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 24px 22px;
+}
+
+.break-even-step span {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.break-even-step strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #0f172a;
+    font-size: 18px;
+}
+
+.break-even-step p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .break-even-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .break-even-steps {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== RELATED RESOURCES ===== */
+
+.related-resources-section .category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.related-resources-section .category-card {
+    padding: 22px 20px;
+    min-height: 0;
+    align-items: flex-start;
+}
+
+.related-resources-section .category-card h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.related-resources-section .category-card p {
+    margin-bottom: 10px;
+    line-height: 1.55;
+}
+
+@media (max-width: 1000px) {
+    .related-resources-section .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .related-resources-section .category-grid {
+        grid-template-columns: 1fr;
+    }
+}

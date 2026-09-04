@@ -502,3 +502,129 @@
     background: #dcfce7;
     color: #15803d;
 }
+/* ===== MARKUP PERCENTAGE EXAMPLES ===== */
+
+.markup-example-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.markup-example-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 24px 22px;
+}
+
+.markup-example-card > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 54px;
+    height: 34px;
+    padding: 0 12px;
+    margin-bottom: 16px;
+
+    background: #eff6ff;
+    border-radius: 999px;
+
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.markup-example-card h3 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    font-size: 19px;
+}
+
+.markup-example-card p {
+    margin: 0 0 8px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.markup-example-card small {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.markup-example-note {
+    margin-top: 20px;
+    padding: 18px 22px;
+
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+}
+
+.markup-example-note p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.markup-example-note strong {
+    color: #0f172a;
+}
+
+@media (max-width: 900px) {
+    .markup-example-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .markup-example-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== COMMON MARKUP MISTAKES ===== */
+
+.markup-mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.markup-mistakes-grid .benefit {
+    height: 100%;
+}
+
+@media (max-width: 640px) {
+    .markup-mistakes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== RELATED RESOURCES ===== */
+
+.related-resources-section .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.related-resources-section .category-card {
+    padding: 22px 20px;
+    min-height: 0;
+    align-items: flex-start;
+}
+
+.related-resources-section .category-card h3 {
+    margin-bottom: 6px;
+    font-size: 19px;
+}
+
+.related-resources-section .category-card p {
+    margin-bottom: 10px;
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+    .related-resources-section .category-grid {
+        grid-template-columns: 1fr;
+    }
+}

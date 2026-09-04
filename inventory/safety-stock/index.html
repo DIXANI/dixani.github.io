@@ -10,7 +10,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-LQEH9L9TZ4');
-</script>s
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Free Safety Stock Calculator | DIXANI</title>
@@ -79,11 +79,59 @@
 </div>
 <div class="note"><h3 id="noteTitle">Enter your inventory data</h3><p id="noteText">DIXANI will estimate the safety-stock buffer.</p></div>
 </section>
-<section class="card"><h2>Which method should I use?</h2>
+<section class="card">
+
+<h2>Which Safety Stock Method Should I Use?</h2>
+
 <div class="two">
-<div><h3>Simple Method</h3><p>Useful when you know normal and worst-case usage and supplier lead times.</p></div>
-<div><h3>Advanced Method</h3><p>Useful when historical data lets you estimate demand standard deviation and choose a target service level.</p></div>
-</div></section>
+
+<div>
+
+<h3>Simple Method</h3>
+
+<p>
+The Simple Method is useful when you know your normal and
+worst-case daily usage and supplier lead times. It is practical
+for businesses that have basic inventory records but do not have
+enough historical data to calculate demand variability.
+</p>
+
+<p>
+It works well for quick operational planning, but the result can
+be heavily influenced by unusually high maximum-demand or
+lead-time values.
+</p>
+
+</div>
+
+<div>
+
+<h3>Advanced Method</h3>
+
+<p>
+The Advanced Method uses demand standard deviation, average lead
+time and a target service level. It is more suitable when reliable
+historical demand data is available and you want the safety-stock
+level to reflect measured demand variability.
+</p>
+
+<p>
+A higher target service level generally produces more safety stock,
+which can reduce stockout risk but also increases the amount of
+inventory being held.
+</p>
+
+</div>
+
+</div>
+
+<p>
+Neither method should be treated as a permanent setting. Safety
+stock should be reviewed when demand patterns, supplier performance,
+lead times or business requirements change.
+</p>
+
+</section>
 <section class="card">
 <h2>Why Is Safety Stock Important?</h2>
 <p>
@@ -103,6 +151,153 @@
         and want to calculate safety stock using a target service level.
     </p>
 </section>
+<section class="card">
+
+<h2>Safety Stock Example</h2>
+
+<p>
+Suppose an item has a maximum daily usage of 25 units and the
+longest supplier lead time is 10 days. Its average daily usage
+is 15 units and the normal lead time is 7 days.
+</p>
+
+<p>
+Using the Simple Method, safety stock is calculated as:
+</p>
+
+<div class="formula">
+(25 × 10) − (15 × 7)
+</div>
+
+<div class="formula">
+250 − 105 = 145 units
+</div>
+
+<p>
+In this example, the recommended safety stock is
+<strong>145 units</strong>. This buffer helps protect inventory
+against higher-than-normal usage or longer-than-normal supplier
+lead times.
+</p>
+
+<p>
+The result should still be reviewed against actual demand patterns,
+supplier reliability, storage capacity, item value and the cost of
+holding additional inventory.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Common Safety Stock Mistakes</h2>
+
+<div class="two">
+
+<div>
+
+<h3>Using outdated demand data</h3>
+
+<p>
+Safety stock based on old demand patterns may no longer provide
+the right level of protection. Review usage data when sales,
+consumption or seasonality changes significantly.
+</p>
+
+</div>
+
+<div>
+
+<h3>Ignoring supplier performance</h3>
+
+<p>
+A supplier that regularly delivers later than the stated lead
+time may require a larger buffer. Use realistic receiving history
+rather than relying only on the supplier's expected lead time.
+</p>
+
+</div>
+
+<div>
+
+<h3>Keeping too much safety stock</h3>
+
+<p>
+More buffer stock is not always better. Excess inventory can
+increase storage costs, working-capital requirements and the risk
+of expiry, damage or obsolescence.
+</p>
+
+</div>
+
+<div>
+
+<h3>Using the same buffer for every item</h3>
+
+<p>
+Different items can have very different demand patterns, values,
+lead times and stockout consequences. Safety stock should normally
+be evaluated at item level rather than applying one fixed quantity
+or percentage to everything.
+</p>
+
+</div>
+
+</div>
+
+<p>
+Safety stock should be reviewed periodically together with actual
+demand, supplier lead-time performance and inventory carrying
+costs. Fast-moving or critical items may require a different
+approach from slow-moving or easily replaceable stock.
+</p>
+
+</section>
+
+<section class="card faq-section">
+
+<h2>Safety Stock Calculator — Frequently Asked Questions</h2>
+
+<details>
+<summary>What is safety stock?</summary>
+<p>
+Safety stock is additional inventory kept as a buffer against
+unexpected demand increases, supplier delays or other uncertainty
+that could cause a stockout.
+</p>
+</details>
+
+<details>
+<summary>How much safety stock should I keep?</summary>
+<p>
+There is no single quantity that is suitable for every item.
+The appropriate level depends on factors such as demand variability,
+supplier lead time, service requirements, item importance and the
+cost of holding additional inventory.
+</p>
+</details>
+
+<details>
+<summary>What is the difference between safety stock and reorder point?</summary>
+<p>
+Safety stock is the buffer inventory kept for uncertainty. The
+reorder point is the stock level at which replenishment should
+normally be triggered. A reorder point typically includes expected
+demand during lead time plus safety stock.
+</p>
+</details>
+
+<details>
+<summary>Does a higher service level require more safety stock?</summary>
+<p>
+Generally, yes. In the Advanced Method, selecting a higher target
+service level increases the Z-score and therefore increases the
+calculated safety stock when the other inputs remain unchanged.
+</p>
+</details>
+
+</section>
+
 <section class="card">
 <h2>Related DIXANI Inventory Tools</h2>
 <div class="related">

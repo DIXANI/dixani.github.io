@@ -60,57 +60,181 @@
 <div><span>04</span><h3>Review the result</h3><p>DIXANI indicates whether you should reorder now, soon, or not yet.</p></div>
 </div></section>
 <section class="info-section">
+
+<div class="content-card">
+
 <h2>Why Is the Reorder Point Important?</h2>
+
 <p>
-        A reorder point helps determine when a replenishment order
-        should be placed before available inventory runs too low.
-        The calculation considers expected demand during supplier
-        lead time together with safety stock.
-    </p>
+A reorder point helps determine when a replenishment order should
+be placed before available inventory runs too low. The calculation
+considers expected demand during supplier lead time together with
+safety stock.
+</p>
+
 <p>
-        For example, if an item uses 15 units per day and the supplier
-        takes 7 days to deliver, expected lead-time demand is 105 units.
-        With 30 units of safety stock, the reorder point becomes
-        135 units.
-    </p>
+For example, if an item uses 15 units per day and the supplier
+takes 7 days to deliver, expected lead-time demand is 105 units.
+With 30 units of safety stock, the reorder point becomes 135 units.
+</p>
+
 <p>
-        When available stock approaches or falls below this level,
-        replenishment may need attention. Actual purchasing decisions
-        should also consider open purchase orders, minimum order
-        quantities, supplier schedules and expected changes in demand.
-    </p>
+When available stock approaches or falls below this level,
+replenishment may need attention. Actual purchasing decisions
+should also consider open purchase orders, minimum order quantities,
+supplier schedules and expected changes in demand.
+</p>
+
+</div>
+
 </section>
+
+    <section class="info-section">
+
+<h2>Reorder Point vs Safety Stock</h2>
+
+<p>
+Reorder point and safety stock are related inventory control
+measures, but they serve different purposes.
+</p>
+
+<p>
+<strong>Safety stock</strong> is the extra inventory kept as a
+buffer against unexpected demand, supplier delays or other
+replenishment uncertainty.
+</p>
+
+<p>
+<strong>Reorder point</strong> is the inventory level that signals
+when a replenishment order should normally be placed. It combines
+the expected demand during supplier lead time with the safety
+stock requirement.
+</p>
+
+<div class="formula-box">
+<strong>
+Reorder Point = Lead-Time Demand + Safety Stock
+</strong>
+</div>
+
+<p>
+For example, if an item normally uses 20 units per day, has a
+5-day supplier lead time and requires 40 units of safety stock,
+the reorder point is 140 units:
+</p>
+
+<div class="formula-box">
+<strong>
+(20 × 5) + 40 = 140 units
+</strong>
+</div>
+
+<p>
+This means the safety stock itself is 40 units, while 140 units
+is the level at which replenishment should normally be triggered.
+Keeping these two values separate helps avoid the common mistake
+of treating safety stock as the reorder point.
+</p>
+
+
+
+</section>
+
+<section class="info-section">
+
+<h2>Common Reorder Point Mistakes</h2>
+
+<p>
+A reorder point is simple to calculate, but inaccurate input data
+can lead to unnecessary stockouts or excess inventory. The following
+are some common issues to check when setting reorder levels.
+</p>
+
+<div class="info-grid">
+
+<div>
+<span>01</span>
+<h3>Using outdated demand</h3>
+<p>
+Average daily usage should reflect recent and representative demand.
+Seasonal changes, promotions or changes in customer demand can make
+an old average unreliable.
+</p>
+</div>
+
+<div>
+<span>02</span>
+<h3>Underestimating supplier lead time</h3>
+<p>
+Using the supplier's best-case delivery time can result in ordering
+too late. Where possible, use a realistic lead time based on actual
+purchasing and receiving history.
+</p>
+</div>
+
+<div>
+<span>03</span>
+<h3>Ignoring open purchase orders</h3>
+<p>
+Before placing another order, check confirmed incoming stock and
+existing purchase orders. This calculator allows incoming stock to
+be included when evaluating the current reorder status.
+</p>
+</div>
+
+<div>
+<span>04</span>
+<h3>Keeping the same safety stock indefinitely</h3>
+<p>
+Safety stock may need adjustment when demand variability, supplier
+reliability or replenishment lead time changes. Review buffer stock
+periodically rather than treating it as a permanent fixed value.
+</p>
+</div>
+
+</div>
+
+<p>
+Reorder points should therefore be reviewed periodically using
+current demand, supplier performance and inventory data. For
+important or high-value items, the calculated reorder point should
+be considered together with minimum order quantities, purchasing
+schedules, storage capacity and expected changes in demand.
+</p>
+
+</section>
+
 <section class="faq-section"><h2>Reorder Point Calculator — Frequently Asked Questions</h2>
 <details><summary>What is a reorder point?</summary><p>A reorder point is the inventory level at which a new purchase or replenishment order should be placed.</p></details>
 <details><summary>Does the reorder point include safety stock?</summary><p>Yes. This calculator adds safety stock to expected demand during lead time.</p></details>
 <details><summary>What if available stock is below the reorder point?</summary><p>The tool will flag that the item needs reorder attention. You should also consider open purchase orders, supplier limits and minimum order quantities.</p></details>
 </section>
-<section class="related-section"><h2>Related DIXANI Inventory Tools</h2><div class="related-grid">
 <section class="related-section">
+
 <h2>Related DIXANI Inventory Tools</h2>
+
 <div class="related-grid">
+
 <a class="related-card" href="/inventory/safety-stock/">
-<span>🛡️</span>
-<strong>
-                Safety Stock Calculator
-            </strong>
-<small>Live tool</small>
+    <span>🛡️</span>
+    <strong>Safety Stock Calculator</strong>
+    <small>Calculate buffer stock for demand and lead-time uncertainty.</small>
 </a>
+
 <a class="related-card" href="/inventory/eoq-calculator/">
-<span>📦</span>
-<strong>
-                Economic Order Quantity Calculator
-            </strong>
-<small>Live tool</small>
+    <span>📦</span>
+    <strong>Economic Order Quantity Calculator</strong>
+    <small>Estimate an economical order quantity based on ordering and holding costs.</small>
 </a>
+
 <a class="related-card" href="/inventory/variance-report/">
-<span>📊</span>
-<strong>
-                Inventory Variance Report Generator
-            </strong>
-<small>Live tool</small>
+    <span>📊</span>
+    <strong>Inventory Variance Report Generator</strong>
+    <small>Compare system stock with physical stock and identify inventory differences.</small>
 </a>
+
 </div>
+
 </section>
 </div></section></main>
 <footer class="footer">

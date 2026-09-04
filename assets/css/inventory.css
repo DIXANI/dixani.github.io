@@ -16,3 +16,58 @@ body{margin:0;background:var(--bg);color:var(--dark);font-family:Inter,system-ui
 @media(max-width:640px){.header-nav{gap:14px;font-size:13px}.main-container{padding:40px 14px 60px}.tool-intro h1{font-size:42px}.tool-intro p{font-size:17px}.panel,.summary-section,.info-section,.faq-section{padding:20px}.form-grid,.summary-grid,.financial-summary,.info-grid{grid-template-columns:1fr}.panel-header,.summary-heading,.action-panel,.import-area{align-items:flex-start;flex-direction:column}.table-controls{flex-direction:column}.table-controls select{max-width:none}.tool-footer{flex-direction:column;gap:12px}}
 .inventory-table input{min-width:90px}.inventory-table td:nth-child(2) input{min-width:120px}.inventory-table td:nth-child(3) input{min-width:180px}
 @media(max-width:640px){.inventory-table input{font-size:16px;min-height:42px}.inventory-table td:nth-child(2) input{min-width:130px}.inventory-table td:nth-child(3) input{min-width:190px}.inventory-table td:nth-child(4) input,.inventory-table td:nth-child(5) input,.inventory-table td:nth-child(8) input{min-width:100px}}
+/* ===== INFORMATION CARD GRID ===== */
+
+.info-section .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.info-section .info-grid > div {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 28px 26px;
+}
+
+.info-section .info-grid > div > span {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.info-section .info-grid > div h3 {
+    margin: 0 0 14px;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.info-section .info-grid > div p {
+    margin: 0 0 14px;
+    line-height: 1.7;
+}
+
+.info-section .info-grid > div p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+    .info-section .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .info-section .info-grid > div {
+        padding: 22px 20px;
+        border-radius: 18px;
+    }
+
+}

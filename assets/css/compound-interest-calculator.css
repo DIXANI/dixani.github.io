@@ -825,3 +825,154 @@ a{
         font-size:22px;
     }
 }
+/* ===== UNDERSTANDING COMPOUND INTEREST RESULTS ===== */
+
+.compound-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.compound-results-grid .benefit {
+    height: 100%;
+}
+
+.compound-results-note {
+    margin-top: 22px;
+    padding: 20px 24px;
+
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+}
+
+.compound-results-note p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.compound-results-note strong {
+    color: #0f172a;
+}
+
+@media (max-width: 640px) {
+
+    .compound-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .compound-results-note {
+        padding: 18px 20px;
+    }
+}
+/* ===== COMPOUND PAGE SPACING & BALANCE ===== */
+
+/* Give major sections more breathing room */
+.section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+/* Keep headings from feeling too close to the content below */
+.section-heading {
+    margin-bottom: 28px;
+}
+
+/* ===== UNDERSTANDING RESULTS ===== */
+
+.compound-results-grid {
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.compound-results-grid .benefit {
+    padding: 22px 20px;
+}
+
+.compound-results-grid .benefit h3 {
+    margin-bottom: 8px;
+}
+
+.compound-results-grid .benefit p {
+    line-height: 1.6;
+}
+
+.compound-results-note {
+    margin-top: 18px;
+}
+
+
+/* ===== EXAMPLE BOX — LIGHTER VISUAL WEIGHT ===== */
+
+.example-box {
+    padding: 30px 32px;
+    border-radius: 18px;
+}
+
+.example-box h2 {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.example-box p {
+    line-height: 1.65;
+}
+
+
+/* ===== COMPOUND INTEREST FORMULA ===== */
+
+.formula-box {
+    margin-top: 24px;
+    padding: 20px 24px;
+
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+
+    box-shadow: none;
+}
+
+.formula-box strong {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #2563eb;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.formula-box p {
+    margin: 0;
+
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 640px) {
+
+    .section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .compound-results-grid .benefit {
+        padding: 20px 18px;
+    }
+
+    .example-box {
+        padding: 24px 20px;
+    }
+
+    .formula-box {
+        padding: 18px 20px;
+    }
+}

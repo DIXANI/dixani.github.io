@@ -849,3 +849,92 @@
     }
 
 }
+/* ===== VAT VALUE EXPLANATION ===== */
+
+.vat-value-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.vat-value-grid .benefit {
+    height: 100%;
+}
+
+.vat-value-note {
+    margin-top: 22px;
+    padding: 20px 24px;
+
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+}
+
+.vat-value-note p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.vat-value-note strong {
+    color: #0f172a;
+}
+
+@media (max-width: 640px) {
+
+    .vat-value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vat-value-note {
+        padding: 18px 20px;
+    }
+}
+/* ===== COMMON VAT MISTAKES ===== */
+
+.vat-mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.vat-mistakes-grid .benefit {
+    height: 100%;
+}
+
+@media (max-width: 640px) {
+    .vat-mistakes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== RELATED RESOURCES ===== */
+
+.related-resources-section .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.related-resources-section .category-card {
+    padding: 22px 20px;
+    min-height: 0;
+    align-items: flex-start;
+}
+
+.related-resources-section .category-card h3 {
+    margin-bottom: 6px;
+    font-size: 19px;
+}
+
+.related-resources-section .category-card p {
+    margin-bottom: 10px;
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+    .related-resources-section .category-grid {
+        grid-template-columns: 1fr;
+    }
+}

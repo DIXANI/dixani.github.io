@@ -8,3 +8,112 @@ button{border:1px solid #cbd5e1;background:#fff;padding:11px 16px;border-radius:
 .pill{display:inline-flex;width:auto;height:auto;flex:0 0 auto;align-self:flex-start;padding:7px 12px;border-radius:999px;background:#eff6ff;color:var(--blue);font-size:11px;font-weight:900;line-height:1;white-space:nowrap}.green{background:#f0fdf4;color:#15803d}.summary-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-top:20px}.metric{border:1px solid var(--line);border-radius:14px;padding:17px;min-width:0}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:23px;overflow-wrap:anywhere}.metric.featured{background:#eff6ff;border-color:#bfdbfe}.metric.featured strong{color:var(--blue)}
 .container-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.container-card{border:1px solid var(--line);border-radius:14px;padding:18px}.container-card>div:first-child{display:flex;justify-content:space-between;gap:12px}.container-card span{color:var(--muted);font-size:13px}.track{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin:15px 0 8px}.track i{display:block;width:0;height:100%;background:var(--blue);border-radius:99px;transition:width .2s}.disclaimer{font-size:12px;margin-bottom:0}.eyebrow{font-size:12px;color:var(--blue);font-weight:900}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}.info-grid>div{border-top:2px solid #dbeafe;padding-top:14px}.info-grid b{color:var(--blue);font-size:12px}.info-grid h3{margin:5px 0}.faq details{padding:14px 0;border-bottom:1px solid var(--line)}.faq summary{font-weight:800;cursor:pointer}footer{background:#fff;border-top:1px solid var(--line);padding:28px 24px;display:flex;justify-content:space-between;gap:20px;color:var(--muted)}footer div{display:flex;gap:12px}footer strong{color:var(--ink)}
 @media(max-width:950px){.summary-grid{grid-template-columns:repeat(2,1fr)}.container-grid{grid-template-columns:1fr}.settings{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.header-inner nav{display:none}.page{padding:42px 14px 60px}.hero h1{font-size:46px}.panel,.summary{padding:20px}.panel-head,.summary-head{flex-direction:column}.settings,.summary-grid,.info-grid{grid-template-columns:1fr}.actions{flex-direction:column}.actions button{width:100%}input,select{font-size:16px}footer{flex-direction:column}.table-wrap{overflow:visible}table,thead,tbody,tr,td{display:block;width:100%;min-width:0}thead{display:none}tr{border:1px solid var(--line);border-radius:14px;padding:12px;margin:14px 0}td{border:0;padding:6px 0}td::before{content:attr(data-label);display:block;color:#64748b;font-size:11px;font-weight:800;text-transform:uppercase;margin-bottom:4px}.row-number{display:none}.calc-cell{padding:9px 0}.remove{width:100%;margin-top:5px}}
+/* ===== CBM INFORMATION CARD GRID ===== */
+
+.panel.info .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.panel.info .info-grid > div {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 28px 26px;
+}
+
+.panel.info .info-grid > div > b {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.panel.info .info-grid > div h3 {
+    margin: 0 0 14px;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.panel.info .info-grid > div p {
+    margin: 0 0 14px;
+    line-height: 1.7;
+}
+
+.panel.info .info-grid > div p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+    .panel.info .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .panel.info .info-grid > div {
+        padding: 22px 20px;
+        border-radius: 18px;
+    }
+
+}
+/* ===== RELATED LOGISTICS TOOLS ===== */
+
+.related {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.related a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    padding: 22px 20px;
+
+    color: #0f172a;
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.related a:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    transform: translateY(-2px);
+}
+
+.related a strong {
+    line-height: 1.4;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 800px) {
+
+    .related {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .related a {
+        padding: 18px 16px;
+    }
+
+}
