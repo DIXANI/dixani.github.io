@@ -19,7 +19,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Sego
 .footer-grid{display:grid!important;grid-template-columns:2fr 1fr 1fr 1fr!important;gap:35px!important}
 .footer-brand{color:var(--dixani-blue)!important;font-size:23px!important;font-weight:900!important;letter-spacing:-.03em}
 .footer p{color:var(--dixani-muted)!important;font-size:16px!important;line-height:1.6!important}
-.footer h4{margin:0 0 12px!important;color:var(--dixani-navy)!important;font-size:16px!important;font-weight:700!important}
+.footer h3{margin:0 0 12px!important;color:var(--dixani-navy)!important;font-size:16px!important;font-weight:700!important}
 .footer a{display:block!important;margin:10px 0!important;color:var(--dixani-muted)!important;text-decoration:none!important;font-size:14px!important;font-weight:400!important}
 .footer a:hover{color:var(--dixani-blue)!important}
 .copyright{border-top:1px solid var(--dixani-border)!important;margin-top:35px!important;padding-top:20px!important;color:#94a3b8!important;font-size:13px!important}
