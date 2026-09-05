@@ -89,3 +89,19 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Sego
     }
 
 }
+/* ===== ACCESSIBILITY CONTRAST FIX ===== */
+
+/* Tags displayed on light grey backgrounds */
+.template-tags span {
+    color: #475569 !important;
+}
+
+/* Section label displayed inside the dark workflow panel */
+.workflow-box .section-label {
+    color: #60a5fa !important;
+}
+
+/* Footer copyright text on white background */
+.copyright {
+    color: #64748b !important;
+}
