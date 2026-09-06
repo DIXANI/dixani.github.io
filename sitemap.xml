@@ -255,6 +255,13 @@
     <url>
         <loc>https://dixani.com/templates/purchasing/purchase-tracker/</loc>
     </url>
+    
+    <url>
+        <loc>https://dixani.com/guides/</loc>
+    </url>
 
+    <url>
+        <loc>https://dixani.com/guides/investigate-inventory-variances/</loc>
+    </url>
    
 </urlset>
