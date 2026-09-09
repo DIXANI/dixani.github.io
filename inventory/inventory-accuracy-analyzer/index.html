@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Inventory Accuracy Analyzer &amp; Cycle Count Planner | DIXANI</title>
+  <meta name="description" content="Analyze stock variances, rank inventory risk, build a priority cycle count list and export an action plan. Free, private and browser-based.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="DIXANI">
+  <link rel="canonical" href="https://dixani.com/inventory/inventory-accuracy-analyzer/">
+  <link rel="icon" type="image/png" href="/assets/images/dixani-icon.png">
+  <link rel="apple-touch-icon" href="/assets/images/dixani-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DIXANI">
+  <meta property="og:title" content="Free Inventory Accuracy Analyzer &amp; Cycle Count Planner">
+  <meta property="og:description" content="Turn stock-count data into risk priorities, accuracy KPIs and a practical investigation plan.">
+  <meta property="og:url" content="https://dixani.com/inventory/inventory-accuracy-analyzer/">
+  <meta property="og:image" content="https://dixani.com/assets/images/dixani-social-preview.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Inventory Accuracy Analyzer &amp; Cycle Count Planner">
+  <meta name="twitter:description" content="Turn stock-count data into risk priorities, accuracy KPIs and a practical investigation plan.">
+  <meta name="twitter:image" content="https://dixani.com/assets/images/dixani-social-preview.png">
+  <link rel="stylesheet" href="/assets/css/inventory-accuracy-analyzer.css">
+  <link rel="stylesheet" href="/assets/css/site-consistency.css">
+  <style>.toolbar-fields{display:flex;align-items:end;gap:10px}.toolbar-fields select{display:block;margin-top:4px;border:1px solid #cbd5e1;border-radius:9px;padding:9px 10px;background:#fff}@media(max-width:760px){.toolbar-fields{align-items:stretch;flex-direction:column}.toolbar-fields select{width:100%}}</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-LQEH9L9TZ4');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"DIXANI Inventory Accuracy Analyzer","url":"https://dixani.com/inventory/inventory-accuracy-analyzer/","applicationCategory":"BusinessApplication","operatingSystem":"Any","isAccessibleForFree":true,"description":"A browser-based tool that analyzes stock variances, ABC class, inventory risk and cycle count priorities."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dixani.com/"},{"@type":"ListItem","position":2,"name":"Inventory Tools","item":"https://dixani.com/categories/inventory/"},{"@type":"ListItem","position":3,"name":"Inventory Accuracy Analyzer","item":"https://dixani.com/inventory/inventory-accuracy-analyzer/"}]}
+  </script>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/">DIXANI</a><button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a href="/#tools">Tools</a><a href="/templates/">Templates</a><a class="active" href="/categories/inventory/">Inventory</a><a href="/categories/logistics/">Logistics</a><a href="/categories/business/">Business</a><a href="/categories/finance/">Finance</a><a href="/categories/converters/">Converters</a><a href="/guides/">Guides</a><a href="/about/">About</a></nav></div></header>
+
+<main class="analyzer-shell">
+  <section class="tool-heading">
+    <div><div class="eyebrow">DIXANI FLAGSHIP INVENTORY TOOL</div><h1>Inventory Accuracy <span>Analyzer</span></h1><p>Convert stock-count data into accuracy KPIs, financial exposure, ABC classes and an explainable priority action list.</p></div>
+    <div class="privacy-note"><strong>Private by design</strong><span>Your file is processed only in this browser. Nothing is uploaded.</span></div>
+  </section>
+
+  <section class="workspace-card" aria-labelledby="dataHeading">
+    <div class="card-heading"><div><span class="step">STEP 1</span><h2 id="dataHeading">Add your inventory data</h2><p>Import the template, paste data, or edit the sample rows below.</p></div><div class="top-actions"><button class="button secondary" id="downloadTemplate" type="button">Download template</button><button class="button secondary" id="loadSample" type="button">Load sample</button><button class="button danger-text" id="clearData" type="button">Clear</button></div></div>
+    <div class="input-methods">
+      <label class="upload-zone" id="dropZone"><input type="file" id="csvFile" accept=".csv,text/csv"><span class="upload-icon">↑</span><strong>Choose or drop a CSV file</strong><small>Required: SKU, System Qty, Physical Qty. Optional fields improve risk scoring.</small></label>
+      <div class="paste-zone"><label for="pasteData">Paste from Excel or Google Sheets</label><textarea id="pasteData" rows="4" placeholder="Paste rows with a header line here…"></textarea><button class="button secondary" id="importPaste" type="button">Import pasted data</button></div>
+    </div>
+    <div class="message" id="message" role="status" aria-live="polite"></div>
+    <details class="field-help"><summary>Accepted columns and definitions</summary><div class="field-grid"><span><b>SKU</b> item code</span><span><b>Description</b> item name</span><span><b>Location</b> bin or zone</span><span><b>System Qty</b> book stock</span><span><b>Physical Qty</b> counted stock</span><span><b>Unit Cost</b> item cost</span><span><b>Annual Usage</b> yearly issues or picks</span><span><b>Last Count Date</b> YYYY-MM-DD</span><span><b>Criticality</b> Low, Medium or High</span><span><b>Previous Variances</b> recent discrepancy count</span></div></details>
+    <div class="table-toolbar"><div class="toolbar-fields"><label>Search <input id="searchRows" type="search" placeholder="SKU, description or location"></label><label>Currency <select id="currency"><option>USD</option><option>QAR</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></label></div><button class="button primary" id="addRow" type="button">+ Add item</button></div>
+    <div class="editable-table-wrap"><table class="editable-table"><thead><tr><th>SKU</th><th>Description</th><th>Location</th><th>System Qty</th><th>Physical Qty</th><th>Unit Cost</th><th>Annual Usage</th><th>Last Count</th><th>Criticality</th><th>Previous Variances</th><th><span class="sr-only">Remove</span></th></tr></thead><tbody id="inputBody"></tbody></table></div>
+    <p class="table-caption"><span id="rowCount">0 items</span> · Blank optional values are treated conservatively and marked in the results.</p>
+  </section>
+
+  <section class="analyze-bar"><div><strong>Ready to identify the inventory that needs attention?</strong><span>The score is comparative within this dataset and every result includes its main risk reasons.</span></div><button class="button primary large" id="analyzeButton" type="button">Analyze inventory</button></section>
+
+  <section id="results" class="results" aria-labelledby="resultsHeading" hidden>
+    <div class="results-title"><div><span class="step">STEP 2</span><h2 id="resultsHeading">Accuracy and risk overview</h2><p id="analysisSummary"></p></div><div class="result-actions"><button class="button secondary" id="exportCsv" type="button">Export analyzed CSV</button><button class="button secondary" id="printReport" type="button">Print / Save PDF</button></div></div>
+    <div class="kpi-grid">
+      <article class="kpi"><span>Exact-match accuracy</span><strong id="accuracyKpi">—</strong><small>SKUs where physical = system</small></article>
+      <article class="kpi"><span>Absolute variance value</span><strong id="exposureKpi">—</strong><small>Total financial discrepancy</small></article>
+      <article class="kpi"><span>Shortage exposure</span><strong id="shortageKpi">—</strong><small>Negative variance value</small></article>
+      <article class="kpi alert"><span>Critical / high priorities</span><strong id="priorityKpi">—</strong><small>Items requiring earlier review</small></article>
+      <article class="kpi"><span>Units mismatched</span><strong id="unitsKpi">—</strong><small>Absolute unit difference</small></article>
+    </div>
+    <div class="insight-grid">
+      <article class="insight-card"><div class="insight-heading"><div><h3>Risk distribution</h3><p>Count of items by priority level</p></div></div><div id="riskChart" class="bar-chart" aria-label="Risk distribution chart"></div></article>
+      <article class="insight-card"><div class="insight-heading"><div><h3>Top variance exposure</h3><p>Items driving the most absolute value difference</p></div></div><div id="exposureChart" class="bar-chart exposure-chart" aria-label="Top variance exposure chart"></div></article>
+      <article class="insight-card recommendations"><h3>Management signals</h3><ul id="managementSignals"></ul></article>
+    </div>
+
+    <section class="priority-card"><div class="card-heading"><div><span class="step">STEP 3</span><h2>Priority investigation list</h2><p>Sorted by risk score. Use the reasons and suggested action to direct recounts and investigations.</p></div><div class="filter-row"><label>Priority <select id="riskFilter"><option value="all">All</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select></label><label>ABC <select id="abcFilter"><option value="all">All</option><option>A</option><option>B</option><option>C</option></select></label></div></div>
+      <div class="results-table-wrap"><table class="results-table"><thead><tr><th>Rank</th><th>SKU / Item</th><th>Variance</th><th>Exposure</th><th>ABC</th><th>Risk</th><th>Why prioritized</th><th>Recommended action</th></tr></thead><tbody id="resultsBody"></tbody></table></div>
+      <div id="noResults" class="empty-result" hidden>No items match these filters.</div>
+    </section>
+    <aside class="method-note"><h3>How the risk score works</h3><p>The 0–100 score combines <b>variance exposure (30)</b>, <b>annual usage/velocity (20)</b>, <b>item value (20)</b>, <b>time since last count (15)</b>, <b>previous variances (10)</b> and <b>operational criticality (5)</b>. Dataset percentiles keep the ranking useful across businesses of different sizes. The score supports professional judgment; it does not replace it.</p><p><b>ABC method:</b> annual usage × unit cost, ranked by cumulative value. Defaults: A through 80%, B through 95%, C thereafter.</p></aside>
+  </section>
+
+  <section class="content-card"><h2>From discrepancy data to a focused action plan</h2><div class="content-grid"><div><h3>What this tool answers</h3><p>Which mismatches create the greatest financial or operational risk? Which items should be recounted first? Are a few items driving most of the exposure? The analyzer makes those decisions visible without requiring a WMS or spreadsheet formulas.</p></div><div><h3>Recommended workflow</h3><p>Import a completed count, analyze the priorities, recount critical items independently, review receiving/issues/transfers, document the root cause, then post approved adjustments. Export the result as your review evidence.</p></div><div><h3>Interpret accuracy carefully</h3><p>Exact-match accuracy is intentionally strict. A business may also use quantity or value tolerances, but these should be approved internally and applied consistently. High-value A items normally warrant tighter control.</p></div></div></section>
+
+  <section class="faq-section"><h2>Inventory Accuracy Analyzer — FAQs</h2><details><summary>Is inventory data uploaded to DIXANI?</summary><p>No. CSV parsing, analysis and exports happen in your browser. Refreshing the page removes the working data unless your browser restores the tab.</p></details><details><summary>Why can an item with zero variance still receive a risk score?</summary><p>High-value, fast-moving, overdue or historically inaccurate items may deserve a preventive count even when the current record matches.</p></details><details><summary>Is the ranking a replacement for internal controls?</summary><p>No. It is a decision-support model. Review its reasons against your materiality thresholds, product criticality and operating procedures.</p></details><details><summary>What does ABC mean?</summary><p>ABC separates items by cumulative annual usage value. A items contribute the first 80%, B the next 15%, and C the remaining 5% under the tool’s default method.</p></details></section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div><div class="footer-brand">DIXANI</div><p>Practical Tools. Smarter Work.</p></div><div><h3>Resources</h3><a href="/#tools">Online Tools</a><a href="/templates/">Templates</a><a href="/guides/">Guides</a><a href="/categories/inventory/">Inventory Tools</a></div><div><h3>Company</h3><a href="/about/">About</a><a href="/contact/">Contact</a></div><div><h3>Legal</h3><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div><div class="copyright">© 2026 DIXANI. All rights reserved.</div></div></footer>
+<script src="/assets/js/inventory-accuracy-analyzer.js"></script>
+<script src="/assets/js/main.js"></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"30b44fcd1cb24302859dddd48e86b942"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
