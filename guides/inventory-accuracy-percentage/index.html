@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="/assets/images/dixani-icon.png"/>
+<link rel="apple-touch-icon" href="/assets/images/dixani-icon.png"/>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','G-LQEH9L9TZ4');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+
+<title>Inventory Accuracy Percentage: Methods & Examples | DIXANI</title>
+
+<meta
+  name="description"
+  content="Learn how to calculate inventory accuracy using record, quantity and value-based methods, with practical warehouse examples, targets and common mistakes."
+/>
+
+<meta content="index, follow" name="robots"/>
+<meta content="Dinesh Madushanka" name="author"/>
+<meta content="#2563eb" name="theme-color"/>
+
+<link
+  href="https://dixani.com/guides/inventory-accuracy-percentage/"
+  rel="canonical"
+/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="DIXANI"/>
+<meta
+  property="og:title"
+  content="Inventory Accuracy Percentage: Methods & Examples | DIXANI"
+/>
+<meta
+  property="og:description"
+  content="Calculate inventory accuracy correctly using record, quantity and value-based methods, with practical warehouse examples."
+/>
+<meta
+  property="og:url"
+  content="https://dixani.com/guides/inventory-accuracy-percentage/"
+/>
+<meta
+  property="og:image"
+  content="https://dixani.com/assets/images/dixani-social-preview.png"
+/>
+<meta property="og:locale" content="en_US"/>
+<meta property="article:published_time" content="2026-09-12"/>
+<meta property="article:modified_time" content="2026-09-12"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta
+  name="twitter:title"
+  content="Inventory Accuracy Percentage: Methods & Examples | DIXANI"
+/>
+<meta
+  name="twitter:description"
+  content="A practical guide to measuring inventory record, quantity and value accuracy."
+/>
+<meta
+  name="twitter:image"
+  content="https://dixani.com/assets/images/dixani-social-preview.png"
+/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Inventory Accuracy Percentage: Methods, Examples and Common Mistakes",
+      "description": "A practical guide to calculating inventory accuracy using record, quantity and value-based methods.",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-09-12",
+      "author": {
+        "@type": "Person",
+        "name": "Dinesh Madushanka",
+        "url": "https://dixani.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DIXANI",
+        "url": "https://dixani.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dixani.com/assets/images/dixani-icon.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://dixani.com/guides/inventory-accuracy-percentage/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dixani.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dixani.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Inventory Accuracy Percentage",
+          "item": "https://dixani.com/guides/inventory-accuracy-percentage/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link href="/assets/css/templates.css" rel="stylesheet"/>
+<link href="/assets/css/guides.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="logo" href="/">DIXANI</a>
+
+    <button
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Open navigation"
+      class="menu-button"
+      id="menuButton"
+      type="button"
+    >
+      ☰
+    </button>
+
+    <nav
+      aria-label="Main navigation"
+      class="main-nav"
+      id="mainNav"
+    >
+      <a href="/#tools">Tools</a>
+      <a href="/templates/">Templates</a>
+      <a class="active" href="/guides/">Guides</a>
+      <a href="/categories/inventory/">Inventory</a>
+      <a href="/categories/logistics/">Logistics</a>
+      <a href="/categories/business/">Business</a>
+      <a href="/categories/finance/">Finance</a>
+      <a href="/categories/converters/">Converters</a>
+      <a href="/about/">About</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="guide-hero">
+  <div class="container">
+
+    <span class="guide-badge">INVENTORY PERFORMANCE GUIDE</span>
+
+    <h1>
+      Inventory Accuracy Percentage:
+      <span>Methods, Examples and Common Mistakes</span>
+    </h1>
+
+    <p>
+      Learn how to measure inventory accuracy correctly, understand what
+      different accuracy percentages reveal and turn count results into
+      practical warehouse improvements.
+    </p>
+
+    <div class="guide-meta">
+      <span><strong>Published:</strong> September 12, 2026</span>
+      <span><strong>Reading time:</strong> 11 minutes</span>
+      <span><strong>By:</strong> Dinesh Madushanka</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="container article-shell">
+
+<article class="article-body">
+
+<h2 id="meaning">What is inventory accuracy?</h2>
+
+<p>
+Inventory accuracy measures how closely the quantities recorded in an
+inventory system match the stock physically available in the warehouse,
+store or stockroom.
+</p>
+
+<p>
+A record is accurate when the system quantity and verified physical
+quantity agree according to the organization’s approved counting rules.
+Depending on the operation, accuracy may also include the correct location,
+unit of measure, batch number, serial number, stock status and expiry date.
+</p>
+
+<p>
+Inventory accuracy is not simply an accounting measure. Inaccurate records
+can cause stockouts, unnecessary purchasing, delayed orders, failed picks,
+production interruptions and incorrect financial decisions.
+</p>
+
+<div class="formula-box">
+  <strong>BASIC RECORD ACCURACY FORMULA</strong>
+  <p>
+    Inventory accuracy % = Accurate records ÷ Records counted × 100
+  </p>
+</div>
+
+<h2 id="methods">Three ways to measure inventory accuracy</h2>
+
+<p>
+There is no single calculation that explains every type of inventory
+difference. A warehouse should understand which method it is using and
+apply the same method consistently when comparing results.
+</p>
+
+<h3>1. Record or SKU accuracy</h3>
+
+<p>
+Record accuracy measures the percentage of counted SKU or location records
+that match the physical count.
+</p>
+
+<div class="formula-box">
+  <strong>RECORD ACCURACY</strong>
+  <p>
+    Accurate records ÷ Total records counted × 100
+  </p>
+</div>
+
+<div class="example-box">
+  <h3>Example: Record accuracy</h3>
+
+  <p>
+    A cycle count covers 100 SKU-location records. Ninety-four records
+    match the physical quantities and six contain differences.
+  </p>
+
+  <p>
+    <strong>Accuracy:</strong>
+    94 ÷ 100 × 100 = <strong>94%</strong>
+  </p>
+</div>
+
+<p>
+This method is straightforward and useful for routine cycle-count reporting.
+However, every inaccurate record normally has the same effect on the
+percentage. A one-unit difference and a one-thousand-unit difference can
+both count as one inaccurate record.
+</p>
+
+<h3>2. Quantity accuracy</h3>
+
+<p>
+Quantity accuracy measures the size of the absolute quantity differences
+in relation to the recorded inventory quantity. Using absolute differences
+prevents shortages and excesses from cancelling each other.
+</p>
+
+<div class="formula-box">
+  <strong>QUANTITY ACCURACY</strong>
+  <p>
+    [1 − (Total absolute quantity variance ÷ Total system quantity)] × 100
+  </p>
+</div>
+
+<div class="example-box">
+  <h3>Example: Quantity accuracy</h3>
+
+  <p>
+    The system shows 2,000 total units. The absolute differences identified
+    during the count total 80 units.
+  </p>
+
+  <p>
+    <strong>Accuracy:</strong>
+    [1 − (80 ÷ 2,000)] × 100 = <strong>96%</strong>
+  </p>
+</div>
+
+<p>
+This method shows the scale of the quantity difference, but it should be
+used carefully when items have different units of measure. Adding pieces,
+cartons, kilograms and litres into one total may produce a misleading
+result.
+</p>
+
+<h3>3. Value accuracy</h3>
+
+<p>
+Value accuracy considers the financial effect of inventory differences.
+It helps management identify situations where a small number of inaccurate
+records creates significant financial exposure.
+</p>
+
+<div class="formula-box">
+  <strong>VALUE ACCURACY</strong>
+  <p>
+    [1 − (Total absolute variance value ÷ Total system stock value)] × 100
+  </p>
+</div>
+
+<div class="example-box">
+  <h3>Example: Value accuracy</h3>
+
+  <p>
+    Counted inventory has a system value of $50,000. The total absolute
+    value of the identified differences is $1,500.
+  </p>
+
+  <p>
+    <strong>Accuracy:</strong>
+    [1 − ($1,500 ÷ $50,000)] × 100 = <strong>97%</strong>
+  </p>
+</div>
+
+<p>
+Value accuracy is particularly useful for high-value inventory, but it
+should not replace record accuracy. A warehouse may have high value
+accuracy while still having many low-value SKU records with incorrect
+quantities.
+</p>
+
+<h2 id="absolute">Why absolute variance matters</h2>
+
+<p>
+A shortage on one item should not be allowed to cancel an excess on another
+item when measuring inventory exposure.
+</p>
+
+<div class="example-box">
+  <h3>Shortage and excess example</h3>
+
+  <p>
+    Item A has a shortage worth $500. Item B has an excess worth $500.
+  </p>
+
+  <p>
+    The net financial difference is zero, but the warehouse still has
+    <strong>$1,000 of absolute variance exposure</strong>.
+  </p>
+</div>
+
+<p>
+The two differences may have separate operational causes. One product may
+have been issued without a transaction while another may have been received
+under the wrong item code. Netting the values would hide both control
+failures.
+</p>
+
+<h2 id="tolerance">Should inventory accuracy use a tolerance?</h2>
+
+<p>
+Some businesses require an exact quantity match. Others apply an approved
+tolerance based on the product, unit of measure or counting process.
+</p>
+
+<ul>
+  <li>
+    <strong>Exact-match method:</strong> a record is accurate only when
+    physical and system quantities are identical.
+  </li>
+
+  <li>
+    <strong>Quantity tolerance:</strong> a difference may be accepted when
+    it remains within an approved number of units.
+  </li>
+
+  <li>
+    <strong>Percentage tolerance:</strong> the acceptable difference is
+    based on a percentage of the recorded quantity.
+  </li>
+
+  <li>
+    <strong>Value tolerance:</strong> minor differences may be accepted
+    when their financial value remains below an authorization threshold.
+  </li>
+</ul>
+
+<p>
+Tolerance should not be introduced simply to improve the reported accuracy
+percentage. It should be formally approved, appropriate for the product and
+consistently applied.
+</p>
+
+<p>
+Serialized products, controlled items and high-value inventory may require
+an exact match even when a tolerance is used for other stock.
+</p>
+
+<h2 id="combined">Use several measures together</h2>
+
+<p>
+A single percentage can hide important inventory risks. A more useful
+inventory-control dashboard combines several indicators.
+</p>
+
+<ul>
+  <li><strong>Record accuracy:</strong> how many records matched.</li>
+  <li><strong>Absolute quantity variance:</strong> total units affected.</li>
+  <li><strong>Absolute variance value:</strong> financial exposure.</li>
+  <li><strong>Shortage value:</strong> value physically missing.</li>
+  <li><strong>Excess value:</strong> value physically available but not recorded.</li>
+  <li><strong>High-risk records:</strong> priority items requiring investigation.</li>
+  <li><strong>Repeat variances:</strong> items or locations with recurring problems.</li>
+</ul>
+
+<p>
+For example, two warehouses may both report 97% record accuracy. The first
+may have three small low-value differences. The second may have three
+differences affecting critical or high-value products. The percentage is
+the same, but the operational risk is not.
+</p>
+
+<h2 id="example">Practical warehouse example</h2>
+
+<div class="example-box">
+  <h3>Cycle-count results</h3>
+
+  <p><strong>Records counted:</strong> 200</p>
+  <p><strong>Exact matches:</strong> 190</p>
+  <p><strong>Inaccurate records:</strong> 10</p>
+  <p><strong>System stock value:</strong> $120,000</p>
+  <p><strong>Absolute variance value:</strong> $3,600</p>
+
+  <p>
+    <strong>Record accuracy:</strong>
+    190 ÷ 200 × 100 = <strong>95%</strong>
+  </p>
+
+  <p>
+    <strong>Value accuracy:</strong>
+    [1 − ($3,600 ÷ $120,000)] × 100 = <strong>97%</strong>
+  </p>
+</div>
+
+<p>
+The results show that 5% of the counted records were inaccurate, while the
+absolute financial exposure represented 3% of the system value.
+</p>
+
+<p>
+Management should not stop after reporting the percentages. The ten
+differences should be ranked using value, movement frequency, operational
+criticality and recurrence. High-risk records should be investigated first.
+</p>
+
+<h2 id="targets">What is a good inventory accuracy percentage?</h2>
+
+<p>
+There is no universal accuracy target suitable for every warehouse.
+Targets should reflect the products, operational risks, system controls
+and service requirements of the organization.
+</p>
+
+<p>
+A warehouse handling expensive serialized equipment may require almost
+perfect accuracy. An operation handling low-value bulk material may use
+approved measurement tolerances.
+</p>
+
+<p>
+When setting internal targets, consider:
+</p>
+
+<ul>
+  <li>Product value and criticality</li>
+  <li>Movement frequency</li>
+  <li>Batch, serial and expiry-control requirements</li>
+  <li>Customer and contractual requirements</li>
+  <li>Historical performance</li>
+  <li>Counting method and approved tolerances</li>
+  <li>Consequences of an inaccurate balance</li>
+</ul>
+
+<p>
+The target should encourage better control without hiding differences.
+Consistent improvement and fewer recurring causes are often more meaningful
+than presenting a high percentage alone.
+</p>
+
+<h2 id="causes">Common causes of inaccurate inventory</h2>
+
+<ul>
+  <li>Receipts physically stored before the system receipt is completed</li>
+  <li>Orders dispatched before the inventory issue is posted</li>
+  <li>Incorrect item codes or units of measure</li>
+  <li>Unrecorded stock transfers between locations</li>
+  <li>Picking from the wrong bin or SKU</li>
+  <li>Returns placed into available stock before inspection</li>
+  <li>Damaged or quarantined stock not recorded correctly</li>
+  <li>Open cartons and incorrect pack quantities</li>
+  <li>Duplicate or delayed transactions</li>
+  <li>Counting errors and uncontrolled stock movements</li>
+</ul>
+
+<h2 id="mistakes">Common inventory-accuracy mistakes</h2>
+
+<ul>
+  <li>
+    Calculating only the net difference and allowing shortages and excesses
+    to cancel each other.
+  </li>
+
+  <li>
+    Reporting one percentage without explaining the calculation method.
+  </li>
+
+  <li>
+    Combining incompatible units of measure into one quantity total.
+  </li>
+
+  <li>
+    Changing the physical count to match the expected system balance.
+  </li>
+
+  <li>
+    Applying unofficial tolerances to improve reported performance.
+  </li>
+
+  <li>
+    Measuring accuracy without checking location, batch, serial or stock status.
+  </li>
+
+  <li>
+    Adjusting quantities without investigating the root cause.
+  </li>
+
+  <li>
+    Ignoring low-value differences that repeatedly affect the same process.
+  </li>
+
+  <li>
+    Comparing warehouses that use different counting rules or tolerances.
+  </li>
+</ul>
+
+<h2 id="improve">How to improve inventory accuracy</h2>
+
+<div class="checklist">
+
+  <div class="check-item">
+    <h3>Define the calculation method</h3>
+    <p>
+      Document whether accuracy requires an exact match or uses an approved
+      tolerance. Apply the same method consistently.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Use regular cycle counting</h3>
+    <p>
+      Count selected inventory throughout the year, with greater frequency
+      for valuable, fast-moving, critical and historically inaccurate items.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Control stock movements</h3>
+    <p>
+      Establish a count cut-off or maintain a movement log for every receipt,
+      issue, transfer and return occurring during the count.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Use blind counts</h3>
+    <p>
+      Avoid showing the system quantity to the first counter. Record the
+      independent physical result before comparing it with the system.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Investigate before adjusting</h3>
+    <p>
+      Review transactions, staging areas, nearby bins, damage, returns,
+      pack sizes and units of measure before posting a stock adjustment.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Track root causes</h3>
+    <p>
+      Use consistent reason codes and identify recurring problems by item,
+      location, process, shift or transaction type.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Prioritize financial and operational risk</h3>
+    <p>
+      Investigate high-value, high-movement and business-critical differences
+      before low-risk discrepancies.
+    </p>
+  </div>
+
+  <div class="check-item">
+    <h3>Verify corrective actions</h3>
+    <p>
+      Recount affected inventory and monitor the relevant process to confirm
+      that the same problem does not return.
+    </p>
+  </div>
+
+</div>
+
+<div class="action-box">
+
+  <h2>Analyze your inventory accuracy</h2>
+
+  <p>
+    Use the free DIXANI Inventory Accuracy Analyzer to compare system and
+    physical quantities, measure accuracy, identify financial exposure and
+    prioritize inventory records for investigation.
+  </p>
+
+  <div class="action-links">
+
+    <a
+      class="primary-link"
+      href="/inventory/inventory-accuracy-analyzer/"
+    >
+      Open Accuracy Analyzer
+    </a>
+
+    <a
+      class="secondary-link"
+      href="/guides/warehouse-cycle-count-checklist/"
+    >
+      Read Cycle Count Guide
+    </a>
+
+    <a
+      class="secondary-link"
+      href="/templates/inventory/stock-count-sheet/"
+    >
+      Download Stock Count Sheet
+    </a>
+
+  </div>
+</div>
+
+<h2 id="faq">Frequently asked questions</h2>
+
+<div class="faq-list">
+
+  <details>
+    <summary>What is the basic inventory accuracy formula?</summary>
+    <p>
+      Divide the number of accurate inventory records by the total records
+      counted and multiply the result by 100.
+    </p>
+  </details>
+
+  <details>
+    <summary>Should inventory accuracy be based on quantity or value?</summary>
+    <p>
+      Both measures can be useful. Record accuracy shows how many records
+      matched, while quantity and value measures show the scale and financial
+      effect of the differences.
+    </p>
+  </details>
+
+  <details>
+    <summary>Should shortages and excesses be netted together?</summary>
+    <p>
+      No. Use absolute variance when measuring exposure. Netting shortages
+      and excesses may conceal separate inventory-control problems.
+    </p>
+  </details>
+
+  <details>
+    <summary>Does a high accuracy percentage mean inventory is under control?</summary>
+    <p>
+      Not necessarily. A high overall percentage may still contain serious
+      differences involving valuable, critical or fast-moving products.
+      Review the risk behind the percentage.
+    </p>
+  </details>
+
+  <details>
+    <summary>How often should inventory accuracy be measured?</summary>
+    <p>
+      Measure it after each controlled cycle-count session and review trends
+      regularly. Higher-risk products should normally be counted more
+      frequently than stable, low-risk inventory.
+    </p>
+  </details>
+
+</div>
+
+</article>
+
+<aside class="article-aside">
+
+  <nav class="toc" aria-label="Guide contents">
+    <strong>In this guide</strong>
+    <a href="#meaning">What inventory accuracy means</a>
+    <a href="#methods">Three calculation methods</a>
+    <a href="#absolute">Absolute variance</a>
+    <a href="#tolerance">Accuracy tolerances</a>
+    <a href="#combined">Using several measures</a>
+    <a href="#example">Practical example</a>
+    <a href="#targets">Setting accuracy targets</a>
+    <a href="#causes">Common causes</a>
+    <a href="#mistakes">Common mistakes</a>
+    <a href="#improve">Improvement checklist</a>
+    <a href="#faq">Questions and answers</a>
+  </nav>
+
+  <div class="aside-note">
+    <strong>Practical principle</strong><br/>
+    An accuracy percentage is useful only when the counting method,
+    tolerance and financial exposure are clearly understood.
+  </div>
+
+</aside>
+
+</div>
+<section class="action-box">
+  <h2>Learn how inventory accuracy is measured</h2>
+
+  <p>
+    Understand record accuracy, quantity accuracy, value accuracy,
+    tolerances and absolute variance before reviewing your results.
+  </p>
+
+  <div class="action-links">
+    <a
+      class="primary-link"
+      href="/guides/inventory-accuracy-percentage/"
+    >
+      Read the Inventory Accuracy Guide
+    </a>
+
+    <a
+      class="secondary-link"
+      href="/guides/warehouse-cycle-count-checklist/"
+    >
+      View the Cycle Count Checklist
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">DIXANI</div>
+        <p>Practical Tools. Smarter Work.</p>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <a href="/#tools">Online Tools</a>
+        <a href="/templates/">Templates</a>
+        <a href="/guides/">Guides</a>
+        <a href="/categories/inventory/">Inventory Tools</a>
+        <a href="/categories/logistics/">Logistics Tools</a>
+        <a href="/categories/business/">Business Tools</a>
+        <a href="/categories/finance/">Finance Tools</a>
+        <a href="/categories/converters/">Converter Tools</a>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 DIXANI. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+
+<!-- Cloudflare Web Analytics -->
+<script
+  type="module"
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token":"30b44fcd1cb24302859dddd48e86b942"}'
+></script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
