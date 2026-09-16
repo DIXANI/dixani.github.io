@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="icon" type="image/png" href="/assets/images/dixani-icon.png"/>
+<link rel="apple-touch-icon" href="/assets/images/dixani-icon.png"/>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','G-LQEH9L9TZ4');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+
+<title>Warehouse Shift Challenge | Interactive Simulator | DIXANI</title>
+
+<meta name="description" content="Take the DIXANI Warehouse Shift Challenge. Make realistic warehouse decisions and measure their impact on accuracy, service, cost, safety and operational flow."/>
+
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Dinesh Madushanka"/>
+<meta name="theme-color" content="#2563eb"/>
+
+<link rel="canonical" href="https://dixani.com/simulators/warehouse-shift-challenge/"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="DIXANI"/>
+<meta property="og:title" content="Warehouse Shift Challenge | DIXANI"/>
+<meta property="og:description" content="Can you manage a difficult warehouse shift? Make five operational decisions and see their impact on warehouse performance."/>
+<meta property="og:url" content="https://dixani.com/simulators/warehouse-shift-challenge/"/>
+<meta property="og:image" content="https://dixani.com/assets/images/dixani-social-preview.png"/>
+<meta property="og:locale" content="en_US"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Warehouse Shift Challenge | DIXANI"/>
+<meta name="twitter:description" content="Make realistic warehouse decisions and receive a practical supervisor performance score."/>
+<meta name="twitter:image" content="https://dixani.com/assets/images/dixani-social-preview.png"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "DIXANI Warehouse Shift Challenge",
+      "url": "https://dixani.com/simulators/warehouse-shift-challenge/",
+      "description": "An interactive warehouse decision simulator covering inventory accuracy, service, cost, safety and material flow.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Dinesh Madushanka"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DIXANI",
+        "url": "https://dixani.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dixani.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Warehouse Shift Challenge",
+          "item": "https://dixani.com/simulators/warehouse-shift-challenge/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link href="/assets/css/templates.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
+<link href="/assets/css/warehouse-shift-challenge.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<header class="site-header">
+<div class="container header-inner">
+
+<a class="logo" href="/">DIXANI</a>
+
+<button
+aria-controls="mainNav"
+aria-expanded="false"
+aria-label="Open navigation"
+class="menu-button"
+id="menuButton"
+type="button">☰</button>
+
+<nav aria-label="Main navigation" class="main-nav" id="mainNav">
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Business</a>
+<a href="/categories/finance/">Finance</a>
+<a href="/categories/converters/">Converters</a>
+<a href="/about/">About</a>
+</nav>
+
+</div>
+</header>
+
+<main class="challenge-shell">
+
+<section class="challenge-hero">
+
+<div>
+
+<span class="challenge-eyebrow">
+DIXANI INTERACTIVE TRAINING SIMULATOR
+</span>
+
+<h1>
+Warehouse Shift
+<span>Challenge</span>
+</h1>
+
+<p>
+You are responsible for today’s warehouse shift. Make five operational
+decisions and see how they affect accuracy, service, cost, safety and flow.
+</p>
+
+</div>
+
+<div class="privacy-card">
+<strong>Private by design</strong>
+<span>Your decisions remain in this browser. No account is required.</span>
+</div>
+
+</section>
+
+<section class="start-panel challenge-card" id="startPanel">
+
+<div class="start-icon" aria-hidden="true">🏭</div>
+
+<span class="panel-label">YOUR SHIFT STARTS NOW</span>
+
+<h2>Can you keep the warehouse under control?</h2>
+
+<p>
+During this simulation, you will respond to five realistic warehouse
+situations involving capacity, inventory discrepancies, labor,
+expiry control and dock congestion.
+</p>
+
+<div class="simulation-details">
+
+<div>
+<strong>5</strong>
+<span>Operational scenarios</span>
+</div>
+
+<div>
+<strong>3</strong>
+<span>Choices per scenario</span>
+</div>
+
+<div>
+<strong>5–8</strong>
+<span>Minutes to complete</span>
+</div>
+
+</div>
+
+<ul class="start-list">
+<li>Review the situation and operational data.</li>
+<li>Select the decision you believe is most appropriate.</li>
+<li>See the immediate effect on five warehouse KPIs.</li>
+<li>Receive a final supervisor performance report.</li>
+</ul>
+
+<button class="challenge-button primary large" id="startChallenge" type="button">
+Start the Shift Challenge
+</button>
+
+<p class="simulation-note">
+Educational decision-support activity. Actual warehouse decisions should
+follow your organization’s procedures, risk controls and authorization limits.
+</p>
+
+</section>
+
+<section class="game-panel" id="gamePanel" hidden>
+
+<div class="game-topbar">
+
+<div>
+<span class="panel-label" id="scenarioCounter">
+SCENARIO 1 OF 5
+</span>
+
+<h2 id="shiftStatus">Shift performance</h2>
+</div>
+
+<div class="progress-wrap" aria-label="Simulation progress">
+<div class="progress-track">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<span id="progressText">20% complete</span>
+</div>
+
+</div>
+
+<section class="score-grid" aria-label="Current performance scores">
+
+<article class="score-card">
+<span class="score-icon">🎯</span>
+<div>
+<small>Accuracy</small>
+<strong id="accuracyScore">70</strong>
+</div>
+<div class="score-meter">
+<span id="accuracyMeter"></span>
+</div>
+</article>
+
+<article class="score-card">
+<span class="score-icon">📦</span>
+<div>
+<small>Service</small>
+<strong id="serviceScore">70</strong>
+</div>
+<div class="score-meter">
+<span id="serviceMeter"></span>
+</div>
+</article>
+
+<article class="score-card">
+<span class="score-icon">💰</span>
+<div>
+<small>Cost</small>
+<strong id="costScore">70</strong>
+</div>
+<div class="score-meter">
+<span id="costMeter"></span>
+</div>
+</article>
+
+<article class="score-card">
+<span class="score-icon">🛡️</span>
+<div>
+<small>Safety</small>
+<strong id="safetyScore">70</strong>
+</div>
+<div class="score-meter">
+<span id="safetyMeter"></span>
+</div>
+</article>
+
+<article class="score-card">
+<span class="score-icon">➡️</span>
+<div>
+<small>Flow</small>
+<strong id="flowScore">70</strong>
+</div>
+<div class="score-meter">
+<span id="flowMeter"></span>
+</div>
+</article>
+
+</section>
+
+<section class="scenario-card challenge-card">
+
+<div class="scenario-heading">
+
+<div class="scenario-icon" id="scenarioIcon" aria-hidden="true">
+🚚
+</div>
+
+<div>
+<span class="scenario-category" id="scenarioCategory">
+WAREHOUSE CAPACITY
+</span>
+
+<h2 id="scenarioTitle">
+Unexpected inbound volume
+</h2>
+</div>
+
+</div>
+
+<p class="scenario-description" id="scenarioDescription"></p>
+
+<div class="scenario-data" id="scenarioData"></div>
+
+<div class="decision-area">
+
+<h3>What would you do?</h3>
+
+<div class="decision-list" id="decisionList"></div>
+
+</div>
+
+</section>
+
+<section class="feedback-card challenge-card" id="feedbackPanel" hidden>
+
+<div class="feedback-heading">
+<span class="feedback-status" id="feedbackStatus">
+DECISION REVIEW
+</span>
+
+<h2 id="feedbackTitle"></h2>
+</div>
+
+<p id="feedbackExplanation"></p>
+
+<div class="impact-grid" id="impactGrid"></div>
+
+<div class="feedback-actions">
+
+<button class="challenge-button primary" id="nextScenario" type="button">
+Continue to Next Scenario
+</button>
+
+</div>
+
+</section>
+
+</section>
+
+<section class="results-panel challenge-card" id="resultsPanel" hidden>
+
+<span class="panel-label">
+SHIFT COMPLETED
+</span>
+
+<div class="result-header">
+
+<div class="result-score-ring">
+<strong id="finalScore">0</strong>
+<span>/100</span>
+</div>
+
+<div>
+<h2 id="resultTitle">Shift performance report</h2>
+<p id="resultSummary"></p>
+</div>
+
+</div>
+
+<div class="final-score-grid">
+
+<div>
+<span>Accuracy</span>
+<strong id="finalAccuracy">0</strong>
+</div>
+
+<div>
+<span>Service</span>
+<strong id="finalService">0</strong>
+</div>
+
+<div>
+<span>Cost</span>
+<strong id="finalCost">0</strong>
+</div>
+
+<div>
+<span>Safety</span>
+<strong id="finalSafety">0</strong>
+</div>
+
+<div>
+<span>Flow</span>
+<strong id="finalFlow">0</strong>
+</div>
+
+</div>
+
+<section class="result-section">
+<h3>Your decision review</h3>
+<div class="decision-summary" id="decisionSummary"></div>
+</section>
+
+<section class="result-section">
+<h3>Recommended DIXANI resources</h3>
+
+<div class="resource-grid">
+
+<a href="/inventory/inventory-accuracy-analyzer/">
+<strong>Inventory Accuracy Analyzer</strong>
+<span>Measure accuracy, exposure and priority items →</span>
+</a>
+
+<a href="/guides/warehouse-space-utilization/">
+<strong>Warehouse Space Utilization Guide</strong>
+<span>Manage occupancy and capacity headroom →</span>
+</a>
+
+<a href="/guides/investigate-inventory-variances/">
+<strong>Inventory Variance Investigation Guide</strong>
+<span>Investigate differences before adjustment →</span>
+</a>
+
+<a href="/guides/warehouse-cycle-count-checklist/">
+<strong>Warehouse Cycle Count Guide</strong>
+<span>Improve counting and reconciliation controls →</span>
+</a>
+
+</div>
+</section>
+
+<div class="result-actions">
+
+<button class="challenge-button primary" id="shareResult" type="button">
+Share My Result
+</button>
+
+<button class="challenge-button secondary" id="restartChallenge" type="button">
+Restart Challenge
+</button>
+
+</div>
+
+<p class="share-message" id="shareMessage" role="status"></p>
+
+</section>
+
+<section class="about-simulator challenge-card">
+
+<div>
+<span class="panel-label">PRACTICAL LEARNING</span>
+
+<h2>Why decision simulations are useful</h2>
+
+<p>
+Warehouse performance is affected by connected decisions. Improving one
+KPI without considering the others can create new risks. This challenge
+encourages balanced decisions rather than focusing only on speed or cost.
+</p>
+</div>
+
+<div class="about-principle">
+
+<strong>Key principle</strong>
+
+<p>
+The strongest operational decision normally protects people, inventory
+and customer commitments while maintaining controlled material flow.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-brand">DIXANI</div>
+<p>Practical Tools. Smarter Work.</p>
+</div>
+
+<div>
+<h3>Resources</h3>
+<a href="/#tools">Online Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory Tools</a>
+<a href="/categories/logistics/">Logistics Tools</a>
+</div>
+
+<div>
+<h3>Company</h3>
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+</div>
+
+<div>
+<h3>Legal</h3>
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 DIXANI. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/warehouse-shift-challenge.js"></script>
+
+<!-- Cloudflare Web Analytics -->
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"30b44fcd1cb24302859dddd48e86b942"}'>
+</script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
