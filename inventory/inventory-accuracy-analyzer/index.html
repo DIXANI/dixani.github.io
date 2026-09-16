@@ -78,7 +78,53 @@
     </section>
     <aside class="method-note"><h3>How the risk score works</h3><p>The 0–100 score combines <b>variance exposure (30)</b>, <b>annual usage/velocity (20)</b>, <b>item value (20)</b>, <b>time since last count (15)</b>, <b>previous variances (10)</b> and <b>operational criticality (5)</b>. Dataset percentiles keep the ranking useful across businesses of different sizes. The score supports professional judgment; it does not replace it.</p><p><b>ABC method:</b> annual usage × unit cost, ranked by cumulative value. Defaults: A through 80%, B through 95%, C thereafter.</p></aside>
   </section>
+<section class="content-card">
 
+<h2>Learn How to Apply the Results</h2>
+
+<div class="content-grid">
+
+<div>
+<h3>ABC Inventory Analysis</h3>
+
+<p>
+Understand how annual usage and unit cost create ABC classifications
+and how those classes can support counting, replenishment and control.
+</p>
+
+<a class="button primary" href="/guides/abc-inventory-analysis/">
+Read ABC Analysis Guide
+</a>
+</div>
+
+<div>
+<h3>Warehouse Cycle Counting</h3>
+
+<p>
+Use ABC classes together with value, movement, criticality and previous
+variances to create a practical cycle-count schedule.
+</p>
+
+<a class="button secondary" href="/guides/warehouse-cycle-count-checklist/">
+Read Cycle Count Guide
+</a>
+</div>
+
+<div>
+<h3>Inventory Accuracy</h3>
+
+<p>
+Understand record, quantity and value accuracy before interpreting
+the KPIs produced by the analyzer.
+</p>
+
+<a class="button secondary" href="/guides/inventory-accuracy-percentage/">
+Read Accuracy Guide
+</a>
+</div>
+
+</div>
+</section>
   <section class="content-card"><h2>From discrepancy data to a focused action plan</h2><div class="content-grid"><div><h3>What this tool answers</h3><p>Which mismatches create the greatest financial or operational risk? Which items should be recounted first? Are a few items driving most of the exposure? The analyzer makes those decisions visible without requiring a WMS or spreadsheet formulas.</p></div><div><h3>Recommended workflow</h3><p>Import a completed count, analyze the priorities, recount critical items independently, review receiving/issues/transfers, document the root cause, then post approved adjustments. Export the result as your review evidence.</p></div><div><h3>Interpret accuracy carefully</h3><p>Exact-match accuracy is intentionally strict. A business may also use quantity or value tolerances, but these should be approved internally and applied consistently. High-value A items normally warrant tighter control.</p></div></div></section>
 
   <section class="faq-section"><h2>Inventory Accuracy Analyzer — FAQs</h2><details><summary>Is inventory data uploaded to DIXANI?</summary><p>No. CSV parsing, analysis and exports happen in your browser. Refreshing the page removes the working data unless your browser restores the tab.</p></details><details><summary>Why can an item with zero variance still receive a risk score?</summary><p>High-value, fast-moving, overdue or historically inaccurate items may deserve a preventive count even when the current record matches.</p></details><details><summary>Is the ranking a replacement for internal controls?</summary><p>No. It is a decision-support model. Review its reasons against your materiality thresholds, product criticality and operating procedures.</p></details><details><summary>What does ABC mean?</summary><p>ABC separates items by cumulative annual usage value. A items contribute the first 80%, B the next 15%, and C the remaining 5% under the tool’s default method.</p></details></section>

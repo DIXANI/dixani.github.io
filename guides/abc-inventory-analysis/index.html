@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="icon" type="image/png" href="/assets/images/dixani-icon.png"/>
+<link rel="apple-touch-icon" href="/assets/images/dixani-icon.png"/>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','G-LQEH9L9TZ4');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+
+<title>ABC Inventory Analysis: Formula, Example and Guide | DIXANI</title>
+
+<meta name="description" content="Learn how to perform ABC inventory analysis using annual consumption value, cumulative percentages and practical A, B and C classifications."/>
+
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Dinesh Madushanka"/>
+<meta name="theme-color" content="#2563eb"/>
+
+<link rel="canonical" href="https://dixani.com/guides/abc-inventory-analysis/"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="DIXANI"/>
+<meta property="og:title" content="ABC Inventory Analysis: Formula, Example and Practical Guide"/>
+<meta property="og:description" content="Classify inventory by annual consumption value and use the results for counting, replenishment, control and warehouse planning."/>
+<meta property="og:url" content="https://dixani.com/guides/abc-inventory-analysis/"/>
+<meta property="og:image" content="https://dixani.com/assets/images/dixani-social-preview.png"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="article:published_time" content="2026-09-16"/>
+<meta property="article:modified_time" content="2026-09-16"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ABC Inventory Analysis Guide | DIXANI"/>
+<meta name="twitter:description" content="A practical guide to calculating annual consumption value and classifying inventory into A, B and C categories."/>
+<meta name="twitter:image" content="https://dixani.com/assets/images/dixani-social-preview.png"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "ABC Inventory Analysis: Formula, Example and Practical Guide",
+      "description": "A practical guide to classifying inventory using annual consumption value and applying ABC results to warehouse and inventory control.",
+      "datePublished": "2026-09-16",
+      "dateModified": "2026-09-16",
+      "author": {
+        "@type": "Person",
+        "name": "Dinesh Madushanka"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DIXANI",
+        "url": "https://dixani.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dixani.com/assets/images/dixani-icon.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://dixani.com/guides/abc-inventory-analysis/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dixani.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dixani.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ABC Inventory Analysis",
+          "item": "https://dixani.com/guides/abc-inventory-analysis/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link href="/assets/css/templates.css" rel="stylesheet"/>
+<link href="/assets/css/guides.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<header class="site-header">
+<div class="container header-inner">
+
+<a class="logo" href="/">DIXANI</a>
+
+<button aria-controls="mainNav"
+aria-expanded="false"
+aria-label="Open navigation"
+class="menu-button"
+id="menuButton"
+type="button">☰</button>
+
+<nav aria-label="Main navigation" class="main-nav" id="mainNav">
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a class="active" href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Business</a>
+<a href="/categories/finance/">Finance</a>
+<a href="/categories/converters/">Converters</a>
+<a href="/about/">About</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="guide-hero">
+<div class="container">
+
+<span class="guide-badge">INVENTORY CLASSIFICATION GUIDE</span>
+
+<h1>ABC Inventory Analysis:
+<span>Formula, Example and Practical Application</span></h1>
+
+<p>
+Learn how to classify inventory by annual consumption value and use
+the results to improve counting, control, replenishment and warehouse planning.
+</p>
+
+<div class="guide-meta">
+<span><strong>Published:</strong> September 16, 2026</span>
+<span><strong>Reading time:</strong> 11 minutes</span>
+<span><strong>By:</strong> Dinesh Madushanka</span>
+</div>
+
+</div>
+</section>
+
+<div class="container article-shell">
+
+<article class="article-body">
+
+<h2 id="meaning">What is ABC inventory analysis?</h2>
+
+<p>
+ABC inventory analysis is a method of grouping inventory items according
+to their relative financial importance. Instead of applying the same
+level of control to every SKU, the method helps a business focus more
+attention on the items that contribute the greatest inventory value.
+</p>
+
+<p>
+A common ABC analysis uses annual consumption value. This combines how
+many units are used or sold during a year with the cost of each unit.
+The items are then ranked from highest to lowest value and separated
+into A, B and C classes.
+</p>
+
+<ul>
+<li><strong>A items:</strong> the relatively small group responsible for the largest share of annual consumption value.</li>
+<li><strong>B items:</strong> the middle group with moderate financial importance.</li>
+<li><strong>C items:</strong> the larger group responsible for the smallest share of annual consumption value.</li>
+</ul>
+
+<p>
+ABC analysis follows the principle that not every inventory item creates
+the same financial exposure. However, value should not be the only factor
+used when operational criticality, safety, expiry or supply risk is important.
+</p>
+
+<h2 id="formula">ABC analysis formula</h2>
+
+<div class="formula-box">
+<strong>ANNUAL CONSUMPTION VALUE</strong>
+<p>Annual consumption value = Annual usage quantity × Unit cost</p>
+</div>
+
+<p>
+Annual usage may represent sales, issues, production consumption or
+another consistent measure of yearly movement. Unit cost should be taken
+from an approved and consistent valuation source.
+</p>
+
+<div class="example-box">
+<h3>Example item</h3>
+<p>Annual usage: <strong>2,000 units</strong></p>
+<p>Unit cost: <strong>QAR 25</strong></p>
+<p>
+Annual consumption value:
+2,000 × QAR 25 = <strong>QAR 50,000</strong>
+</p>
+</div>
+
+<p>
+After calculating this value for every item, sort the list from highest
+to lowest. Then calculate each item’s percentage contribution and
+cumulative percentage.
+</p>
+
+<div class="formula-box">
+<strong>ITEM VALUE CONTRIBUTION</strong>
+<p>Item contribution % = Item annual consumption value ÷ Total annual consumption value × 100</p>
+</div>
+
+<h2 id="steps">How to perform ABC inventory analysis</h2>
+
+<div class="checklist">
+
+<div class="check-item">
+<h3>Prepare the inventory list</h3>
+<p>
+Create one controlled list containing every active SKU to be analyzed.
+Include the item code, description, annual usage quantity and unit cost.
+Remove duplicates and clearly identify inactive or obsolete items.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Validate the source data</h3>
+<p>
+Confirm that the usage period is consistent and that unit costs use the
+same valuation method and currency. Check for missing, negative, zero or
+unusual values before beginning the classification.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Calculate annual consumption value</h3>
+<p>
+Multiply each item’s annual usage quantity by its unit cost. This converts
+movement and cost into one comparable financial measurement.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Sort items from highest to lowest</h3>
+<p>
+Rank the items by annual consumption value. The highest-value item should
+appear first, followed by the remaining items in descending order.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Calculate value contribution</h3>
+<p>
+Divide each item’s annual consumption value by the total value of all
+items and multiply by 100. This shows the percentage contributed by each SKU.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Calculate cumulative percentage</h3>
+<p>
+Add the contribution percentages progressively from the top of the
+ranked list. The cumulative percentage determines where each class ends.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Assign A, B and C classes</h3>
+<p>
+Apply the organization’s approved thresholds. Document the classification
+rules and use them consistently during each analysis cycle.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Review operational exceptions</h3>
+<p>
+Identify critical, regulated, expiry-sensitive or difficult-to-source
+items that may require stronger control even when their annual value is low.
+</p>
+</div>
+
+<div class="check-item">
+<h3>Apply and maintain the results</h3>
+<p>
+Use the classification in cycle counting, replenishment, purchasing,
+slotting and management reporting. Review the classification periodically.
+</p>
+</div>
+
+</div>
+
+<h2 id="example">Practical ABC classification example</h2>
+
+<p>
+Assume six inventory items have the following annual consumption values:
+</p>
+
+<div class="example-box">
+<h3>Ranked annual consumption values</h3>
+
+<p><strong>SKU-101:</strong> QAR 50,000</p>
+<p><strong>SKU-205:</strong> QAR 25,000</p>
+<p><strong>SKU-118:</strong> QAR 12,000</p>
+<p><strong>SKU-330:</strong> QAR 7,000</p>
+<p><strong>SKU-412:</strong> QAR 4,000</p>
+<p><strong>SKU-509:</strong> QAR 2,000</p>
+
+<p><strong>Total annual consumption value: QAR 100,000</strong></p>
+</div>
+
+<p>The percentage and cumulative results are:</p>
+
+<ul>
+<li><strong>SKU-101:</strong> 50% contribution; 50% cumulative.</li>
+<li><strong>SKU-205:</strong> 25% contribution; 75% cumulative.</li>
+<li><strong>SKU-118:</strong> 12% contribution; 87% cumulative.</li>
+<li><strong>SKU-330:</strong> 7% contribution; 94% cumulative.</li>
+<li><strong>SKU-412:</strong> 4% contribution; 98% cumulative.</li>
+<li><strong>SKU-509:</strong> 2% contribution; 100% cumulative.</li>
+</ul>
+
+<p>
+Using illustrative thresholds of A through 80%, B through 95% and C for
+the remainder, the resulting classification could be:
+</p>
+
+<ul>
+<li><strong>A class:</strong> SKU-101 and SKU-205.</li>
+<li><strong>B class:</strong> SKU-118 and SKU-330.</li>
+<li><strong>C class:</strong> SKU-412 and SKU-509.</li>
+</ul>
+
+<p>
+Threshold boundary rules should be defined in advance. For example, an
+item that causes the cumulative value to move above 80% may remain in A
+or move to B depending on the approved method. Consistency is more
+important than forcing every result into an exact percentage.
+</p>
+
+<h2 id="thresholds">Typical ABC classification ranges</h2>
+
+<p>
+Organizations often begin with ranges similar to the following:
+</p>
+
+<ul>
+<li><strong>A items:</strong> approximately the first 70–80% of annual consumption value.</li>
+<li><strong>B items:</strong> approximately the next 15–25% of annual consumption value.</li>
+<li><strong>C items:</strong> approximately the final 5–10% of annual consumption value.</li>
+</ul>
+
+<p>
+These are planning references rather than universal rules. The correct
+thresholds depend on the number of SKUs, value distribution, industry,
+business risk and how the organization intends to use the classification.
+</p>
+
+<p>
+Do not assume that A items must always represent a fixed percentage of
+the total number of SKUs. The number of A items is determined by the value
+distribution in the actual dataset.
+</p>
+
+<h2 id="controls">How control can differ by ABC class</h2>
+
+<p>
+ABC classification should lead to practical differences in how inventory
+is reviewed and managed.
+</p>
+
+<h3>A-class items</h3>
+
+<ul>
+<li>More frequent cycle counts and reconciliation.</li>
+<li>Tighter approval controls for stock adjustments.</li>
+<li>Closer review of demand, lead time and safety stock.</li>
+<li>More frequent supplier and replenishment monitoring.</li>
+<li>Detailed investigation of financial variances.</li>
+<li>Accurate, secure and accessible storage locations.</li>
+</ul>
+
+<h3>B-class items</h3>
+
+<ul>
+<li>Moderate cycle-count frequency.</li>
+<li>Regular replenishment and exception review.</li>
+<li>Standard approval and investigation controls.</li>
+<li>Periodic review for movement into A or C class.</li>
+</ul>
+
+<h3>C-class items</h3>
+
+<ul>
+<li>Lower count frequency where risk permits.</li>
+<li>Simpler replenishment controls.</li>
+<li>Efficient storage without consuming prime picking locations unnecessarily.</li>
+<li>Review of excessive quantities, inactivity and obsolescence.</li>
+</ul>
+
+<p>
+Lower financial contribution does not mean that C items should be ignored.
+A missing low-cost component can still stop production or delay a customer order.
+</p>
+
+<h2 id="counting">Using ABC analysis for cycle counting</h2>
+
+<p>
+ABC classification is commonly used to set count frequency. A starting
+schedule might count A items monthly, B items quarterly and C items once
+or twice per year.
+</p>
+
+<p>
+The final frequency should also consider historical accuracy, movement,
+criticality, expiry, theft risk and transaction complexity. An inaccurate
+C item may require more frequent counts, while a consistently accurate A
+item may still remain on a frequent schedule because of its financial exposure.
+</p>
+
+<div class="aside-note">
+<strong>Practical principle</strong><br/>
+Use ABC analysis to focus control, but combine value with operational
+risk before deciding count frequency.
+</div>
+
+<h2 id="criticality">Why value alone is not enough</h2>
+
+<p>
+Traditional ABC analysis focuses on financial value. This is useful, but
+it can underestimate items with low cost and high operational importance.
+</p>
+
+<p>Examples include:</p>
+
+<ul>
+<li>A low-cost spare part that can stop critical equipment.</li>
+<li>A safety item required for regulatory compliance.</li>
+<li>A low-value component with an extremely long lead time.</li>
+<li>An item available from only one approved supplier.</li>
+<li>A temperature-controlled or expiry-sensitive product.</li>
+<li>A packaging material required to dispatch finished products.</li>
+</ul>
+
+<p>
+These items may require an operational override or a second classification.
+Some businesses combine ABC value classification with criticality,
+movement, supply risk or variability analysis.
+</p>
+
+<p>
+Any override should be documented. The original ABC class can remain
+visible while an additional control level reflects the operational risk.
+</p>
+
+<h2 id="applications">Practical uses of ABC analysis</h2>
+
+<ul>
+<li><strong>Cycle counting:</strong> determine where frequent verification produces the greatest value.</li>
+<li><strong>Replenishment:</strong> apply closer monitoring to financially important items.</li>
+<li><strong>Purchasing:</strong> focus negotiation and supplier management on major spend areas.</li>
+<li><strong>Warehouse slotting:</strong> combine value with movement and handling characteristics.</li>
+<li><strong>Inventory reporting:</strong> separate high-value exposure from the total SKU population.</li>
+<li><strong>Variance investigation:</strong> prioritize discrepancies with greater financial impact.</li>
+<li><strong>Obsolescence review:</strong> identify slow-moving value tied up in stock.</li>
+<li><strong>Management attention:</strong> direct limited time toward inventory with the greatest impact.</li>
+</ul>
+
+<h2 id="mistakes">Common ABC analysis mistakes</h2>
+
+<ul>
+<li>Classifying items by unit cost alone instead of annual consumption value.</li>
+<li>Using inconsistent usage periods across different SKUs.</li>
+<li>Mixing currencies or different costing methods.</li>
+<li>Failing to sort items before calculating cumulative percentages.</li>
+<li>Applying arbitrary thresholds without documenting the method.</li>
+<li>Ignoring missing, zero or negative usage and cost values.</li>
+<li>Treating C items as unimportant in every operational situation.</li>
+<li>Ignoring criticality, expiry, supply and service risks.</li>
+<li>Using outdated classification after demand or cost has changed.</li>
+<li>Creating classes without applying different control actions.</li>
+</ul>
+
+<h2 id="review">How often should ABC classes be reviewed?</h2>
+
+<p>
+Review frequency depends on how quickly demand, cost and the product
+portfolio change. Many organizations review ABC classifications every
+six or twelve months. Faster-moving environments may review them quarterly
+or through a rolling automated process.
+</p>
+
+<p>
+An additional review may be required after major price changes, new
+product introductions, seasonal demand shifts, supplier changes or
+significant changes in annual usage.
+</p>
+
+<p>
+Keep the analysis date, source period, valuation method and thresholds
+with the results. This allows later classifications to be compared consistently.
+</p>
+
+<div class="action-box">
+
+<h2>Analyze your inventory priorities</h2>
+
+<p>
+Use the free DIXANI Inventory Accuracy Analyzer to calculate ABC classes,
+measure variance exposure and identify items that may require earlier
+counting or investigation.
+</p>
+
+<div class="action-links">
+
+<a class="primary-link" href="/inventory/inventory-accuracy-analyzer/">
+Open Inventory Accuracy Analyzer
+</a>
+
+<a class="secondary-link" href="/guides/warehouse-cycle-count-checklist/">
+Read Cycle Count Guide
+</a>
+
+<a class="secondary-link" href="/guides/inventory-accuracy-percentage/">
+Read Inventory Accuracy Guide
+</a>
+
+</div>
+</div>
+
+<section class="guide-author" aria-label="About the author">
+
+<div class="guide-author-mark" aria-hidden="true">
+DM
+</div>
+
+<div class="guide-author-content">
+
+<span>About the author</span>
+
+<h2>Dinesh Madushanka</h2>
+
+<p>
+Warehouse and inventory professional with more than 20 years of
+multi-country experience across warehousing, inventory control and
+third-party logistics. DIXANI resources are developed from practical
+operational workflows and common workplace challenges.
+</p>
+
+</div>
+</section>
+
+<h2 id="faq">Frequently asked questions</h2>
+
+<div class="faq-list">
+
+<details>
+<summary>What does ABC mean in inventory management?</summary>
+<p>
+ABC divides inventory into three classes based on relative importance.
+A items normally represent the greatest annual consumption value, B
+items represent moderate value, and C items represent the smallest share.
+</p>
+</details>
+
+<details>
+<summary>How is annual consumption value calculated?</summary>
+<p>
+Multiply the annual usage quantity by the unit cost. Use a consistent
+usage period, currency and costing method across all items.
+</p>
+</details>
+
+<details>
+<summary>Is an expensive item automatically an A item?</summary>
+<p>
+Not necessarily. ABC classification normally considers both usage and
+cost. An expensive item with very low annual usage may contribute less
+annual value than a lower-cost item used in large quantities.
+</p>
+</details>
+
+<details>
+<summary>Can a C item still be operationally critical?</summary>
+<p>
+Yes. A low-value item may be essential for safety, production, maintenance
+or customer service. Use a documented operational-risk override or an
+additional criticality classification where necessary.
+</p>
+</details>
+
+<details>
+<summary>How often should ABC analysis be updated?</summary>
+<p>
+Many businesses review it every six or twelve months. More frequent
+reviews may be appropriate when demand, cost, suppliers or the product
+range change quickly.
+</p>
+</details>
+
+</div>
+
+</article>
+
+<aside class="article-aside">
+
+<nav class="toc" aria-label="Guide contents">
+
+<strong>In this guide</strong>
+
+<a href="#meaning">What ABC analysis means</a>
+<a href="#formula">Formula</a>
+<a href="#steps">Analysis steps</a>
+<a href="#example">Practical example</a>
+<a href="#thresholds">Classification ranges</a>
+<a href="#controls">Controls by class</a>
+<a href="#counting">Cycle counting</a>
+<a href="#criticality">Operational criticality</a>
+<a href="#applications">Practical applications</a>
+<a href="#mistakes">Common mistakes</a>
+<a href="#review">Review frequency</a>
+<a href="#faq">Questions and answers</a>
+
+</nav>
+
+<div class="aside-note">
+<strong>Key takeaway</strong><br/>
+ABC analysis helps focus attention, but financial value should be
+reviewed together with criticality, movement and supply risk.
+</div>
+
+</aside>
+
+</div>
+</main>
+
+<footer class="footer">
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-brand">DIXANI</div>
+<p>Practical Tools. Smarter Work.</p>
+</div>
+
+<div>
+<h3>Resources</h3>
+<a href="/#tools">Online Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory Tools</a>
+<a href="/categories/logistics/">Logistics Tools</a>
+<a href="/categories/business/">Business Tools</a>
+<a href="/categories/finance/">Finance Tools</a>
+<a href="/categories/converters/">Converter Tools</a>
+</div>
+
+<div>
+<h3>Company</h3>
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+</div>
+
+<div>
+<h3>Legal</h3>
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 DIXANI. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+
+<!-- Cloudflare Web Analytics -->
+<script type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"30b44fcd1cb24302859dddd48e86b942"}'>
+</script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
