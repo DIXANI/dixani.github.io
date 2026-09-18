@@ -1,0 +1,488 @@
+:root {
+  --toolkit-blue: #2563eb;
+  --toolkit-blue-dark: #1d4ed8;
+  --toolkit-navy: #0f1f4b;
+  --toolkit-text: #16213a;
+  --toolkit-muted: #64748b;
+  --toolkit-border: #dbe5f1;
+  --toolkit-background: #f5f8fc;
+  --toolkit-light-blue: #eff6ff;
+  --toolkit-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--toolkit-background);
+  color: var(--toolkit-text);
+}
+
+.toolkit-hero {
+  background:
+    radial-gradient(circle at 85% 10%, rgba(37, 99, 235, 0.16), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #f2f7ff 100%);
+  border-bottom: 1px solid var(--toolkit-border);
+  padding: 78px 0;
+}
+
+.toolkit-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.toolkit-badge,
+.section-label,
+.workflow-stage,
+.summary-label {
+  display: inline-block;
+  color: var(--toolkit-blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.toolkit-hero h1 {
+  max-width: 780px;
+  margin: 16px 0 20px;
+  color: var(--toolkit-navy);
+  font-size: clamp(2.45rem, 5vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.toolkit-hero h1 span {
+  color: var(--toolkit-blue);
+}
+
+.toolkit-hero p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--toolkit-muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.toolkit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.toolkit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 750;
+  line-height: 1.25;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.toolkit-button:hover {
+  transform: translateY(-2px);
+}
+
+.toolkit-button.primary {
+  background: var(--toolkit-blue);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+}
+
+.toolkit-button.primary:hover {
+  background: var(--toolkit-blue-dark);
+}
+
+.toolkit-button.secondary {
+  border-color: #cbd8eb;
+  background: #ffffff;
+  color: var(--toolkit-navy);
+}
+
+.toolkit-summary {
+  padding: 28px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 22px 55px rgba(15, 31, 75, 0.1);
+}
+
+.toolkit-summary ol {
+  display: grid;
+  gap: 0;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toolkit-summary;
+}
+
+.toolkit-summary li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 92px 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  border-bottom: 1px solid #e6edf6;
+  counter-increment: toolkit-summary;
+}
+
+.toolkit-summary li:last-child {
+  border-bottom: 0;
+}
+
+.toolkit-summary li::before {
+  content: counter(toolkit-summary, decimal-leading-zero);
+  color: var(--toolkit-blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.toolkit-summary strong {
+  color: var(--toolkit-navy);
+  font-size: 0.94rem;
+}
+
+.toolkit-summary span {
+  color: var(--toolkit-muted);
+  font-size: 0.87rem;
+  line-height: 1.4;
+}
+
+.toolkit-intro {
+  padding: 72px 0 36px;
+  text-align: center;
+}
+
+.toolkit-intro h2 {
+  margin: 12px 0 14px;
+  color: var(--toolkit-navy);
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  letter-spacing: -0.025em;
+}
+
+.section-intro {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--toolkit-muted);
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+.toolkit-workflow {
+  padding: 28px 0 80px;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.workflow-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+  padding: 32px;
+  overflow: hidden;
+  border: 1px solid var(--toolkit-border);
+  border-radius: 18px;
+  background: var(--toolkit-white);
+  box-shadow: 0 14px 38px rgba(15, 31, 75, 0.06);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 20px 44px rgba(15, 31, 75, 0.1);
+}
+
+.workflow-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: #e8eef8;
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.workflow-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 22px;
+  border-radius: 13px;
+  background: var(--toolkit-light-blue);
+  font-size: 1.45rem;
+}
+
+.workflow-stage {
+  margin-bottom: 9px;
+}
+
+.workflow-card h2 {
+  max-width: 470px;
+  margin: 0 0 14px;
+  color: var(--toolkit-navy);
+  font-size: 1.55rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.workflow-card p {
+  margin: 0 0 16px;
+  color: var(--toolkit-muted);
+  line-height: 1.7;
+}
+
+.workflow-card ul {
+  display: grid;
+  gap: 9px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-card li {
+  position: relative;
+  padding-left: 23px;
+  color: #42526b;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.workflow-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--toolkit-blue);
+  font-weight: 900;
+}
+
+.workflow-card a {
+  margin-top: auto;
+  color: var(--toolkit-blue);
+  font-weight: 750;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.workflow-card a:hover {
+  color: var(--toolkit-blue-dark);
+  text-decoration: underline;
+}
+
+.card-links {
+  display: grid;
+  gap: 9px;
+  margin-top: auto;
+}
+
+.card-links a {
+  margin-top: 0;
+}
+
+.future-card {
+  border-color: rgba(37, 99, 235, 0.3);
+  background:
+    linear-gradient(145deg, rgba(239, 246, 255, 0.9), #ffffff 70%);
+}
+
+.coming-soon {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+}
+
+.toolkit-principles {
+  padding: 0 0 80px;
+}
+
+.principles-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+  padding: 48px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.42), transparent 36%),
+    var(--toolkit-navy);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(15, 31, 75, 0.16);
+}
+
+.light-label {
+  color: #93c5fd;
+}
+
+.principles-panel h2 {
+  margin: 12px 0 14px;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  letter-spacing: -0.025em;
+}
+
+.principles-panel p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+
+.principle-list {
+  display: grid;
+  gap: 0;
+}
+
+.principle-list div {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.principle-list div:last-child {
+  border-bottom: 0;
+}
+
+.principle-list strong {
+  color: #60a5fa;
+  font-size: 0.82rem;
+}
+
+.principle-list span {
+  color: #ffffff;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.toolkit-next-step {
+  padding: 0 0 90px;
+}
+
+.next-step-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 40px;
+  padding: 42px;
+  border: 1px solid var(--toolkit-border);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 14px 38px rgba(15, 31, 75, 0.06);
+}
+
+.next-step-card h2 {
+  margin: 10px 0 12px;
+  color: var(--toolkit-navy);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  letter-spacing: -0.025em;
+}
+
+.next-step-card p {
+  max-width: 750px;
+  margin: 0;
+  color: var(--toolkit-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .toolkit-hero {
+    padding: 58px 0;
+  }
+
+  .toolkit-hero-grid,
+  .principles-panel {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-card {
+    min-height: 0;
+  }
+
+  .next-step-card {
+    grid-template-columns: 1fr;
+  }
+
+  .next-step-card .toolkit-button {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .toolkit-hero {
+    padding: 44px 0;
+  }
+
+  .toolkit-hero h1 {
+    font-size: 2.55rem;
+  }
+
+  .toolkit-actions {
+    display: grid;
+  }
+
+  .toolkit-button {
+    width: 100%;
+  }
+
+  .toolkit-summary,
+  .workflow-card,
+  .principles-panel,
+  .next-step-card {
+    padding: 24px;
+    border-radius: 15px;
+  }
+
+  .toolkit-summary li {
+    grid-template-columns: 28px 82px 1fr;
+  }
+
+  .toolkit-intro {
+    padding-top: 54px;
+  }
+
+  .toolkit-workflow,
+  .toolkit-principles {
+    padding-bottom: 58px;
+  }
+
+  .workflow-number {
+    top: 18px;
+    right: 18px;
+    font-size: 3rem;
+  }
+}
