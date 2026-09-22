@@ -339,7 +339,7 @@ function loadExample() {
 
     breakMinutes.value = "60";
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     hourlyRate.value = "25";
 
@@ -363,7 +363,7 @@ function clearCalculator() {
 
     hourlyRate.value = "";
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     resetResults();
 }

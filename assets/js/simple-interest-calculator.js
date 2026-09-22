@@ -307,10 +307,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             periodUnit.value = "years";
 
-            currency.value = "QAR";
+            currency.value = "USD";
             decimalPlaces.value = "2";
 
-            currencyPrefix.textContent = "QAR";
+            currencyPrefix.textContent = "USD";
 
             calculateInterest();
         }
@@ -331,10 +331,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             periodUnit.value = "years";
 
-            currency.value = "QAR";
+            currency.value = "USD";
             decimalPlaces.value = "2";
 
-            currencyPrefix.textContent = "QAR";
+            currencyPrefix.textContent = "USD";
 
             hideWarning();
             resetResults();

@@ -585,7 +585,7 @@ function loadExample() {
 
     hideError();
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     updateCurrencyLabels();
 
@@ -627,7 +627,7 @@ function clearCalculator() {
 
     hideError();
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     originalPrice.value = "";
     discountPercent.value = "";

@@ -319,7 +319,7 @@ function loadExample() {
 
     hideError();
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     fixedCosts.value = "10000";
     sellingPrice.value = "100";
@@ -340,7 +340,7 @@ function clearCalculator() {
 
     hideError();
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     fixedCosts.value = "";
     sellingPrice.value = "";

@@ -49,7 +49,27 @@
 <div class="form-group"><label for="warehouseName">Warehouse / Location</label><input id="warehouseName" placeholder="e.g. Main Warehouse"/></div>
 <div class="form-group"><label for="reportDate">Report Date</label><input id="reportDate" type="date"/></div>
 <div class="form-group"><label for="preparedBy">Prepared By</label><input id="preparedBy" placeholder="e.g. Inventory Controller"/></div>
-<div class="form-group"><label for="currency">Currency</label><select id="currency"><option>QAR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></div>
+<div class="form-group"><label for="currency">Currency</label><select id="currency">
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
+<option value="LKR">LKR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
+</select></div>
 <div class="form-group"><label for="decimalPlaces">Decimal Places</label><select id="decimalPlaces"><option>0</option><option>1</option><option selected="">2</option><option>3</option></select></div>
 </div></section>
 <section class="panel inventory-panel">
@@ -75,9 +95,9 @@
 <div class="financial-summary">
 <div class="financial-card"><span>Shortage Quantity</span><strong id="shortageQty">0</strong></div>
 <div class="financial-card"><span>Excess Quantity</span><strong id="excessQty">0</strong></div>
-<div class="financial-card"><span>Shortage Value</span><strong id="shortageValue">QAR 0.00</strong></div>
-<div class="financial-card"><span>Excess Value</span><strong id="excessValue">QAR 0.00</strong></div>
-<div class="financial-card net-card"><span>Net Variance Value</span><strong id="netVariance">QAR 0.00</strong></div>
+<div class="financial-card"><span>Shortage Value</span><strong id="shortageValue">USD 0.00</strong></div>
+<div class="financial-card"><span>Excess Value</span><strong id="excessValue">USD 0.00</strong></div>
+<div class="financial-card net-card"><span>Net Variance Value</span><strong id="netVariance">USD 0.00</strong></div>
 </div></section>
 <section class="action-panel"><div><h2>Report Actions</h2><p>Export or print your completed inventory report.</p></div>
 <div class="action-buttons"><button class="secondary-button" id="exportCsvButton" type="button">↓ Export CSV</button><button class="secondary-button" id="printButton" type="button">🖨 Print / Save PDF</button><button class="danger-button" id="clearButton" type="button">Clear All</button></div></section>
@@ -311,7 +331,7 @@ not be used by itself to judge inventory accuracy.
 </p>
 
 <p>
-For example, a QAR 1,000 shortage and a QAR 1,000 excess may
+For example, a USD 1,000 shortage and a USD 1,000 excess may
 produce a net variance of zero even though two significant stock
 discrepancies still require investigation.
 </p>

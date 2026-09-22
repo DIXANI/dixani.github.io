@@ -81,14 +81,25 @@ You can also add an expected sales volume to estimate profit or loss.
 Currency
 </label>
 <select id="currency">
-<option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
 <option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
 <option value="AED">AED</option>
 <option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
 <option value="LKR">LKR</option>
-<option value="INR">INR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
 </select>
 </div>
 <div class="field-group">
@@ -97,7 +108,7 @@ Fixed Costs
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="fixedCurrency">
-QAR
+USD
 </span>
 <input id="fixedCosts" min="0" placeholder="10000.00" step="0.01" type="number"/>
 </div>
@@ -112,7 +123,7 @@ Selling Price per Unit
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="sellingCurrency">
-QAR
+USD
 </span>
 <input id="sellingPrice" min="0" placeholder="100.00" step="0.01" type="number"/>
 </div>
@@ -126,7 +137,7 @@ Variable Cost per Unit
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="variableCurrency">
-QAR
+USD
 </span>
 <input id="variableCost" min="0" placeholder="60.00" step="0.01" type="number"/>
 </div>
@@ -196,7 +207,7 @@ Enter your values and calculate.
 Break-Even Revenue
 </span>
 <strong id="breakEvenRevenue">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -204,7 +215,7 @@ QAR 0.00
 Contribution / Unit
 </span>
 <strong id="contributionPerUnit">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -220,7 +231,7 @@ Contribution Margin
 Fixed Costs
 </span>
 <strong id="resultFixedCosts">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -271,26 +282,26 @@ Break-Even Units = Fixed Costs ÷
 EXAMPLE
 </span>
 <h2>
-QAR 10,000 fixed costs with QAR 40 contribution per unit
+USD 10,000 fixed costs with USD 40 contribution per unit
 </h2>
 <p>
-If a product sells for QAR 100 and has a variable cost
-of QAR 60, each unit contributes QAR 40 toward covering
+If a product sells for USD 100 and has a variable cost
+of USD 60, each unit contributes USD 40 toward covering
 fixed costs and then generating profit.
 </p>
 </div>
 <div class="workflow-example">
 <p>
 <strong>Fixed Costs:</strong>
-QAR 10,000
+USD 10,000
 
 <span>•</span>
 <strong>Selling Price:</strong>
-QAR 100
+USD 100
 
 <span>•</span>
 <strong>Variable Cost:</strong>
-QAR 60
+USD 60
 
 <span>•</span>
 <strong>Break-Even:</strong>

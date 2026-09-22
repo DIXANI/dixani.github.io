@@ -415,7 +415,7 @@ function loadExample() {
 
     hideError();
 
-    currency.value = "QAR";
+    currency.value = "USD";
     vatRate.value = "5";
 
     updateCurrencyLabel();
@@ -443,7 +443,7 @@ function clearCalculator() {
 
     hideError();
 
-    currency.value = "QAR";
+    currency.value = "USD";
 
     amount.value = "";
     vatRate.value = "";

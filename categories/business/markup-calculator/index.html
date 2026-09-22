@@ -93,14 +93,25 @@ to calculate the required selling price.
 Currency
 </label>
 <select id="currency">
-<option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
 <option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
 <option value="AED">AED</option>
 <option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
 <option value="LKR">LKR</option>
-<option value="INR">INR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
 </select>
 </div>
 <div class="field-group">
@@ -109,7 +120,7 @@ Cost Price
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="costCurrency">
-QAR
+USD
 </span>
 <input id="costPrice" min="0" placeholder="100.00" step="0.01" type="number"/>
 </div>
@@ -139,7 +150,7 @@ Selling Price
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="sellingCurrency">
-QAR
+USD
 </span>
 <input id="sellingPrice" min="0" placeholder="150.00" step="0.01" type="number"/>
 </div>
@@ -202,7 +213,7 @@ margin and profit results.
 Selling Price
 </span>
 <strong id="primaryResult">
-QAR 0.00
+USD 0.00
 </strong>
 <p id="primaryResultNote">
 Enter your values and calculate.
@@ -231,7 +242,7 @@ Equivalent Margin
 Profit per Unit
 </span>
 <strong id="profitPerUnit">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -239,7 +250,7 @@ QAR 0.00
 Selling Price Before Discount
 </span>
 <strong id="resultSellingPrice">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -247,7 +258,7 @@ QAR 0.00
 Total Revenue
 </span>
 <strong id="totalRevenue">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -255,7 +266,7 @@ QAR 0.00
 Total Cost
 </span>
 <strong id="totalCost">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card result-card-wide">
@@ -263,7 +274,7 @@ QAR 0.00
 Total Profit
 </span>
 <strong id="totalProfit">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 </div>
@@ -351,21 +362,21 @@ Profit ÷ Selling Price × 100
 EXAMPLE
 </span>
 <h2>
-Cost QAR 100 with a 50% markup
+Cost USD 100 with a 50% markup
 </h2>
 <p>
-A 50% markup on a QAR 100 cost
-produces a selling price of QAR 150.
+A 50% markup on a USD 100 cost
+produces a selling price of USD 150.
 </p>
 </div>
 <div class="workflow-example">
 <p>
 <strong>Selling Price:</strong>
-QAR 150
+USD 150
 
 <span>•</span>
 <strong>Profit:</strong>
-QAR 50
+USD 50
 
 <span>•</span>
 <strong>Markup:</strong>
@@ -410,28 +421,28 @@ and margin percentages are not equal.
 <div class="markup-example-card">
 <span>25%</span>
 <h3>25% Markup</h3>
-<p>QAR 100 cost → <strong>QAR 125 selling price</strong></p>
+<p>USD 100 cost → <strong>USD 125 selling price</strong></p>
 <small>Equivalent margin: 20%</small>
 </div>
 
 <div class="markup-example-card">
 <span>50%</span>
 <h3>50% Markup</h3>
-<p>QAR 100 cost → <strong>QAR 150 selling price</strong></p>
+<p>USD 100 cost → <strong>USD 150 selling price</strong></p>
 <small>Equivalent margin: 33.33%</small>
 </div>
 
 <div class="markup-example-card">
 <span>75%</span>
 <h3>75% Markup</h3>
-<p>QAR 100 cost → <strong>QAR 175 selling price</strong></p>
+<p>USD 100 cost → <strong>USD 175 selling price</strong></p>
 <small>Equivalent margin: 42.86%</small>
 </div>
 
 <div class="markup-example-card">
 <span>100%</span>
 <h3>100% Markup</h3>
-<p>QAR 100 cost → <strong>QAR 200 selling price</strong></p>
+<p>USD 100 cost → <strong>USD 200 selling price</strong></p>
 <small>Equivalent margin: 50%</small>
 </div>
 

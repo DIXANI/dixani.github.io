@@ -100,14 +100,25 @@ to calculate profit, margin and markup.
 Currency
 </label>
 <select id="currency">
-<option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
 <option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
 <option value="AED">AED</option>
 <option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
 <option value="LKR">LKR</option>
-<option value="INR">INR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
 </select>
 </div>
 <!-- COST -->
@@ -117,7 +128,7 @@ Cost Price
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="costCurrency">
-QAR
+USD
 </span>
 <input id="costPrice" min="0" placeholder="100.00" step="0.01" type="number"/>
 </div>
@@ -132,7 +143,7 @@ Selling Price
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="sellingCurrency">
-QAR
+USD
 </span>
 <input id="sellingPrice" min="0" placeholder="150.00" step="0.01" type="number"/>
 </div>
@@ -225,7 +236,7 @@ Enter your values and calculate.
 Profit per Unit
 </span>
 <strong id="profitPerUnit">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -241,7 +252,7 @@ Markup
 Selling Price Before Discount
 </span>
 <strong id="resultSellingPrice">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -249,7 +260,7 @@ QAR 0.00
 Cost Price
 </span>
 <strong id="resultCostPrice">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -257,7 +268,7 @@ QAR 0.00
 Total Revenue
 </span>
 <strong id="totalRevenue">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -265,7 +276,7 @@ QAR 0.00
 Total Cost
 </span>
 <strong id="totalCost">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card result-card-wide">
@@ -273,7 +284,7 @@ QAR 0.00
 Total Profit
 </span>
 <strong id="totalProfit">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 </div>
@@ -362,17 +373,17 @@ Profit ÷ Cost Price × 100
 EXAMPLE
 </span>
 <h2>
-Cost QAR 100 and selling price QAR 150
+Cost USD 100 and selling price USD 150
 </h2>
 <p>
-If an item costs QAR 100 and sells for QAR 150,
-the profit is QAR 50 per unit.
+If an item costs USD 100 and sells for USD 150,
+the profit is USD 50 per unit.
 </p>
 </div>
 <div class="workflow-example">
 <p>
 <strong>Profit:</strong>
-QAR 50
+USD 50
 
 <span>•</span>
 <strong>Margin:</strong>

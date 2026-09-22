@@ -412,11 +412,11 @@ document.addEventListener("DOMContentLoaded", () => {
         loanTerm.value = "5";
         termUnit.value = "years";
         extraPayment.value = "500";
-        currency.value = "QAR";
+        currency.value = "USD";
         decimalPlaces.value = "2";
 
-        currencyPrefix.textContent = "QAR";
-        extraCurrencyPrefix.textContent = "QAR";
+        currencyPrefix.textContent = "USD";
+        extraCurrencyPrefix.textContent = "USD";
 
         calculateLoan();
     });
@@ -434,11 +434,11 @@ document.addEventListener("DOMContentLoaded", () => {
         termUnit.value = "years";
         extraPayment.value = "";
 
-        currency.value = "QAR";
+        currency.value = "USD";
         decimalPlaces.value = "2";
 
-        currencyPrefix.textContent = "QAR";
-        extraCurrencyPrefix.textContent = "QAR";
+        currencyPrefix.textContent = "USD";
+        extraCurrencyPrefix.textContent = "USD";
 
         hideWarning();
         resetResults();

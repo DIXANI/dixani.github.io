@@ -171,7 +171,7 @@ $("printButton").onclick=()=>{
  const warehouse=esc($("warehouseName").value||"");
  const reportDate=esc($("reportDate").value||"");
  const prepared=esc($("preparedBy").value||"");
- const currency=esc($("currency").value||"QAR");
+ const currency=esc($("currency").value||"USD");
  let matched=0,shortage=0,excess=0,sv=0,ev=0;
  state.items.forEach(i=>{
   const v=n(i.physical)-n(i.system),x=val(i);

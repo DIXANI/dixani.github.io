@@ -94,14 +94,25 @@ to calculate the sale price and amount saved.
 Currency
 </label>
 <select id="currency">
-<option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
 <option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
 <option value="AED">AED</option>
 <option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
 <option value="LKR">LKR</option>
-<option value="INR">INR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
 </select>
 </div>
 <!-- ORIGINAL PRICE -->
@@ -111,7 +122,7 @@ Original Price
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="originalCurrency">
-QAR
+USD
 </span>
 <input id="originalPrice" min="0" placeholder="100.00" step="0.01" type="number"/>
 </div>
@@ -141,7 +152,7 @@ Sale Price
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="saleCurrency">
-QAR
+USD
 </span>
 <input id="salePrice" min="0" placeholder="80.00" step="0.01" type="number"/>
 </div>
@@ -210,7 +221,7 @@ Review the final price, savings and effective discount.
 Final Price
 </span>
 <strong id="primaryResult">
-QAR 0.00
+USD 0.00
 </strong>
 <p id="primaryResultNote">
 Enter your values and calculate.
@@ -222,7 +233,7 @@ Enter your values and calculate.
 Original Price
 </span>
 <strong id="resultOriginalPrice">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -230,7 +241,7 @@ QAR 0.00
 Amount Saved
 </span>
 <strong id="amountSaved">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -262,7 +273,7 @@ Quantity
 Total Original
 </span>
 <strong id="totalOriginal">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -270,7 +281,7 @@ QAR 0.00
 Total Savings
 </span>
 <strong id="totalSavings">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -278,7 +289,7 @@ QAR 0.00
 Final Total
 </span>
 <strong id="finalTotal">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 </div>
@@ -318,7 +329,7 @@ the second discount applies to the already-discounted price.
 Original
 </span>
 <strong>
-QAR 100
+USD 100
 </strong>
 </div>
 <div class="discount-example-arrow">
@@ -329,7 +340,7 @@ QAR 100
 20% Off
 </span>
 <strong>
-QAR 80
+USD 80
 </strong>
 </div>
 <div class="discount-example-arrow">
@@ -340,7 +351,7 @@ QAR 80
 Then 10% Off
 </span>
 <strong>
-QAR 72
+USD 72
 </strong>
 </div>
 <div class="discount-example-arrow">
@@ -790,7 +801,7 @@ How do I calculate a discounted price?
 <p>
 Multiply the original price by one minus the discount
 percentage expressed as a decimal. For example,
-20% off QAR 100 gives a final price of QAR 80.
+20% off USD 100 gives a final price of USD 80.
 </p>
 </details>
 <details>

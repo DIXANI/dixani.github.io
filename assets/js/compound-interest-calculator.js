@@ -382,15 +382,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         contributionFrequency.value = "12";
 
-        currency.value = "QAR";
+        currency.value = "USD";
 
         decimalPlaces.value = "2";
 
 
-        currencyPrefix.textContent = "QAR";
+        currencyPrefix.textContent = "USD";
 
         contributionCurrencyPrefix.textContent =
-            "QAR";
+            "USD";
 
 
         calculateInvestment();
@@ -415,15 +415,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         contributionFrequency.value = "12";
 
-        currency.value = "QAR";
+        currency.value = "USD";
 
         decimalPlaces.value = "2";
 
 
-        currencyPrefix.textContent = "QAR";
+        currencyPrefix.textContent = "USD";
 
         contributionCurrencyPrefix.textContent =
-            "QAR";
+            "USD";
 
 
         hideWarning();

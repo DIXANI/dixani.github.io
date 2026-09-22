@@ -93,14 +93,25 @@ the VAT amount and gross total.
 Currency
 </label>
 <select id="currency">
-<option value="QAR">QAR</option>
 <option value="USD">USD</option>
 <option value="EUR">EUR</option>
 <option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
 <option value="AED">AED</option>
 <option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
 <option value="LKR">LKR</option>
-<option value="INR">INR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
 </select>
 </div>
 <!-- AMOUNT -->
@@ -110,7 +121,7 @@ Net Amount
 </label>
 <div class="input-with-unit">
 <span class="currency-prefix" id="amountCurrency">
-QAR
+USD
 </span>
 <input id="amount" min="0" placeholder="1000.00" step="0.01" type="number"/>
 </div>
@@ -167,7 +178,7 @@ VAT value and gross amount.
 Gross Amount
 </span>
 <strong id="primaryResult">
-QAR 0.00
+USD 0.00
 </strong>
 <p id="primaryResultNote">
 Enter your values and calculate.
@@ -179,7 +190,7 @@ Enter your values and calculate.
 Net Amount
 </span>
 <strong id="netAmount">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -195,7 +206,7 @@ VAT Rate
 VAT Amount
 </span>
 <strong id="vatAmount">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 <div class="result-card">
@@ -203,7 +214,7 @@ QAR 0.00
 Gross Amount
 </span>
 <strong id="grossAmount">
-QAR 0.00
+USD 0.00
 </strong>
 </div>
 </div>
@@ -231,22 +242,22 @@ Gross Amount = Net Amount × (1 + VAT Rate)
         How a 5% VAT calculation works
     </h2>
 <p class="vat-example-description">
-        For a net amount of QAR 1,000 with a 5% VAT rate,
-        the VAT is QAR 50 and the gross amount is QAR 1,050.
+        For a net amount of USD 1,000 with a 5% VAT rate,
+        the VAT is USD 50 and the gross amount is USD 1,050.
     </p>
 <div class="vat-example-divider"></div>
 <div class="vat-example-summary">
 <p>
 <strong>Net Amount:</strong>
-            QAR 1,000
+            USD 1,000
 
             <span>•</span>
 <strong>VAT 5%:</strong>
-            QAR 50
+            USD 50
 
             <span>•</span>
 <strong>Gross Amount:</strong>
-            QAR 1,050
+            USD 1,050
         </p>
 </div>
 </div>
@@ -426,7 +437,7 @@ calculator.
 
 <p>
 The VAT amount is the tax calculated from the applicable VAT rate.
-For example, 5% VAT on a net amount of QAR 1,000 is QAR 50.
+For example, 5% VAT on a net amount of USD 1,000 is USD 50.
 </p>
 </div>
 
@@ -437,8 +448,8 @@ For example, 5% VAT on a net amount of QAR 1,000 is QAR 50.
 
 <p>
 The gross amount is the total after VAT has been added. In the
-same example, QAR 1,000 net plus QAR 50 VAT gives a gross amount
-of QAR 1,050.
+same example, USD 1,000 net plus USD 50 VAT gives a gross amount
+of USD 1,050.
 </p>
 </div>
 

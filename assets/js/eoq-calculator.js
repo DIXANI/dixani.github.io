@@ -195,7 +195,7 @@ function clearAll(){
   ].forEach(id=>$(id).value="");
 
   $("workingDays").value="365";
-  $("currency").value="QAR";
+  $("currency").value="USD";
   $("decimalPlaces").value="2";
   $("validationMessage").hidden=true;
 

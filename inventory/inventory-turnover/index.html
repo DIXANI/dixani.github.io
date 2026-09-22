@@ -24,27 +24,47 @@
 <label id="eGroup">Ending Inventory<input id="ending" inputmode="decimal" min="0" placeholder="150000" step="any" type="number"/></label>
 <label hidden="" id="aGroup">Average Inventory<input id="average" inputmode="decimal" min="0" placeholder="125000" step="any" type="number"/></label>
 <label>Reporting Period<select id="period"><option value="365">1 Year (365 days)</option><option value="366">Leap Year (366 days)</option><option value="180">6 Months (180 days)</option><option value="90">Quarter (90 days)</option><option value="30">Month (30 days)</option></select></label>
-<label>Currency<select id="currency"><option>QAR</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></label>
+<label>Currency<select id="currency">
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
+<option value="LKR">LKR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
+</select></label>
 <label>Decimal Places<select id="decimals"><option>0</option><option>1</option><option selected="">2</option><option>3</option></select></label></div>
 <div class="warning" hidden="" id="warning"></div><div class="actions"><button class="primary" id="calculate" type="button">Calculate Turnover</button><button id="clear" type="button">Clear</button></div></section>
 <section class="card"><div class="top"><div><h2>Inventory Turnover Result</h2><p>Results update automatically when valid values change.</p></div><b class="pill" id="mode">BEGINNING + ENDING</b></div>
 <div class="results"><div class="result featured"><small>Inventory Turnover Ratio</small><strong id="turnover">—</strong><small>Times during selected period</small></div><div class="result"><small>Average Inventory</small><strong id="avgResult">—</strong></div><div class="result"><small>Inventory Days</small><strong id="daysResult">—</strong></div><div class="result"><small>COGS</small><strong id="cogsResult">—</strong></div></div>
 <div class="note"><h3 id="noteTitle">Enter your inventory data</h3><p id="noteText">DIXANI will calculate turnover and inventory days. Appropriate turnover varies by industry and product type.</p></div></section>
-<section class="card"><h2>Understanding Inventory Turnover</h2><p>Inventory turnover shows how many times average inventory is sold or used during a reporting period. A higher or lower ratio is not automatically better; margins, lead times, seasonality and service targets all matter.</p><div class="three"><div><b>01</b><h3>Average Inventory</h3><p>Beginning and ending inventory are averaged. Seasonal businesses may benefit from more frequent inventory snapshots.</p></div><div><b>02</b><h3>Turnover Ratio</h3><p>COGS ÷ Average Inventory. QAR 500,000 COGS and QAR 125,000 average inventory equals 4.00×.</p></div><div><b>03</b><h3>Inventory Days</h3><p>Period days ÷ turnover. Annual turnover of 4.00× is about 91.25 days using 365 days.</p></div></div></section>
+<section class="card"><h2>Understanding Inventory Turnover</h2><p>Inventory turnover shows how many times average inventory is sold or used during a reporting period. A higher or lower ratio is not automatically better; margins, lead times, seasonality and service targets all matter.</p><div class="three"><div><b>01</b><h3>Average Inventory</h3><p>Beginning and ending inventory are averaged. Seasonal businesses may benefit from more frequent inventory snapshots.</p></div><div><b>02</b><h3>Turnover Ratio</h3><p>COGS ÷ Average Inventory. USD 500,000 COGS and USD 125,000 average inventory equals 4.00×.</p></div><div><b>03</b><h3>Inventory Days</h3><p>Period days ÷ turnover. Annual turnover of 4.00× is about 91.25 days using 365 days.</p></div></div></section>
 <section class="card">
 <h2>Inventory Turnover Calculation Example</h2>
 <p>
-        Suppose annual cost of goods sold is QAR 500,000,
-        beginning inventory is QAR 100,000 and ending inventory
-        is QAR 150,000.
+        Suppose annual cost of goods sold is USD 500,000,
+        beginning inventory is USD 100,000 and ending inventory
+        is USD 150,000.
     </p>
 <p>
         Average inventory is:
     </p>
 <div class="formula">
 <b>
-            (QAR 100,000 + QAR 150,000) ÷ 2
-            = QAR 125,000
+            (USD 100,000 + USD 150,000) ÷ 2
+            = USD 125,000
         </b>
 </div>
 <p>
@@ -52,7 +72,7 @@
     </p>
 <div class="formula">
 <b>
-            QAR 500,000 ÷ QAR 125,000
+            USD 500,000 ÷ USD 125,000
             = 4.00×
         </b>
 </div>

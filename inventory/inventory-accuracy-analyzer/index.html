@@ -50,7 +50,27 @@
     </div>
     <div class="message" id="message" role="status" aria-live="polite"></div>
     <details class="field-help"><summary>Accepted columns and definitions</summary><div class="field-grid"><span><b>SKU</b> item code</span><span><b>Description</b> item name</span><span><b>Location</b> bin or zone</span><span><b>System Qty</b> book stock</span><span><b>Physical Qty</b> counted stock</span><span><b>Unit Cost</b> item cost</span><span><b>Annual Usage</b> yearly issues or picks</span><span><b>Last Count Date</b> YYYY-MM-DD</span><span><b>Criticality</b> Low, Medium or High</span><span><b>Previous Variances</b> recent discrepancy count</span></div></details>
-    <div class="table-toolbar"><div class="toolbar-fields"><label>Search <input id="searchRows" type="search" placeholder="SKU, description or location"></label><label>Currency <select id="currency"><option>USD</option><option>QAR</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>LKR</option><option>INR</option></select></label></div><button class="button primary" id="addRow" type="button">+ Add item</button></div>
+    <div class="table-toolbar"><div class="toolbar-fields"><label>Search <input id="searchRows" type="search" placeholder="SKU, description or location"></label><label>Currency <select id="currency">
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="AUD">AUD</option>
+<option value="NZD">NZD</option>
+<option value="CHF">CHF</option>
+<option value="JPY">JPY</option>
+<option value="CNY">CNY</option>
+<option value="HKD">HKD</option>
+<option value="SGD">SGD</option>
+<option value="INR">INR</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="QAR">QAR</option>
+<option value="LKR">LKR</option>
+<option value="ZAR">ZAR</option>
+<option value="BRL">BRL</option>
+<option value="MXN">MXN</option>
+</select></label></div><button class="button primary" id="addRow" type="button">+ Add item</button></div>
     <div class="editable-table-wrap"><table class="editable-table"><thead><tr><th>SKU</th><th>Description</th><th>Location</th><th>System Qty</th><th>Physical Qty</th><th>Unit Cost</th><th>Annual Usage</th><th>Last Count</th><th>Criticality</th><th>Previous Variances</th><th><span class="sr-only">Remove</span></th></tr></thead><tbody id="inputBody"></tbody></table></div>
     <p class="table-caption"><span id="rowCount">0 items</span> · Blank optional values are treated conservatively and marked in the results.</p>
   </section>
