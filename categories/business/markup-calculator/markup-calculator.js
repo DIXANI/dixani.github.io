@@ -1,522 +1,114 @@
-const tabs = document.querySelectorAll(".calc-tab");
-
-const currency = document.getElementById("currency");
-const costPrice = document.getElementById("costPrice");
-const markupPercentInput = document.getElementById("markupPercentInput");
-const sellingPrice = document.getElementById("sellingPrice");
-const quantity = document.getElementById("quantity");
-
-const markupInputGroup = document.getElementById("markupInputGroup");
-const sellingPriceGroup = document.getElementById("sellingPriceGroup");
-
-const inputHeading = document.getElementById("inputHeading");
-const inputDescription = document.getElementById("inputDescription");
-
-const calculateButton = document.getElementById("calculateButton");
-const exampleButton = document.getElementById("exampleButton");
-const clearButton = document.getElementById("clearButton");
-
-const calculatorError = document.getElementById("calculatorError");
-
-const primaryResultLabel = document.getElementById("primaryResultLabel");
-const primaryResult = document.getElementById("primaryResult");
-const primaryResultNote = document.getElementById("primaryResultNote");
-
-const resultMarkup = document.getElementById("resultMarkup");
-const resultMargin = document.getElementById("resultMargin");
-const profitPerUnit = document.getElementById("profitPerUnit");
-const resultSellingPrice = document.getElementById("resultSellingPrice");
-const totalRevenue = document.getElementById("totalRevenue");
-const totalCost = document.getElementById("totalCost");
-const totalProfit = document.getElementById("totalProfit");
-
-const costCurrency = document.getElementById("costCurrency");
-const sellingCurrency = document.getElementById("sellingCurrency");
-
-const formulaBox = document.getElementById("formulaBox");
-const resultPrimary = document.querySelector(".result-primary");
-
-let currentMode = "selling";
-
-
-/* =========================================================
-   FORMATTING
-   ========================================================= */
-
-function money(value) {
-    return `${currency.value} ${Number(value).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    })}`;
-}
-
-function percent(value) {
-    return `${Number(value).toFixed(2)}%`;
-}
-
-
-/* =========================================================
-   ERROR MESSAGE
-   ========================================================= */
-
-function showError(message) {
-    calculatorError.textContent = message;
-    calculatorError.classList.add("show");
-}
-
-function hideError() {
-    calculatorError.textContent = "";
-    calculatorError.classList.remove("show");
-}
-
-
-/* =========================================================
-   CURRENCY
-   ========================================================= */
-
-function updateCurrencyLabels() {
-    costCurrency.textContent = currency.value;
-    sellingCurrency.textContent = currency.value;
-}
-
-
-/* =========================================================
-   RESET RESULTS
-   ========================================================= */
-
-function resetResults() {
-
-    if (currentMode === "selling") {
-        primaryResultLabel.textContent = "Selling Price";
-        primaryResult.textContent = money(0);
-    } else {
-        primaryResultLabel.textContent = "Markup";
-        primaryResult.textContent = "0.00%";
-    }
-
-    primaryResultNote.textContent =
-        "Enter your values and calculate.";
-
-    resultMarkup.textContent = "0.00%";
-    resultMargin.textContent = "0.00%";
-
-    profitPerUnit.textContent = money(0);
-    resultSellingPrice.textContent = money(0);
-
-    totalRevenue.textContent = money(0);
-    totalCost.textContent = money(0);
-    totalProfit.textContent = money(0);
-
-    resultPrimary.classList.remove("loss", "positive");
-}
-
-
-/* =========================================================
-   SWITCH MODE
-   ========================================================= */
-
-function switchMode(mode) {
-
-    currentMode = mode;
-
-    tabs.forEach(tab => {
-        tab.classList.toggle(
-            "active",
-            tab.dataset.mode === mode
-        );
+(() => {
+  'use strict';
+  const get = id => document.getElementById(id);
+  const isMargin = Boolean(get('targetMargin'));
+  let mode = isMargin ? 'margin' : 'selling';
+  let summary = '';
+  const money = value => `${get('currency').value} ${value.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  const percent = value => value === null ? 'N/A' : `${value.toFixed(2)}%`;
+  const cents = value => Math.round((value + Number.EPSILON) * 100) / 100;
+  const set = (id, text) => { if (get(id)) get(id).textContent = text; };
+  function number(id, name, min, max, precision = 2, fallback) {
+    const text = get(id).value.trim();
+    if (!text && fallback !== undefined) return fallback;
+    if (!new RegExp(`^-?\\d+(?:\\.\\d{1,${precision}})?$`).test(text)) throw new Error(`${name}: enter a number with up to ${precision} decimal places.`);
+    const value = Number(text);
+    if (!Number.isFinite(value) || value < min || value > max) throw new Error(`${name} must be between ${min} and ${max}.`);
+    return value;
+  }
+  function reset() {
+    summary = '';
+    get('copyBreakdown').disabled = true;
+    get('copyFallback').hidden = true;
+    get('copyFallback').value = '';
+    set('copyStatus', '');
+    set('calculatorError', '');
+    get('calculatorError').classList.remove('show');
+    document.querySelectorAll('.result-panel strong[id]').forEach(el => el.textContent = '—');
+    document.querySelector('.result-primary').classList.remove('loss', 'positive');
+    set('primaryResultNote', 'Enter your values and calculate. Results clear when inputs change.');
+  }
+  function switchMode(next) {
+    mode = next;
+    document.querySelectorAll('.calc-tab').forEach(tab => {
+      const active = tab.dataset.mode === mode;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-pressed', String(active));
     });
-
-    hideError();
-
-    if (mode === "selling") {
-
-        markupInputGroup.classList.remove("hidden");
-        sellingPriceGroup.classList.add("hidden");
-
-        inputHeading.textContent =
-            "Calculate Selling Price";
-
-        inputDescription.textContent =
-            "Enter your cost price and markup percentage to calculate the required selling price.";
-
-        formulaBox.innerHTML = `
-            <strong>Selling Price Formula</strong>
-            <p>
-                Selling Price = Cost Price × (1 + Markup %)
-            </p>
-        `;
-
-    } else {
-
-        markupInputGroup.classList.add("hidden");
-        sellingPriceGroup.classList.remove("hidden");
-
-        inputHeading.textContent =
-            "Calculate Markup";
-
-        inputDescription.textContent =
-            "Enter your cost price and selling price to calculate markup, margin and profit.";
-
-        formulaBox.innerHTML = `
-            <strong>Markup Formula</strong>
-            <p>
-                Markup % = (Selling Price − Cost Price)
-                ÷ Cost Price × 100
-            </p>
-        `;
+    const target = mode === 'target' || mode === 'selling';
+    get('sellingPriceGroup').classList.toggle('hidden', target);
+    get(isMargin ? 'targetMarginGroup' : 'markupInputGroup').classList.toggle('hidden', !target);
+    const heading = target ? 'Calculate Selling Price Before Discount' : `Calculate ${isMargin ? 'Margin' : 'Markup'} After Discount`;
+    set('inputHeading', heading);
+    set('inputDescription', target ? 'Your target sets the price before discount. The discount reduces your achieved profit.' : 'Enter cost and selling price before discount to see the achieved profit.');
+    set('primaryResultLabel', target ? 'Selling Price Before Discount' : isMargin ? 'Achieved Gross Margin' : 'Achieved Markup');
+    get('formulaBox').textContent = mode === 'target' ? 'Target price = cost ÷ (1 − margin ÷ 100).' : mode === 'selling' ? 'Target price = cost × (1 + markup ÷ 100).' : isMargin ? 'Achieved margin = gross profit ÷ price after discount × 100.' : 'Achieved markup = gross profit ÷ cost × 100.';
+    reset();
+  }
+  function calculate() {
+    reset();
+    try {
+      const cost = number('costPrice', 'Unit cost', 0, 1e9);
+      const discount = number('discountPercent', 'Discount', 0, 100);
+      const qty = number('quantity', 'Quantity', 0.001, 1e6, 3, 1);
+      const target = mode === 'target' || mode === 'selling';
+      let raw;
+      if (target && cost === 0) throw new Error('Enter a cost above zero to calculate a target price.');
+      if (mode === 'target') raw = cost / (1 - number('targetMargin', 'Target margin', 0, 99.99) / 100);
+      else if (mode === 'selling') raw = cost * (1 + number('markupPercentInput', 'Markup', -100, 10000) / 100);
+      else raw = number('sellingPrice', 'Selling price', 0, 1e9);
+      const price = target ? Math.max(0, Math.ceil(raw * 100 - 1e-7) / 100) : raw;
+      if (!Number.isFinite(price) || price > 1e9) throw new Error('Calculated price is too large. Reduce the cost or target.');
+      const after = cents(price * (1 - discount / 100));
+      const profit = cents(after - cost);
+      const margin = after === 0 ? null : profit / after * 100;
+      const markup = cost === 0 ? null : profit / cost * 100;
+      const revenue = cents(after * qty), totalCost = cents(cost * qty);
+      const totalProfit = cents(revenue - totalCost);
+      if (Math.max(revenue, totalCost, Math.abs(totalProfit)) > 1e12) throw new Error('Order totals are too large. Reduce quantity or unit amounts.');
+      set('primaryResult', target ? money(price) : percent(isMargin ? margin : markup));
+      set('primaryResultNote', profit < 0 ? 'The price after discount is below cost: each unit makes a gross loss.' : 'Profit and percentages below use the price after discount.');
+      document.querySelector('.result-primary').classList.toggle('loss', profit < 0);
+      document.querySelector('.result-primary').classList.toggle('positive', profit > 0);
+      for (const [id, value] of Object.entries({profitPerUnit: money(profit), markupPercent: percent(markup), resultMarkup: percent(markup), resultMargin: percent(margin), achievedMargin: percent(margin), resultSellingPrice: money(price), afterDiscount: money(after), resultCostPrice: money(cost), totalRevenue: money(revenue), totalCost: money(totalCost), totalProfit: money(totalProfit)})) set(id, value);
+      summary = `DIXANI pricing breakdown\nUnit cost: ${money(cost)}\nSelling price before discount: ${money(price)}\nDiscount: ${discount}%\nPrice after discount: ${money(after)}\nGross profit per unit: ${money(profit)}\nAchieved gross margin: ${percent(margin)}\nAchieved markup: ${percent(markup)}\nQuantity: ${qty}\nTotal revenue: ${money(revenue)}\nTotal cost: ${money(totalCost)}\nTotal gross profit: ${money(totalProfit)}\nCurrency label only; no conversion. Taxes, fees and overhead excluded unless included in cost.`;
+      get('copyBreakdown').disabled = false;
+    } catch (error) {
+      set('calculatorError', error.message);
+      get('calculatorError').classList.add('show');
     }
-
-    resetResults();
-}
-
-
-/* =========================================================
-   QUANTITY
-   ========================================================= */
-
-function getQuantity() {
-
-    if (!quantity.value.trim()) {
-        return 1;
-    }
-
-    const qty = parseFloat(quantity.value);
-
-    if (!Number.isFinite(qty) || qty <= 0) {
-        return null;
-    }
-
-    return qty;
-}
-
-
-/* =========================================================
-   MODE 1 — COST + MARKUP → SELLING PRICE
-   ========================================================= */
-
-function calculateSellingPrice() {
-
-    const cost = parseFloat(costPrice.value);
-    const markup = parseFloat(markupPercentInput.value);
-    const qty = getQuantity();
-
-    if (!Number.isFinite(cost) || cost < 0) {
-        showError("Please enter a valid cost price.");
-        return;
-    }
-
-    if (!Number.isFinite(markup)) {
-        showError("Please enter a valid markup percentage.");
-        return;
-    }
-
-    if (markup < -100) {
-        showError("Markup cannot be less than -100%.");
-        return;
-    }
-
-    if (qty === null) {
-        showError("Quantity must be greater than zero.");
-        return;
-    }
-
-    const sell = cost * (1 + markup / 100);
-
-    if (sell < 0) {
-        showError("The calculated selling price cannot be negative.");
-        return;
-    }
-
-    hideError();
-
-    const profit = sell - cost;
-
-    let margin = 0;
-
-    if (sell > 0) {
-        margin = (profit / sell) * 100;
-    }
-
-    const revenue = sell * qty;
-    const costTotal = cost * qty;
-    const profitTotal = profit * qty;
-
-    primaryResultLabel.textContent =
-        "Selling Price";
-
-    primaryResult.textContent =
-        money(sell);
-
-    if (profit > 0) {
-
-        primaryResultNote.textContent =
-            `${money(profit)} profit per unit.`;
-
-        resultPrimary.classList.remove("loss");
-        resultPrimary.classList.add("positive");
-
-    } else if (profit < 0) {
-
-        primaryResultNote.textContent =
-            `${money(Math.abs(profit))} loss per unit.`;
-
-        resultPrimary.classList.remove("positive");
-        resultPrimary.classList.add("loss");
-
-    } else {
-
-        primaryResultNote.textContent =
-            "Selling price equals cost price — no profit or loss.";
-
-        resultPrimary.classList.remove("loss", "positive");
-    }
-
-    resultMarkup.textContent =
-        percent(markup);
-
-    resultMargin.textContent =
-        percent(margin);
-
-    profitPerUnit.textContent =
-        money(profit);
-
-    resultSellingPrice.textContent =
-        money(sell);
-
-    totalRevenue.textContent =
-        money(revenue);
-
-    totalCost.textContent =
-        money(costTotal);
-
-    totalProfit.textContent =
-        money(profitTotal);
-}
-
-
-/* =========================================================
-   MODE 2 — COST + SELLING PRICE → MARKUP
-   ========================================================= */
-
-function calculateMarkup() {
-
-    const cost = parseFloat(costPrice.value);
-    const sell = parseFloat(sellingPrice.value);
-    const qty = getQuantity();
-
-    if (!Number.isFinite(cost) || cost <= 0) {
-        showError(
-            "Cost price must be greater than zero to calculate markup."
-        );
-        return;
-    }
-
-    if (!Number.isFinite(sell) || sell < 0) {
-        showError("Please enter a valid selling price.");
-        return;
-    }
-
-    if (qty === null) {
-        showError("Quantity must be greater than zero.");
-        return;
-    }
-
-    hideError();
-
-    const profit = sell - cost;
-
-    const markup =
-        (profit / cost) * 100;
-
-    let margin = 0;
-
-    if (sell > 0) {
-        margin = (profit / sell) * 100;
-    }
-
-    const revenue = sell * qty;
-    const costTotal = cost * qty;
-    const profitTotal = profit * qty;
-
-    primaryResultLabel.textContent =
-        "Markup";
-
-    primaryResult.textContent =
-        percent(markup);
-
-    if (profit > 0) {
-
-        primaryResultNote.textContent =
-            `${money(profit)} profit per unit.`;
-
-        resultPrimary.classList.remove("loss");
-        resultPrimary.classList.add("positive");
-
-    } else if (profit < 0) {
-
-        primaryResultNote.textContent =
-            `${money(Math.abs(profit))} loss per unit.`;
-
-        resultPrimary.classList.remove("positive");
-        resultPrimary.classList.add("loss");
-
-    } else {
-
-        primaryResultNote.textContent =
-            "Selling price equals cost price — 0% markup.";
-
-        resultPrimary.classList.remove("loss", "positive");
-    }
-
-    resultMarkup.textContent =
-        percent(markup);
-
-    resultMargin.textContent =
-        sell > 0
-            ? percent(margin)
-            : "N/A";
-
-    profitPerUnit.textContent =
-        money(profit);
-
-    resultSellingPrice.textContent =
-        money(sell);
-
-    totalRevenue.textContent =
-        money(revenue);
-
-    totalCost.textContent =
-        money(costTotal);
-
-    totalProfit.textContent =
-        money(profitTotal);
-}
-
-
-/* =========================================================
-   CALCULATE
-   ========================================================= */
-
-function calculate() {
-
-    if (currentMode === "selling") {
-        calculateSellingPrice();
-    } else {
-        calculateMarkup();
-    }
-}
-
-
-/* =========================================================
-   LOAD EXAMPLE
-   ========================================================= */
-
-function loadExample() {
-
-    hideError();
-
-    currency.value = "QAR";
-
-    updateCurrencyLabels();
-
-    costPrice.value = "100";
-    quantity.value = "10";
-
-    if (currentMode === "selling") {
-
-        markupPercentInput.value = "50";
-        sellingPrice.value = "";
-
-    } else {
-
-        sellingPrice.value = "150";
-        markupPercentInput.value = "";
-    }
-
+  }
+  document.querySelectorAll('.calc-tab').forEach(tab => tab.addEventListener('click', () => switchMode(tab.dataset.mode)));
+  ['costPrice', 'sellingPrice', 'targetMargin', 'markupPercentInput', 'quantity', 'discountPercent'].forEach(id => {
+    const el = get(id); if (!el) return;
+    el.addEventListener('input', reset);
+    el.addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); calculate(); } });
+  });
+  get('currency').addEventListener('change', () => {
+    set('costCurrency', get('currency').value); set('sellingCurrency', get('currency').value); reset();
+  });
+  get('calculateButton').addEventListener('click', calculate);
+  get('clearButton').addEventListener('click', () => {
+    ['costPrice', 'sellingPrice', 'targetMargin', 'markupPercentInput', 'quantity'].forEach(id => { if (get(id)) get(id).value = ''; });
+    get('discountPercent').value = '0'; reset();
+  });
+  get('exampleButton').addEventListener('click', () => {
+    get('costPrice').value = '75'; get('sellingPrice').value = '100'; get('quantity').value = '10'; get('discountPercent').value = '10';
+    if (isMargin) get('targetMargin').value = '25'; else get('markupPercentInput').value = '50';
     calculate();
-}
-
-
-/* =========================================================
-   CLEAR
-   ========================================================= */
-
-function clearCalculator() {
-
-    hideError();
-
-    costPrice.value = "";
-    markupPercentInput.value = "";
-    sellingPrice.value = "";
-    quantity.value = "";
-
-    resetResults();
-}
-
-
-/* =========================================================
-   EVENTS
-   ========================================================= */
-
-tabs.forEach(tab => {
-
-    tab.addEventListener("click", () => {
-        switchMode(tab.dataset.mode);
-    });
-
-});
-
-
-currency.addEventListener("change", () => {
-    updateCurrencyLabels();
-    resetResults();
-});
-
-
-calculateButton.addEventListener(
-    "click",
-    calculate
-);
-
-
-exampleButton.addEventListener(
-    "click",
-    loadExample
-);
-
-
-clearButton.addEventListener(
-    "click",
-    clearCalculator
-);
-
-
-/* ENTER KEY */
-
-[
-    costPrice,
-    markupPercentInput,
-    sellingPrice,
-    quantity
-].forEach(input => {
-
-    input.addEventListener(
-        "keydown",
-        event => {
-
-            if (event.key === "Enter") {
-                calculate();
-            }
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   INITIALIZE
-   ========================================================= */
-
-updateCurrencyLabels();
-switchMode("selling");
+  });
+  get('copyBreakdown').addEventListener('click', async () => {
+    if (!summary) return;
+    const text = summary;
+    try {
+      await navigator.clipboard.writeText(text);
+      if (summary === text) set('copyStatus', 'Pricing breakdown copied.');
+    } catch {
+      if (summary !== text) return;
+      get('copyFallback').value = text; get('copyFallback').hidden = false;
+      get('copyFallback').focus(); get('copyFallback').select();
+      set('copyStatus', 'Automatic copy is unavailable. Copy the selected breakdown below.');
+    }
+  });
+  switchMode(mode);
+})();

@@ -137,7 +137,7 @@ QAR
 <input id="sellingPrice" min="0" placeholder="150.00" step="0.01" type="number"/>
 </div>
 <small>
-The price charged to the customer per unit.
+The selling price per unit before discount.
 </small>
 </div>
 <!-- TARGET MARGIN -->
@@ -155,13 +155,18 @@ Target Profit Margin
 Enter the margin you want to achieve.
 </small>
 </div>
+<div class="field-group">
+<label for="discountPercent">Discount on selling price (%)</label>
+<input id="discountPercent" type="number" min="0" max="100" step="0.01" value="0"/>
+<small>Targets set the price before discount. The discount reduces achieved margin and markup.</small>
+</div>
 <!-- QUANTITY -->
 <div class="field-group">
 <label for="quantity">
 Quantity
 <span class="optional">(optional)</span>
 </label>
-<input id="quantity" min="0" placeholder="1" step="1" type="number"/>
+<input id="quantity" min="0.001" max="1000000" placeholder="1" step="0.001" type="number"/>
 <small>
 Use quantity to calculate total revenue,
 total cost and total profit.
@@ -214,6 +219,7 @@ Enter your values and calculate.
 </p>
 </div>
 <div class="result-grid">
+<div class="result-card"><span>Price After Discount</span><strong id="afterDiscount">—</strong></div><div class="result-card"><span>Achieved Gross Margin</span><strong id="achievedMargin">—</strong></div>
 <div class="result-card">
 <span>
 Profit per Unit
@@ -232,7 +238,7 @@ Markup
 </div>
 <div class="result-card">
 <span>
-Selling Price
+Selling Price Before Discount
 </span>
 <strong id="resultSellingPrice">
 QAR 0.00
@@ -270,6 +276,13 @@ Total Profit
 QAR 0.00
 </strong>
 </div>
+</div>
+<div class="field-group">
+<button class="secondary-button" id="copyBreakdown" type="button" disabled>Copy pricing breakdown</button>
+<p id="copyStatus" role="status"></p>
+<textarea id="copyFallback" aria-label="Pricing breakdown to copy" rows="12" readonly hidden style="width:100%;box-sizing:border-box;"></textarea>
+<p>Targets are before discount and round upward to the next cent. Discounted unit prices and order totals round to two decimals; total profit is total revenue minus total cost. A zero selling price has no defined margin; zero cost has no defined markup (N/A).</p>
+<p>Currency is a label only, with no conversion. Gross profit excludes taxes, fees and overhead unless included in your cost.</p>
 </div>
 <div class="formula-box" id="formulaBox">
 <strong>
