@@ -72,6 +72,8 @@
 
   const varianceForm=document.getElementById("varianceForm"),varianceReport=document.getElementById("varianceReport");
   const systemInput=document.getElementById("varianceSystem"),physicalInput=document.getElementById("variancePhysical"),costInput=document.getElementById("varianceCost");
+  const varianceCurrency=()=>document.getElementById("varianceCurrency").value;
+  document.getElementById("varianceCurrency").addEventListener("change",updateVariance);
   function varianceNumbers(){const system=Number(systemInput.value),physical=Number(physicalInput.value),cost=Number(costInput.value||0);return{system,physical,cost,difference:physical-system,value:(physical-system)*cost};}
   function updateVariance(){
     const box=document.getElementById("liveVariance");
@@ -79,7 +81,7 @@
     const data=varianceNumbers(),type=data.difference<0?"shortage":data.difference>0?"overage":"matched";
     box.className="live-variance "+(type==="matched"?"neutral":type);
     document.getElementById("liveVarianceQty").textContent=(data.difference>0?"+":"")+data.difference+" units · "+type.toUpperCase();
-    document.getElementById("liveVarianceValue").textContent="Financial impact: QAR "+Math.abs(data.value).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById("liveVarianceValue").textContent="Financial impact: "+varianceCurrency()+" "+Math.abs(data.value).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
   }
   [systemInput,physicalInput,costInput].forEach(field=>field.addEventListener("input",updateVariance));
   document.getElementById("loadVarianceExample").addEventListener("click",()=>{
@@ -95,9 +97,9 @@
     document.getElementById("reportReference").textContent="Reference: DX-VAR-"+new Date().getFullYear()+"-DEMO";
     document.getElementById("reportSystem").textContent=data.system.toLocaleString();document.getElementById("reportPhysical").textContent=data.physical.toLocaleString();
     document.getElementById("reportVariance").textContent=(data.difference>0?"+":"")+data.difference.toLocaleString()+" · "+type;
-    document.getElementById("reportValue").textContent="QAR "+Math.abs(data.value).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById("reportValue").textContent=varianceCurrency()+" "+Math.abs(data.value).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
     document.getElementById("reportVarianceCard").className=data.difference<0?"negative":data.difference>0?"positive":"";
-    document.getElementById("reportItem").textContent=document.getElementById("varianceSku").value+" — "+document.getElementById("varianceProduct").value+" · Location "+document.getElementById("varianceLocation").value+" · Unit cost QAR "+data.cost.toFixed(2);
+    document.getElementById("reportItem").textContent=document.getElementById("varianceSku").value+" — "+document.getElementById("varianceProduct").value+" · Location "+document.getElementById("varianceLocation").value+" · Unit cost "+varianceCurrency()+" "+data.cost.toFixed(2);
     document.getElementById("reportCause").textContent=document.getElementById("varianceCause").value;document.getElementById("reportAction").textContent=document.getElementById("varianceAction").value;document.getElementById("reportStatus").textContent=document.getElementById("varianceStatus").value;
     document.getElementById("reportChecks").innerHTML=checks.map(item=>"<li>"+escapeHtml(item)+"</li>").join("");
     varianceForm.style.display="none";varianceReport.classList.add("visible");varianceReport.scrollIntoView({behavior:"smooth",block:"start"});

@@ -73,7 +73,7 @@
       data: [
         ["System quantity", "48 units"],
         ["Physical quantity", "42 units"],
-        ["Unit value", "QAR 1,250"]
+        ["Unit value", "USD 1,250"]
       ],
       choices: [
         {

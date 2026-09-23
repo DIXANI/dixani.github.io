@@ -90,7 +90,8 @@
               <label>SKU<input id="varianceSku" required placeholder="e.g. SKU-1048"/></label>
               <label>Product description<input id="varianceProduct" required placeholder="e.g. Storage Bin 45L"/></label>
               <label>Location<input id="varianceLocation" required placeholder="e.g. A-02-04"/></label>
-              <label>Unit cost (QAR)<input id="varianceCost" min="0" step="0.01" required type="number" placeholder="0.00"/></label>
+              <label>Currency<select id="varianceCurrency"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CAD">CAD</option><option value="AUD">AUD</option><option value="NZD">NZD</option><option value="CHF">CHF</option><option value="JPY">JPY</option><option value="CNY">CNY</option><option value="HKD">HKD</option><option value="SGD">SGD</option><option value="INR">INR</option><option value="AED">AED</option><option value="SAR">SAR</option><option value="QAR">QAR</option><option value="LKR">LKR</option><option value="ZAR">ZAR</option><option value="BRL">BRL</option><option value="MXN">MXN</option></select><small>Labels costs only; no exchange-rate conversion.</small></label>
+              <label>Unit cost<input id="varianceCost" min="0" step="0.01" required type="number" placeholder="0.00"/></label>
               <label>System quantity<input id="varianceSystem" min="0" step="1" required type="number" placeholder="0"/></label>
               <label>Physical quantity<input id="variancePhysical" min="0" step="1" required type="number" placeholder="0"/></label>
             </div>
