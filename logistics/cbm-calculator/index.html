@@ -34,7 +34,7 @@
 </section>
 <section class="panel">
 <div class="panel-head">
-<div><h2>Shipment Settings</h2><p>Choose the units used for carton dimensions and weight.</p></div>
+<div><h2>Shipment Settings</h2><p>Choose the units used for carton dimensions and weight. All rows use these units. Changing a unit reinterprets the entered numbers; it does not convert the input values.</p></div>
 <button class="secondary" id="sampleBtn" type="button">Load Sample</button>
 </div>
 <div class="settings">
@@ -61,11 +61,11 @@
 </table>
 </div>
 <div class="empty" hidden="" id="empty">No carton rows. Click “+ Add Carton” to begin.</div>
-<div class="warning" hidden="" id="warning"></div>
+<div class="warning" hidden="" id="warning" role="status" aria-live="polite"></div>
 <div class="actions"><button class="primary" id="calculateBtn" type="button">Calculate CBM</button><button class="danger" id="clearBtn" type="button">Clear All</button></div>
 </section>
 <section class="summary">
-<div class="summary-head"><div><h2>Shipment Summary</h2><p>Calculated from all valid carton rows.</p></div><div class="pill">VOLUME SUMMARY</div></div>
+<div class="summary-head"><div><h2>Shipment Summary</h2><p>Complete every started row to see shipment totals. Empty rows are ignored.</p></div><div class="pill">VOLUME SUMMARY</div></div>
 <div class="summary-grid">
 <div class="metric"><span>Total Cartons</span><strong id="totalCartons">0</strong></div>
 <div class="metric featured"><span>Total CBM</span><strong id="totalCbm">0.0000 m³</strong></div>
@@ -73,6 +73,7 @@
 <div class="metric"><span>Total Gross Weight</span><strong id="totalWeight">—</strong></div>
 <div class="metric"><span>Average CBM / Carton</span><strong id="averageCbm">0.0000 m³</strong></div>
 </div>
+<p id="weightNote" role="status"></p>
 </section>
 <section class="panel">
 <div class="summary-head"><div><h2>Container Volume Reference</h2><p>Approximate percentage of nominal container volume represented by this shipment's CBM.</p></div><div class="pill green">PLANNING REFERENCE</div></div>

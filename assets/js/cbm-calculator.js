@@ -9,7 +9,7 @@ const weightToKg={kg:1,lb:.45359237};
 
 const dp=()=>Number($("decimals").value||4);
 const fmt=(v,places=dp())=>Number(v).toLocaleString(undefined,{minimumFractionDigits:places,maximumFractionDigits:places});
-const val=(el)=>{const n=parseFloat(el.value);return Number.isFinite(n)?n:null};
+const val=(el)=>{const n=Number(el.value.trim());return el.value.trim()!==""&&Number.isFinite(n)?n:null};
 
 function rowTemplate(id){
  return `<tr data-id="${id}">
@@ -34,7 +34,9 @@ function addRow(values={}){
  ["length","width","height","qty","weight"].forEach(k=>{
    if(values[k]!==undefined && values[k]!==null) row.querySelector("."+k).value=values[k];
  });
+ row.querySelectorAll("input").forEach(input=>input.setAttribute("aria-label", input.closest("td").dataset.label+" — carton "+id));
  bindRow(row);
+ renumber();
  updateEmpty();
  calculate(false);
 }
@@ -53,57 +55,56 @@ function updateEmpty(){ $("empty").hidden=body.rows.length>0; }
 
 function calculate(showWarning=false){
  const rows=[...body.rows];
- let totalCartons=0,totalCbm=0,totalWeightKg=0,weightEntered=false,validRows=0,invalid=false;
+ let totalCartons=0,totalCbm=0,totalWeightKg=0,validRows=0,missingWeight=false;
+ const errors=[];
  const factor=unitFactor[$("dimensionUnit").value];
+ const weightFactor=weightToKg[$("weightUnit").value];
 
- rows.forEach(row=>{
-   const l=val(row.querySelector(".length")),w=val(row.querySelector(".width")),h=val(row.querySelector(".height")),q=val(row.querySelector(".qty")),wt=val(row.querySelector(".weight"));
-   const required=[l,w,h,q];
-   const hasAny=required.some(x=>x!==null);
-   const valid=required.every(x=>x!==null&&x>0);
-   if(hasAny&&!valid) invalid=true;
-
-   if(valid){
-     const cbm=(l*factor)*(w*factor)*(h*factor);
-     const total=cbm*q;
-     row.querySelector(".cbmEach").textContent=fmt(cbm)+" m³";
-     row.querySelector(".cbmTotal").textContent=fmt(total)+" m³";
-     totalCartons+=q; totalCbm+=total; validRows++;
-     if(wt!==null){
-       if(wt<0) invalid=true;
-       else{weightEntered=true; totalWeightKg+=(wt*weightToKg[$("weightUnit").value])*q;}
-     }
-   }else{
-     row.querySelector(".cbmEach").textContent="—";
-     row.querySelector(".cbmTotal").textContent="—";
+ rows.forEach((row,index)=>{
+   const inputs=["length","width","height","qty","weight"].map(k=>row.querySelector("."+k));
+   inputs.forEach(input=>input.removeAttribute("aria-invalid"));
+   row.querySelector(".cbmEach").textContent="—";
+   row.querySelector(".cbmTotal").textContent="—";
+   const active=inputs.some(input=>input.value!==""||input.validity.badInput)||row.querySelector(".ref").value.trim()!=="";
+   if(!active)return;
+   const [l,w,h,q,wt]=inputs.map(val);
+   const bad=inputs.filter((input,i)=>i<3 ? val(input)===null||val(input)<=0 :
+     i===3 ? !Number.isSafeInteger(q)||q<=0 :
+     input.validity.badInput||(input.value!==""&&(wt===null||wt<0)));
+   if(bad.length){
+     bad.forEach(input=>input.setAttribute("aria-invalid","true"));
+     errors.push("Row "+(index+1)+": enter positive dimensions, a whole-number quantity and, if supplied, a non-negative weight.");
+     return;
    }
+   const cbm=(l*factor)*(w*factor)*(h*factor), total=cbm*q;
+   const rowWeight=wt===null?0:wt*weightFactor*q;
+   if(!Number.isFinite(total)||total<=0||!Number.isFinite(rowWeight)||
+      !Number.isFinite(totalCbm+total)||!Number.isFinite((totalCbm+total)/(.3048**3))||
+      !Number.isFinite((totalWeightKg+rowWeight)/weightFactor)||!Number.isSafeInteger(totalCartons+q)){
+     errors.push("Row "+(index+1)+": values exceed the supported calculation range.");
+     return;
+   }
+   row.querySelector(".cbmEach").textContent=fmt(cbm)+" m³";
+   row.querySelector(".cbmTotal").textContent=fmt(total)+" m³";
+   totalCartons+=q;totalCbm+=total;totalWeightKg+=rowWeight;validRows++;
+   if(wt===null)missingWeight=true;
  });
 
- $("totalCartons").textContent=validRows?fmt(totalCartons,0):"0";
- $("totalCbm").textContent=fmt(totalCbm)+" m³";
- $("totalCft").textContent=fmt(totalCbm*35.3146667)+" ft³";
- $("averageCbm").textContent=totalCartons>0?fmt(totalCbm/totalCartons)+" m³":fmt(0)+" m³";
-
- if(weightEntered){
-   const unit=$("weightUnit").value;
-   const displayed=unit==="kg"?totalWeightKg:totalWeightKg/weightToKg.lb;
-   $("totalWeight").textContent=fmt(displayed)+" "+unit;
- }else $("totalWeight").textContent="—";
-
- updateContainer("bar20","pct20",totalCbm,33);
- updateContainer("bar40","pct40",totalCbm,67);
- updateContainer("bar40hc","pct40hc",totalCbm,76);
-
- if(showWarning && rows.length===0){
-   $("warning").textContent="Add at least one carton row before calculating.";
-   $("warning").hidden=false;
- }else if(showWarning && validRows===0){
-   $("warning").textContent="Enter positive length, width, height and quantity for at least one carton.";
-   $("warning").hidden=false;
- }else if(showWarning && invalid){
-   $("warning").textContent="Some rows are incomplete or contain invalid values. Only complete positive-value rows were included.";
-   $("warning").hidden=false;
- }else $("warning").hidden=true;
+ const blocked=errors.length>0;
+ $("totalCartons").textContent=blocked?"—":fmt(totalCartons,0);
+ $("totalCbm").textContent=blocked?"—":fmt(totalCbm)+" m³";
+ $("totalCft").textContent=blocked?"—":fmt(totalCbm/(.3048**3))+" ft³";
+ $("averageCbm").textContent=blocked?"—":fmt(totalCartons?totalCbm/totalCartons:0)+" m³";
+ $("totalWeight").textContent=blocked||!validRows||missingWeight?"—":fmt(totalWeightKg/weightFactor)+" "+$("weightUnit").value;
+ $("weightNote").textContent=missingWeight&&!blocked?"Enter gross weight for every carton type to calculate total shipment weight.":"";
+ [["bar20","pct20",33],["bar40","pct40",67],["bar40hc","pct40hc",76]].forEach(([bar,pct,capacity])=>{
+   updateContainer(bar,pct,blocked?0:totalCbm,capacity);
+   if(blocked)$(pct).textContent="—";
+ });
+ const message=blocked?errors.join(" ")+" Shipment totals are withheld until these rows are corrected or removed.":
+   showWarning&&!validRows?"Add a carton row and enter positive dimensions and a whole-number quantity.":"";
+ $("warning").textContent=message;
+ $("warning").hidden=!message;
 }
 
 function updateContainer(barId,pctId,total,capacity){

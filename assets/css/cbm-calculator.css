@@ -117,3 +117,6 @@ button{border:1px solid #cbd5e1;background:#fff;padding:11px 16px;border-radius:
     }
 
 }
+input[aria-invalid="true"]{border-color:#be123c;background:#fff1f2}
+#weightNote{color:#64748b;font-size:14px}
+#weightNote:empty{display:none}
