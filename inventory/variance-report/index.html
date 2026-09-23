@@ -78,7 +78,7 @@
 <div class="import-area"><div><strong>Import inventory from CSV</strong><span>Use columns: SKU, Description, System Qty, Physical Qty, Unit Cost</span></div>
 <label class="file-button">Choose CSV File<input accept=".csv,text/csv" hidden="" id="csvFile" type="file"/></label></div>
 <div class="table-controls"><div class="search-control"><span>🔍</span><input id="itemSearch" aria-label="Search inventory items" placeholder="Search SKU or description..." type="search"/></div>
-<select id="statusFilter" aria-label="Filter items by variance status"><option value="all">All Statuses</option><option value="matched">Matched</option><option value="shortage">Shortage</option><option value="excess">Excess</option></select></div>
+<select id="statusFilter" aria-label="Filter items by variance status"><option value="all">All Statuses</option><option value="incomplete">Incomplete</option><option value="matched">Matched</option><option value="shortage">Shortage</option><option value="excess">Excess</option></select></div>
 <div class="table-wrapper"><table class="inventory-table"><thead><tr>
 <th>#</th><th>SKU / Item Code</th><th>Description</th><th>System Qty</th><th>Physical Qty</th><th>Variance</th><th>Variance %</th><th>Unit Cost</th><th>Variance Value</th><th>Status</th><th></th>
 </tr></thead><tbody id="inventoryBody"></tbody></table></div>
@@ -86,6 +86,8 @@
 <div class="table-footer-note"><span id="visibleCount">0 items</span><span>Negative variance = shortage · Positive variance = excess</span></div>
 </section>
 <section class="summary-section"><div class="summary-heading"><div><h2>Variance Summary</h2><p>Automatic summary based on your inventory data.</p></div><button class="calculate-button" id="calculateButton" type="button">Calculate Variance</button></div>
+<p id="validationMessage" role="status" aria-live="polite"></p>
+<p>Variance = physical quantity − system quantity. Compare the same item, unit and count cut-off. Blank values are unknown, not zero. Quantity totals are meaningful only for compatible units. Currency selection labels your costs; it does not convert exchange rates. A net value can offset shortages against excesses.</p>
 <div class="summary-grid">
 <div class="summary-card"><span>Total Items</span><strong id="totalItems">0</strong></div>
 <div class="summary-card"><span>Matched</span><strong id="matchedItems">0</strong></div>
