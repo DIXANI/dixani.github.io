@@ -57,10 +57,20 @@ Excel + PDF
 <span>•</span>
 No account required
 <span>•</span>
-Ready to use
+25 Excel rows · 10 PDF rows
 </div>
 </div>
 </section>
+<section class="section featured-section">
+<div class="container">
+<div class="section-heading"><div><span class="section-label">PREVIEW THE FORM</span>
+<h2>See the printable inventory adjustment form</h2>
+<p>Excel includes 25 entry rows, formulas and dropdowns. The one-page PDF includes 10 rows for handwritten entries and signatures; it is not an interactive fillable PDF.</p></div></div>
+<a href="/downloads/inventory/dixani-inventory-adjustment-form.pdf" aria-label="Open full-size inventory adjustment form PDF">
+<img src="/assets/images/templates/inventory-adjustment-form-preview.png" alt="Inventory adjustment form with quantity, cost, reason, investigation and approval fields" width="1400" height="990" loading="lazy" style="display:block;width:100%;height:auto;border:1px solid #dbe3ef;border-radius:12px"/>
+</a>
+<p>Use one currency per form. Excel defaults to USD and offers 19 currencies; selecting a currency does not convert amounts.</p>
+</div></section>
 <!-- FEATURES -->
 <section class="section">
 <div class="container">
@@ -191,6 +201,24 @@ difference has been counted and investigated.
 </div>
 </div>
 </section>
+<section class="section">
+<div class="container">
+<div class="section-heading"><div><span class="section-label">COMPLETE THE FORM</span>
+<h2>How to use the inventory adjustment template</h2></div></div>
+<ol>
+<li><strong>Confirm the scope.</strong> Record the warehouse, reference, date and count cutoff. Compare the same SKU, location, unit of measure and stock status.</li>
+<li><strong>Verify the quantities.</strong> Use a recount and transaction review. Enter zero for a confirmed zero balance; leave unknown quantities blank.</li>
+<li><strong>Review the proposed difference.</strong> Excel calculates verified quantity minus system quantity. Keep formula columns H and J intact.</li>
+<li><strong>Document value and evidence.</strong> Enter unit cost in the selected currency, choose the supported reason and explain the findings. Value summaries show “Incomplete” when a calculated line has no numeric unit cost.</li>
+<li><strong>Approve and record posting.</strong> Follow your organization's approval procedure. Retain the evidence, authorization and final system transaction reference.</li>
+</ol>
+<div class="workflow-box">
+<h3>Worked example: a verified two-unit shortage</h3>
+<p>Fictional example: the system shows 100 units, a verified count shows 98, and unit cost is USD 25. The proposed quantity correction is <strong>98 − 100 = −2 units</strong>. Its value is <strong>−2 × 25 = −USD 50</strong>.</p>
+<p>This calculation does not establish the cause or authorize posting. If an unposted issue explains the difference, complete the appropriate issue transaction instead of also posting a shortage adjustment.</p>
+<p>Review positive and negative values separately. A small net value can hide larger shortages and excesses. “Calculated Lines” counts numeric comparisons, including zero differences; it is not an approval or completeness check.</p>
+</div>
+</div></section>
 <!-- REASONS -->
 <section class="section featured-section">
 <div class="container">
@@ -232,9 +260,7 @@ recorded using an incorrect location or unit of measure.
 <span class="section-label">CONTROL NOTE</span>
 <h2>Verify before posting the adjustment</h2>
 <p>
-An inventory adjustment changes the official stock record,
-so material discrepancies should be verified before the
-correction is posted.
+An inventory adjustment changes the official stock record. Verify the evidence and required approval before posting. A wrong location may need a transfer; a missing receipt may need a receipt correction. Damaged stock may require a status change or approved write-off rather than a physical shortage adjustment.
 </p>
 </div>
 <div class="workflow-example">
@@ -289,6 +315,7 @@ if the system shows 50 units but 53 are verified, the adjustment
 quantity is +3 units.
 </p>
 </details>
+<details><summary>How do I print the Excel form?</summary><p>Select A1:L51 on the Adjustment Form sheet. Print the selection in landscape, fit to one page wide and leave page height automatic. Check print preview for readable text. Use the PDF for a fixed one-page, 10-line form.</p></details>
 <details>
 <summary>Should inventory adjustments require approval?</summary>
 <p>
