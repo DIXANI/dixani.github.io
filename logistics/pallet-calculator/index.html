@@ -21,7 +21,7 @@
 <h3>Carton Dimensions</h3><div class="grid"><label>Carton Length<input id="cl" min="0" placeholder="40" step="any" type="number"/></label><label>Carton Width<input id="cw" min="0" placeholder="30" step="any" type="number"/></label><label>Carton Height<input id="ch" min="0" placeholder="25" step="any" type="number"/></label></div>
 <h3>Pallet Dimensions &amp; Limits</h3><div class="grid"><label>Pallet Length<input id="pl" min="0" placeholder="120" step="any" type="number"/></label><label>Pallet Width<input id="pw" min="0" placeholder="100" step="any" type="number"/></label><label>Maximum Loaded Height<input id="mh" min="0" placeholder="150" step="any" type="number"/></label><label>Empty Pallet Height <small>(Optional)</small><input id="ph" min="0" placeholder="15" step="any" type="number"/></label><label class="check"><span><input checked="" id="rotate" type="checkbox"/> Allow 90° carton rotation</span><small>Tests normal and rotated simple-grid orientations.</small></label></div>
 <div class="note"><b>Method:</b> DIXANI tests 0° and 90° simple-grid orientations and visualizes the better arrangement.</div><div class="warn" hidden="" id="warn"></div><div class="actions"><button class="primary" id="calc">Calculate Pallet</button><button class="danger" id="clear">Clear All</button></div></section>
-<section class="card"><div class="head"><div><h2>Pallet Results</h2><p>Estimated configuration from your dimensions.</p></div><b class="pill" id="orientation">—</b></div><div class="results"><div class="result featured"><small>Cartons / Layer</small><strong id="perLayer">—</strong></div><div class="result"><small>Layers / Pallet</small><strong id="layers">—</strong></div><div class="result featured"><small>Cartons / Pallet</small><strong id="perPallet">—</strong></div><div class="result"><small>Pallets Required</small><strong id="pallets">—</strong></div><div class="result"><small>Full Pallets</small><strong id="full">—</strong></div><div class="result"><small>Cartons on Last Pallet</small><strong id="last">—</strong></div></div><div class="dark"><div><small>Loaded Height</small><strong id="height">—</strong></div><div><small>Footprint Utilization</small><strong id="util">—</strong></div><div><small>Loaded Pallet CBM</small><strong id="cbm">—</strong></div></div></section>
+<section class="card"><div class="head"><div><h2>Pallet Results</h2><p>Estimated configuration from your dimensions.</p></div><b class="pill" id="orientation">—</b></div><div class="results"><div class="result featured"><small>Cartons / Layer</small><strong id="perLayer">—</strong></div><div class="result"><small>Layers / Pallet</small><strong id="layers">—</strong></div><div class="result featured"><small>Cartons / Pallet</small><strong id="perPallet">—</strong></div><div class="result"><small>Pallets Required</small><strong id="pallets">—</strong></div><div class="result"><small>Full Pallets</small><strong id="full">—</strong></div><div class="result"><small>Cartons on Last Pallet</small><strong id="last">—</strong></div></div><div class="dark"><div><small>Loaded Height</small><strong id="height">—</strong></div><div><small>Footprint Utilization</small><strong id="util">—</strong></div><div><small>Loaded Pallet CBM (incl. pallet)</small><strong id="cbm">—</strong></div></div></section>
 <section class="card"><div class="head"><div><h2>Visual Pallet Layout</h2><p>Dynamic simple-grid visualization based on the selected arrangement.</p></div><b class="pill">VISUAL PLAN</b></div><div class="visual-grid"><div class="visual-card"><h3>Top View — Layer Formation</h3><div class="visual empty" id="topView">No layout yet</div><div class="stats"><span id="formation">—</span><span id="layerCount">—</span></div></div><div class="visual-card"><h3>Side View — Layer Stack</h3><div class="visual empty" id="sideView">No stack yet</div><div class="stats"><span id="stackCount">—</span><span id="heightLabel">—</span></div></div></div><p class="disclaimer">Visual planning guide only. It does not perform advanced mixed-orientation/bin-packing optimization or assess load stability, carton strength or pallet weight limits.</p></section>
 <section class="card">
 <h2>Pallet Calculation Example</h2>
@@ -69,6 +69,15 @@
         while the side view shows the estimated layer stack
         and loaded pallet height.
     </p>
+    <p>
+        <strong>Loaded Pallet CBM</strong> is the shipping volume the whole
+        loaded unit occupies — pallet footprint multiplied by the total
+        loaded height, so it includes the empty pallet height, the cartons
+        and the air gaps between them. It is not the carton-only volume.
+        To measure shipment volume excluding the pallet and gaps, use the
+        <a href="/logistics/cbm-calculator/">CBM Calculator</a>.
+    </p>
+
 </section>
 <section class="card">
 
