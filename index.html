@@ -100,11 +100,12 @@ and purchasing decisions.
 </p>
 <!-- SEARCH -->
 <div class="home-search">
-<input aria-label="Search DIXANI tools" id="siteSearch" placeholder="Search inventory, warehouse or logistics tools..." type="search"/>
+<input aria-label="Search DIXANI tools" aria-controls="searchResults" aria-expanded="false" autocomplete="off" id="siteSearch" placeholder="Search tools, templates and guides..." role="combobox" type="search"/>
 <button id="siteSearchButton" type="button">
 Search
 </button>
 </div>
+<div aria-live="polite" class="search-results" id="searchResults" hidden></div>
 <div class="hero-actions">
 <a class="primary-button" href="#tools">
 Browse Online Tools
@@ -221,7 +222,7 @@ Open Variance Generator →
             Measure, prioritize, count, investigate, correct and
             monitor inventory using practical DIXANI resources.
           </p>
-          <span>Explore the Toolkit &rarr;</span>
+          <span>Explore the Toolkit →</span>
         </div>
       </a>
     </div>
@@ -1184,6 +1185,7 @@ and purchasing workflows.
 <div class="copyright">© 2026 DIXANI. All rights reserved.</div>
 </div>
 </footer>
+<script src="/assets/js/search-index.js"></script>
 <script src="/assets/js/main.js"></script>
 
 <!-- Cloudflare Web Analytics -->
