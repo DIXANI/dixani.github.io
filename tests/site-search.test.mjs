@@ -220,10 +220,16 @@ test("main.js loads the index and no longer hardcodes the 3-keyword redirect", (
 
 test("homepage wires up the search index script, results container and a11y attributes", () => {
   const html = readFileSync(join(ROOT, "index.html"), "utf8");
-  assert.ok(html.includes('src="/assets/js/search-index.js"'), "search-index.js not loaded on the homepage");
-  const idx = html.indexOf('src="/assets/js/search-index.js"');
-  const main = html.indexOf('src="/assets/js/main.js"');
-  assert.ok(idx > -1 && main > -1 && idx < main, "search-index.js must load before main.js");
+  // Tolerate the optional ?v=<content-hash> cache-version suffix.
+  const at = (file) => {
+    const m = html.match(new RegExp(`src="/assets/js/${file}(?:\\?[^"]*)?"`));
+    return m ? m.index : -1;
+  };
+  const idx = at("search-index.js");
+  const main = at("main.js");
+  assert.ok(idx > -1, "search-index.js not loaded on the homepage");
+  assert.ok(main > -1, "main.js not loaded on the homepage");
+  assert.ok(idx < main, "search-index.js must load before main.js");
   assert.ok(html.includes('id="searchResults"'), "results container missing");
   const input = html.match(/<input[^>]*id="siteSearch"[^>]*>/)[0];
   assert.ok(/aria-controls="searchResults"/.test(input), "input not linked to results container");
