@@ -94,13 +94,14 @@ const HUB_NAME = {
 };
 
 // Pages skipped entirely -- the homepage already declares Organization +
-// WebSite, and these four have no meaningful breadcrumb hierarchy.
+// WebSite, and these five have no meaningful breadcrumb hierarchy.
 const SKIP_PAGES = new Set([
   "/",
   "/privacy/",
   "/terms/",
   "/contact/",
   "/about/",
+  "/editorial-policy/",
   "/ai-operations-assistant/",
 ]);
 
