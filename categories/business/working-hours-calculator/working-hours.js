@@ -85,6 +85,9 @@ function formatMoney(value) {
 
 function showError(message) {
 
+    // AUD-012: a validation error must never sit next to a stale result.
+    resetResults();
+
     calculatorError.textContent = message;
 
     calculatorError.classList.add("show");

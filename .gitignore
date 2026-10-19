@@ -1,1 +1,7 @@
 .vscode/
+
+# Audit evidence artifacts (large binaries + generated JSON) stay local.
+reports/audit-2026-10-19/evidence/*.png
+reports/audit-2026-10-19/evidence/*.pdf
+reports/audit-2026-10-19/evidence/*.json
+

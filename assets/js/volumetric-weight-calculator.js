@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  function blankResults() {
+    chargeableWeight.textContent = "—";
+    actualWeightResult.textContent = "—";
+    volumetricWeightResult.textContent = "—";
+    cartonVolumeResult.textContent = "—";
+    totalVolumeResult.textContent = "—";
+    quantityResult.textContent = "—";
+  }
+
+
   /* -------------------------------------------------------
      CALCULATE
   ------------------------------------------------------- */
@@ -44,7 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const length = parseFloat(lengthInput.value);
     const width = parseFloat(widthInput.value);
     const height = parseFloat(heightInput.value);
-    const quantity = parseInt(quantityInput.value, 10);
+    const quantityRaw = quantityInput.value.trim();
+    const quantity = Number(quantityRaw);
     const actualWeightEntered = parseFloat(actualWeightInput.value);
     const divisor = parseFloat(divisorSelect.value);
 
@@ -52,18 +63,31 @@ document.addEventListener("DOMContentLoaded", () => {
       !Number.isFinite(length) ||
       !Number.isFinite(width) ||
       !Number.isFinite(height) ||
-      !Number.isFinite(quantity) ||
       !Number.isFinite(actualWeightEntered) ||
       !Number.isFinite(divisor) ||
       length <= 0 ||
       width <= 0 ||
       height <= 0 ||
-      quantity <= 0 ||
       actualWeightEntered < 0 ||
       divisor <= 0
     ) {
+      // AUD-011: never leave a previous result next to a validation error.
+      blankResults();
       resultSummary.textContent =
         "Please enter valid shipment dimensions, carton quantity and actual weight.";
+      return;
+    }
+
+    // AUD-010: quantity must be a whole number of cartons (no silent truncation).
+    if (
+      quantityRaw === "" ||
+      !Number.isFinite(quantity) ||
+      !Number.isInteger(quantity) ||
+      quantity <= 0
+    ) {
+      blankResults();
+      resultSummary.textContent =
+        "Carton quantity must be a whole number greater than zero.";
       return;
     }
 

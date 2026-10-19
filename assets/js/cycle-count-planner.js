@@ -711,6 +711,14 @@
     };
   }
 
+  function parseBackup(text) {
+    try {
+      return JSON.parse(text);
+    } catch {
+      throw new Error("This file is not valid JSON. Choose a DIXANI cycle count backup (.json) file and try again.");
+    }
+  }
+
   function restore(data) {
     if (!data || data.version !== 1 || !Array.isArray(data.history)) {
       throw new Error("This is not a supported DIXANI planner backup.");
@@ -885,7 +893,7 @@
   $("loadLocal").addEventListener("click", () => attempt(() => {
     const text = localStorage.getItem(SAVE_KEY);
     if (!text) throw new Error("No saved planner workspace was found in this browser.");
-    restore(JSON.parse(text));
+    restore(parseBackup(text));
   }));
 
   $("downloadBackup").addEventListener("click", () => attempt(() => {
@@ -895,7 +903,7 @@
   }));
 
   $("restoreBackup").addEventListener("change", event => {
-    readFile(event.target, text => restore(JSON.parse(text)));
+    readFile(event.target, text => restore(parseBackup(text)));
   });
 
   $("deleteLocal").addEventListener("click", () => attempt(() => {

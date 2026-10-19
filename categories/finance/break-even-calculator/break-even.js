@@ -53,6 +53,10 @@ function number(value, decimals = 2) {
    ========================================================= */
 
 function showError(message) {
+
+    // AUD-013: clear stale results so an error never sits beside old figures.
+    resetResults();
+
     calculatorError.textContent = message;
     calculatorError.classList.add("show");
 }

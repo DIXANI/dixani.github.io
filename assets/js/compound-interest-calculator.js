@@ -201,82 +201,92 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-        Use daily simulation.
+        Exact compound-interest mathematics.
 
-        This makes annual, semi-annual,
-        quarterly, monthly and daily compounding
-        work reliably together with recurring
-        contributions.
+        Future value of the principal for t years at a nominal annual
+        rate r compounded n times per year:
+
+            FV = P * (1 + r/n)^(n*t)
+
+        `n*t` may be fractional (for example one month at monthly
+        compounding is n*t = 1 exactly; three months is n*t = 3). The
+        exponent is applied directly so partial periods are never dropped
+        (AUD-007).
+
+        Recurring contributions are modelled as an ordinary annuity paid
+        at the END of each contribution period:
+
+            FV_contrib = C * (((1 + i)^m - 1) / i)
+
+        where i is the interest rate per compounding period and m is the
+        number of compounding periods that occur over the term. When there
+        is no interest per period the contributions simply accumulate.
         */
 
-        const daysPerYear = 365;
-
-        const totalDays =
-            Math.round(years * daysPerYear);
-
-
-        const daysBetweenCompounding =
-            daysPerYear / compoundsPerYear;
-
-
-        const daysBetweenContributions =
-            contributionsPerYear > 0
-                ? daysPerYear / contributionsPerYear
-                : null;
-
-
-        const interestPerCompound =
+        const ratePerPeriod =
             rate / 100 / compoundsPerYear;
 
+        const periodsTotal =
+            compoundsPerYear * years;
 
-        let balance = startingAmount;
+        let balance =
+            startingAmount *
+            Math.pow(1 + ratePerPeriod, periodsTotal);
 
         let totalAdded = 0;
 
-        let nextCompound =
-            daysBetweenCompounding;
+        if (contributionsPerYear > 0 && contributionAmount > 0) {
 
-        let nextContribution =
-            daysBetweenContributions;
+            // Number of contribution payments across the term.
+            const contributionsTotal =
+                contributionsPerYear * years;
 
+            /*
+            Convert the contribution schedule into the compounding
+            period grid. Each contribution is assumed to earn interest
+            from the moment it is paid until the end of the term.
+            */
+            const periodsPerContribution =
+                compoundsPerYear / contributionsPerYear;
 
-        // =================================================
-        // SIMULATION
-        // =================================================
+            /*
+            Closed-form ordinary-annuity valuation on the compounding
+            grid. When the two frequencies match this reduces exactly to
+            the standard annuity formula.
+            */
+            const i = ratePerPeriod;
 
-        for (let day = 1; day <= totalDays; day++) {
+            let annuityFactor;
 
+            if (i === 0) {
 
-            // APPLY COMPOUNDING
+                annuityFactor = contributionsTotal;
 
-            if (day + 0.0001 >= nextCompound) {
+            } else {
 
-                balance *=
-                    1 + interestPerCompound;
+                const growth =
+                    Math.pow(1 + i, periodsTotal);
 
-                nextCompound +=
-                    daysBetweenCompounding;
+                const contributionPoints =
+                    Math.pow(
+                        1 + i,
+                        periodsPerContribution
+                    );
+
+                annuityFactor =
+                    ((contributionPoints - 1) /
+                        (contributionPoints * i)) *
+                    growth;
             }
 
+            const contributionsFutureValue =
+                contributionAmount * annuityFactor;
 
-            // ADD CONTRIBUTION AT END OF PERIOD
+            balance =
+                balance + contributionsFutureValue;
 
-            if (
-                contributionsPerYear > 0 &&
-                contributionAmount > 0 &&
-                day + 0.0001 >= nextContribution
-            ) {
-
-                balance +=
-                    contributionAmount;
-
-                totalAdded +=
-                    contributionAmount;
-
-                nextContribution +=
-                    daysBetweenContributions;
-            }
-
+            totalAdded =
+                contributionAmount * contributionsTotal;
         }
 
 

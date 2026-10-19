@@ -2,8 +2,23 @@
 "use strict";
 const $=id=>document.getElementById(id);
 const value=id=>{const v=parseFloat($(id).value);return Number.isFinite(v)?v:0};
+// AUD-009: raw parse so negatives/non-numeric inputs can be rejected before calculating.
+const raw=id=>{const s=String($(id).value??'').trim();if(s==='')return null;const x=Number(s);return Number.isFinite(x)?x:NaN};
 const fmt=n=>Number(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
 let method="simple";
+
+function blankResults(){
+  $("result").textContent="—";
+  $("coverage").textContent="—";
+  $("m1").textContent="—";
+  $("m2").textContent="—";
+}
+
+function errorState(){
+  blankResults();
+  $("noteTitle").textContent="Check the highlighted values";
+  $("noteText").textContent="All safety-stock inputs must be zero or positive numbers.";
+}
 
 function setMode(next){
   method=next;
@@ -18,6 +33,15 @@ function setMode(next){
 function calculate(){
   let safety=0, avgUsage=0, metric1=0, metric2=0;
   let hasInput=false;
+
+  // AUD-009: reject negative or non-numeric values in the active method.
+  const activeIds = method==="simple"
+    ? ["maxDaily","maxLead","avgDaily","avgLead"]
+    : ["service","std","advLead","advAvg"];
+  if(activeIds.some(id=>{const v=raw(id);return v!==null&&(Number.isNaN(v)||v<0)})){
+    errorState();
+    return;
+  }
 
   if(method==="simple"){
     const maxDaily=value("maxDaily");

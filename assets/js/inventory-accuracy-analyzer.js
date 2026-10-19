@@ -26,6 +26,9 @@
   function emptyRow(){ return {sku:'',description:'',location:'',systemQty:0,physicalQty:0,unitCost:0,annualUsage:0,lastCountDate:'',criticality:'Medium',previousVariances:0}; }
   function escCsv(v){ const s=String(v??''); return /[",\n]/.test(s)?`"${s.replace(/"/g,'""')}"`:s; }
   function num(v){ const n=Number(String(v??'').replace(/,/g,'').trim()); return Number.isFinite(n)?n:0; }
+  // Strict parse used by import/analysis. Returns NaN for blanks and non-numeric text so
+  // callers can distinguish "missing/invalid" from a genuine zero (AUD-001/003/005).
+  function strictNum(v){ const s=String(v??'').replace(/,/g,'').trim(); if(s==='')return NaN; const n=Number(s); return Number.isFinite(n)?n:NaN; }
   function money(v){ return new Intl.NumberFormat(undefined,{style:'currency',currency:$('currency')?.value||'USD',maximumFractionDigits:2}).format(v); }
   function formatNum(v,max=2){ return new Intl.NumberFormat(undefined,{maximumFractionDigits:max}).format(v); }
   function daysSince(date){ if(!date) return 365; const d=new Date(`${date}T00:00:00`); return Number.isNaN(d.getTime())?365:Math.max(0,Math.round((Date.now()-d.getTime())/86400000)); }
@@ -33,18 +36,59 @@
 
   function parseDelimited(text){
     const first=(text.split(/\r?\n/,1)[0]||''); const delimiter=(first.match(/\t/g)||[]).length>(first.match(/,/g)||[]).length?'\t':',';
-    const out=[]; let row=[], cell='', quoted=false;
-    for(let i=0;i<text.length;i++){ const c=text[i]; if(c==='"'){ if(quoted&&text[i+1]==='"'){cell+='"';i++;}else quoted=!quoted; } else if(c===delimiter&&!quoted){row.push(cell);cell='';} else if((c==='\n'||c==='\r')&&!quoted){ if(c==='\r'&&text[i+1]==='\n')i++; row.push(cell); if(row.some(x=>x.trim()))out.push(row); row=[];cell=''; } else cell+=c; }
-    row.push(cell); if(row.some(x=>x.trim()))out.push(row); return out;
+    const out=[]; let row=[], cell='', quoted=false, quoteStartLine=0, line=1;
+    for(let i=0;i<text.length;i++){ const c=text[i]; if(c==='"'){ if(quoted&&text[i+1]==='"'){cell+='"';i++;}else{ if(!quoted)quoteStartLine=line; quoted=!quoted; } } else if(c===delimiter&&!quoted){row.push(cell);cell='';} else if((c==='\n'||c==='\r')&&!quoted){ if(c==='\r'&&text[i+1]==='\n')i++; row.push(cell); if(row.some(x=>x.trim()))out.push({row,line}); row=[];cell='';line++; } else { if(c==='\n')line++; cell+=c; } }
+    // AUD-004: an unterminated quote means the record structure cannot be trusted.
+    if(quoted) throw new Error(`Unterminated quoted value starting on line ${quoteStartLine}. Close the quote or fix the file and re-import.`);
+    row.push(cell); if(row.some(x=>x.trim()))out.push({row,line}); return out;
   }
 
+  const NUMERIC_FIELDS=[['systemQty','System Qty'],['physicalQty','Physical Qty'],['unitCost','Unit Cost'],['annualUsage','Annual Usage'],['previousVariances','Previous Variances']];
+
   function importText(text){
-    const matrix=parseDelimited(text.trim()); if(matrix.length<2) throw new Error('Include a header row and at least one inventory item.');
-    const headers=matrix[0].map(normalizeHeader); const map={};
+    const parsed=parseDelimited(text.trim()); if(parsed.length<2) throw new Error('Include a header row and at least one inventory item.');
+    const headers=parsed[0].row.map(normalizeHeader); const map={};
     for(const [key,names] of Object.entries(aliases)){ const idx=headers.findIndex(h=>names.includes(h)); if(idx>=0)map[key]=idx; }
     const missing=['sku','systemQty','physicalQty'].filter(k=>map[k]===undefined);
     if(missing.length) throw new Error(`Missing required columns: ${missing.map(k=>k==='systemQty'?'System Qty':k==='physicalQty'?'Physical Qty':'SKU').join(', ')}.`);
-    const imported=matrix.slice(1).filter(r=>r.some(c=>c.trim())).map(r=>{ const item=emptyRow(); fields.forEach(k=>{if(map[k]!==undefined)item[k]=(r[map[k]]||'').trim();}); ['systemQty','physicalQty','unitCost','annualUsage','previousVariances'].forEach(k=>item[k]=num(item[k])); item.criticality=/^(high|medium|low)$/i.test(item.criticality)?item.criticality[0].toUpperCase()+item.criticality.slice(1).toLowerCase():'Medium'; return item; });
+    const today=new Date(); today.setHours(23,59,59,999);
+    const imported=[]; const errors=[]; const seen=new Map();
+    parsed.slice(1).forEach(({row,line})=>{
+      if(!row.some(c=>String(c).trim()))return;
+      const item=emptyRow(); fields.forEach(k=>{if(map[k]!==undefined)item[k]=String(row[map[k]]??'').trim();});
+      const sku=item.sku;
+      if(!sku){ errors.push(`Line ${line}: SKU is required.`); return; }
+      // AUD-001/AUD-003: required quantities must be present and numeric, never coerced to zero.
+      const sys=strictNum(item.systemQty), phys=strictNum(item.physicalQty);
+      if(Number.isNaN(sys)){ errors.push(`Line ${line} (${sku}): System Qty must be a number.`); return; }
+      if(Number.isNaN(phys)){ errors.push(`Line ${line} (${sku}): Physical Qty must be a number.`); return; }
+      // AUD-005: operational quantities and costs must be non-negative.
+      if(sys<0||phys<0){ errors.push(`Line ${line} (${sku}): quantities cannot be negative.`); return; }
+      item.systemQty=sys; item.physicalQty=phys;
+      for(const [key,label] of NUMERIC_FIELDS.slice(2)){
+        if(map[key]===undefined)continue; const raw=item[key]; if(String(raw).trim()===''){ item[key]=0; continue; }
+        const v=strictNum(raw); if(Number.isNaN(v)){ errors.push(`Line ${line} (${sku}): ${label} must be a number.`); return; }
+        if(v<0){ errors.push(`Line ${line} (${sku}): ${label} cannot be negative.`); return; }
+        item[key]=v;
+      }
+      // AUD-006: count dates in the future are not meaningful.
+      if(item.lastCountDate){
+        const d=new Date(`${item.lastCountDate}T00:00:00`);
+        if(Number.isNaN(d.getTime())){ errors.push(`Line ${line} (${sku}): Last Count Date is not a valid date.`); return; }
+        if(d>today){ errors.push(`Line ${line} (${sku}): Last Count Date cannot be in the future.`); return; }
+      }
+      item.criticality=/^(high|medium|low)$/i.test(item.criticality)?item.criticality[0].toUpperCase()+item.criticality.slice(1).toLowerCase():'Medium';
+      // AUD-002: SKU + location identifies an inventory record; duplicates double-count.
+      const key=`${sku.toLowerCase()}\u0000${String(item.location).toLowerCase()}`;
+      if(seen.has(key)){ errors.push(`Line ${line} (${sku}${item.location?` @ ${item.location}`:''}): duplicate SKU-Location already imported on line ${seen.get(key)}.`); return; }
+      seen.set(key,line);
+      imported.push(item);
+    });
+    // AUD-001: import is atomic — a single bad row never silently produces a KPI.
+    if(errors.length){
+      const shown=errors.slice(0,6).join(' ');
+      throw new Error(`${errors.length} problem row${errors.length===1?'':'s'} found. Nothing was imported. ${shown}${errors.length>6?' …':''}`);
+    }
     if(!imported.length)throw new Error('No usable inventory rows were found.'); rows=imported; renderInputs(); showMessage(`${rows.length} inventory items imported successfully.`,'success');
   }
 
@@ -64,9 +108,27 @@
   function syncInput(e){ const el=e.target;if(!el.dataset.field)return;const i=Number(el.dataset.index),f=el.dataset.field; rows[i][f]=el.type==='number'?num(el.value):el.value; }
 
   function percentile(values,value){ const sorted=[...values].sort((a,b)=>a-b);if(value<=0)return 0;if(sorted.length<=1)return 1;if(sorted[0]===sorted[sorted.length-1])return .5;let below=0;sorted.forEach(v=>{if(v<value)below++;});return below/(sorted.length-1); }
+  function validateRows(list){
+    const errors=[]; const seen=new Map();
+    list.forEach((r,i)=>{
+      const sku=String(r.sku??'').trim(); if(!sku){ errors.push(`Row ${i+1}: SKU is required.`); return; }
+      const sys=strictNum(r.systemQty), phys=strictNum(r.physicalQty);
+      if(Number.isNaN(sys)){ errors.push(`Row ${i+1} (${sku}): System Qty must be a number.`); return; }
+      if(Number.isNaN(phys)){ errors.push(`Row ${i+1} (${sku}): Physical Qty must be a number.`); return; }
+      if(sys<0||phys<0){ errors.push(`Row ${i+1} (${sku}): quantities cannot be negative.`); return; }
+      for(const [key,label] of NUMERIC_FIELDS.slice(2)){ const raw=r[key]; if(String(raw??'').trim()==='')continue; const v=strictNum(raw); if(Number.isNaN(v)){ errors.push(`Row ${i+1} (${sku}): ${label} must be a number.`); return; } if(v<0){ errors.push(`Row ${i+1} (${sku}): ${label} cannot be negative.`); return; } }
+      if(r.lastCountDate){ const d=new Date(`${r.lastCountDate}T00:00:00`); if(Number.isNaN(d.getTime())){ errors.push(`Row ${i+1} (${sku}): Last Count Date is not a valid date.`); return; } }
+      const key=`${sku.toLowerCase()}\u0000${String(r.location??'').toLowerCase()}`;
+      if(seen.has(key)){ errors.push(`Row ${i+1} (${sku}): duplicate SKU-Location of row ${seen.get(key)}.`); return; }
+      seen.set(key,i+1);
+    });
+    return errors;
+  }
   function analyze(){
     if(!rows.length){showMessage('Add at least one inventory item before analyzing.','error');return;}
     const valid=rows.filter(r=>String(r.sku).trim()); if(!valid.length){showMessage('Each analyzed item needs an SKU or item code.','error');return;}
+    const problems=validateRows(valid);
+    if(problems.length){ showMessage(`${problems.length} problem row${problems.length===1?'':'s'}: nothing was analyzed. ${problems.slice(0,6).join(' ')}${problems.length>6?' …':''}`,'error'); $('results').hidden=true; return; }
     const base=valid.map(r=>{const variance=num(r.physicalQty)-num(r.systemQty);const varianceValue=variance*num(r.unitCost);return {...r,variance,varianceValue,absExposure:Math.abs(varianceValue),annualValue:num(r.annualUsage)*num(r.unitCost),age:daysSince(r.lastCountDate)};});
     const exposureVals=base.map(r=>r.absExposure),velocityVals=base.map(r=>num(r.annualUsage)),valueVals=base.map(r=>num(r.unitCost)),ageVals=base.map(r=>r.age);
     const byAnnual=[...base].sort((a,b)=>b.annualValue-a.annualValue);const totalAnnual=byAnnual.reduce((s,r)=>s+r.annualValue,0);let cumulative=0;const abc=new Map();byAnnual.forEach(r=>{const shareBefore=totalAnnual?cumulative/totalAnnual:1;abc.set(r,shareBefore<.8?'A':shareBefore<.95?'B':'C');cumulative+=r.annualValue;});
