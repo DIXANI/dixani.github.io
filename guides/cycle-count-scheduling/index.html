@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="/assets/images/dixani-icon.png"/>
+<link rel="apple-touch-icon" href="/assets/images/dixani-icon.png"/>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQEH9L9TZ4"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','G-LQEH9L9TZ4');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+
+<title>How to Schedule Cycle Counts: Intervals, Capacity &amp; ABC | DIXANI</title>
+
+<meta name="description" content="Learn how to schedule cycle counts: set count intervals from ABC class and risk, plan within daily team capacity and keep count dates achievable."/>
+
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Dinesh Madushanka"/>
+<meta name="theme-color" content="#2563eb"/>
+
+<link rel="canonical" href="https://dixani.com/guides/cycle-count-scheduling/"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="DIXANI"/>
+<meta property="og:title" content="How to Schedule Cycle Counts: Intervals, Capacity and ABC"/>
+<meta property="og:description" content="Build a cycle count schedule that matches counting risk to count frequency and still fits the team you actually have."/>
+<meta property="og:url" content="https://dixani.com/guides/cycle-count-scheduling/"/>
+<meta property="og:image" content="https://dixani.com/assets/images/dixani-social-preview.png"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="article:published_time" content="2026-10-20"/>
+<meta property="article:modified_time" content="2026-10-20"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Schedule Cycle Counts | DIXANI"/>
+<meta name="twitter:description" content="Set count intervals from ABC class and risk, plan within daily capacity and avoid schedules that quietly slip."/>
+<meta name="twitter:image" content="https://dixani.com/assets/images/dixani-social-preview.png"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Schedule Cycle Counts: Intervals, Capacity and ABC Class",
+      "description": "A practical guide to building a cycle count schedule from count intervals, ABC class, risk and daily counting capacity.",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@type": "Person",
+        "name": "Dinesh Madushanka"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DIXANI",
+        "url": "https://dixani.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dixani.com/assets/images/dixani-icon.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://dixani.com/guides/cycle-count-scheduling/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dixani.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dixani.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Schedule Cycle Counts",
+          "item": "https://dixani.com/guides/cycle-count-scheduling/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link href="/assets/css/style.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="/">DIXANI</a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button>
+<nav aria-label="Main navigation" class="main-nav" id="mainNav">
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Operations</a>
+<a href="/templates/purchasing/">Purchasing</a>
+<a href="/about/">About</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="guide-hero">
+<div class="container">
+<span class="guide-badge">INVENTORY CONTROL GUIDE</span>
+
+<h1>How to Schedule Cycle Counts:
+<span>Intervals, Capacity and ABC Class</span></h1>
+
+<p>
+A count plan only works if it is actually achievable. Learn how to set
+count intervals from item risk, convert them into a daily workload, and
+keep the schedule inside the capacity you really have.
+</p>
+
+<div class="guide-meta">
+<span><strong>Published:</strong> October 20, 2026</span>
+<span><strong>Updated:</strong> October 20, 2026</span>
+<span><strong>By:</strong> Dinesh Madushanka</span>
+</div>
+</div>
+</section>
+
+<div class="container article-shell">
+
+<article class="article-body">
+
+<h2 id="why">Why scheduling matters more than counting</h2>
+
+<p>
+Most cycle count programmes fail for a scheduling reason rather than a
+counting reason. Counting itself is straightforward: someone with the right
+sheet goes to a location and records what is there. The hard part is
+deciding which items to count, how often, and whether the resulting
+workload can actually be delivered by the people available.
+</p>
+
+<p>
+A schedule that demands more counts than the team can perform does not
+fail loudly. It fails quietly. Counts are skipped, then rescheduled, then
+quietly dropped. Within a few months the programme exists on paper while
+key items have not been counted in a year.
+</p>
+
+<p>
+A good schedule has three properties: it targets the items where error
+matters most, it repeats at a frequency justified by that item's risk, and
+its total workload fits within realistic daily capacity.
+</p>
+
+<div class="formula-box">
+<strong>THE CORE TRADE-OFF</strong>
+<p>Count frequency should follow the cost of being wrong, and the plan must fit the counting hours you actually have.</p>
+</div>
+
+<h2 id="abc">Setting intervals from ABC class and risk</h2>
+
+<p>
+The usual starting point is ABC classification, which groups items by
+consumption value rather than unit count. A relatively small number of
+items typically account for most of the value moved, and those items
+justify the most frequent counting.
+</p>
+
+<table class="data-table">
+<thead>
+<tr><th>Class</th><th>Typical share of items</th><th>Common count frequency</th><th>Counts per year</th></tr>
+</thead>
+<tbody>
+<tr><td>A</td><td>Around 20%</td><td>Monthly</td><td>12</td></tr>
+<tr><td>B</td><td>Around 30%</td><td>Quarterly</td><td>4</td></tr>
+<tr><td>C</td><td>Around 50%</td><td>Annually</td><td>1</td></tr>
+</tbody>
+</table>
+
+<p>
+Those frequencies are conventional, not mandatory. ABC class captures
+value, but it does not capture all risk. Two items in the same class can
+deserve very different counting attention if one is a controlled substance,
+a serialised component or a part prone to damage.
+</p>
+
+<p>
+A practical approach is to start from the ABC baseline and then apply
+adjustments for specific risk factors:
+</p>
+
+<div class="checklist">
+<div class="check-item"><h3>Raise the frequency</h3><p>High theft exposure, high unit value, serialised or regulated stock, parts with a history of repeated discrepancies, and items in dispersed or congested locations.</p></div>
+<div class="check-item"><h3>Lower the frequency</h3><p>Slow-moving, low-value, bulky items that are difficult and time-consuming to count, provided they have no history of unexplained variance.</p></div>
+<div class="check-item"><h3>Do not use frequency as a punishment</h3><p>If an area is error-prone because of broken process rather than genuine risk, more counting will not fix it. Counting measures the problem; it does not solve it.</p></div>
+</div>
+
+<h2 id="workload">Turning intervals into a daily workload</h2>
+
+<p>
+Count frequencies are only useful once converted into work. The
+arithmetic is simple and should be done before committing to a schedule.
+For each item, divide the number of counts per year by the number of
+counting working days in the year.
+</p>
+
+<div class="formula-box">
+<strong>ITEMS PER COUNTING DAY</strong>
+<p>Items per day = (Annual counts for item) &divide; (Counting working days per year)</p>
+</div>
+
+<p>
+Sum that figure across every item in scope and you have the total number
+of item counts the plan demands each day. Compare it with the number the
+team can realistically complete, allowing for travel between locations,
+opening and resealing, locating stock behind other stock, and recording
+findings properly.
+</p>
+
+<p>
+Two details commonly distort this estimate:
+</p>
+
+<div class="checklist">
+<div class="check-item"><h3>Counting days are not calendar days</h3><p>If counting only happens on weekdays, the divisor is roughly 250, not 365. Using calendar days understates the daily workload by around 30%.</p></div>
+<div class="check-item"><h3>An "item count" is not a fixed unit of work</h3><p>Counting ten units of a well-organised pallet position takes far less time than counting ten units scattered across a bulk area. Workload should be estimated in time, not just in lines.</p></div>
+</div>
+
+<h2 id="capacity">Planning within real capacity</h2>
+
+<p>
+This is where most plans break. The required daily count volume is compared
+against theoretical staffing rather than the hours genuinely available
+after receiving, put-away, picking and dispatch have taken their share.
+</p>
+
+<p>
+A defensible capacity figure is the number of counting hours per day that
+survive a normal week, including the days when someone is absent, a
+delivery arrives late or a stock issue demands immediate attention.
+Planning against a perfect day guarantees slippage.
+</p>
+
+<div class="checklist">
+<div class="check-item"><h3>Budget counting hours, not headcount</h3><p>Two counters available for one hour is two hours of capacity, not two days of work. Converting to hours makes the comparison honest.</p></div>
+<div class="check-item"><h3>Include the non-counting parts</h3><p>Locating, moving stock, recording and reconciling are all part of the work. A count that is performed but not properly recorded has not reduced risk.</p></div>
+<div class="check-item"><h3>Reserve contingency</h3><p>Leave capacity unallocated for investigations. A variance found by a count still needs someone to investigate and correct it.</p></div>
+</div>
+
+<p>
+When required workload exceeds available capacity, there are only three
+honest responses: reduce the scope of the programme, accept a lower
+frequency for some items, or add counting resource. Quietly pretending the
+schedule will fit is the fourth option, and it is the one that fails.
+</p>
+
+<p>
+The DIXANI
+<a href="/inventory/cycle-count-planner/">Cycle Count Planner</a>
+automates exactly this step: it takes an inventory list, count intervals
+and available working days, and produces a dated schedule within your
+<h2 id="timing">Timing counts and controlling stock movements</h2>
+
+<p>
+When a count happens matters as much as how often. Counting an item while
+stock is actively moving produces a variance that reflects the movement,
+not an error. The schedule should reduce that interference rather than
+create it.
+</p>
+
+<div class="checklist">
+<div class="check-item"><h3>Count when movement is naturally low</h3><p>Early shifts, quiet periods or outside peak picking hours reduce the chance of counting stock that is halfway out of the door.</p></div>
+<div class="check-item"><h3>Freeze or flag the location</h3><p>A short freeze, or at minimum a clear flag that the location is being counted, prevents put-away and picking from changing the quantity mid-count.</p></div>
+<div class="check-item"><h3>Count the location, not just the item</h3><p>An item in the wrong location appears as a shortage in one place and a surplus in another. Counting by location surfaces placement errors that item-only counting hides.</p></div>
+<div class="check-item"><h3>Keep blind counts</h3><p>Counters who can see the expected quantity tend to confirm it. Withholding the expected figure makes the count a measurement rather than a confirmation.</p></div>
+</div>
+
+<h2 id="example">Worked scheduling example</h2>
+
+<p>
+A warehouse has 1,200 active items split roughly 20/30/50 across ABC
+classes, and counting happens on weekdays only. Using the conventional
+frequencies, the annual count volume is:
+</p>
+
+<div class="checklist">
+<div class="check-item"><h3>Class A</h3><p>240 items &times; 12 counts = 2,880 counts per year</p></div>
+<div class="check-item"><h3>Class B</h3><p>360 items &times; 4 counts = 1,440 counts per year</p></div>
+<div class="check-item"><h3>Class C</h3><p>600 items &times; 1 count = 600 counts per year</p></div>
+<div class="check-item"><h3>Total</h3><p>4,920 counts per year</p></div>
+</div>
+
+<p>
+With roughly 250 weekdays available, the plan requires about 20 item counts
+per day. If each count takes an average of six minutes including travel and
+recording, that is around two hours of counting work every single working
+day.
+</p>
+
+<div class="formula-box">
+<strong>DAILY WORKLOAD</strong>
+<p>4,920 counts &divide; 250 days = 19.7 counts/day, at 6 minutes each &asymp; 2 hours/day</p>
+</div>
+
+<p>
+That is the number to test against reality. If only one hour per day is
+genuinely available, the plan as written is not achievable, and no amount
+of intention will change that. The options are to reduce Class C scope,
+lengthen intervals for lower-risk items, or find additional counting time.
+</p>
+
+<p>
+Notice also what happens if the plan silently assumes 365 calendar days:
+the target drops to about 13.5 counts per day, or roughly 1.4 hours. That
+looks comfortably achievable, which is precisely why the error is
+dangerous. The plan appears to fit right up until it starts slipping.
+</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+
+<div class="checklist">
+<div class="check-item"><h3>Scheduling against perfect conditions</h3><p>Capacity should reflect a normal week including absences and interruptions, not the best possible day.</p></div>
+<div class="check-item"><h3>Using calendar days for a weekday operation</h3><p>It understates the daily requirement by around 30% and hides the fact that the plan does not fit.</p></div>
+<div class="check-item"><h3>Counting everything at the same frequency</h3><p>A uniform interval ignores value and risk, spending effort on low-consequence items while critical ones wait.</p></div>
+<div class="check-item"><h3>Never revising the schedule</h3><p>Item mix, locations and staffing change. A schedule built once and never adjusted drifts out of fit within a year.</p></div>
+<div class="check-item"><h3>Not acting on variances</h3><p>A count that finds a discrepancy and does not trigger investigation and correction has consumed time without reducing risk.</p></div>
+<div class="check-item"><h3>Treating skipped counts as harmless</h3><p>Each skipped count pushes risk forward. Persistent slippage is a signal that the plan, not the team, is wrong.</p></div>
+</div>
+
+stated daily capacity.
+</p>
+
+<h2 id="faq">Questions and answers</h2>
+
+<details>
+<summary>How often should items be cycle counted?</summary>
+<p>
+Frequency should follow the cost of being wrong. A common starting point is
+monthly for Class A, quarterly for Class B and annually for Class C, then
+adjusted upward for risk factors such as high value, theft exposure or a
+history of repeated discrepancies.
+</p>
+</details>
+
+<details>
+<summary>Should cycle counting replace an annual physical inventory?</summary>
+<p>
+Where a council-approved perpetual inventory programme exists, structured
+cycle counting can often replace the full annual count. The requirements
+differ by jurisdiction and by the standards your auditors apply, so the
+replacement should be agreed with them in advance.
+</p>
+</details>
+
+<details>
+<summary>How many counts per day can one person complete?</summary>
+<p>
+That depends on travel, accessibility and how carefully findings are
+recorded. Estimating in hours rather than lines is far more reliable:
+measure how long a representative set of counts actually takes, then
+multiply.
+</p>
+</details>
+
+<details>
+<summary>What should happen when a count finds a variance?</summary>
+<p>
+The count should trigger investigation before any adjustment. Most
+variances have an explainable cause, such as a mis-placed item, an
+unrecorded transaction or a misidentified part, and correcting the cause is
+more valuable than adjusting the number.
+</p>
+</details>
+
+<details>
+<summary>Why does my schedule keep slipping?</summary>
+<p>
+Almost always because the required workload exceeds genuine capacity. The
+plan was built against theoretical availability rather than the hours that
+survive a normal week. Recalculating the daily requirement in hours and
+comparing it honestly is the first step.
+</p>
+</details>
+
+<details>
+<summary>Can I count during normal working hours?</summary>
+<p>
+Yes, and it is often necessary. The requirement is to control movement
+during the count, not to stop operations. A short location freeze or a
+clear in-progress flag is usually enough.
+</p>
+</details>
+
+</article>
+
+<aside class="article-aside">
+
+<nav class="toc" aria-label="Guide contents">
+<strong>In this guide</strong>
+<a href="#why">Why scheduling matters</a>
+<a href="#abc">Intervals from ABC and risk</a>
+<a href="#workload">Intervals to daily workload</a>
+<a href="#capacity">Planning within capacity</a>
+<a href="#timing">Timing and stock control</a>
+<a href="#example">Worked example</a>
+<a href="#mistakes">Common mistakes</a>
+<a href="#faq">Questions and answers</a>
+</nav>
+
+<div class="aside-note">
+<strong>Key takeaway</strong><br/>
+A count plan that does not fit the available hours will slip quietly, not visibly.
+</div>
+
+</aside>
+
+</div>
+</main>
+
+<footer class="footer">
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-brand">DIXANI</div>
+<p>Practical tools for inventory and operations.</p>
+</div>
+
+<div>
+<h3>Resources</h3>
+<a href="/#tools">Online Tools</a>
+<a href="/templates/">Templates</a>
+<a href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory Tools</a>
+<a href="/categories/logistics/">Logistics Tools</a>
+<a href="/categories/business/">Business Tools</a>
+<a href="/categories/finance/">Finance Tools</a>
+<a href="/categories/converters/">Converter Tools</a>
+</div>
+
+<div>
+<h3>Company</h3>
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+</div>
+
+<div>
+<h3>Legal</h3>
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+<a href="/editorial-policy/">Editorial Policy</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 DIXANI. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+<script src="/assets/js/main.js?v=e271ad4197"></script>
+
+<!-- Cloudflare Web Analytics -->
+<script type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"30b44fcd1cb24302859dddd48e86b942"}'>
+</script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
