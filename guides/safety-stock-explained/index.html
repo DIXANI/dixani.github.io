@@ -93,6 +93,64 @@ gtag('config','G-LQEH9L9TZ4');
   ]
 }
 </script>
+
+<link href="/assets/css/templates.css" rel="stylesheet"/>
+<link href="/assets/css/guides.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="/">DIXANI</a>
+
+<button aria-controls="mainNav" aria-expanded="false"
+aria-label="Open navigation" class="menu-button"
+id="menuButton" type="button">☰</button>
+
+<nav aria-label="Main navigation" class="main-nav" id="mainNav">
+<a href="/#tools">Tools</a>
+<a href="/templates/">Templates</a>
+<a class="active" href="/guides/">Guides</a>
+<a href="/categories/inventory/">Inventory</a>
+<a href="/categories/logistics/">Logistics</a>
+<a href="/categories/business/">Operations</a>
+<a href="/templates/purchasing/">Purchasing</a>
+<a href="/about/">About</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="guide-hero">
+<div class="container">
+<span class="guide-badge">INVENTORY PLANNING GUIDE</span>
+
+<h1>How to Calculate Safety Stock:
+<span>Service Level, Formula and Practical Limits</span></h1>
+
+<p>
+Learn what safety stock protects against, how to choose a service level,
+how the standard formula works, and the assumption that makes it
+misleading when supplier lead times move.
+</p>
+
+<div class="guide-meta">
+<span><strong>Published:</strong> October 20, 2026</span>
+<span><strong>Updated:</strong> October 20, 2026</span>
+<span><strong>By:</strong> Dinesh Madushanka</span>
+</div>
+</div>
+</section>
+
+<div class="container article-shell">
+
+<article class="article-body">
+
 <h2 id="meaning">What is safety stock?</h2>
 
 <p>
@@ -185,6 +243,25 @@ stops a production line may justify far more.
 <tr><td>90%</td><td>1.28</td><td>Low-value, substitutable, easily reordered items</td></tr>
 <tr><td>95%</td><td>1.65</td><td>General working stock in distribution operations</td></tr>
 <tr><td>98%</td><td>2.05</td><td>Items with meaningful margin or service penalties</td></tr>
+<tr><td>99%</td><td>2.33</td><td>Critical spares, production-stopping components</td></tr>
+<tr><td>99.9%</td><td>3.09</td><td>Rare, high-consequence items only</td></tr>
+</tbody>
+</table>
+
+<p>
+Notice how the buffer grows faster than the service level. Moving from 95%
+to 99% raises the Z factor by about 41%, which raises the buffer by 41%
+for the same demand variability. Moving from 95% to 99.9% raises it by
+about 87%. Each additional decimal place of protection costs
+progressively more in working capital.
+</p>
+
+<p>
+This is why applying a blanket 99% service level across a catalogue is
+usually a mistake. It quietly inflates inventory value without improving
+service where it matters.
+</p>
+
 <h2 id="variability">Demand variability versus lead time variability</h2>
 
 <p>
@@ -234,8 +311,31 @@ assume. It tells you how much buffer you need to cover unpredictable
 If your supplier's lead time genuinely is dependable, use the simple
 formula and do not feel obligated to complicate it. The complexity buys
 nothing when the second term is near zero.
+</p>
+
+<p>
+If your supplier's lead time is not dependable, then one of three things
+is true, and you should decide which:
+</p>
+
+<div class="checklist">
+<div class="check-item"><h3>1. Measure the variability</h3><p>If you have at least ten to twenty delivery records, calculate the standard deviation of actual lead time and use the two-factor formula. This is the most accurate option and is worth doing for your highest-value or most critical items.</p></div>
+<div class="check-item"><h3>2. Substitute the worst case</h3><p>If you have too little history to measure, use your realistic worst-case lead time rather than the average in an otherwise simple calculation. This overstates the buffer somewhat, which is the safer direction to be wrong in for critical items.</p></div>
+<div class="check-item"><h3>3. Fix the supply problem</h3><p>Large, persistent safety stock is often a symptom rather than a solution. If lead time variability keeps consuming working capital, the more durable fix is supplier performance management rather than a bigger buffer.</p></div>
+</div>
+
+<p>
+Stating which assumption you are relying on is itself valuable. A planner
+who writes "95% service level, fixed three-week lead time assumed, review
+if supplier reliability changes" has documented a decision. A planner who
+copies a number into a system without that context has created a latent
+problem.
+</p>
+
 <h2 id="example">Worked example</h2>
 
+<div class="example-box">
+<h3>Item and service level</h3>
 <p>
 A distributor holds a component with average daily demand of 40 units and a
 standard deviation of 10 units per day. The supplier's lead time is
@@ -243,6 +343,7 @@ normally 9 days. The business has decided that a 98% service level is
 appropriate because the component carries a reasonable margin and
 customers will not accept substitution.
 </p>
+</div>
 
 <p>
 The service factor for 98% is Z = 2.05. Applying the single-factor
@@ -303,6 +404,28 @@ the buffer you calculated above. Using the same example: average demand of
 demand, plus 62 units of safety stock, for a reorder point of 422 units.
 </p>
 
+<p>
+The distinction matters operationally. The cycle-stock portion is consumed
+by normal business; the safety stock portion should only be touched when
+something abnormal has happened. Monitoring how often you dip into the
+safety stock layer is a useful early warning that your demand pattern,
+lead times or service level assumption have drifted.
+</p>
+
+<p>
+For the trigger calculation itself, see the DIXANI
+<a href="/inventory/reorder-point/">Reorder Point Calculator</a>. For the
+order quantity that determines how large each cycle is, see
+<a href="/inventory/eoq-calculator/">Economic Order Quantity</a>.
+</p>
+
+<p>
+The DIXANI
+<a href="/inventory/safety-stock/">Safety Stock Calculator</a>
+uses the single-factor formula and states the fixed lead time assumption
+on the tool page, so this is worth reading alongside the tool.
+</p>
+
 <h2 id="mistakes">Common mistakes</h2>
 
 <div class="checklist">
@@ -315,6 +438,8 @@ demand, plus 62 units of safety stock, for a reorder point of 422 units.
 </div>
 
 <h2 id="faq">Questions and answers</h2>
+
+<div class="faq-list">
 
 <details>
 <summary>What is the difference between safety stock and reorder point?</summary>
@@ -373,6 +498,49 @@ volatile markets may warrant quarterly review.
 </p>
 </details>
 
+</div>
+
+<div class="action-box">
+<h2>Calculate safety stock for your items</h2>
+<p>
+Use the free DIXANI Safety Stock Calculator to apply the service level
+formula to your own demand variability and lead time, and see how the
+buffer changes as the assumption changes.
+</p>
+<div class="action-links">
+<a class="primary-link" href="/inventory/safety-stock/">
+Open Safety Stock Calculator
+</a>
+<a class="secondary-link" href="/inventory/reorder-point/">
+Open Reorder Point Calculator
+</a>
+<a class="secondary-link" href="/guides/cycle-count-scheduling/">
+Read Cycle Count Guide
+</a>
+</div>
+</div>
+
+<section class="guide-author" aria-label="About the author">
+
+<div class="guide-author-mark" aria-hidden="true">
+DM
+</div>
+
+<div class="guide-author-content">
+<span>About the author</span>
+
+<h2>Dinesh Madushanka</h2>
+
+<p>
+Warehouse and inventory professional with more than 20 years of
+multi-country experience across warehousing, inventory control and
+third-party logistics. DIXANI resources are developed from practical
+operational workflows and common workplace challenges.
+</p>
+</div>
+
+</section>
+
 </article>
 
 <aside class="article-aside">
@@ -400,8 +568,6 @@ The formula is simple. The assumption that lead time never varies is not.
 </div>
 </main>
 
-<p>
-The distinction matters operationally. The cycle-stock portion is consumed
 <footer class="footer">
 <div class="container">
 
@@ -457,114 +623,3 @@ data-cf-beacon='{"token":"30b44fcd1cb24302859dddd48e86b942"}'>
 
 </body>
 </html>
-
-by normal business; the safety stock portion should only be touched when
-something abnormal has happened. Monitoring how often you dip into the
-safety stock layer is a useful early warning that your demand pattern,
-lead times or service level assumption have drifted.
-</p>
-
-<p>
-For the trigger calculation itself, see the DIXANI
-<a href="/inventory/reorder-point/">Reorder Point Calculator</a>. For the
-order quantity that determines how large each cycle is, see
-<a href="/inventory/eoq-calculator/">Economic Order Quantity</a>.
-</p>
-
-</p>
-
-<p>
-If your supplier's lead time is not dependable, then one of three things
-is true, and you should decide which:
-</p>
-
-<div class="checklist">
-<div class="check-item"><h3>1. Measure the variability</h3><p>If you have at least ten to twenty delivery records, calculate the standard deviation of actual lead time and use the two-factor formula. This is the most accurate option and is worth doing for your highest-value or most critical items.</p></div>
-<div class="check-item"><h3>2. Substitute the worst case</h3><p>If you have too little history to measure, use your realistic worst-case lead time rather than the average in an otherwise simple calculation. This overstates the buffer somewhat, which is the safer direction to be wrong in for critical items.</p></div>
-<div class="check-item"><h3>3. Fix the supply problem</h3><p>Large, persistent safety stock is often a symptom rather than a solution. If lead time variability keeps consuming working capital, the more durable fix is supplier performance management rather than a bigger buffer.</p></div>
-</div>
-
-<p>
-Stating which assumption you are relying on is itself valuable. A planner
-who writes "95% service level, fixed three-week lead time assumed, review
-if supplier reliability changes" has documented a decision. A planner who
-copies a number into a system without that context has created a latent
-problem.
-</p>
-
-<p>
-The DIXANI
-<a href="/inventory/safety-stock/">Safety Stock Calculator</a>
-uses the single-factor formula and states the fixed lead time assumption
-on the tool page, so this is worth reading alongside the tool.
-</p>
-
-<tr><td>99%</td><td>2.33</td><td>Critical spares, production-stopping components</td></tr>
-<tr><td>99.9%</td><td>3.09</td><td>Rare, high-consequence items only</td></tr>
-</tbody>
-</table>
-
-<p>
-Notice how the buffer grows faster than the service level. Moving from 95%
-to 99% raises the Z factor by about 41%, which raises the buffer by 41%
-for the same demand variability. Moving from 95% to 99.9% raises it by
-about 87%. Each additional decimal place of protection costs
-progressively more in working capital.
-</p>
-
-<p>
-This is why applying a blanket 99% service level across a catalogue is
-usually a mistake. It quietly inflates inventory value without improving
-service where it matters.
-</p>
-
-
-<link href="/assets/css/style.css" rel="stylesheet"/>
-<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
-</head>
-<body>
-<a class="skip-link" href="#main">Skip to main content</a>
-
-<header class="site-header">
-<div class="container header-inner">
-<a class="logo" href="/">DIXANI</a>
-<button aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation" class="menu-button" id="menuButton" type="button">☰</button>
-<nav aria-label="Main navigation" class="main-nav" id="mainNav">
-<a href="/#tools">Tools</a>
-<a href="/templates/">Templates</a>
-<a href="/guides/">Guides</a>
-<a href="/categories/inventory/">Inventory</a>
-<a href="/categories/logistics/">Logistics</a>
-<a href="/categories/business/">Operations</a>
-<a href="/templates/purchasing/">Purchasing</a>
-<a href="/about/">About</a>
-</nav>
-</div>
-</header>
-
-<main id="main">
-
-<section class="guide-hero">
-<div class="container">
-<span class="guide-badge">INVENTORY PLANNING GUIDE</span>
-
-<h1>How to Calculate Safety Stock:
-<span>Service Level, Formula and Practical Limits</span></h1>
-
-<p>
-Learn what safety stock protects against, how to choose a service level,
-how the standard formula works, and the assumption that makes it
-misleading when supplier lead times move.
-</p>
-
-<div class="guide-meta">
-<span><strong>Published:</strong> October 20, 2026</span>
-<span><strong>Updated:</strong> October 20, 2026</span>
-<span><strong>By:</strong> Dinesh Madushanka</span>
-</div>
-</div>
-</section>
-
-<div class="container article-shell">
-
-<article class="article-body">
