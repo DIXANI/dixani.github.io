@@ -4,34 +4,54 @@
 **read this file first** and start from the checkpoint below. Do **not** re-run the
 completed audit work.
 
-**Last updated:** 2026-10-20
+**Last updated:** 2026-10-24
 **Repo:** `https://github.com/DIXANI/dixani.github.io` (local: `C:\Users\DELL\Documents\Website\dixani.github.io`)
 **Branch:** `main`
 **Working tree:** clean (nothing uncommitted)
-**HEAD = origin/main =** `f64707b`
+**HEAD = origin/main =** `0a0b9ab`
+
+---
+
+## 0. Where we are right now (read this first)
+
+| Question | Answer |
+|---|---|
+| Is anything blocked or uncommitted? | No — tree clean, all pushed |
+| What is the next *content* work? | **Tier 2** (§4) — but **only after ~2026-11-13** |
+| Why the wait? | Tier 1 deployed **2026-10-16**; needs 28 days to measure |
+| What was just finished? | Zero-risk work (§5c): stub check ✅, indexing confirmed ✅, `lastmod` rejected ⛔ |
+| What should happen next? | **Export fresh GSC data** (2026-10-16 → now) to get the first Tier 1 read |
+
+**⚠️ Timing gate: do NOT deploy Tier 2 content before ~2026-11-13.** Tier 1 went live
+2026-10-16 and the observation window is 28 days. Deploying earlier makes Tier 1's
+effect unmeasurable. See §4 for the rationale.
+
 
 ---
 
 ## 1. Current checkpoint — nothing pending
 
+> Superseded by §0 above; kept because §0 is a summary and this is the detail.
+
 | Item | State |
 |---|---|
-| Local `HEAD` | `f64707b` |
-| `origin/main` | `f64707b` (identical — `rev-list --left-right --count` = `0  0`) |
+| Local `HEAD` | `0a0b9ab` *(before the 2026-10-24 zero-risk commit)* |
+| `origin/main` | `0a0b9ab` (identical — `rev-list --left-right --count` = `0  0`) |
 | Uncommitted changes | **none** |
 | Last session's work | **committed AND pushed** |
 
-### Last 4 commits (newest first)
+### Last commits (newest first)
 
 ```
+0a0b9ab  Add resume checkpoint for continuing DIXANI site improvement
 f64707b  Add related tool, template and guide links to four new guides
 cc64997  Fix guide structure and styling for four new guides
 9e1288d  Add warehouse capacity cost and container stuffing guides
 ac78bb7  Add safety stock and cycle count scheduling guides
 ```
 
-**Do not amend `cc64997` or `f64707b`.** They are already on the remote. Any further
-work must be a **new forward commit**.
+**Do not amend `cc64997`, `f64707b` or `0a0b9ab`.** They are already on the remote.
+Any further work must be a **new forward commit**.
 ## 2. What is DONE (do not redo)
 
 ### 2.1 Four new guides — created, repaired, and fully linked
@@ -174,10 +194,21 @@ Deploy 3  (day 56)   #11     — abc-inventory-analysis title only
 Deploy 4  (day 84)   #12     — investigate-inventory-variances title only
 ```
 
-Tier 1 was deployed ahead of the 28-day spacing, so **before starting Tier 2,
-confirm with the user whether the 28-day observation window has actually elapsed.**
-If it has not, the correct action is to **wait, not write** — the whole point of the
-staged plan is valid attribution.
+Tier 1 deployed **2026-10-16**. Tier 1 was deployed ahead of the 28-day spacing, so
+**the 28-day observation window does not close until ~2026-11-13.** Before starting
+Tier 2, check the real date:
+
+- **Before ~2026-11-13** → the correct action is to **wait, not write**. Deploying
+  Tier 2 now makes Tier 1's effect unattributable, which forfeits the whole point of
+  the staged plan. (Confirmed reasoning: at 21 clicks/42 days the signal is barely
+  above noise — measurement is the scarce resource, not content.)
+- **On/after ~2026-11-13** → deploy Tier 2.
+
+**Zero-risk work that does NOT break attribution** (safe during the wait): anything
+invisible to the SERP — correctness fixes, internal plumbing, local verification.
+Already done in the 2026-10-24 pass (§5c). **Do not** make further SERP-visible edits
+(titles, descriptions, body copy) during the window.
+
 
 ### Explicitly EXCLUDED from this phase (recorded, not deleted)
 
@@ -196,16 +227,87 @@ deliberately changed **zero** titles.
 
 ---
 
-## 5. Open item the user should rule on
+## 5. Open items — RESOLVED 2026-10-24
 
-Four tool pages were linked from the new guides without verifying they are fully
-built out and published in the nav:
+### 5.1 ✅ Stub check on the four linked tool pages — PASSED
 
-`inventory/inventory-turnover`, `inventory/inventory-accuracy-analyzer`,
-`inventory/variance-report`, `logistics/cbm-calculator`
+Verified 2026-10-24. All four are substantive full pages, **not stubs**. The links
+added in `f64707b` are safe; no swap required.
 
-They exist on disk and are topically core, but if any is a stub, the link sends
-readers to a thin page. **Worth confirming; links can be swapped out if needed.**
+| Tool | Words | h1 | h2 | Script |
+|---|---|---|---|---|
+| `inventory/inventory-turnover` | 1,582 | 1 | 9 | dedicated (3 KB) |
+| `inventory/inventory-accuracy-analyzer` | 1,261 | 1 | 6 | dedicated (22.7 KB) |
+| `inventory/variance-report` | 1,791 | 1 | 10 | shared `assets/js/inventory.js` |
+| `logistics/cbm-calculator` | 1,657 | 1 | 11 | dedicated (6.5 KB) |
+
+> Note for future stub checks: `variance-report` has **no** dedicated
+> `assets/js/variance-report.js` — it uses the shared `assets/js/inventory.js`.
+> A naive "does `<slug>.js` exist" test gives a false positive here.
+
+### 5.2 ✅ All four new guides are INDEXED (user-confirmed 2026-10-24)
+
+The four guides added in `ac78bb7`/`9e1288d` went live 2026-10-20 and are all
+confirmed indexed in Google. The technical indexability signals are working — no
+action needed on canonical/robots/sitemap presence for these pages.
+
+---
+
+## 5b. ⛔ REJECTED — do not re-attempt: `sitemap.xml` lastmod backfill
+
+**Task:** audit item P2 #10 — *"Add `<lastmod>` to the 59 sitemap URLs currently
+missing it (aids recrawl)."*
+
+**Decision 2026-10-24: REJECTED (again). Do not attempt without new information.**
+
+`DIXANI-P1-REPORT.md` §11 already deferred this, with the objection:
+
+> *"Requires an accurate change-date source; guessing dates is worse than omitting them."*
+
+That objection was **re-tested on 2026-10-24 and it still holds.** Git looks like it
+supplies the missing date source, but it does **not** supply the right one:
+
+| Finding | Value |
+|---|---|
+| Repo created | 2026-08-16 |
+| Total commits | 168 |
+| Distinct git "last touched" dates across all 69 pages | **2** (2026-10-19, 2026-10-20) |
+| `guides/abc-inventory-analysis` true content history | 6 commits: Sep 16, 21, 23, Oct 16 ×2, Oct 19 |
+| `guides/abc-inventory-analysis` git last-touch date | 2026-10-19 (a meta-tag touch) |
+
+**Why it fails.** `git log -1` returns when a *file was last modified*, not when its
+*content meaningfully changed*. The 2026-10-19 audit sweep (`667695b`) touched nearly
+every page for metadata/a11y fixes, so virtually every page now reports 10-19/10-20
+regardless of its real editorial date. Writing those as `lastmod` would assert that
+all 69 pages changed on the same two days — false, and a classic spam pattern.
+
+**Additional contradiction.** The 9 URLs that already carry `lastmod` claim
+`2026-09-09`, `2026-09-12`, `2026-09-15`, `...`. A git backfill of the other 60 would
+leave the sitemap asserting that 9 pages have precise older dates while 60 all
+"changed" on Oct 19–20 — internally inconsistent.
+
+**Risk if done anyway.** A `lastmod` that does not reflect real content change is a
+documented route to having the `<lastmod>` signal **ignored entirely** by Google.
+The backfill would forfeit the exact benefit it was meant to gain.
+
+**Conclusion.** `lastmod` is optional per P2-A §8.4 (*"Not required; GitHub Pages
+serves the files regardless"*). Correct action is to **leave it alone.** If it is ever
+revisited, the only sound method is to derive dates from *editorial/content* events
+(not file touches) and to backfill the existing 9 entries to the same convention at
+the same time — never mixing the two.**
+
+---
+
+## 5c. Status of the "safe work while Tier 1 is observed" plan (2026-10-24)
+
+Chosen next step was **(a) zero-risk work**, not Tier 2 content (Tier 1 went live
+2026-10-16; the 28-day observation window closes ~2026-11-13).
+
+| Task | Status |
+|---|---|
+| Verify the 4 linked tools are not stubs | ✅ Done — all substantive (§5.1) |
+| Confirm the 4 new guides are indexed | ✅ Done — all indexed (§5.2) |
+| `sitemap.xml` `lastmod` backfill | ⛔ Rejected with evidence (§5b) |
 
 ---
 
@@ -222,9 +324,15 @@ readers to a thin page. **Worth confirming; links can be swapped out if needed.*
 
 | When | What | Commit |
 |---|---|---|
-| 2026-10-20 | Tier 1 implementation (descriptions + additive vocabulary) | (per TIER1 report) |
+| 2026-08-16 | Repo created | `3809a9f` |
+| 2026-10-16 | P1 / P2-A / P2-B: metadata, schema, search intent, cache busting | `4111028`…`682e48e` |
+| 2026-10-19 | Audit sweep: AUD-001..AUD-020 | `667695b` |
+| 2026-10-20 | 4 new guides: safety stock, cycle count, warehouse capacity, container stuffing | `ac78bb7`, `9e1288d` |
 | 2026-10-20 | 4 new guides: structure + styling repair | `cc64997` |
 | 2026-10-20 | 4 new guides: internal tool / template / guide links | `f64707b` |
+| 2026-10-21 | Resume checkpoint created | `0a0b9ab` |
+| 2026-10-24 | Zero-risk pass: stub check ✅, indexing confirmed ✅, `lastmod` rejected ⛔ | (this commit) |
+
 
 
 `page-inventory.mjs`, `pallet-calculator.test.mjs`, `schema.test.mjs`,
