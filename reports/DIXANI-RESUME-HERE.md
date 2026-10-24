@@ -19,12 +19,48 @@ completed audit work.
 | Is anything blocked or uncommitted? | No — tree clean, all pushed |
 | What is the next *content* work? | **Tier 2** (§4) — but **only after ~2026-11-13** |
 | Why the wait? | Tier 1 deployed **2026-10-16**; needs 28 days to measure |
-| What was just finished? | Zero-risk work (§5c): stub check ✅, indexing confirmed ✅, `lastmod` rejected ⛔ |
-| What should happen next? | **Export fresh GSC data** (2026-10-16 → now) to get the first Tier 1 read |
+| What was just finished? | Zero-risk pass (§5c) + **first post-Tier-1 GSC read** (§5d) |
+| What should happen next? | **Re-export GSC with a custom range** on/after **2026-11-16** |
 
 **⚠️ Timing gate: do NOT deploy Tier 2 content before ~2026-11-13.** Tier 1 went live
 2026-10-16 and the observation window is 28 days. Deploying earlier makes Tier 1's
 effect unmeasurable. See §4 for the rationale.
+
+### 5d. First post-Tier-1 GSC read — 2026-10-24 ⚠️ INCONCLUSIVE, KEEP WAITING
+
+Full analysis: **`reports/DIXANI-P3-GSC-2026-10-24.md`** (new).
+
+The export is **"Last 3 months"** (2026-09-03 → 2026-10-22), *not* the 28-day window.
+It contains only **7 post-deploy days** — far too few to attribute anything.
+
+| Metric | PRE (Sep 5 – Oct 15) | POST (Oct 16 – 22) |
+|---|---|---|
+| Clicks/day | 0.54 | 2.00 |
+| Impressions/day | 117.8 | 275.6 |
+| Site avg position | ~35 | ~47 (worse) |
+
+**Do not read this as Tier 1 success.** The impression climb **began 2026-09-21**,
+before Tier 1, and the Oct 19+ spike coincides with the 4 new guides going live
+(2026-10-20) — new URL discovery, not metadata. The position drop is the mechanical
+effect of adding URLs (new pages rank 50-70 and drag the site average).
+
+**Three durable findings that DO matter:**
+
+1. **Position, not targeting, is the constraint.** 48 of the top 50 queries have zero
+   clicks. The site is shown for real demand but ranks too low to be clicked.
+   Descriptions (Tier 1) cannot fix this; content depth + links + time can.
+2. **The warehouse/space cluster is the biggest opportunity.** ~700 impressions across
+   8 query variants (`warehouse space utilization` + variants), all zero-click, all
+   pos >30. `guides/warehouse-space-utilization` alone carries **928 impressions at
+   position 32.0 with 0 clicks**. Deepening this page is the highest-leverage Tier 2 move.
+3. **Templates convert 6-9x better than calculators.** `picking-list` 4.9% CTR and
+   `stock-variance-report` 8.0% CTR vs `pallet-calculator` 0.86%, at comparable
+   positions. Strongest conversion signal in the data — argues for more templates.
+
+**Action:** do **nothing SERP-visible** while the window is open. Re-export with
+Filters → Date → **Custom** = 2026-10-16 to 2026-11-13, on/after **2026-11-16**, and
+compare **per-page** / **per-query** (site averages will mislead).
+
 
 
 ---
@@ -331,7 +367,8 @@ Chosen next step was **(a) zero-risk work**, not Tier 2 content (Tier 1 went liv
 | 2026-10-20 | 4 new guides: structure + styling repair | `cc64997` |
 | 2026-10-20 | 4 new guides: internal tool / template / guide links | `f64707b` |
 | 2026-10-21 | Resume checkpoint created | `0a0b9ab` |
-| 2026-10-24 | Zero-risk pass: stub check ✅, indexing confirmed ✅, `lastmod` rejected ⛔ | (this commit) |
+| 2026-10-24 | Zero-risk pass: stub check ✅, indexing confirmed ✅, `lastmod` rejected ⛔ | `f1b96a0` |
+| 2026-10-24 | First post-Tier-1 GSC read (inconclusive, 7 days; 3 durable findings) | (this commit) |
 
 
 
