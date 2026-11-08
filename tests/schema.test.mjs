@@ -140,6 +140,23 @@ test("breadcrumb positions are contiguous and start at Home", () => {
   }
 });
 
+test("generated breadcrumbs only reference existing internal pages", () => {
+  const routes = new Set(pages.map((p) => p.route));
+  for (const p of pages) {
+    const region = regionOf(p.html);
+    if (!region) continue;
+    for (const m of region.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
+      const obj = JSON.parse(m[1]);
+      if (obj["@type"] !== "BreadcrumbList") continue;
+      for (const item of obj.itemListElement) {
+        const url = new URL(item.item);
+        if (url.origin !== "https://dixani.com") continue;
+        assert.ok(routes.has(url.pathname), `missing breadcrumb target in ${p.route}: ${url.pathname}`);
+      }
+    }
+  }
+});
+
 test("no page declares more than one BreadcrumbList", () => {
   for (const p of pages) {
     const count = (p.html.match(/"@type"\s*:\s*"BreadcrumbList"/g) || []).length;

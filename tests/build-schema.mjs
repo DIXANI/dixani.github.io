@@ -33,6 +33,13 @@ const isContentPage = (name) => !/^google[0-9a-f]+\.html$/i.test(name);
 const START = "<!-- schema:generated -->";
 const END = "<!-- /schema:generated -->";
 
+const withoutGeneratedRegion = (html) => {
+  const start = html.indexOf(START);
+  const end = html.indexOf(END);
+  if (start === -1 || end === -1) return html;
+  return html.slice(0, start) + html.slice(end + END.length);
+};
+
 // ---------------------------------------------------------------------------
 // 1. Discover pages.
 // ---------------------------------------------------------------------------
@@ -80,7 +87,6 @@ const routeOf = (file) =>
 // hub -- otherwise the breadcrumb advertises a 404.
 // ---------------------------------------------------------------------------
 const HUB_NAME = {
-  "/categories/": "Categories",
   "/categories/business/": "Business Calculators",
   "/categories/converters/": "Converters",
   "/categories/finance/": "Finance Calculators",
@@ -148,7 +154,6 @@ const buildTrail = (route, name) => {
   const trail = [{ name: "Home", item: ORIGIN + "/" }];
 
   if (parts[0] === "categories" && parts.length >= 2) {
-    trail.push({ name: HUB_NAME["/categories/"], item: ORIGIN + "/categories/" });
     const hub = `/categories/${parts[1]}/`;
     // Only add the category hub when the page sits *below* it.
     if (parts.length > 2 && HUB_NAME[hub]) trail.push({ name: HUB_NAME[hub], item: ORIGIN + hub });
@@ -225,9 +230,11 @@ for (const file of files) {
     (html.match(/<link[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["'][^>]*>/i) || [])[0] ||
     "";
 
-  // Types already declared in the page's own hand-written JSON-LD.
+  // Types already declared in the page's own hand-written JSON-LD. Ignore
+  // this generator's existing region so re-running can refresh stale output.
   const existingTypes = new Set();
-  for (const m of html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
+  const authoredHtml = withoutGeneratedRegion(html);
+  for (const m of authoredHtml.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
     for (const t of m[1].matchAll(/"@type"\s*:\s*"([^"]+)"/g)) existingTypes.add(t[1]);
   }
 
