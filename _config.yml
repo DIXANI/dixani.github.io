@@ -1,0 +1,11 @@
+# DIXANI — GitHub Pages configuration
+# Exclude internal development material from the published website.
+exclude:
+  - reports
+  - tests
+  - scripts
+  - audit-check.mjs
+  - .vscode
+  - .gitignore
+  - .gitattributes
+  - README.md
