@@ -105,6 +105,8 @@ const SKIP_PAGES = new Set([
   "/",
   "/privacy/",
   "/terms/",
+  "/disclaimer/",
+  "/author/dinesh-madushanka/",
   "/contact/",
   "/about/",
   "/editorial-policy/",

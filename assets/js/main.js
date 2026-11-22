@@ -10,6 +10,40 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  /* ---------- Cookie consent banner ---------- */
+  try {
+    const CONSENT_KEY = "dixani_cookie_consent";
+    const savedConsent = localStorage.getItem(CONSENT_KEY);
+    if (!savedConsent && document.body) {
+      const bar = document.createElement("aside");
+      bar.className = "cookie-banner";
+      bar.setAttribute("role", "region");
+      bar.setAttribute("aria-label", "Cookie consent");
+      bar.innerHTML =
+        '<div class="cookie-banner-inner">' +
+        '<p>DIXANI uses cookies for analytics and to serve relevant advertising via Google AdSense. See our <a href="/privacy/">Privacy Policy</a> for details.</p>' +
+        '<div class="cookie-banner-actions">' +
+        '<button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Reject</button>' +
+        '<button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Accept</button>' +
+        "</div></div>";
+      document.body.appendChild(bar);
+      const setChoice = (val) => {
+        try { localStorage.setItem(CONSENT_KEY, val); } catch (_) {}
+        if (typeof window.gtag === "function") {
+          window.gtag("consent", "update", {
+            ad_storage: val === "accepted" ? "granted" : "denied",
+            ad_user_data: val === "accepted" ? "granted" : "denied",
+            ad_personalization: val === "accepted" ? "granted" : "denied",
+            analytics_storage: val === "accepted" ? "granted" : "denied"
+          });
+        }
+        bar.remove();
+      };
+      document.getElementById("cookieAcceptBtn").onclick = () => setChoice("accepted");
+      document.getElementById("cookieRejectBtn").onclick = () => setChoice("rejected");
+    }
+  } catch (_) {}
+
   /* ---------- Site search ---------- */
   const s = document.getElementById("siteSearch");
   const bt = document.getElementById("siteSearchButton");
