@@ -77,12 +77,15 @@ let missing = [];
 const touchedFiles = [];
 const seen = new Set(); // de-dupe: each (page, file) documented once
 
+const CSS_TARGET = join(ROOT, "assets", "css", "site-consistency.css");
+const cssHash = existsSync(CSS_TARGET) ? hashOf(CSS_TARGET) : "";
+
 for (const page of pages) {
   const original = readFileSync(page, "utf8");
   const pageDir = dirname(page);
   let changed = false;
 
-  const updated = original.replace(SCRIPT_SRC, (whole, pre, src, post) => {
+  let updated = original.replace(SCRIPT_SRC, (whole, pre, src, post) => {
     scannedTags++;
     const abs = resolveLocal(pageDir, src);
     if (!abs) {
@@ -101,6 +104,18 @@ for (const page of pages) {
     }
     return pre + next + post;
   });
+
+  if (cssHash) {
+    const nextCss = updated.replace(
+      /\/assets\/css\/site-consistency\.css(?:\?v=[0-9a-f]+)?/g,
+      `/assets/css/site-consistency.css?v=${cssHash}`
+    );
+    if (nextCss !== updated) {
+      updated = nextCss;
+      stamped++;
+      changed = true;
+    }
+  }
 
   if (changed) {
     touchedFiles.push(rel(page));

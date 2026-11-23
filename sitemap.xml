@@ -6,102 +6,125 @@
          MAIN PAGES
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/about/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/about/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/editorial-policy/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/editorial-policy/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/contact/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/contact/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/ai-operations-assistant/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/ai-operations-assistant/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/privacy/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/privacy/</loc>
+    <lastmod>2026-09-04</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/terms/</loc>
-    </url>
+    <lastmod>2026-09-04</lastmod>
+  </url>
 
 
     <!-- =========================
          TOOL CATEGORY PAGES
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/categories/inventory/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/categories/inventory/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/categories/business/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/categories/business/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-     <url>
+  <url>
     <loc>https://dixani.com/categories/business/profit-margin-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/business/markup-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/business/working-hours-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/categories/converters/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/categories/converters/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/categories/logistics/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/categories/logistics/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/categories/finance/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/categories/finance/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/finance/break-even-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/finance/discount-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/finance/vat-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/finance/loan-payment-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/finance/compound-interest-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/finance/simple-interest-calculator/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/converters/unit-converter/</loc>
-    </url>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/categories/converters/volumetric-weight-calculator/</loc>
-    </url>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
     
 
@@ -111,240 +134,277 @@
          INVENTORY TOOLS
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/inventory/variance-report/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/variance-report/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/inventory/reorder-point/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/reorder-point/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/inventory/safety-stock/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/safety-stock/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/inventory/inventory-turnover/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/inventory-turnover/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/inventory/eoq-calculator/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/eoq-calculator/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/inventory/dio-calculator/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/dio-calculator/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
 
     <!-- =========================
          LOGISTICS TOOLS
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/logistics/cbm-calculator/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/logistics/cbm-calculator/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/logistics/pallet-calculator/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/logistics/pallet-calculator/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/logistics/container-loading-calculator/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/logistics/container-loading-calculator/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/logistics/warehouse-space-calculator/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/logistics/warehouse-space-calculator/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
 
     <!-- =========================
          TEMPLATES HOME
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/templates/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
 
     <!-- =========================
          INVENTORY TEMPLATES
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/stock-count-sheet/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/stock-count-sheet/</loc>
+    <lastmod>2026-11-22</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/stock-variance-report/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/stock-variance-report/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/inventory-master-list/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/inventory-master-list/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/stock-movement-register/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/stock-movement-register/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/reorder-level-tracker/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/reorder-level-tracker/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/inventory/inventory-adjustment-form/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/inventory/inventory-adjustment-form/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
 
     <!-- =========================
          WAREHOUSE TEMPLATES
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/goods-received-note/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/goods-received-note/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/goods-issue-note/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/goods-issue-note/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/stock-transfer-form/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/stock-transfer-form/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/picking-list/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/picking-list/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/packing-list/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/packing-list/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/warehouse/damage-write-off-form/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/warehouse/damage-write-off-form/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
 
     <!-- =========================
          PURCHASING TEMPLATES
     ========================== -->
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/purchase-order/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/purchase-order/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/purchase-requisition/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/purchase-requisition/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/request-for-quotation/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/request-for-quotation/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/supplier-comparison/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/supplier-comparison/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/supplier-evaluation/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/supplier-evaluation/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/templates/purchasing/purchase-tracker/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/templates/purchasing/purchase-tracker/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
     
-    <url>
-        <loc>https://dixani.com/guides/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/guides/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
-    <url>
-        <loc>https://dixani.com/guides/investigate-inventory-variances/</loc>
-    </url>
+  <url>
+    <loc>https://dixani.com/guides/investigate-inventory-variances/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
 
-    <url>
+  <url>
     <loc>https://dixani.com/guides/warehouse-cycle-count-checklist/</loc>
-    </url>
+    <lastmod>2026-09-23</lastmod>
+  </url>
    
-   <url>
-  <loc>https://dixani.com/inventory/inventory-accuracy-analyzer/</loc>
-  <lastmod>2026-09-09</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-    </url>
+  <url>
+    <loc>https://dixani.com/inventory/inventory-accuracy-analyzer/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-    <url>
-  <loc>https://dixani.com/guides/inventory-accuracy-percentage/</loc>
-  <lastmod>2026-09-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://dixani.com/guides/warehouse-space-utilization/</loc>
-  <lastmod>2026-09-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/guides/inventory-accuracy-percentage/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dixani.com/guides/warehouse-space-utilization/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/guides/abc-inventory-analysis/</loc>
-  <lastmod>2026-09-16</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/guides/abc-inventory-analysis/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/guides/safety-stock-explained/</loc>
-  <lastmod>2026-10-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/guides/safety-stock-explained/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/guides/cycle-count-scheduling/</loc>
-  <lastmod>2026-10-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/guides/cycle-count-scheduling/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/guides/warehouse-capacity-storage-cost/</loc>
-  <lastmod>2026-10-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/guides/warehouse-capacity-storage-cost/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/guides/container-stuffing-load-planning/</loc>
-  <lastmod>2026-10-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/guides/container-stuffing-load-planning/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/simulators/warehouse-shift-challenge/</loc>
-  <lastmod>2026-09-16</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+  <url>
+    <loc>https://dixani.com/simulators/warehouse-shift-challenge/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://dixani.com/inventory-control-toolkit/</loc>
-</url>
+  <url>
+    <loc>https://dixani.com/inventory-control-toolkit/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 
-<url>
-  <loc>https://dixani.com/inventory/cycle-count-planner/</loc>
-</url>
+  <url>
+    <loc>https://dixani.com/inventory/cycle-count-planner/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
 
   <url>
     <loc>https://dixani.com/disclaimer/</loc>

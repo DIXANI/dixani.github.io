@@ -11,7 +11,9 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  /* Cookie Consent & Google Consent Mode v2 */
+(function(){var c=null;try{c=localStorage.getItem('dixani_cookie_consent')}catch(e){}var a=c==='accepted'||(c&&c.indexOf('"analytics":true')>-1)?'granted':'denied',d=c==='accepted'||(c&&c.indexOf('"ads":true')>-1)?'granted':'denied';gtag('consent','default',{ad_storage:d,ad_user_data:d,ad_personalization:d,analytics_storage:a,wait_for_update:500});window.googlefc=window.googlefc||{};window.googlefc.callbackQueue=window.googlefc.callbackQueue||[];})();
+gtag('js', new Date());
 
   gtag('config', 'G-LQEH9L9TZ4');
 </script>
@@ -25,7 +27,7 @@
 content="Free volumetric weight calculator for shipping, courier and logistics use. Compare actual weight with dimensional weight and calculate chargeable weight.">
 
 <meta name="robots" content="index, follow">
-<meta name="author" content="DIXANI">
+<meta name="author" content="Dinesh Madushanka"/>
 <meta name="theme-color" content="#2563eb">
 
 <link rel="canonical"
@@ -46,7 +48,7 @@ href="https://dixani.com/categories/converters/volumetric-weight-calculator/">
 href="/assets/css/templates.css">
 
 <link rel="stylesheet"
-href="/assets/css/site-consistency.css">
+href="/assets/css/site-consistency.css?v=5629ce5597">
 
 <link rel="stylesheet"
 href="/assets/css/volumetric-weight-calculator.css">
@@ -164,6 +166,11 @@ Calculate dimensional or volumetric weight for cartons and shipments,
 compare it with the actual weight and identify the chargeable weight
 used for shipping and courier calculations.
 </p>
+<div class="guide-meta">
+<span><strong>Published:</strong> September 4, 2026</span>
+<span><strong>Last updated:</strong> November 15, 2026</span>
+<span><strong>By:</strong> <a href="/author/dinesh-madushanka/">Dinesh Madushanka</a></span>
+</div>
 
 <div class="hero-note">
 
@@ -1122,6 +1129,7 @@ Privacy
 Terms
 </a>
 <a href="/disclaimer/">Disclaimer</a>
+<button type="button" class="footer-cookie-btn" data-cookie-manage>Cookie Settings</button>
 
 </div>
 
@@ -1136,9 +1144,27 @@ Terms
 </div>
 
 </footer>
+<!-- Cookie Consent Banner -->
+<aside id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie consent">
+<div class="cookie-banner-inner">
+<p>DIXANI uses cookies for analytics and advertising (via Google Analytics and Google AdSense) to measure site usage and serve relevant ads. Rejecting optional cookies will not affect any calculator or template. See our <a href="/privacy/">Privacy Policy</a>.</p>
+<div class="cookie-banner-prefs" id="cookieConsentPrefs" hidden>
+<label><input type="checkbox" checked disabled/> Essential (Tools &amp; Preferences)</label>
+<label><input type="checkbox" id="cookiePrefAnalytics" checked/> Analytics (Google Analytics)</label>
+<label><input type="checkbox" id="cookiePrefAds" checked/> Advertising (Google AdSense)</label>
+</div>
+<div class="cookie-banner-actions">
+<button type="button" class="cookie-btn cookie-btn-manage" id="cookieManageBtn">Manage</button>
+<button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Reject</button>
+<button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Accept</button>
+</div>
+</div>
+</aside>
+<script>(function(){try{if(localStorage.getItem('dixani_cookie_consent')||/(?:^|;\s*)dixani_cookie_consent=/.test(document.cookie)){var b=document.getElementById('cookieConsentBanner');if(b){b.hidden=true;b.style.display='none';}}}catch(e){}})();</script>
+<!-- /Cookie Consent Banner -->
 
 
-<script defer src="/assets/js/main.js?v=6f91e3bb2b"></script>
+<script defer src="/assets/js/main.js?v=683d4b51c4"></script>
 
 <script defer src="/assets/js/volumetric-weight-calculator.js?v=d620fc7820"></script>
 

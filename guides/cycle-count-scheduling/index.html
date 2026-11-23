@@ -8,6 +8,8 @@
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments)}
+/* Cookie Consent & Google Consent Mode v2 */
+(function(){var c=null;try{c=localStorage.getItem('dixani_cookie_consent')}catch(e){}var a=c==='accepted'||(c&&c.indexOf('"analytics":true')>-1)?'granted':'denied',d=c==='accepted'||(c&&c.indexOf('"ads":true')>-1)?'granted':'denied';gtag('consent','default',{ad_storage:d,ad_user_data:d,ad_personalization:d,analytics_storage:a,wait_for_update:500});window.googlefc=window.googlefc||{};window.googlefc.callbackQueue=window.googlefc.callbackQueue||[];})();
 gtag('js',new Date());
 gtag('config','G-LQEH9L9TZ4');
 </script>
@@ -102,7 +104,7 @@ gtag('config','G-LQEH9L9TZ4');
 
 <link href="/assets/css/templates.css" rel="stylesheet"/>
 <link href="/assets/css/guides.css" rel="stylesheet"/>
-<link href="/assets/css/site-consistency.css" rel="stylesheet"/>
+<link href="/assets/css/site-consistency.css?v=5629ce5597" rel="stylesheet"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8025420721885884" crossorigin="anonymous"></script>
 </head>
@@ -145,8 +147,8 @@ keep the schedule inside the capacity you really have.
 
 <div class="guide-meta">
 <span><strong>Published:</strong> October 20, 2026</span>
-<span><strong>Updated:</strong> October 20, 2026</span>
-<span><strong>By:</strong> Dinesh Madushanka</span>
+<span><strong>Last updated:</strong> October 20, 2026</span>
+<span><strong>By:</strong> <a href="/author/dinesh-madushanka/">Dinesh Madushanka</a></span>
 </div>
 </div>
 </section>
@@ -530,6 +532,7 @@ A count plan that does not fit the available hours will slip quietly, not visibl
 <a href="/privacy/">Privacy</a>
 <a href="/terms/">Terms</a>
 <a href="/disclaimer/">Disclaimer</a>
+<button type="button" class="footer-cookie-btn" data-cookie-manage>Cookie Settings</button>
 <a href="/editorial-policy/">Editorial Policy</a>
 </div>
 
@@ -541,8 +544,26 @@ A count plan that does not fit the available hours will slip quietly, not visibl
 
 </div>
 </footer>
+<!-- Cookie Consent Banner -->
+<aside id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie consent">
+<div class="cookie-banner-inner">
+<p>DIXANI uses cookies for analytics and advertising (via Google Analytics and Google AdSense) to measure site usage and serve relevant ads. Rejecting optional cookies will not affect any calculator or template. See our <a href="/privacy/">Privacy Policy</a>.</p>
+<div class="cookie-banner-prefs" id="cookieConsentPrefs" hidden>
+<label><input type="checkbox" checked disabled/> Essential (Tools &amp; Preferences)</label>
+<label><input type="checkbox" id="cookiePrefAnalytics" checked/> Analytics (Google Analytics)</label>
+<label><input type="checkbox" id="cookiePrefAds" checked/> Advertising (Google AdSense)</label>
+</div>
+<div class="cookie-banner-actions">
+<button type="button" class="cookie-btn cookie-btn-manage" id="cookieManageBtn">Manage</button>
+<button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Reject</button>
+<button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Accept</button>
+</div>
+</div>
+</aside>
+<script>(function(){try{if(localStorage.getItem('dixani_cookie_consent')||/(?:^|;\s*)dixani_cookie_consent=/.test(document.cookie)){var b=document.getElementById('cookieConsentBanner');if(b){b.hidden=true;b.style.display='none';}}}catch(e){}})();</script>
+<!-- /Cookie Consent Banner -->
 
-<script defer src="/assets/js/main.js?v=6f91e3bb2b"></script>
+<script defer src="/assets/js/main.js?v=683d4b51c4"></script>
 
 <!-- Cloudflare Web Analytics -->
 <script type="module"

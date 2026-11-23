@@ -161,3 +161,63 @@ test("meta descriptions stay within sane search-snippet lengths", () => {
   }
   assert.equal(tooLong.length, 0, `descriptions still too long:\n${tooLong.join("\n")}`);
 });
+
+test("Task 1.1: AdSense snippet is present on 100% of pages and loaded exactly once per page", () => {
+  const adsRegex = /https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-8025420721885884/g;
+  for (const f of PAGES) {
+    const h = read(f);
+    const matches = h.match(adsRegex) || [];
+    assert.equal(matches.length, 1, `expected AdSense snippet exactly once on ${rel(f)}, found ${matches.length}`);
+  }
+});
+
+test("Task 1.2: Cookie consent banner + Google Consent Mode v2 trace is present on 100% of pages", () => {
+  for (const f of PAGES) {
+    const h = read(f);
+    assert.ok(h.includes("gtag('consent','default'"), `missing Google Consent Mode v2 default on ${rel(f)}`);
+    assert.ok(h.includes('id="cookieConsentBanner"'), `missing #cookieConsentBanner on ${rel(f)}`);
+    assert.ok(h.includes('id="cookieAcceptBtn"'), `missing Accept button on ${rel(f)}`);
+    assert.ok(h.includes('id="cookieRejectBtn"'), `missing Reject button on ${rel(f)}`);
+    assert.ok(h.includes('id="cookieManageBtn"'), `missing Manage button on ${rel(f)}`);
+    assert.ok(h.includes("cookies for analytics and advertising"), `missing analytics/advertising cookie disclosure on ${rel(f)}`);
+    assert.ok(h.includes("data-cookie-manage"), `missing footer Cookie Settings trigger on ${rel(f)}`);
+  }
+});
+
+test("Task 1.5: sitemap.xml validates with <lastmod> on 100% of URLs", () => {
+  const xml = readFileSync(join(ROOT, "sitemap.xml"), "utf8");
+  const urlBlocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+  assert.equal(urlBlocks.length, PAGES.length, `sitemap URL count (${urlBlocks.length}) != page count (${PAGES.length})`);
+  for (const block of urlBlocks) {
+    const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1];
+    const lastmod = (block.match(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/) || [])[1];
+    assert.ok(loc, "sitemap <url> block missing <loc>");
+    assert.ok(lastmod, `sitemap URL missing valid YYYY-MM-DD <lastmod>: ${loc}`);
+  }
+});
+
+test("Task 1.6: Author link + Published + Last updated renders on every tool, template, and guide page", () => {
+  const exempt = new Set([
+    "index.html",
+    "about/index.html",
+    "contact/index.html",
+    "privacy/index.html",
+    "terms/index.html",
+    "disclaimer/index.html",
+    "editorial-policy/index.html",
+    "author/dinesh-madushanka/index.html",
+  ]);
+  for (const f of PAGES) {
+    const r = rel(f);
+    if (exempt.has(r)) continue;
+    const h = read(f);
+    const meta = (h.match(/<div class="guide-meta[^"]*">([\s\S]*?)<\/div>/) || [])[1] || "";
+    assert.ok(meta.length > 0, `missing .guide-meta block on ${r}`);
+    assert.ok(/<strong>Published:<\/strong>\s*[A-Za-z]+\s+\d{1,2},\s*2026/.test(meta), `missing Published date on ${r}`);
+    assert.ok(/<strong>Last updated:<\/strong>\s*[A-Za-z]+\s+\d{1,2},\s*2026/.test(meta), `missing Last updated date on ${r}`);
+    assert.ok(
+      meta.includes('<a href="/author/dinesh-madushanka/">Dinesh Madushanka</a>'),
+      `missing linked author name on ${r}`
+    );
+  }
+});

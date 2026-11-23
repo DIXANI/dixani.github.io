@@ -10,37 +10,138 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  /* ---------- Cookie consent banner ---------- */
+  /* ---------- Cookie consent banner (Google Consent Mode v2 + CMP) ---------- */
   try {
     const CONSENT_KEY = "dixani_cookie_consent";
-    const savedConsent = localStorage.getItem(CONSENT_KEY);
-    if (!savedConsent && document.body) {
-      const bar = document.createElement("aside");
+    const readSaved = () => {
+      try {
+        const ls = localStorage.getItem(CONSENT_KEY);
+        if (ls) return ls;
+      } catch (_) {}
+      const m = document.cookie.match(/(?:^|;\s*)dixani_cookie_consent=([^;]+)/);
+      return m ? decodeURIComponent(m[1]) : null;
+    };
+
+    const parseState = (val) => {
+      if (!val) return null;
+      if (val === "accepted") return { analytics: true, ads: true, label: "accepted" };
+      if (val === "rejected") return { analytics: false, ads: false, label: "rejected" };
+      try {
+        const obj = JSON.parse(val);
+        return { analytics: !!obj.analytics, ads: !!obj.ads, label: val };
+      } catch (_) {
+        return null;
+      }
+    };
+
+    const applyGtagConsent = (state) => {
+      if (!state || typeof window.gtag !== "function") return;
+      window.gtag("consent", "update", {
+        ad_storage: state.ads ? "granted" : "denied",
+        ad_user_data: state.ads ? "granted" : "denied",
+        ad_personalization: state.ads ? "granted" : "denied",
+        analytics_storage: state.analytics ? "granted" : "denied"
+      });
+    };
+
+    let bar = document.getElementById("cookieConsentBanner");
+    if (!bar && document.body) {
+      bar = document.createElement("aside");
+      bar.id = "cookieConsentBanner";
       bar.className = "cookie-banner";
       bar.setAttribute("role", "region");
       bar.setAttribute("aria-label", "Cookie consent");
       bar.innerHTML =
         '<div class="cookie-banner-inner">' +
-        '<p>DIXANI uses cookies for analytics and to serve relevant advertising via Google AdSense. See our <a href="/privacy/">Privacy Policy</a> for details.</p>' +
+        '<p>DIXANI uses cookies for analytics and advertising (via Google Analytics and Google AdSense) to measure site usage and serve relevant ads. Rejecting optional cookies will not affect any calculator or template. See our <a href="/privacy/">Privacy Policy</a>.</p>' +
+        '<div class="cookie-banner-prefs" id="cookieConsentPrefs" hidden>' +
+        '<label><input type="checkbox" checked disabled/> Essential (Tools &amp; Preferences)</label>' +
+        '<label><input type="checkbox" id="cookiePrefAnalytics" checked/> Analytics (Google Analytics)</label>' +
+        '<label><input type="checkbox" id="cookiePrefAds" checked/> Advertising (Google AdSense)</label>' +
+        '</div>' +
         '<div class="cookie-banner-actions">' +
+        '<button type="button" class="cookie-btn cookie-btn-manage" id="cookieManageBtn">Manage</button>' +
         '<button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectBtn">Reject</button>' +
         '<button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptBtn">Accept</button>' +
         "</div></div>";
       document.body.appendChild(bar);
-      const setChoice = (val) => {
+    }
+
+    if (bar) {
+      const prefsBox = document.getElementById("cookieConsentPrefs");
+      const chkAnalytics = document.getElementById("cookiePrefAnalytics");
+      const chkAds = document.getElementById("cookiePrefAds");
+      const btnAccept = document.getElementById("cookieAcceptBtn");
+      const btnReject = document.getElementById("cookieRejectBtn");
+      const btnManage = document.getElementById("cookieManageBtn");
+
+      const saveChoice = (val, state) => {
         try { localStorage.setItem(CONSENT_KEY, val); } catch (_) {}
-        if (typeof window.gtag === "function") {
-          window.gtag("consent", "update", {
-            ad_storage: val === "accepted" ? "granted" : "denied",
-            ad_user_data: val === "accepted" ? "granted" : "denied",
-            ad_personalization: val === "accepted" ? "granted" : "denied",
-            analytics_storage: val === "accepted" ? "granted" : "denied"
-          });
-        }
-        bar.remove();
+        try {
+          document.cookie = CONSENT_KEY + "=" + encodeURIComponent(val) + "; Max-Age=15552000; Path=/; SameSite=Lax";
+        } catch (_) {}
+        applyGtagConsent(state);
+        bar.hidden = true;
+        bar.style.display = "none";
+        if (prefsBox) prefsBox.hidden = true;
+        if (btnManage) btnManage.textContent = "Manage";
       };
-      document.getElementById("cookieAcceptBtn").onclick = () => setChoice("accepted");
-      document.getElementById("cookieRejectBtn").onclick = () => setChoice("rejected");
+
+      const saved = parseState(readSaved());
+      if (saved) {
+        applyGtagConsent(saved);
+        bar.hidden = true;
+        bar.style.display = "none";
+        if (chkAnalytics) chkAnalytics.checked = saved.analytics;
+        if (chkAds) chkAds.checked = saved.ads;
+      } else {
+        bar.hidden = false;
+        bar.style.display = "";
+      }
+
+      if (btnAccept) {
+        btnAccept.onclick = () => saveChoice("accepted", { analytics: true, ads: true });
+      }
+      if (btnReject) {
+        btnReject.onclick = () => saveChoice("rejected", { analytics: false, ads: false });
+      }
+      if (btnManage) {
+        btnManage.onclick = () => {
+          if (!prefsBox) return;
+          if (prefsBox.hidden) {
+            prefsBox.hidden = false;
+            btnManage.textContent = "Save Selection";
+          } else {
+            const state = {
+              analytics: chkAnalytics ? !!chkAnalytics.checked : false,
+              ads: chkAds ? !!chkAds.checked : false
+            };
+            const val = state.analytics && state.ads
+              ? "accepted"
+              : (!state.analytics && !state.ads ? "rejected" : JSON.stringify(state));
+            saveChoice(val, state);
+          }
+        };
+      }
+
+      document.querySelectorAll("[data-cookie-manage]").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (window.googlefc && typeof window.googlefc.showRevocationMessage === "function") {
+            window.googlefc.showRevocationMessage();
+            return;
+          }
+          const cur = parseState(readSaved());
+          if (cur) {
+            if (chkAnalytics) chkAnalytics.checked = cur.analytics;
+            if (chkAds) chkAds.checked = cur.ads;
+          }
+          bar.hidden = false;
+          bar.style.display = "";
+          if (prefsBox) prefsBox.hidden = false;
+          if (btnManage) btnManage.textContent = "Save Selection";
+        });
+      });
     }
   } catch (_) {}
 
