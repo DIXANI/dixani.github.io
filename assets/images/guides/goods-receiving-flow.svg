@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="920" height="340" role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">Goods Receiving Process Flow Diagram</title>
+  <desc id="flowDesc">Seven-stage warehouse goods receiving workflow from pre-arrival ASN and dock booking through physical inspection, discrepancy quarantine, GRN sign-off, put-away handover, and ERP system entry.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="340" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="28" y="34" font-family="Inter,system-ui,-apple-system,sans-serif" font-size="14" font-weight="800" fill="#0f1f4b" letter-spacing="0.06em">STANDARD GOODS RECEIVING WORKFLOW (7 CONTROL GATES)</text>
+
+  <!-- Row 1: Steps 1 to 4 -->
+  <!-- Step 1 -->
+  <rect x="28" y="56" width="188" height="96" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="40" y="68" width="24" height="24" rx="6" fill="#2563eb"/>
+  <text x="52" y="85" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">1</text>
+  <text x="72" y="85" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#0f172a">Booking-in &amp; ASN</text>
+  <text x="40" y="108" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">Match PO, delivery slot,</text>
+  <text x="40" y="125" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">ASN &amp; staging bay</text>
+
+  <line x1="216" y1="104" x2="246" y2="104" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="252" y="56" width="188" height="96" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="264" y="68" width="24" height="24" rx="6" fill="#2563eb"/>
+  <text x="276" y="85" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">2</text>
+  <text x="296" y="85" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#0f172a">Dock &amp; Seal Check</text>
+  <text x="264" y="108" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">Verify seal, vehicle safety,</text>
+  <text x="264" y="125" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">temp &amp; pallet condition</text>
+
+  <line x1="440" y1="104" x2="470" y2="104" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="476" y="56" width="188" height="96" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="488" y="68" width="24" height="24" rx="6" fill="#2563eb"/>
+  <text x="500" y="85" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">3</text>
+  <text x="520" y="85" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#0f172a">Qty &amp; Quality Check</text>
+  <text x="488" y="108" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">Blind count units/UOM,</text>
+  <text x="488" y="125" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">check batch, lot &amp; expiry</text>
+
+  <line x1="664" y1="104" x2="694" y2="104" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 4 (Exception Branch) -->
+  <rect x="700" y="56" width="192" height="96" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="712" y="68" width="24" height="24" rx="6" fill="#d97706"/>
+  <text x="724" y="85" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">4</text>
+  <text x="744" y="85" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#78350f">Discrepancy Hold</text>
+  <text x="712" y="108" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#78350f">Quarantine damage/overage,</text>
+  <text x="712" y="125" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#78350f">photo &amp; endorse delivery note</text>
+
+  <!-- Connector down from Step 3/4 to Row 2 -->
+  <path d="M 570 152 L 570 182 L 122 182 L 122 204" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 796 152 L 796 182 L 570 182" fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Row 2: Steps 5 to 7 -->
+  <!-- Step 5 -->
+  <rect x="28" y="210" width="256" height="96" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <rect x="40" y="222" width="24" height="24" rx="6" fill="#2563eb"/>
+  <text x="52" y="239" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">5</text>
+  <text x="72" y="239" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#0f1f4b">GRN Sign-Off</text>
+  <text x="40" y="262" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#1e3a8a">Record accepted vs. rejected qty,</text>
+  <text x="40" y="279" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#1e3a8a">Received By + Checked By signatures</text>
+
+  <line x1="284" y1="258" x2="324" y2="258" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 6 -->
+  <rect x="330" y="210" width="256" height="96" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="342" y="222" width="24" height="24" rx="6" fill="#2563eb"/>
+  <text x="354" y="239" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">6</text>
+  <text x="374" y="239" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#0f172a">Put-Away Handover</text>
+  <text x="342" y="262" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">Apply bin/pallet labels, release to</text>
+  <text x="342" y="279" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#475569">storage or quarantine zone</text>
+
+  <line x1="586" y1="258" x2="626" y2="258" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 7 -->
+  <rect x="632" y="210" width="260" height="96" rx="12" fill="#0f1f4b" stroke="#0f1f4b" stroke-width="1.5"/>
+  <rect x="644" y="222" width="24" height="24" rx="6" fill="#3b82f6"/>
+  <text x="656" y="239" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">7</text>
+  <text x="676" y="239" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">System Entry &amp; Close</text>
+  <text x="644" y="262" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#cbd5e1">Post GRN to WMS/ERP same shift,</text>
+  <text x="644" y="279" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#cbd5e1">update PO status &amp; file packet</text>
+</svg>
